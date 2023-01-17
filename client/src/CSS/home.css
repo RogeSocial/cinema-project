@@ -1,0 +1,28 @@
+.background-image {
+    background-image: url("../images/bakgrund.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+.transparent-background {
+    background-color: white;
+    opacity: 0.8;
+    margin-left: 780px;
+    margin-right: 780px;
+}
+
+h2 {
+    font-size: 30px;
+    color: black;
+    text-align: center;
+    margin-top: 380px;
+}
+
+button {
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
