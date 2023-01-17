@@ -1,6 +1,11 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+/*
 * {
     outline: solid 1px green;
 }
+*/
 
 :root {
     --body_background_color: rgb(6, 57, 84);
@@ -43,7 +48,7 @@ aside {
 }
 section {
     background-color: var(--section_background_color);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -57,19 +62,20 @@ footer {
     align-items: flex-start;
     justify-content: space-around;
     color: #8B95A6;
-    font-family: Verdana;
+    font-family: Questrial;
     font-size: small;
+    padding-bottom: 5vh;
 }
 
 footer h1 {
-    font-family: Verdana;
+    font-family: Poppins;
     font-size: 1.2em;
     color: #8B95A6;
 }
 
 footer .codinema {
     color: #CACCCD;
-    font-family: Verdana;
+    font-family: Poppins;
 }
 
 footer ul {
@@ -97,4 +103,20 @@ footer a:visited{
 footer a:active {
     text-decoration: none;
     color: #8B95A6;
+}
+
+hr {
+    width: 84%;
+    height: 1px;
+    border-width: 0;
+    background-color: #8B95A6;
+    margin: 0;
+}
+
+.line-container {
+    display: flex;
+    background-color: #0B1321;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    justify-content: center;
 }
