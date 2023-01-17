@@ -21,8 +21,29 @@ h2 {
     margin-top: 380px;
 }
 
+.btn {
+    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
 button {
-    display: block;
-    align-items: center;
-    justify-content: center;
+    padding: 9px 25px;
+    background-color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: red;
+    color: white;
+    transition: 3s;
+}
+
+.center-btn {
+    margin: 0 auto;
+    
+    text-align: center;
 }
