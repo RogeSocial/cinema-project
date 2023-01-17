@@ -56,7 +56,7 @@ section {
 
 footer {
   background-color: var(--footer_background_color);
-  height: 100px;
+  min-height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;

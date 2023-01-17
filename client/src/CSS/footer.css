@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url('https://fonts.googleapis.com/css?family=Poppins');
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
 /*
@@ -57,7 +57,7 @@ section {
 
 footer {
     background-color: var(--footer_background_color);
-    height: 100px;
+    min-height: 100px;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
@@ -65,12 +65,15 @@ footer {
     font-family: Questrial;
     font-size: small;
     padding-bottom: 5vh;
+    flex-direction: column;
+    padding-left: 20%;
 }
 
 footer h1 {
     font-family: Poppins;
     font-size: 1.2em;
     color: #8B95A6;
+    margin: 0;
 }
 
 footer .codinema {
@@ -88,6 +91,7 @@ footer li {
 
 footer div {
     max-width: 20em;
+    margin-top: 2vh;
 }
 
 footer a {
@@ -106,7 +110,7 @@ footer a:active {
 }
 
 hr {
-    width: 84%;
+    width: 60%;
     height: 1px;
     border-width: 0;
     background-color: #8B95A6;
@@ -119,4 +123,24 @@ hr {
     padding-top: 2vh;
     padding-bottom: 2vh;
     justify-content: center;
+}
+
+
+@media only screen and (min-width: 600px) {
+    footer {
+        flex-direction: row;
+        padding-left: 0;
+    }
+
+    footer div {
+        margin-top: 0;
+    }
+
+    footer h1 {
+        margin-bottom: 1vh;
+    }
+
+    hr {
+        width: 84%;
+    }
 }

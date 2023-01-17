@@ -9,7 +9,7 @@ export default function() {
         <footer>
             <div>
                 <h1 className={"codinema"}>Codinema</h1>
-                <p>I am a paragraph, Click here to add some extra text and stuff like that. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.</p>
+                I am a paragraph, Click here to add some extra text and stuff like that. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
             </div>
             <div>
                 <h1>Contact</h1>
