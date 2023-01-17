@@ -16,17 +16,17 @@ export default function () {
         </aside>
         <nav>
           <a href="/">Home</a>
-          <a href="calender">Calender</a>
           <a href="#movies">Movies</a>
           <a href="#tickets">Tickets</a>
+          <a href="calender">Calender</a>
         </nav>
       </header>
       {openMenu ? (
         <div className="dropdown-menu">
           <a href="/">Home</a>
-          <a href="calender">Calender</a>
           <a href="#movies">Movies</a>
           <a href="#tickets">Tickets</a>
+          <a href="calender">Calender</a>
         </div>
       ) : null}
     </>
