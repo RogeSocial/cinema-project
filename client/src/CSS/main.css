@@ -43,7 +43,7 @@ aside {
 }
 section {
   background-color: var(--section_background_color);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
