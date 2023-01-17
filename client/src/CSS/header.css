@@ -5,7 +5,10 @@
   text-decoration: none;
   padding: var(--dropdown_padding);
 }
-
+.active {
+  background-color: #58181F;
+  color: honeydew;
+}
 .dropdown-menu {
   position: absolute;
   right: 0;

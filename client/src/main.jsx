@@ -9,13 +9,15 @@ import Footer from './components/Footer.jsx'
 import Calender from "./components/Calender.jsx"
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <Header />
+
       <RouterProvider router={
           createBrowserRouter(createRoutesFromElements(
-              <Route path={"/"}>
+              <Route path={"/"} element={<Header />}>
                   <Route index element={<Mainpage/>}/>
-                  <Route path={"home"} element={<Mainpage/>}/>
+                  {/*<Route path={"home"} element={<Mainpage/>}/>*/}
                   <Route path={"calender"} element={<Calender/>}/>
+                  <Route path={"movies"} />
+                  <Route path={"tickets"} />
               </Route>
                   )
                   )
