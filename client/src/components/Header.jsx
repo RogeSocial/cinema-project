@@ -17,16 +17,18 @@ export default function () {
         <nav>
           <a href="/">Home</a>
           <a href="calender">Calender</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
+          <a href="movies">Movies</a>
+          <a href="tickets">Tickets</a>
+          <a href="reservations">Reservations</a>
         </nav>
       </header>
       {openMenu ? (
         <div className="dropdown-menu">
           <a href="/">Home</a>
           <a href="calender">Calender</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
+          <a href="movies">Movies</a>
+          <a href="tickets">Tickets</a>
+          <a href="reservations">Reservations</a>
         </div>
       ) : null}
     </>

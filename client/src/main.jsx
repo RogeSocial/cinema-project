@@ -7,6 +7,9 @@ import {createBrowserRouter, createRoutesFromElements, RouterProvider, Route} fr
 import Header from "./components/Header.jsx";
 import Footer from './components/Footer.jsx'
 import Calender from "./components/Calender.jsx"
+import Movies from './components/Movies'
+import Tickets from './components/Tickets'
+import Reservations from './components/Reservations'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
   <Header />
@@ -16,6 +19,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   <Route index element={<Mainpage/>}/>
                   <Route path={"home"} element={<Mainpage/>}/>
                   <Route path={"calender"} element={<Calender/>}/>
+                  <Route path={"movies"} element={<Movies/>}/>
+                  <Route path={"tickets"} element={<Tickets/>}/>
+                  <Route path={"reservations"} element={<Reservations/>}/>
               </Route>
                   )
                   )
