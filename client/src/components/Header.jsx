@@ -6,6 +6,9 @@ export default function () {
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
+  const ActiveNav = ({ isActive }) => {
+     return isActive ? 'active' : 'inactive';
+  }
   return (
     <>
       <header>
@@ -16,20 +19,18 @@ export default function () {
           </div>
         </aside>
         <nav>
-          <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : 'inactive')} >Home
-          </NavLink>
-
-          <NavLink to="calender" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Calender</NavLink>
-          <NavLink to="movies" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Movies</NavLink>
-          <NavLink to="tickets" className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Tickets</NavLink>
+          <NavLink to={"/"} className={ActiveNav} >Home</NavLink>
+          <NavLink to="calender" className={ActiveNav}>Calender</NavLink>
+          <NavLink to="movies" className={ActiveNav}>Movies</NavLink>
+          <NavLink to="tickets" className={ActiveNav}>Tickets</NavLink>
         </nav>
       </header>
       {openMenu ? (
         <div className="dropdown-menu">
-          <a href="/">Home</a>
-          <a href="calender">Calender</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="calender">Calender</NavLink>
+          <NavLink to="movies">Movies</NavLink>
+          <NavLink to="tickets">Tickets</NavLink>
         </div>
       ) : null}
 
