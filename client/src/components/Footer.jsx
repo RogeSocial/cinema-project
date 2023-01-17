@@ -1,8 +1,8 @@
 import React from "react";
 
 export default function() {
-    return <div>
+    return <footer>
         <p>Footer text and content here</p>
-    </div>
+    </footer>
 
 }

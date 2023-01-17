@@ -1,0 +1,34 @@
+.dropdown-menu a {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  text-decoration: none;
+  padding: var(--dropdown_padding);
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  background-color: darkblue; 
+  text-align: center;
+}
+
+aside {
+  display: none;
+}
+
+@media screen and (max-width: 550px) {
+  aside {
+    display: flex;
+  }
+  header {
+    background-color: red;
+  }
+
+  nav {
+    display: none;
+  }
+}
