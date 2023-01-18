@@ -24,36 +24,7 @@ body {
     margin: 0;
 }
 
-header {
-    background-color: var(--header_background_color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-height: 70px;
 
-}
-
-nav a {
-    padding: var(--navbar_padding);
-    text-decoration: none;
-    color: white;
-}
-
-header h1 {
-    padding: var(--navbar_padding);
-}
-
-aside {
-    padding: var(--navbar_padding);
-}
-section {
-    background-color: var(--section_background_color);
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-}
 
 footer {
     background-color: var(--footer_background_color);
