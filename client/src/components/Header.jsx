@@ -1,10 +1,14 @@
 import React, { useState } from "react";
+import {NavLink} from "react-router-dom";
 
 export default function () {
   const [openMenu, setOpenMenu] = useState(false);
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
+  const ActiveNav = ({ isActive }) => {
+     return isActive ? 'active' : 'inactive';
+  }
   return (
     <>
       <header>
@@ -15,20 +19,21 @@ export default function () {
           </div>
         </aside>
         <nav>
-          <a href="/">Home</a>
-          <a href="calender">Calender</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
+          <NavLink to={"/"} className={ActiveNav} >Home</NavLink>
+          <NavLink to="calender" className={ActiveNav}>Calender</NavLink>
+          <NavLink to="movies" className={ActiveNav}>Movies</NavLink>
+          <NavLink to="tickets" className={ActiveNav}>Tickets</NavLink>
         </nav>
       </header>
       {openMenu ? (
         <div className="dropdown-menu">
-          <a href="/">Home</a>
-          <a href="calender">Calender</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="calender">Calender</NavLink>
+          <NavLink to="movies">Movies</NavLink>
+          <NavLink to="tickets">Tickets</NavLink>
         </div>
       ) : null}
+
     </>
   );
 }
