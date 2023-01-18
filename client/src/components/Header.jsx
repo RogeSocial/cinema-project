@@ -1,10 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import {NavLink} from "react-router-dom";
 
 export default function () {
   const [openMenu, setOpenMenu] = useState(false);
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
+
+
+  //Close hamburger menu when click outside.
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handler);
+
+    return () => {
+    document.removeEventListener('mousedown', handler)
+    }
+  });
+
+
+  const ActiveNav = ({ isActive }) => {
+     return isActive ? 'active' : 'inactive';
+  }
   return (
     <>
       <header>
@@ -15,20 +38,21 @@ export default function () {
           </div>
         </aside>
         <nav>
-          <a href="/">Home</a>
-          <a href="calender">Calender</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
+          <NavLink to={"/"} className={ActiveNav} >Home</NavLink>
+          <NavLink to="calender" className={ActiveNav}>Calender</NavLink>
+          <NavLink to="movies" className={ActiveNav}>Movies</NavLink>
+          <NavLink to="tickets" className={ActiveNav}>Tickets</NavLink>
         </nav>
       </header>
       {openMenu ? (
-        <div className="dropdown-menu">
-          <a href="/">Home</a>
-          <a href="calender">Calender</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
+        <div ref={menuRef}  className="dropdown-menu">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="calender">Calender</NavLink>
+          <NavLink to="movies">Movies</NavLink>
+          <NavLink to="tickets">Tickets</NavLink>
         </div>
       ) : null}
+
     </>
   );
 }

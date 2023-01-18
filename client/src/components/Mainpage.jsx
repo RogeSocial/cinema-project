@@ -1,7 +1,7 @@
 import React from "react";
 import '../CSS/home.css'
 
-export default function () {
+export default function() {
   return (
     <section>
       <div className="background-image">
