@@ -42,6 +42,8 @@ export default function () {
           <NavLink to="calender" className={ActiveNav}>Calender</NavLink>
           <NavLink to="movies" className={ActiveNav}>Movies</NavLink>
           <NavLink to="tickets" className={ActiveNav}>Tickets</NavLink>
+          <NavLink to="reservations" className={ActiveNav}>Reservations</NavLink>
+          
         </nav>
       </header>
       {openMenu ? (
@@ -50,6 +52,7 @@ export default function () {
           <NavLink to="calender">Calender</NavLink>
           <NavLink to="movies">Movies</NavLink>
           <NavLink to="tickets">Tickets</NavLink>
+          <NavLink to="reservations">Reservations</NavLink>
         </div>
       ) : null}
 
