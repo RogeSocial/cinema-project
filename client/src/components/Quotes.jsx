@@ -70,8 +70,8 @@ export default class Quotes extends Component {
 
         return (
             <div className={"quotebox"}>
-                <h1 className={"quote fading"}>{movieQuote}</h1>
-                <p className={"byline fading"}>{byline}</p>
+                <div className={"quote fading"}>{movieQuote}</div>
+                <div className={"byline fading"}>{byline}</div>
             </div>
         )
     }
