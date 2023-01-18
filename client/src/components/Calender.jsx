@@ -37,20 +37,21 @@ export default function() {
                 <input type="checkbox" id="my-dropdown" value="" name="my-checkbox"></input>
                 <label htmlFor="my-dropdown" data-toggle="dropdown">Pick a day</label>
                 <ul>
-{/*                    {sortByDate(movies)}
+                    {sortByDate(movies)}
                     {movies.map((item, index) =>
                         <li key={movies.id}><a href="#">date: {item.date}</a></li>
-                    )}*/}
+                    )}
 
-                    {sortByLetter(movies)}
+                    {/*{sortByLetter(movies)}
                     {movies.map((item, index) =>
                         <li><a href="#">title: {item.title}</a></li>
-                    )}
+                    )}*/}
                 </ul>
             </div>
             </section>
 }
 
+//Sorting the array by date (numbers)
 function sortByDate(inArray){
     for(let i=0; i<inArray.length - 1; i++){
         if(inArray[i].date > inArray[i+1].date){
@@ -59,12 +60,14 @@ function sortByDate(inArray){
     }
 }
 
+//swap the two indexes
 function swap(inArray, index1, index2){
     let tmp = inArray[index1];
     inArray[index1] = inArray[index2];
     inArray[index2] = tmp;
 }
 
+//sorting the array by letter(alphabetically)
 function sortByLetter(inArray) {
     for(let i=0; i<inArray.length - 1; i++){
         if(inArray[i].title > inArray[i+1].title){
