@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {NavLink} from "react-router-dom";
 
 export default function () {
@@ -6,6 +6,25 @@ export default function () {
   const toggleMenu = () => {
     setOpenMenu(!openMenu);
   };
+
+
+  //Close hamburger menu when click outside.
+  let menuRef = useRef();
+  useEffect(() => {
+    let handler = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handler);
+
+    return () => {
+    document.removeEventListener('mousedown', handler)
+    }
+  });
+
+
   const ActiveNav = ({ isActive }) => {
      return isActive ? 'active' : 'inactive';
   }
@@ -26,7 +45,7 @@ export default function () {
         </nav>
       </header>
       {openMenu ? (
-        <div className="dropdown-menu">
+        <div ref={menuRef}  className="dropdown-menu">
           <NavLink to="/">Home</NavLink>
           <NavLink to="calender">Calender</NavLink>
           <NavLink to="movies">Movies</NavLink>

@@ -1,9 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Niconne&family=Nosifer&family=Poppins:wght@200&display=swap');
+
+header {
+  height: 3.5vw;
+  background-color: #0b132182;
+  position: fixed;
+  width: 100%;
+  height: 2.7rem;
+  
+}
+
+header h1 {
+  font-family: 'Niconne', cursive;
+  font-weight: 100;
+  padding-left: 3rem;
+}
+
+
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+
+}
+
+nav a  {
+  font-family: 'Poppins', sans-serif;
+  padding: 0.45rem 3.5vw;
+  font-weight: 600;
+
+}
+
+nav a:hover {
+  border-top: 2px solid white;
+}
+
+.hamburger-icon {
+  cursor: pointer;
+}
+
 .dropdown-menu a {
   display: flex;
   flex-direction: column;
   color: white;
   text-decoration: none;
   padding: var(--dropdown_padding);
+  align-items: space-around;
+}
+
+.dropdown-menu a:hover {
+  border-top: 2px solid white;
 }
 .active {
   background-color: #58181F;
@@ -15,8 +60,10 @@
   top: 0;
   height: 100%;
   width: 50%;
-  background-color: darkblue; 
+  background-color: #0b1321; 
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
 }
 
 aside {
@@ -27,9 +74,7 @@ aside {
   aside {
     display: flex;
   }
-  header {
-    background-color: red;
-  }
+  
 
   nav {
     display: none;
