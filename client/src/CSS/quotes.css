@@ -1,0 +1,33 @@
+.quotebox {
+
+}
+
+.quote {
+    font-size: 2rem;
+}
+
+.byline {
+    font-size: 1rem;
+}
+
+.fading {
+    animation: fadeInOut ease 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity:0;
+    }
+
+    45% {
+        opacity:1;
+    }
+
+    65% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+ }

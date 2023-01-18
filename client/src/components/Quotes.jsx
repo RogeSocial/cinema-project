@@ -1,48 +1,78 @@
-import React, {useEffect, useState} from 'react';
+import React, { Component } from 'react';
+import '../CSS/home.css';
+import '../CSS/quotes.css';
 
-function Quotes(props) {
+//The elements of both arrays must be kept in the right order
+// because the index of each horrorQuote corresponds to the index of each quoteData
 
-    let quotes = [
-        "Here's Johnny!",
-        "I see dead people.",
-        "They're here!",
-        "Do you like scary movies?",
-        "I'm your number one fan.",
-        "We all go a little mad sometimes.",
-        "It's alive! It's alive!",
-        "They're not gonna catch themselves.",
-        "I'm your boogie man.",
-    ]
+const horrorQuote = [
+    "\"Here's Johnny!\"",
+    "\"I see dead people.\"",
+    "\"They're here!",
+    "\"Do you like scary movies?\"",
+    "\"We all go a little mad sometimes.\"",
+    "\"It's alive! It's alive!\"",
+    "\"They're not gonna catch themselves.\"",
+    "\"I'm your boogie man.\"",
+    "\"Whatever You Do, Don’t Fall Asleep.\"",
+    "\"I Want To Play A Game.\"",
+    "\"The power of Christ compels you!\"",
+    "\"Tell her to stay away from the light.\"",
+    "\"Be afraid. Be very afraid.\"",
+    "\"I ate his liver with some fava beans and a nice Chianti.\""
 
-    let quoteData = [
-        "The Shining (1980)",
-        "The Sixth Sense (1999)",
-        "Poltergeist (1982)",
-        "Scream (1996)",
-        "Fatal Attraction (1987)",
-        "Psycho (1960)",
-        "Frankenstein (1931)",
-        "Evil Dead II (1987)",
-        "A Nightmare on Elm Street (1984)",
-    ]
+];
 
-    let number = Math.floor(Math.random() * quotes.length);
-    console.log(quotes[number]);
+const quoteData = [
+    "– The Shining, 1980",
+    "– The Sixth Sense, 1999",
+    "– Poltergeist, 1982",
+    "– Scream, 1996",
+    "– Psycho, 1960",
+    "– Frankenstein, 1931",
+    "– Evil Dead II, 1987",
+    "– A Nightmare on Elm Street, 1984",
+    "– A Nightmare on Elm Street, 1984",
+    "– Saw, 2004",
+    "– The Exorcist, 1973",
+    "– Poltergeist, 1982",
+    "– The Fly, 1986",
+    "– The Silence of the Lambs, 1991"
+]
+
+export default class Quotes extends Component {
+    constructor() {
+        super();
+
+        //This is the index that will be fetched from the two arrays.
+        this.state = {
+            index: Math.floor(Math.random() * horrorQuote.length)
+        };
+    }
+
+    //componentDidMount will be called when the component is mounted
+    componentDidMount() {
+
+        //This if-statement makes sure the qoutes are not updated double
+        if (this.timeout) {
+            return;
+        }
+
+        this.timeout = setInterval(() => {
+            this.setState({ index: Math.floor(Math.random() * horrorQuote.length) });
+        }, 15000);
+    }
 
 
-    const [divContent, setDivContent] = useState('Initial Content');
+    render() {
+        let movieQuote = horrorQuote[this.state.index];
+        let byline = quoteData[this.state.index];
 
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setDivContent('content');
-        }, 5000);
-        return () => clearInterval(intervalId);
-    }, []);
-
-
-    return (
-        <div>{[quotes[number]]}, {quoteData[number]}</div>
-    );
+        return (
+            <div className={"quotebox"}>
+                <h2 className={"quote fading"}>{movieQuote}</h2>
+                <p className={"byline fading"}>{byline}</p>
+            </div>
+        )
+    }
 }
-
-export default Quotes;
