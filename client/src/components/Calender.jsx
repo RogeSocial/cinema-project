@@ -69,9 +69,9 @@ function swap(inArray, index1, index2){
 
 //sorting the array by letter(alphabetically)
 function sortByLetter(inArray) {
-    for(let i=0; i<inArray.length - 1; i++){
-        if(inArray[i].title > inArray[i+1].title){
-            swap(movies, i, i+1);
+    for (let i = 0; i < inArray.length - 1; i++) {
+        if (inArray[i].title > inArray[i + 1].title) {
+            swap(movies, i, i + 1);
         }
     }
 }
