@@ -7,19 +7,19 @@ import '../CSS/quotes.css';
 
 const horrorQuote = [
     "\"Here's Johnny!\"",
-    "\"I see dead people.\"",
+    "\"I see dead people\"",
     "\"They're here!",
     "\"Do you like scary movies?\"",
-    "\"We all go a little mad sometimes.\"",
+    "\"We all go a little mad sometimes\"",
     "\"It's alive! It's alive!\"",
-    "\"They're not gonna catch themselves.\"",
-    "\"I'm your boogie man.\"",
-    "\"Whatever You Do, Don’t Fall Asleep.\"",
-    "\"I Want To Play A Game.\"",
+    "\"They're not gonna catch themselves\"",
+    "\"I'm your boogie man\"",
+    "\"Whatever You Do, Don’t Fall Asleep\"",
+    "\"I Want To Play A Game\"",
     "\"The power of Christ compels you!\"",
-    "\"Tell her to stay away from the light.\"",
-    "\"Be afraid. Be very afraid.\"",
-    "\"I ate his liver with some fava beans and a nice Chianti.\""
+    "\"Tell her to stay away from the light\"",
+    "\"Be afraid. Be very afraid\"",
+    "\"I'm having an old friend for dinner\""
 
 ];
 
@@ -70,7 +70,7 @@ export default class Quotes extends Component {
 
         return (
             <div className={"quotebox"}>
-                <h2 className={"quote fading"}>{movieQuote}</h2>
+                <h1 className={"quote fading"}>{movieQuote}</h1>
                 <p className={"byline fading"}>{byline}</p>
             </div>
         )

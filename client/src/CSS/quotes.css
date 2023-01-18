@@ -1,9 +1,18 @@
-.quotebox {
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Niconne&family=Nosifer&family=Poppins:wght@200&display=swap');
 
+.quotebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 160px;
+}
+
+.quotebox h2 {
+    margin: 0;
 }
 
 .quote {
-    font-size: 2rem;
+    font-family: 'Fredericka the Great';
 }
 
 .byline {
