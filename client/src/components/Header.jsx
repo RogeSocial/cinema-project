@@ -7,7 +7,7 @@ export default function () {
   };
 
 
-  //Close menu when click outside.
+  //Close hamburger menu when click outside.
   let menuRef = useRef();
   useEffect(() => {
     let handler = (event) => {
@@ -19,7 +19,7 @@ export default function () {
     document.addEventListener('mousedown', handler);
 
     return () => {
-      document.removeEventListener('mousedown', handler)
+    document.removeEventListener('mousedown', handler)
     }
   });
 
