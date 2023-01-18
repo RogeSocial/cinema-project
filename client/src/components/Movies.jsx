@@ -25,6 +25,7 @@ export default function () {
         "https://i.pinimg.com/originals/a2/b5/f7/a2b5f7baac617b3918457722da8a8767.jpg",
     },
   ]);
+
   return (
     <section className="movies">
       <input type="text" placeholder="Search.."></input>

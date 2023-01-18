@@ -6,10 +6,9 @@ export default function() {
   return (
     <section>
       <div className="background-image">
-        <div className="transparent-background">
-          <h2>"WHATEVER YOU DO, <br></br> DON'T FALL ASLEEP."</h2>
-        </div>
-        <div className="center-btn">
+          <h2 className="transparent-background">"WHATEVER YOU DO DON'T FALL 
+          ASLEEP."</h2>
+          <div className="center-btn">
           <button className="btn">LOGIN</button>
           <button className="btn">SIGNUP</button>
         </div>
