@@ -9,6 +9,7 @@
   padding: 1rem;
   background-color: black;
   color: white;
+  padding-top: 3.7rem; /* to move content down from navbar */
 }
 
 .movies input {
@@ -20,6 +21,20 @@
 .movies button {
     padding: var(--button_padding);
     border-radius: 25px;
+    margin: 1rem;
+}
+
+.movies input {
+  margin: 1rem;
+}
+.movies h3 {
+  position: absolute;
+  z-index: 2;
+}
+
+.movies h2 {
+margin: 1rem;
+color: white;
 }
 
 .movie-list {
@@ -40,11 +55,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.movie-list h3 {
-  position: absolute;
-  z-index: 2;
 }
 
 @media screen and (min-width: 550px) {

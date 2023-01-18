@@ -1,5 +1,6 @@
 import React from "react";
 import '../CSS/home.css'
+import Movies from "./Movies";
 
 export default function() {
   return (
