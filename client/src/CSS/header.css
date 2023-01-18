@@ -14,6 +14,7 @@
   width: 50%;
   background-color: darkblue; 
   text-align: center;
+  z-index: 999;
 }
 
 aside {

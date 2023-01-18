@@ -27,17 +27,23 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.movie-list-item {
+  padding: 1rem;
 }
 
 .movie-list img {
+  position: relative;
   border-radius: 20px;
   width: 225px;
   height: 225px;
   object-fit: cover;
   display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.movie-list h3 {
+  position: absolute;
+  z-index: 2;
 }
 
 @media screen and (min-width: 550px) {

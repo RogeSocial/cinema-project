@@ -8,21 +8,21 @@ export default function () {
       title: "Bram Stoker's Dracula",
       text: "Bram Stoker's Dracula is a 1992 American Gothic horror film directed and produced by Francis Ford Coppola, based on the 1897 novel Dracula by Bram Stoker",
       image:
-        "https://cinespia.org/wp-content/uploads/2022/09/Screen-Shot-2020-05-17-at-9.02.13-PM-1.png",
+      "https://i.pinimg.com/originals/a2/b5/f7/a2b5f7baac617b3918457722da8a8767.jpg",
     },
     {
       id: 2,
       title: "Bram Stoker's Dracula",
       text: "Bram Stoker's Dracula is a 1992 American Gothic horror film directed and produced by Francis Ford Coppola, based on the 1897 novel Dracula by Bram Stoker",
       image:
-        "https://cinespia.org/wp-content/uploads/2022/09/Screen-Shot-2020-05-17-at-9.02.13-PM-1.png",
+      "https://i.pinimg.com/originals/a2/b5/f7/a2b5f7baac617b3918457722da8a8767.jpg",
     },
     {
       id: 3,
       title: "Bram Stoker's Dracula",
       text: "Bram Stoker's Dracula is a 1992 American Gothic horror film directed and produced by Francis Ford Coppola, based on the 1897 novel Dracula by Bram Stoker",
       image:
-        "https://cinespia.org/wp-content/uploads/2022/09/Screen-Shot-2020-05-17-at-9.02.13-PM-1.png",
+        "https://i.pinimg.com/originals/a2/b5/f7/a2b5f7baac617b3918457722da8a8767.jpg",
     },
   ]);
   return (
