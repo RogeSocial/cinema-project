@@ -62,6 +62,7 @@ nav a:hover {
   width: 50%;
   background-color: #0b1321; 
   text-align: center;
+  z-index: 999;
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
 }
