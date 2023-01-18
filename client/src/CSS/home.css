@@ -25,6 +25,16 @@ button:hover {
     text-align: center;
 }
 
+.section-top-movies {
+    background-color: black;
+}
+
+.title {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media screen and (min-width: 550px) {
     .background-image {
         background-image: url("../images/bakgrund.jpg");
