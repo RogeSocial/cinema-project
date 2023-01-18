@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import {NavLink} from "react-router-dom";
 
 export default function () {
   const [openMenu, setOpenMenu] = useState(false);
@@ -24,6 +25,9 @@ export default function () {
   });
 
 
+  const ActiveNav = ({ isActive }) => {
+     return isActive ? 'active' : 'inactive';
+  }
   return (
     <>
       <header>
@@ -34,21 +38,20 @@ export default function () {
           </div>
         </aside>
         <nav>
-          <a href="/">Home</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
-          <a href="calender">Calender</a>
+          <NavLink to={"/"} className={ActiveNav} >Home</NavLink>
+          <NavLink to="calender" className={ActiveNav}>Calender</NavLink>
+          <NavLink to="movies" className={ActiveNav}>Movies</NavLink>
+          <NavLink to="tickets" className={ActiveNav}>Tickets</NavLink>
         </nav>
       </header>
       {openMenu ? (
-        <div ref={menuRef} className="dropdown-menu">
-          <a href="/">Home</a>
-          <a href="#movies">Movies</a>
-          <a href="#tickets">Tickets</a>
-          <a href="calender">Calender</a>
+        <div ref={menuRef}  className="dropdown-menu">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="calender">Calender</NavLink>
+          <NavLink to="movies">Movies</NavLink>
+          <NavLink to="tickets">Tickets</NavLink>
         </div>
       ) : null}
-
 
     </>
   );

@@ -50,7 +50,10 @@ nav a:hover {
 .dropdown-menu a:hover {
   border-top: 2px solid white;
 }
-
+.active {
+  background-color: #58181F;
+  color: honeydew;
+}
 .dropdown-menu {
   position: absolute;
   right: 0;
