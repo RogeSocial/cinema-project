@@ -1,5 +1,6 @@
 import "../CSS/calender.css"
-
+let dates = [];
+const daysForward = 21;
 let movies = [
     {
         title: "Dmovie",
@@ -29,18 +30,24 @@ let movies = [
 ]
 
 export default function() {
-
+    {dates=[]}
     return <section>
             <h2>Calender</h2>
             <p>Here you will find a calender</p>
             <div className="dropdown">
                 <input type="checkbox" id="my-dropdown" value="" name="my-checkbox"></input>
-                <label htmlFor="my-dropdown" data-toggle="dropdown">Pick a day</label>
+                <label htmlFor="my-dropdown" data-toggle="dropdown">Pick a day </label>
                 <ul>
-                    {sortByDate(movies)}
+                    {calculateCurrentDate()}
+                    {console.log("dates.length: " + dates.length)}
+                    {dates.map((item, index) =>
+                        <li key={dates.id}><a href="#">{item.day} - {item.month} - {item.year}</a></li>
+                        )}
+
+                    {/*{sortByDate(movies)}
                     {movies.map((item, index) =>
                         <li key={movies.id}><a href="#">date: {item.date}</a></li>
-                    )}
+                    )}*/}
 
                     {/*{sortByLetter(movies)}
                     {movies.map((item, index) =>
@@ -73,5 +80,24 @@ function sortByLetter(inArray) {
         if (inArray[i].title > inArray[i + 1].title) {
             swap(movies, i, i + 1);
         }
+    }
+}
+
+function calculateCurrentDate(){
+    for(let i = 0; i < daysForward; i++){
+        let today = new Date();
+        let dateLimit = new Date(new Date().setDate(today.getDate() + i));
+        let object = {};
+        object.day = dateLimit.getDate();
+        object.month = dateLimit.getMonth() + 1;
+        object.year = dateLimit.getFullYear();
+        /*let day = dateLimit.getDate();
+        let month = dateLimit.getMonth() + 1;
+        let year = dateLimit.getFullYear();*/
+        //let currentDate = `${day}-${month}-${year}`;
+        dates.push(object);
+    }
+    for(let i = 0; i < dates.length; i++){
+        console.log("date day: " + dates[i].day);
     }
 }
