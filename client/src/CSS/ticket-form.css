@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+.ticket-form-box {
+    font-family: Questrial;
+    padding-top: 100px;
+    padding-left: 20%;
+    overflow-wrap: normal;
+}
