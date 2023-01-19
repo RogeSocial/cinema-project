@@ -12,14 +12,31 @@
   padding-top: 3.7rem; /* to move movies.jsx content down from navbar */
 }
 
+.movie-search-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px white;
+  padding: 0.6rem;
+  padding-right: 4.2rem;
+ 
+}
+.movie-search-field i {
+  color: lightgray;
+}
+
 .movies input {
-  margin: 1rem;
-  padding: 0.85rem;
-  max-width: 134px;
-  outline: solid 1px white;
-  background-color: black;
+  background-color: transparent;
   color: white;
-  margin-bottom: 0;
+  height: 18px;
+  width: 100px;
+  margin-left: 0.45rem;
+  margin-right: -2.5rem;
+  margin-top: 0.2rem;
+  border: none;
+}
+.movies input:focus {
+  outline: none;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -93,9 +110,11 @@ font-weight: 400;
   .movies {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    max-width: fit-content;
   }
 
   .non-image-items {
+   
   }
   
   }

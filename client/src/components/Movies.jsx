@@ -71,7 +71,10 @@ export default function () {
   return (
     <section className="movies">
     <div className="non-image-items">
-    <input type="text" placeholder="🔍 Search.."></input>
+    <div className="movie-search-field">
+    <i className="fa-solid fa-magnifying-glass"></i>
+    <input type="text" placeholder="Search.."></input>
+    </div>
       <h2>Top Movies</h2>
       <button>Sort</button>
       <br />
