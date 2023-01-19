@@ -1,8 +1,8 @@
 import React from "react";
 import '../CSS/home.css'
+import Movies from "./Movies";
 import {Link} from "react-router-dom";
 import Quotes from "./Quotes.jsx";
-
 
 export default function() {
   return (
