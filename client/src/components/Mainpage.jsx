@@ -1,5 +1,6 @@
 import React from "react";
 import '../CSS/home.css'
+import {Link} from "react-router-dom";
 
 export default function() {
   return (
@@ -8,8 +9,8 @@ export default function() {
           <h2 className="transparent-background">"WHATEVER YOU DO DON'T FALL 
           ASLEEP."</h2>
           <div className="center-btn">
-          <button className="btn">LOGIN</button>
-          <button className="btn">SIGNUP</button>
+          <Link to="user/login" ><button className="btn">LOGIN</button></Link>
+          <Link to="user/login" className="btn"><button className="btn">SIGNUP</button></Link>
         </div>
       </div>
     </section>
