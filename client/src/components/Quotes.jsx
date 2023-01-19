@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import '../CSS/home.css';
 import '../CSS/quotes.css';
 
@@ -20,7 +20,6 @@ const horrorQuote = [
     "\"Tell her to stay away from the light\"",
     "\"Be afraid. Be very afraid\"",
     "\"I'm having an old friend for dinner\""
-
 ];
 
 const quoteData = [
@@ -44,32 +43,31 @@ export default class Quotes extends Component {
     constructor() {
         super();
 
-        //This is the index that will be fetched from the two arrays.
+        this.animationRef = React.createRef();
+
+        //This is the index (random number) that will be fetched from the two arrays.
         this.state = {
-            index: Math.floor(Math.random() * horrorQuote.length)
+            index: Math.floor(Math.random() * horrorQuote.length),
         };
+    }
+
+    //This function is called whenever an animation iterates in the quote div, it changes the quote index
+    handleIteration = (event) => {
+        this.setState({ index: Math.floor(Math.random() * horrorQuote.length) });
     }
 
     //componentDidMount will be called when the component is mounted
     componentDidMount() {
-
-        //This if-statement makes sure the qoutes are not updated double
-        if (this.timeout) {
-            return;
-        }
-
-        this.timeout = setInterval(() => {
-            this.setState({ index: Math.floor(Math.random() * horrorQuote.length) });
-        }, 15000);
+        this.animationRef.current.addEventListener("animationiteration", this.handleIteration);
     }
 
     render() {
-        let movieQuote = horrorQuote[this.state.index];
+    let movieQuote = horrorQuote[this.state.index];
         let byline = quoteData[this.state.index];
 
         return (
             <div className={"quotebox"}>
-                <div className={"quote fading"}>{movieQuote}</div>
+                <div ref={this.animationRef} className={"quote fading"}>{movieQuote}</div>
                 <div className={"byline fading"}>{byline}</div>
             </div>
         )
