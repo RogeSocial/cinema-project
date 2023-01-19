@@ -51,7 +51,7 @@ a {
   position: relative;
   border: none;
   background: none;
-  text-transform: uppercase;
+  text-decoration: none;
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
@@ -94,18 +94,15 @@ a:after {
   text-decoration: none;
   padding: var(--dropdown_padding);
   align-items: space-around;
-  position: sticky;
 }
 
 
 
 .dropdown-menu {
-  position: fixed;
-  overflow: auto;
-  align-self: flex-end;
-  flex-direction: column;
+  position: absolute;
   right: 0;
   top: 0;
+  height: 100%;
   width: 50%;
   background-color: #0b1321; 
   text-align: center;
