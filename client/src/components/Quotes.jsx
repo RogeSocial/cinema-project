@@ -14,8 +14,8 @@ const horrorQuote = [
     "\"It's alive! It's alive!\"",
     "\"They're not gonna catch themselves\"",
     "\"I'm your boogie man\"",
-    "\"Whatever You Do, Don’t Fall Asleep\"",
-    "\"I Want To Play A Game\"",
+    "\"Whatever you do, don’t fall asleep\"",
+    "\"I want to play a game\"",
     "\"The power of Christ compels you!\"",
     "\"Tell her to stay away from the light\"",
     "\"Be afraid. Be very afraid\"",
@@ -38,7 +38,7 @@ const quoteData = [
     "– Poltergeist, 1982",
     "– The Fly, 1986",
     "– The Silence of the Lambs, 1991"
-]
+];
 
 export default class Quotes extends Component {
     constructor() {
@@ -62,7 +62,6 @@ export default class Quotes extends Component {
             this.setState({ index: Math.floor(Math.random() * horrorQuote.length) });
         }, 15000);
     }
-
 
     render() {
         let movieQuote = horrorQuote[this.state.index];
