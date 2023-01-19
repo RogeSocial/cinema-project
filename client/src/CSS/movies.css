@@ -1,5 +1,5 @@
 :root {
-    --button_padding: 0.25rem 1rem 0.25rem 1rem;
+  --button_padding: 0.25rem 1rem 0.25rem 1rem;
 }
 
 .movies {
@@ -19,7 +19,6 @@
   border: solid 1px white;
   padding: 0.6rem;
   padding-right: 4.2rem;
- 
 }
 .movie-search-field i {
   color: lightgray;
@@ -39,7 +38,8 @@
   outline: none;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: white;
   opacity: 1; /* Firefox */
   font-size: 18px;
@@ -48,11 +48,13 @@
   align-items: center;
 }
 
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
   color: white;
 }
 
-::-ms-input-placeholder { /* Microsoft Edge */
+::-ms-input-placeholder {
+  /* Microsoft Edge */
   color: white;
 }
 
@@ -61,21 +63,22 @@
   z-index: 2;
   font-size: 25px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
-font-weight: 600;
+  font-weight: 600;
 }
 
 .movies h2 {
-margin: 1rem;
-color: white;
-font-size: 33px;
-min-width: 200px;
-border: none;
-font-family: system-ui, -apple-system, BlinkMacSystemFont;
-font-weight: 400;
+  margin: 1rem;
+  margin-top: 0.3rem;
+  color: white;
+  font-size: 33px;
+  min-width: 200px;
+  border: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  font-weight: 400;
 }
 
 .movies button {
-  margin-bottom: 1rem;
+  margin-bottom: -1rem;
 }
 
 .non-image-items {
@@ -103,18 +106,34 @@ font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
-  float: left;
 }
 
 @media screen and (min-width: 550px) {
   .movies {
+    padding-top: 220px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: fit-content;
+    grid-template-columns: repeat(3, max-content);
   }
 
   .non-image-items {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    margin-top: 3.5rem;
+  }
+  .movies h2 {
+    font-size: 50px;
+    min-width: 300px;
+    margin-top: -0.2rem;
+  }
+
+  .movie-search-field {
+    padding: 0.6rem;
+    padding-right: 4.2rem;
    
   }
   
+  .movies input {
+    width: 270px;
   }
+}
