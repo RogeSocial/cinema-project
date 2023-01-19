@@ -1,5 +1,6 @@
 :root {
-    --button_padding: 0.25rem 1rem 0.25rem 1rem;
+  --button_padding: 0.25rem 1rem 0.25rem 1rem;
+  --main_text_color: white;
 }
 
 .movies {
@@ -8,18 +9,84 @@
   align-items: center;
   padding: 1rem;
   background-color: black;
-  color: white;
+  color: var(--main_text_color);
+  padding-top: 3.7rem; /* to move movies.jsx content down from navbar */
+}
+
+.movie-search-field {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid 1px white;
+  padding: 0.6rem;
+  padding-right: 4.2rem;
+}
+.movie-search-field i {
+  color: lightgray;
 }
 
 .movies input {
-    outline: solid 1px white;
-    background-color: black;
-    color: white;
+  background-color: transparent;
+  color: var(--main_text_color);
+  height: 18px;
+  width: 100px;
+  margin-left: 0.45rem;
+  margin-right: -2.5rem;
+  margin-top: 0.2rem;
+  border: none;
+}
+.movies input:focus {
+  outline: none;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--main_text_color);
+  opacity: 1; /* Firefox */
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--main_text_color);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--main_text_color);
+}
+
+.movies h3 {
+  position: absolute;
+  z-index: 2;
+  font-size: 25px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  font-weight: 600;
+}
+
+.movies h2 {
+  margin: 1rem;
+  margin-top: 0.3rem;
+  color: white;
+  font-size: 33px;
+  min-width: 200px;
+  border: none;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  font-weight: 400;
 }
 
 .movies button {
-    padding: var(--button_padding);
-    border-radius: 25px;
+  margin-bottom: -1rem;
+}
+
+.non-image-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .movie-list {
@@ -34,19 +101,46 @@
 .movie-list img {
   position: relative;
   border-radius: 20px;
-  width: 225px;
-  height: 225px;
+  width: 300px;
+  height: 250px;
   object-fit: cover;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.movie-list h3 {
-  position: absolute;
-  z-index: 2;
-}
-
-@media screen and (min-width: 550px) {
-
+@media screen and (min-width: 680px) {
+  .movies {
+    padding-top: 220px;
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
   }
+
+  .non-image-items {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    margin-top: 3.5rem;
+  }
+  .movies h2 {
+    font-size: 50px;
+    min-width: 300px;
+    margin-top: -0.2rem;
+  }
+
+  .movie-search-field {
+    padding: 0.6rem;
+    padding-right: 4.2rem;
+  }
+
+  .movies input {
+    width: 270px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .movies {
+    grid-template-columns: repeat(3, max-content);
+    /*     review if js plugin needed to maintain grid-gap when adding an even amount of movies */
+    grid-template-rows: repeat(3, max-content);
+  }
+}
