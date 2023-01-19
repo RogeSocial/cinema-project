@@ -9,10 +9,16 @@ header {
   z-index: 999;
 }
 
+a{
+  text-decoration: none;
+  color: whitesmoke;
+}
+
 header h1 {
   font-family: 'Niconne', cursive;
   font-weight: 100;
   padding-left: 3rem;
+  margin: 0;
 }
 
 
@@ -50,10 +56,7 @@ nav a:hover {
 .dropdown-menu a:hover {
   border-top: 2px solid white;
 }
-.active {
-  background-color: #58181F;
-  color: honeydew;
-}
+
 .dropdown-menu {
   position: absolute;
   right: 0;

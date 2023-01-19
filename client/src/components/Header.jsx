@@ -31,7 +31,7 @@ export default function () {
   return (
     <>
       <header>
-        <h1>Codinema</h1>
+        <NavLink to={'/'}> <h1>Codinema</h1></NavLink>
         <aside>
           <div className="hamburger-icon" onClick={toggleMenu}>
             <i className="fa-solid fa-bars"></i>
@@ -39,10 +39,10 @@ export default function () {
         </aside>
         <nav>
           <NavLink to={"/"} className={ActiveNav} >Home</NavLink>
-          <NavLink to="calender" className={ActiveNav}>Calender</NavLink>
           <NavLink to="movies" className={ActiveNav}>Movies</NavLink>
-          <NavLink to="tickets" className={ActiveNav}>Tickets</NavLink>
+          <NavLink to="calender" className={ActiveNav}>Tickets</NavLink>
           <NavLink to="reservations" className={ActiveNav}>Reservations</NavLink>
+          <NavLink to="tickets" className={ActiveNav}>Account</NavLink>
           
         </nav>
       </header>
