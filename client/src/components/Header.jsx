@@ -48,11 +48,11 @@ export default function () {
       </header>
       {openMenu ? (
         <div ref={menuRef}  className="dropdown-menu">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="calender">Calender</NavLink>
-          <NavLink to="movies">Movies</NavLink>
-          <NavLink to="tickets">Tickets</NavLink>
-          <NavLink to="reservations">Reservations</NavLink>
+          <NavLink to="/" onClick={() => setOpenMenu(false)}> Home</NavLink>
+          <NavLink to="calender" onClick={() => setOpenMenu(false)}>Calender</NavLink>
+          <NavLink to="movies" onClick={() => setOpenMenu(false)}>Movies</NavLink>
+          <NavLink to="tickets"onClick={() => setOpenMenu(false)}>Tickets</NavLink>
+          <NavLink to="reservations"onClick={() => setOpenMenu(false)}>Reservations</NavLink>
         </div>
       ) : null}
 
