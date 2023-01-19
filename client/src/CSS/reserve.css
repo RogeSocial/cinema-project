@@ -1,0 +1,80 @@
+.section-seatPicker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #242333;
+    color: white;
+    height: 100vh;
+    font-family: 'Poppins', cursive
+}
+
+.seat {
+    background-color: #444451;
+    height: 12px;
+    width: 15px;
+    margin: 3px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.screen {
+ /*    border-left: 15px solid #550101;
+    border-right: 15px solid #550101;
+    border-top: 10px solid #550101;
+    border-bottom: 10px solid rgb(32, 31, 31); */
+    height: 70px;
+    width: 180px;
+    background-color: white;
+    margin: 15px 0;
+    box-shadow: 0px 3px 10px rgba(255, 255, 255, 0.75);
+}
+
+.seat.selected {
+    background-color: #26d4f7;
+}
+
+.seat.occupied {
+    background-color: rgb(207, 15, 15);
+}
+
+.seat:not(.occupied):hover {
+    background-color: #26d4f7;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.showcase .seat:not(.occupied):hover {
+    cursor: default;
+    transform: 1;
+}
+
+.showcase {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.showcase li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+}
+
+.showcase li small {
+    margin-left: 10px;
+}
+
+.container{
+    perspective: 200px;
+    margin-bottom: 30px;
+}
