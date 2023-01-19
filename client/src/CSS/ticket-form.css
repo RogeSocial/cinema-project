@@ -1,8 +1,90 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
+.ticket-form-page {
+    background: url("../images/ticket.jpg");
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
 .ticket-form-box {
+    display: flex;
+    align-items: center;
     font-family: Questrial;
     padding-top: 100px;
-    padding-left: 20%;
-    overflow-wrap: normal;
+    max-width: 100%;
+    flex-direction: column;
+}
+
+.form-item {
+    display: block;
+    margin-bottom: 5vh;
+}
+
+.ticket-form-box ul {
+    margin-bottom: 5vh;
+    margin-top: 5vh;
+    padding-right:0;
+    padding-left: 0;
+    justify-self: center;
+}
+
+.ticket-submit {
+    display: block;
+    margin-top: 10vh;
+    margin-bottom: 15vh;
+}
+
+.movie-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.ticket-image {
+    max-width: 100%;
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .ticket-form-page {
+        display: flex;
+        justify-content: center;
+        background: url("../images/ticket.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .ticket-form-box ul {
+        align-self: flex-end;
+    }
+
+    .movie-details {
+        width: 100%;
+        background: #58181FBB;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 20px;
+    }
+
+    .ticket-form-box {
+        display: flex;
+        width: 50%;
+    }
+    .ticket-form-box form {
+        align-self: flex-end;
+        margin-left: 50px;
+    }
+
+    .ticket-form-box .image-box {
+        width: 700px;
+        height: 500px;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
 }
