@@ -1,5 +1,6 @@
 :root {
   --button_padding: 0.25rem 1rem 0.25rem 1rem;
+  --main_text_color: white;
 }
 
 .movies {
@@ -8,7 +9,7 @@
   align-items: center;
   padding: 1rem;
   background-color: black;
-  color: white;
+  color: var(--main_text_color);
   padding-top: 3.7rem; /* to move movies.jsx content down from navbar */
 }
 
@@ -26,7 +27,7 @@
 
 .movies input {
   background-color: transparent;
-  color: white;
+  color: var(--main_text_color);
   height: 18px;
   width: 100px;
   margin-left: 0.45rem;
@@ -40,7 +41,7 @@
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: var(--main_text_color);
   opacity: 1; /* Firefox */
   font-size: 18px;
   font-weight: 500;
@@ -50,12 +51,12 @@
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: white;
+  color: var(--main_text_color);
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: white;
+  color: var(--main_text_color);
 }
 
 .movies h3 {
@@ -108,11 +109,11 @@
   justify-content: center;
 }
 
-@media screen and (min-width: 550px) {
+@media screen and (min-width: 680px) {
   .movies {
     padding-top: 220px;
     display: grid;
-    grid-template-columns: repeat(3, max-content);
+    grid-template-columns: repeat(2, max-content);
   }
 
   .non-image-items {
@@ -130,10 +131,16 @@
   .movie-search-field {
     padding: 0.6rem;
     padding-right: 4.2rem;
-   
   }
-  
+
   .movies input {
     width: 270px;
+  }
+}
+@media screen and (min-width: 1000px) {
+  .movies {
+    grid-template-columns: repeat(3, max-content);
+    /*     review if js plugin needed to maintain grid-gap when adding an even amount of movies */
+    grid-template-rows: repeat(3, max-content);
   }
 }
