@@ -61,6 +61,10 @@ export default class Quotes extends Component {
         this.animationRef.current.addEventListener("animationiteration", this.handleIteration);
     }
 
+    componentWillUnmount() {
+        this.animationRef.current.removeEventListener("animationiteration", this.handleIteration);
+    }
+
     render() {
     let movieQuote = horrorQuote[this.state.index];
         let byline = quoteData[this.state.index];
