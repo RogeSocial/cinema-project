@@ -27,6 +27,7 @@ button:hover {
 
 .section-top-movies {
     background-color: black;
+    
 }
 
 .title {
@@ -58,6 +59,18 @@ button:hover {
         text-align: center;
         margin-top: 380px;
     }
+}
+
+.top-movies {
+    display: flex;
+    flex-direction: row;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.top-movies img {
+    height: 500px;
+    width: 500px;
 }
 
 @media screen and (max-width: 550px) {
