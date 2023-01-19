@@ -7,7 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  
   background-color: black;
   color: var(--main_text_color);
   padding-top: 3.7rem; /* to move movies.jsx content down from navbar */
