@@ -4,8 +4,6 @@ import ticketImage from '../images/ticket.jpg';
 
 export default function TicketForm(props) {
 
-    console.log(`The props are currently ${props}`);
-
     return (
         <div className={"ticket-form-page"}>
             <div className={"ticket-form-box form-row"}>
