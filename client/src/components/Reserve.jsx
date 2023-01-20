@@ -2,6 +2,12 @@ import React, { useState } from "react";
 import '../CSS/reserve.css'
 
 export default function() {
+
+    useState()
+    
+
+
+
     return (
       <section className="section-seatPicker">
     
@@ -24,12 +30,12 @@ export default function() {
 
 
       
-        <div className="container">
+        <div className="container" >
         <div className="screen"></div>
             <div className="row">
                 <div className="seat occupied"></div>
                 <div className="seat occupied"></div>
-                <div className="seat"></div>
+                <div className="seat" ></div>
                 <div className="seat occupied"></div>
                 <div className="seat"></div>
                 <div className="seat occupied"></div>
@@ -77,7 +83,7 @@ export default function() {
                 <div className="seat"></div>
             </div>
             <div className="row">
-                <div className="seat"></div>
+                <div className="seat" classname="occuopied"></div>
                 <div className="seat"></div>
                 <div className="seat"></div>
                 <div className="seat"></div>
