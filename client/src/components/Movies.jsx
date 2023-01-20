@@ -91,7 +91,7 @@ export default function () {
       </div>
       <MovieList
         movies={
-          searchValue === null
+          searchValue === null ||searchValue === ""
             ? movies
             : movies.filter((movie) =>
                 matchesSearchWithMovieResult(movie, searchValue)
