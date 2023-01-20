@@ -1,4 +1,5 @@
 import "../CSS/calender.css"
+import {useEffect, useRef, useState} from "react";
 let dates = [];
 const daysForward = 21;
 let movies = [
@@ -29,33 +30,41 @@ let movies = [
     }
 ]
 
+let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 export default function() {
     {dates=[]}
+    const [open, setOpen] = useState(false);
+
+    let calenderRef = useRef();
+
+    useEffect(() => {
+        let handler = (e) =>{
+            if(!calenderRef.current.contains(e.target)) {
+                setOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handler);
+        return() =>{
+            document.removeEventListener("mousedown", handler);
+        }
+        });
+
     return <section>
-            <h2>Calender</h2>
-            <p>Here you will find a calender</p>
-            <div className="dropdown">
-                <input type="checkbox" id="my-dropdown" value="" name="my-checkbox"></input>
-                <label htmlFor="my-dropdown" data-toggle="dropdown">Pick a day </label>
-                <ul>
+        <h2>Calender</h2>
+        <p>Here you will find a calender</p>
+
+        <div className="calender-dropdown"  ref={calenderRef} onClick={()=>{setOpen(!open)}}>Pick a Date</div>
+            <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`} >
+
                     {calculateCurrentDate()}
-                    {console.log("dates.length: " + dates.length)}
                     {dates.map((item, index) =>
-                        <li key={dates.id}><a href="#">{item.day} - {item.month} - {item.year}</a></li>
-                        )}
+                        <ul key={dates.id}><a href="#">{item.day} / {item.month} - {returnDayName(item.dayName)}</a></ul>
+                    )}
 
-                    {/*{sortByDate(movies)}
-                    {movies.map((item, index) =>
-                        <li key={movies.id}><a href="#">date: {item.date}</a></li>
-                    )}*/}
-
-                    {/*{sortByLetter(movies)}
-                    {movies.map((item, index) =>
-                        <li><a href="#">title: {item.title}</a></li>
-                    )}*/}
-                </ul>
             </div>
-            </section>
+
+        </section>
 }
 
 //Sorting the array by date (numbers)
@@ -83,6 +92,7 @@ function sortByLetter(inArray) {
     }
 }
 
+//Calculates the dates and puts it in the array "dates"
 function calculateCurrentDate(){
     for(let i = 0; i < daysForward; i++){
         let today = new Date();
@@ -91,13 +101,24 @@ function calculateCurrentDate(){
         object.day = dateLimit.getDate();
         object.month = dateLimit.getMonth() + 1;
         object.year = dateLimit.getFullYear();
-        /*let day = dateLimit.getDate();
-        let month = dateLimit.getMonth() + 1;
-        let year = dateLimit.getFullYear();*/
-        //let currentDate = `${day}-${month}-${year}`;
+        object.dayName = dateLimit.getDay();
         dates.push(object);
     }
-    for(let i = 0; i < dates.length; i++){
-        console.log("date day: " + dates[i].day);
-    }
 }
+
+//returns the name of the date, like "Monday", etc
+function returnDayName(inIndex){
+    return daysInWeek[inIndex];
+}
+
+{/*keep for now, might use somehow later
+                    {sortByDate(movies)}
+                    {movies.map((item, index) =>
+                        <li key={movies.id}><a href="#">date: {item.date}</a></li>
+                    )}
+
+                    keep for now, might use somehow later
+                    {sortByLetter(movies)}
+                    {movies.map((item, index) =>
+                        <li><a href="#">title: {item.title}</a></li>
+                    )}*/}
