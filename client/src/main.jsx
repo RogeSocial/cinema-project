@@ -31,8 +31,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="tickets" element={<Tickets/>} />
               <Route path="reservations" element={<Reservations/>} />
               <Route path="ticket-form" element={<TicketForm />} />
+              <Route path="user">
+                <Route path="login"/>
+                <Route path="register"/>
+              </Route>
 
-          </Routes>
+              </Routes>
           <Footer />
       </BrowserRouter>
 
