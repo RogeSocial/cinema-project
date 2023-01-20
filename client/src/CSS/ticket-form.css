@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial');
+
+.ticket-form-page {
+    background: url("../images/ticket.jpg");
+    background-size: cover;
+}
+
+.ticket-form-box {
+    font-family: Questrial;
+    padding-top: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.ticket-list {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.ticket-submit {
+    display: block;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.movie-details {
+    flex-direction: column;
+    background-color: #111111AA;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.ticket-form {
+    background-color: #111111AA;
+    padding: 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.ticket-picker-in-form {
+    min-width: 200px;
+    min-height: 200px;
+    background-color: darkcyan;
+    margin-bottom: 15px;
+}
+
+.ticket-list {
+    list-style: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .ticket-form-page {
+        display: flex;
+        justify-content: center;
+        background: url("../images/ticket.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .movie-details {
+        width: 100%;
+        background-color: #111111AA;
+        padding-left: 15px;
+        padding-right: 15px;
+        border-radius: 20px;
+    }
+
+    .ticket-form {
+        align-items: center;
+        margin-left: 50px;
+    }
+
+    .form-row {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ticket-form {
+        background-color: #111111AA;
+        border-radius: 20px;
+    }
+}
