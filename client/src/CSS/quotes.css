@@ -1,0 +1,37 @@
+/*min-height is specified so that the box don't change size when the content changes*/
+.quotebox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 6.2rem;
+}
+
+.quote {
+    font-size: 2rem;
+}
+
+.byline {
+    font-size: 1rem;
+}
+
+.fading {
+    animation: fadeInOut ease 20s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity:0;
+    }
+
+    45% {
+        opacity:1;
+    }
+
+    65% {
+        opacity:1;
+    }
+    100% {
+        opacity:0;
+    }
+ }
