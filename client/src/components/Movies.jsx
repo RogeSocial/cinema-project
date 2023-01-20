@@ -76,7 +76,7 @@ export default function () {
     <input type="text" placeholder="Search.."></input>
     </div>
       <h2>Top Movies</h2>
-      <button>Sort</button>
+      <button className="btn">Sort</button>
       <br />
     </div>
       <MovieList movies={movies} />

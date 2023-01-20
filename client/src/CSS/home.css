@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Niconne&family=Nosifer&family=Poppins:wght@200&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lacquer&family=Metal+Mania&family=Niconne&family=Poppins:wght@200&family=Rubik+Wet+Paint&family=Slackey&family=Yuji+Boku&display=swap');
 .background-image {
     display: flex;
     flex-direction: column;
@@ -13,39 +12,92 @@
     height: 100vh;
 }
 
+
+
 .btn {
-    margin-right: 20px;
-    margin-left: 20px;
-}
-
-button {
-    padding: 9px 25px;
-    background-color: white;
-    border: none;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    display: inline-block;
     border-radius: 50px;
+    transition: all .4s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: black;
+    background-color: rgb(255, 254, 254);
     cursor: pointer;
-    transition: all 0.3s ease 0s;
-}
-
-button:hover {
-    background-color: red;
+    margin: 10px;
+    
+  
+   }
+   
+   .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+    background-color: rgb(178, 29, 29);
+    transition: .4s;
     color: white;
-    transition: 3s;
-}
+   }
+   
+   .btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+   }
+   
+   .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 1s;
+   }
+   
+   .btn::after {
+    background-color: #fff;
+   }
+   
+   .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+   }
+
+
+.darken-lower-part {
+    position: relative;
+  }
+
+.darken-lower-part {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, #0000001c,  #000000f4);
+    
+  }
 
 .transparent-background {
-    background-color: rgba(249, 245, 245, 0.642);
+    background-color: rgba(249, 245, 245, 0.611);
     opacity: 0.8;
     width: 400px;
 }
 
 h2 {
     font-size: 2vw;
-    color: rgb(0, 0, 0);
-    font-family: 'Fredericka the Great';
+    color: rgb(96, 5, 5);
+    font-family: 'Lacquer', cursive;
     text-align: center;
     margin: 1rem;
-    border: 3px inset rgb(131, 135, 146);
+   
 }
 
 .section-top-movies {
@@ -61,11 +113,13 @@ h2 {
 
 .center-btn {
     display: block;
-    max-width: 300px;
+    max-width: 400px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 40px;
 }
+
+
 
 .more-movies {
     padding: 20px;
@@ -82,14 +136,15 @@ h2 {
 .top-movies img {
     height: 500px;
     width: 500px;
+    transition: 1.5s;
 }
-
-.top-movies:hover {}
 
 .top-movies img:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     cursor: pointer;
 }
+
+
 
 @media screen and (max-width: 550px) {
     .top-movies img {
