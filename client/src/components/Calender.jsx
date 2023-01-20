@@ -60,7 +60,7 @@ export default function() {
                     {calculateCurrentDate()}
                     <ul>
                     {dates.map((item) =>
-                        <li className={"calender-list"} key={dates.id}><a href="movies">{item.day} / {item.month} - {returnDayName(item.dayName)}</a></li>
+                        <li className={"calender-list"} key={dates.id}><a href="#">{item.day} / {item.month} - {returnDayName(item.dayName)}</a></li>
                     )}
                     </ul>
                 </div>
