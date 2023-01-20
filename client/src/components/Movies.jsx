@@ -65,17 +65,14 @@ export default function () {
       image: "https://images3.alphacoders.com/808/thumb-1920-808740.jpg",
     },
   ]);
+  //variable to hold the value that the user is searching for
+  const [searchValue, setSearchValue] = useState(null);
+
+  //sets searchValue to the value entered by the user in the search field
   const handlesSearch = (event) => {
-  
-    {
-      movies.filter((movie) =>
-        event.target.value.toLowerCase() === movie.title.toLowerCase()
-          ? console.log(movies.indexOf(movie))
-          : null
-      );
- /*      movies.unshift(movies.splice(movies.indexOf(movie), 1)[0]) */
-    }
+    setSearchValue(event.target.value);
   };
+  console.log(searchValue);
 
   return (
     <section className="movies">
@@ -92,7 +89,33 @@ export default function () {
         <button>Sort</button>
         <br />
       </div>
-      <MovieList movies={movies} />
+      <MovieList
+        movies={
+          searchValue === null
+            ? movies
+            : movies.filter((movie) =>
+                matchesSearchWithMovieResult(movie, searchValue)
+              )
+        }
+      />
     </section>
   );
+}
+
+function matchesSearchWithMovieResult(movie, searchValue) {
+  let movieTitle = movie.title.toLowerCase();
+  let searchedTitle = searchValue.toLowerCase();
+  if (
+    movieTitle[0] === searchedTitle[0] 
+    &&
+    movieTitle[searchValue.length / 2] ===
+      searchedTitle[searchValue.length / 2] 
+    &&
+    movieTitle[searchValue.length - 1] ===
+      searchedTitle[searchValue.length - 1]
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
