@@ -17,6 +17,9 @@ import Movies from './components/Movies'
 import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
 import PageNotFound from "./components/pageNotFound.jsx";
+
+import TicketForm from "./components/TicketForm.jsx";
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
@@ -31,6 +34,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="tickets" element={<Tickets/>} />
               <Route path="reservations" element={<Reservations/>} />
               <Route path="*" element={<PageNotFound/>}></Route>
+              <Route path="ticket-form" element={<TicketForm />} />
               <Route path="user">
                 <Route path="login"/>
                 <Route path="register"/>
