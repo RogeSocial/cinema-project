@@ -36,8 +36,8 @@ export default function () {
         <div className="background-image">
           <h2 className={"transparent-background"}><Quotes /></h2>
           <div className="center-btn">
-            <Link to="user/login" ><button className="btn">LOGIN</button></Link>
-            <Link to="user/register" className="btn"><button className="btn">SIGNUP</button></Link>
+            <Link to="user/logins" ><button className="btn">LOGIN</button></Link>
+            <Link to="user/registers" className="btn"><button className="btn">SIGNUP</button></Link>
           </div>
          </div> 
       </section>
@@ -47,7 +47,7 @@ export default function () {
           <MovieList movies={movies} />
         </div>
         <div className="center-btn">
-          <button className="more-movies">MORE MOVIES</button>
+          <Link to="movies"><button className="more-movies">MORE MOVIES</button></Link>
         </div>
       </section>
     </div>

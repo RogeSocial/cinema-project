@@ -16,6 +16,7 @@ import Calender from "./components/Calender.jsx"
 import Movies from './components/Movies'
 import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
+import PageNotFound from "./components/pageNotFound.jsx";
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
@@ -29,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="movies" element={<Movies/>} />
               <Route path="tickets" element={<Tickets/>} />
               <Route path="reservations" element={<Reservations/>} />
+              <Route path="*" element={<PageNotFound/>}></Route>
               <Route path="user">
                 <Route path="login"/>
                 <Route path="register"/>
