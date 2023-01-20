@@ -38,7 +38,7 @@ export default function () {
           <h2 className={"transparent-background"}><Quotes /></h2>
           <div className="center-btn">
             <Link to="user/logins" ><button className="btn">LOGIN</button></Link>
-            <Link to="user/registers" className="btn"><button className="btn">SIGNUP</button></Link>
+            <Link to="user/registers"><button className="btn">SIGNUP</button></Link>
           </div>
           <div className="darken-lower-part"></div>
          </div> 
@@ -49,8 +49,6 @@ export default function () {
           <MovieList movies={movies} />
         </div>
         <div className="center-btn">
-
-          <Link to="movies"><button className="more-movies">MORE MOVIES</button></Link>
 
           <Link to="movies"><button className="btn">MORE MOVIES</button></Link>
 
