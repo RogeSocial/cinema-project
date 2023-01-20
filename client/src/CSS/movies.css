@@ -5,12 +5,11 @@
 
 .movies {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 1rem;
   background-color: black;
   color: var(--main_text_color);
-  padding-top: 3.7rem; /* to move movies.jsx content down from navbar */
+  padding-top: 240px; /* amount moved down from navbar */
 }
 
 .movie-search-field {
@@ -82,11 +81,24 @@
   margin-bottom: -1rem;
 }
 
+.movie-btn {
+  padding: 0rem;
+}
+
+#movie-sort-btn {
+  font-size: 18px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
 .non-image-items {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: absolute;
+    top: 0;
+    width: 100vw;
+    margin-top: 3.5rem;
 }
 
 .movie-list {
@@ -109,9 +121,16 @@
   justify-content: center;
 }
 
+.movie-list:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}     
+
 @media screen and (min-width: 680px) {
   .movies {
-    padding-top: 220px;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 260px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
   }
@@ -137,6 +156,7 @@
     width: 270px;
   }
 }
+
 @media screen and (min-width: 1000px) {
   .movies {
     grid-template-columns: repeat(3, max-content);

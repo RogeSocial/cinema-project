@@ -17,6 +17,8 @@ import Movies from './components/Movies'
 import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
 import ScrollToTop from "./components/scrollToTop.jsx";
+import TicketForm from "./components/TicketForm.jsx";
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
@@ -31,6 +33,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="movies" element={<Movies/>} />
               <Route path="tickets" element={<Tickets/>} />
               <Route path="reservations" element={<Reservations/>} />
+              <Route path="ticket-form" element={<TicketForm />} />
               <Route path="user">
                 <Route path="login"/>
                 <Route path="register"/>
