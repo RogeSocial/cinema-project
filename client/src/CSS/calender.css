@@ -5,26 +5,28 @@
     cursor: pointer;
 }
 
-/*.calender-dropdown-trigger > ul{
+.calender-dropdown-trigger > ul{
     background-color: #2a5081;
     list-style: none;
-    position: absolute;
-    padding: 0;
-}*/
-
-/*.calender-dropdown > ul a:hover{
-    background: #8B95A6;
-}*/
-
-ul{
-    background: #8B95A6;
+    height: 10em;
+    overflow-y: scroll;
     padding: 0;
     margin: 0;
 }
 
-ul:hover{
+.calender-list:hover{
     background: burlywood;
 }
+
+/*ul{
+    background: #8B95A6;
+    padding: 0;
+    margin: 0;
+}*/
+
+/*li:hover{
+    background: burlywood;
+}*/
 
 .calender-dropdown.a:hover{
     background: #8B95A6;
