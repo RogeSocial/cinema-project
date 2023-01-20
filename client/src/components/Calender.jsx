@@ -54,16 +54,17 @@ export default function() {
         <h2>Calender</h2>
         <p>Here you will find a calender</p>
 
-        <div className="calender-dropdown"  ref={calenderRef} onClick={()=>{setOpen(!open)}}>Pick a Date</div>
-            <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`} >
-
+        <div ref={calenderRef}>
+            <div className="calender-dropdown" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
+                <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`}>
                     {calculateCurrentDate()}
-                    {dates.map((item, index) =>
-                        <ul key={dates.id}><a href="#">{item.day} / {item.month} - {returnDayName(item.dayName)}</a></ul>
+                    <ul>
+                    {dates.map((item) =>
+                        <li className={"calender-list"} key={dates.id}><a href="#">{item.day} / {item.month} - {returnDayName(item.dayName)}</a></li>
                     )}
-
+                    </ul>
+                </div>
             </div>
-
         </section>
 }
 
