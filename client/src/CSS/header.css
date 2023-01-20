@@ -11,6 +11,8 @@ header {
 
 }
 
+
+
 @keyframes slideInFromTop {
   0% {
     transform: translatey(-100%);
@@ -25,6 +27,10 @@ header h1 {
   font-family: 'Niconne', cursive;
   font-weight: 100;
   padding-left: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: white;
+  margin: 0;
 }
 
 
@@ -41,8 +47,10 @@ nav a  {
   font-weight: 600;
 }
 
-
-a {
+a{
+  text-decoration: none;
+}
+#navbar {
   font-size: 18px;
   color: #e1e1e1;
   font-family: inherit;
@@ -55,20 +63,21 @@ a {
   transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
   transition-duration: 400ms;
   transition-property: color;
+  padding-top: 12px;
 }
 
-a:focus,
-a:hover {
+#navbar:focus,
+#navbar:hover {
   color: #fff;
 }
 
-a:focus:after,
-a:hover:after {
+#navbar:focus:after,
+#navbar:hover:after {
   width: 100%;
   left: 0%;
 }
 
-a:after {
+#navbar:after {
   content: "";
   pointer-events: none;
   top: 0;
