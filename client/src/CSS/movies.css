@@ -121,6 +121,11 @@
   justify-content: center;
 }
 
+.movie-list:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}     
+
 @media screen and (min-width: 680px) {
   .movies {
     justify-content: center;
