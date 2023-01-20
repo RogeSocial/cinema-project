@@ -8,6 +8,7 @@
 .ticket-form-box {
     font-family: Questrial;
     padding-top: 100px;
+    margin: 5%;
 }
 
 .ticket-list {
@@ -47,10 +48,6 @@
 
 .ticket-list {
     list-style: none;
-}
-
-.form-row {
-    margin-left: 10%;
 }
 
 @media only screen and (min-width: 600px) {

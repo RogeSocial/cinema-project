@@ -8,8 +8,8 @@ export default function TicketForm(props) {
 
     return (
         <div className={"ticket-form-page"}>
-            <div className={"ticket-form-box"}>
-                <div className={"form-row"}>
+            <div className={"ticket-form-box form-row"}>
+
                 <div className={"movie-details"}>
                     <h1>Name of the movie (props.movieName) {props.moviename}</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, magna vel dictum porta,
@@ -37,7 +37,7 @@ export default function TicketForm(props) {
 
                     <button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button>
                 </form>
-            </div>
+
         </div>
     </div>
 
