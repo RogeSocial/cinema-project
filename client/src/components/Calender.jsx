@@ -31,6 +31,7 @@ let movies = [
 ]
 
 let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+let pickedDay;
 
 export default function() {
     {dates=[]}
@@ -50,7 +51,7 @@ export default function() {
         }
         });
 
-    return <section>
+    return <section className="calender">
         <h2>Calender</h2>
         <p>Here you will find a calender</p>
 
@@ -58,14 +59,25 @@ export default function() {
             <div className="calender-dropdown" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
                 <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`}>
                     {calculateCurrentDate()}
-                    <ul>
+                    <ul onClick={()=>{setOpen(!open)}}>
                     {dates.map((item) =>
-                        <li className={"calender-list"} key={dates.id}><a href="#">{item.day} / {item.month} - {returnDayName(item.dayName)}</a></li>
+                        <div className="calender-list" key={dates.id}>
+                            <div onClick={function (e){getDate(item.day, item.month, returnDayName(item.dayName))}}>
+                                {item.day} / {item.month} - {returnDayName(item.dayName)}
+                            </div>
+                        </div>
                     )}
                     </ul>
                 </div>
             </div>
         </section>
+}
+
+function getDate(day, month, dayname) {
+    let a=day;
+    let b=month;
+    let c=dayname;
+    console.log("day:" + a + " month:" + b + " dayname:" + c);
 }
 
 //Sorting the array by date (numbers)
