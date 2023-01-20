@@ -9,7 +9,7 @@
   align-items: center;
   background-color: black;
   color: var(--main_text_color);
-  padding-top: 205px; /* amount moved down from navbar */
+  padding-top: 240px; /* amount moved down from navbar */
 }
 
 .movie-search-field {
@@ -81,6 +81,15 @@
   margin-bottom: -1rem;
 }
 
+.movie-btn {
+  padding: 0rem;
+}
+
+#movie-sort-btn {
+  font-size: 18px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+}
+
 .non-image-items {
   display: flex;
   flex-direction: column;
@@ -116,7 +125,7 @@
   .movies {
     justify-content: center;
     align-items: flex-start;
-    padding-top: 220px;
+    padding-top: 260px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
   }

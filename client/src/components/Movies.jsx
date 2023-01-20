@@ -86,7 +86,7 @@ export default function () {
           ></input>
         </div>
         <h2>Top Movies</h2>
-        <button>Sort</button>
+        <button className="btn" id="movie-sort-btn">Sort</button>
         <br />
       </div>
       <MovieList
