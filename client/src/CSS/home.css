@@ -130,7 +130,7 @@ h2 {
     justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
-    transition: all .2s ease-in-out;
+    transition: all 2s ease-in-out;
 }
 
 .top-movies img {
@@ -144,9 +144,56 @@ h2 {
     cursor: pointer;
 }
 
+.top-movies h3 {
+    position: absolute;
+    z-index: 2;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: 600;
+  }
 
+.top-movies h3:hover {
+    transform: scale(1.1);
+}
 
 @media screen and (max-width: 550px) {
+    .top-movies img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .top-movies {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+      }
+      
+      .top-movies img {
+        position: relative;
+        border-radius: 20px;
+        width: 225px;
+        height: 225px;
+        object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .more-movies {
+        margin-bottom: 25px;
+      }
+
+      .transparent-background {
+        background-color: rgba(249, 245, 245, 0.642);
+        opacity: 0.8;
+        width: 90vw;
+    }
+}
+
+@media screen and (max-height: 550px) {
     .top-movies img {
         height: 200px;
         width: 200px;
