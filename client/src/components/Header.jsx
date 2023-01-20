@@ -38,11 +38,11 @@ export default function () {
           </div>
         </aside>
         <nav>
-          <NavLink to={"/"} className={ActiveNav} >Home</NavLink>
-          <NavLink to="movies" className={ActiveNav}>Movies</NavLink>
-          <NavLink to="calender" className={ActiveNav}>Tickets</NavLink>
-          <NavLink to="reservations" className={ActiveNav}>Reservations</NavLink>
-          <NavLink to="tickets" className={ActiveNav}>Account</NavLink>
+          <NavLink to={"/"} className={ActiveNav} id='navbar' >Home</NavLink>
+          <NavLink to="movies" className={ActiveNav} id='navbar'>Movies</NavLink>
+          <NavLink to="calender" className={ActiveNav} id='navbar'>Tickets</NavLink>
+          <NavLink to="reservations" className={ActiveNav} id='navbar'>Reservations</NavLink>
+          <NavLink to="tickets" className={ActiveNav} id='navbar'>Account</NavLink>
           
         </nav>
       </header>

@@ -8,6 +8,7 @@ header {
   height: 2.7rem;
   z-index: 999;
   animation: 1.5s ease-out 0s 1 slideInFromTop;
+  
 
 }
 
@@ -25,6 +26,10 @@ header h1 {
   font-family: 'Niconne', cursive;
   font-weight: 100;
   padding-left: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  color: white;
+  text-decoration: none;
 }
 
 
@@ -42,7 +47,7 @@ nav a  {
 }
 
 
-a {
+#navbar {
   font-size: 18px;
   color: #e1e1e1;
   font-family: inherit;
@@ -57,18 +62,18 @@ a {
   transition-property: color;
 }
 
-a:focus,
-a:hover {
+#navbar:focus,
+#navbar:hover {
   color: #fff;
 }
 
-a:focus:after,
-a:hover:after {
+#navbar:focus:after,
+#navbar:hover:after {
   width: 100%;
   left: 0%;
 }
 
-a:after {
+#navbar:after {
   content: "";
   pointer-events: none;
   top: 0;
