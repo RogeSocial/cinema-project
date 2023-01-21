@@ -1,7 +1,13 @@
 import "../CSS/calender.css"
+import "../CSS/movies.css"
 import {useEffect, useRef, useState} from "react";
+import {movieArray} from "./MovieData.jsx";
+import movieList from "./MovieList.jsx";
+import MovieList from "./MovieList.jsx";
+
 let dates = [];
 const daysForward = 21;
+let dateString = null;
 let movies = [
     {
         title: "Dmovie",
@@ -31,7 +37,6 @@ let movies = [
 ]
 
 let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-let pickedDay;
 
 export default function() {
     {dates=[]}
@@ -52,11 +57,12 @@ export default function() {
         });
 
     return <section className="calender">
-        <h2>Calender</h2>
-        <p>Here you will find a calender</p>
+            <h2>Calender</h2>
+            <p>Here you will find a calender</p>
 
-        <div ref={calenderRef}>
+            <div ref={calenderRef}>
             <div className="calender-dropdown" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
+                <div>{dateString}</div>
                 <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`}>
                     {calculateCurrentDate()}
                     <ul onClick={()=>{setOpen(!open)}}>
@@ -70,21 +76,38 @@ export default function() {
                     </ul>
                 </div>
             </div>
-        </section>
+            {/*<MovieList movieList={}/>*/}
+            {moviesOnDate()}
+            </section>
 }
 
-function getDate(day, month, dayname) {
+function getDate(day, month, dayName) {
     let a=day;
     let b=month;
-    let c=dayname;
+    let c=dayName;
+    {dateString = a + " / " + b + "-" + c }
     console.log("day:" + a + " month:" + b + " dayname:" + c);
+}
+
+function moviesOnDate(){
+    return (
+        <>
+        {movieArray.map((item) =>
+            <div className="movie-list" key={item.id}>
+                <h3>{item.title}</h3>
+                {console.log("hej")}
+                <img src={item.image} alt="a picture of a movie"/>
+            </div>
+        )}
+        </>
+    );
 }
 
 //Sorting the array by date (numbers)
 function sortByDate(inArray){
     for(let i=0; i<inArray.length - 1; i++){
         if(inArray[i].date > inArray[i+1].date){
-            swap(movies, i, i+1);
+            swap(movieArray, i, i+1);
         }
     }
 }
@@ -100,7 +123,7 @@ function swap(inArray, index1, index2){
 function sortByLetter(inArray) {
     for (let i = 0; i < inArray.length - 1; i++) {
         if (inArray[i].title > inArray[i + 1].title) {
-            swap(movies, i, i + 1);
+            swap(movieArray, i, i + 1);
         }
     }
 }
