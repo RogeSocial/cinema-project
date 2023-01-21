@@ -56,22 +56,18 @@ function setDate(inDate, inMonth, inWeekDay) {
     dateInNumbers.month = inMonth;
     dateInNumbers.weekDay = inWeekDay;
     dateString = dateInNumbers.date + " / " + dateInNumbers.month + "-" + dateInNumbers.weekDay;
-    console.log("day:" + dateInNumbers.date + " month:" + dateInNumbers.month + " weekDay:" + dateInNumbers.weekDay);
 }
 
 //compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
 function MoviesOnDate(){
-    console.log("dateInnumbers.date " + dateInNumbers.date);
     let tmpArray = [];
     for(let i = 0; i < movieArray.length; i++){
         for(let j = 0; j < movieArray[i].date.length; j++) {
             if (movieArray[i].date[j] === dateInNumbers.date) {
-                console.log("its a match " + movieArray[i].id);
                 tmpArray.push(movieArray[i]);
             }
         }
     }
-    console.log("tmpArray length: " + tmpArray.length);
     return(
         <>
         {tmpArray.map((item) =>
