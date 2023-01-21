@@ -18,7 +18,7 @@ import Tickets from './components/Tickets'
 import Reservations from './components/Reservations';
 import Seatpicker from './components/Reserve';
 import Reserve from './components/Reserve'
-import Seats from './components/Seats'
+import Seats from './components/Seats';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 

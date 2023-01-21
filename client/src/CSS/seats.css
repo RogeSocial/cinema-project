@@ -1,5 +1,27 @@
 section {
-    display: flex;
+  
+ 
     justify-content: center;
     align-items: center;
 }
+
+.seat-list {
+    display: flex;
+    width: 300px;
+    justify-content: center;
+}
+
+.message {
+    margin-left: 10px;
+}
+
+.seatsWrap{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 equal-width columns */
+    grid-template-rows: repeat(6, 1fr); /* 6 equal-height rows */
+
+}
+
+.seating-chart {
+    
+  }

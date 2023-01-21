@@ -1,35 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from 'react';
 
-export default function() {
-
-    const [seats, setSeats] = useState([
-        {nr: 1, selected: false, available: true},
-        {nr: 2, selected: false, available: true},
-        {nr: 3, selected: false, available: true},
-        {nr: 4, selected: false, available: true}]);
-        
-        const handleClick = (event) => {
-            
-            let element = event.target;
-            if (!element.selected) {
-                element.classList.add("selected")
-                element.selected = true;
-            } else if (element.selected) {
-                element.classList.remove('selected')
-                element.selected = false;
+function Seats() {
+    const [seats, setSeats] = useState([]);
+    const [totalCost, setTotalCost] = useState(0);
+    const [message, setMessage] = useState('');
+    // Initialize the seats state variable
+    useEffect(() => {
+        for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 8; j++) {
+                seats.push({ id: i * 8 + j + 1, seat: j + 1, row: i + 1, selected: false, available: true });
             }
-                console.log(element.selected)
         }
+        setSeats(seats);
+    }, []);
 
-    return(
-    <section>
-              
+    const handleClick = (event) => {
+        let element = event.target;
+        let updatedSeats = [...seats];
+        let selectedSeat = updatedSeats.find(seat => seat.id === parseInt(element.id));
+        selectedSeat.selected = !selectedSeat.selected;
+        setSeats(updatedSeats);
+        let selectedSeats = updatedSeats.filter(seat => seat.selected === true);
+        let selectedSeatsCount = selectedSeats.length;
+        // Update the message displayed in the "message" div
+        setMessage(`${selectedSeatsCount} - ${selectedSeatsCount * 10}$`);
+        // Update the total cost
+        if (selectedSeat.selected) {
+            setTotalCost(totalCost + 10);
+        } else {
+            setTotalCost(totalCost - 10);
+        }
+    }
 
-                 {seats.map((seat) => (
-        <div className="seat-list" key={seat.id}>
-  <div className="seat" id={seat.id} onClick={handleClick}></div>
-        </div>
-      ))}
+    return (
+        <section>
+            <div className="seatsWrap">
+                {seats.map((seat) => (
+                    <div key={seat.id} className={`seat ${seat.selected ? 'selected' : ''}`} id={seat.id} onClick={handleClick}></div>
+                ))}
+            </div>
+            <div className="message">{message}</div>
+        </section>
+    )}
 
-    </section>)
-}
+    export default Seats;
