@@ -1,40 +1,11 @@
 import "../CSS/calender.css"
-import "../CSS/movies.css"
 import {useEffect, useRef, useState} from "react";
 import {movieArray} from "./MovieData.jsx";
-import movieList from "./MovieList.jsx";
-import MovieList from "./MovieList.jsx";
 
 let dates = [];
 const daysForward = 21;
 let dateString = null;
-let movies = [
-    {
-        title: "Dmovie",
-        date: 2,
-        info: "this is about movie 1"
-    },
-    {
-        title: "Cmovie",
-        date: 4,
-        info: "this is about movie 2"
-    },
-    {
-        title: "Amovie",
-        date: 5,
-        info: "this is about movie 3"
-    },
-    {
-        title: "Emovie",
-        date: 1,
-        info: "this is about movie 4"
-    },
-    {
-        title: "Bmovie",
-        date: 3,
-        info: "this is about movie 5"
-    }
-]
+let dateInNumbers = [{date:null, month:null, weekDay:null}];
 
 let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
@@ -68,7 +39,7 @@ export default function() {
                     <ul onClick={()=>{setOpen(!open)}}>
                     {dates.map((item) =>
                         <div className="calender-list" key={dates.id}>
-                            <div onClick={function (e){getDate(item.day, item.month, returnDayName(item.dayName))}}>
+                            <div onClick={function (e){setDate(item.day, item.month, returnDayName(item.dayName))}}>
                                 {item.day} / {item.month} - {returnDayName(item.dayName)}
                             </div>
                         </div>
@@ -76,31 +47,61 @@ export default function() {
                     </ul>
                 </div>
             </div>
-            {/*<MovieList movieList={}/>*/}
-            {moviesOnDate()}
+        <MoviesOnDate/>
             </section>
 }
 
-function getDate(day, month, dayName) {
-    let a=day;
-    let b=month;
-    let c=dayName;
-    {dateString = a + " / " + b + "-" + c }
-    console.log("day:" + a + " month:" + b + " dayname:" + c);
+function setDate(inDate, inMonth, inWeekDay) {
+    dateInNumbers.date = inDate;
+    dateInNumbers.month = inMonth;
+    dateInNumbers.weekDay = inWeekDay;
+    dateString = dateInNumbers.date + " / " + dateInNumbers.month + "-" + dateInNumbers.weekDay;
+    console.log("day:" + dateInNumbers.date + " month:" + dateInNumbers.month + " weekDay:" + dateInNumbers.weekDay);
 }
 
-function moviesOnDate(){
-    return (
+//compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
+function MoviesOnDate(){
+    console.log("dateInnumbers.date " + dateInNumbers.date);
+    let tmpArray = [];
+    for(let i = 0; i < movieArray.length; i++){
+        for(let j = 0; j < movieArray[i].date.length; j++) {
+            if (movieArray[i].date[j] === dateInNumbers.date) {
+                console.log("its a match " + movieArray[i].id);
+                tmpArray.push(movieArray[i]);
+            }
+        }
+    }
+    console.log("tmpArray length: " + tmpArray.length);
+    return(
         <>
-        {movieArray.map((item) =>
+        {tmpArray.map((item) =>
             <div className="movie-list" key={item.id}>
-                <h3>{item.title}</h3>
-                {console.log("hej")}
-                <img src={item.image} alt="a picture of a movie"/>
+            <h3>{item.title}</h3>
+            <img src={item.image} alt="a picture of a movie"/>
             </div>
         )}
         </>
     );
+}
+
+//Calculates the dates and puts it in the array "dates"
+function calculateCurrentDate(){
+    for(let i = 0; i < daysForward; i++){
+        let today = new Date();
+        let dateLimit = new Date(new Date().setDate(today.getDate() + i));
+        let object = {};
+        object.day = dateLimit.getDate();
+        object.month = dateLimit.getMonth() + 1;
+        object.year = dateLimit.getFullYear();
+        object.dayName = dateLimit.getDay();
+        object.id = i;
+        dates.push(object);
+    }
+}
+
+//returns the name of the date, like "Monday", etc
+function returnDayName(inIndex){
+    return daysInWeek[inIndex];
 }
 
 //Sorting the array by date (numbers)
@@ -128,33 +129,3 @@ function sortByLetter(inArray) {
     }
 }
 
-//Calculates the dates and puts it in the array "dates"
-function calculateCurrentDate(){
-    for(let i = 0; i < daysForward; i++){
-        let today = new Date();
-        let dateLimit = new Date(new Date().setDate(today.getDate() + i));
-        let object = {};
-        object.day = dateLimit.getDate();
-        object.month = dateLimit.getMonth() + 1;
-        object.year = dateLimit.getFullYear();
-        object.dayName = dateLimit.getDay();
-        dates.push(object);
-    }
-}
-
-//returns the name of the date, like "Monday", etc
-function returnDayName(inIndex){
-    return daysInWeek[inIndex];
-}
-
-{/*keep for now, might use somehow later
-                    {sortByDate(movies)}
-                    {movies.map((item, index) =>
-                        <li key={movies.id}><a href="#">date: {item.date}</a></li>
-                    )}
-
-                    keep for now, might use somehow later
-                    {sortByLetter(movies)}
-                    {movies.map((item, index) =>
-                        <li><a href="#">title: {item.title}</a></li>
-                    )}*/}
