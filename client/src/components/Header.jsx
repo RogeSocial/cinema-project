@@ -31,28 +31,28 @@ export default function () {
   return (
     <>
       <header>
-        <h1>Codinema</h1>
+        <NavLink to={'/'}> <h1>Codinema</h1></NavLink>
         <aside>
           <div className="hamburger-icon" onClick={toggleMenu}>
             <i className="fa-solid fa-bars"></i>
           </div>
         </aside>
         <nav>
-          <NavLink to={"/"} className={ActiveNav} >Home</NavLink>
-          <NavLink to="calender" className={ActiveNav}>Calender</NavLink>
-          <NavLink to="movies" className={ActiveNav}>Movies</NavLink>
-          <NavLink to="tickets" className={ActiveNav}>Tickets</NavLink>
-          <NavLink to="reservations" className={ActiveNav}>Reservations</NavLink>
+          <NavLink to={"/"} className={ActiveNav} id='navbar' >Home</NavLink>
+          <NavLink to="movies" className={ActiveNav} id='navbar'>Movies</NavLink>
+          <NavLink to="calender" className={ActiveNav} id='navbar'>Tickets</NavLink>
+          <NavLink to="reservations" className={ActiveNav} id='navbar'>Reservations</NavLink>
+          <NavLink to="tickets" className={ActiveNav} id='navbar'>Account</NavLink>
           
         </nav>
       </header>
       {openMenu ? (
         <div ref={menuRef}  className="dropdown-menu">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="calender">Calender</NavLink>
-          <NavLink to="movies">Movies</NavLink>
-          <NavLink to="tickets">Tickets</NavLink>
-          <NavLink to="reservations">Reservations</NavLink>
+          <NavLink to="/" onClick={() => setOpenMenu(false)}> Home</NavLink>
+          <NavLink to="calender" onClick={() => setOpenMenu(false)}>Calender</NavLink>
+          <NavLink to="movies" onClick={() => setOpenMenu(false)}>Movies</NavLink>
+          <NavLink to="tickets"onClick={() => setOpenMenu(false)}>Tickets</NavLink>
+          <NavLink to="reservations"onClick={() => setOpenMenu(false)}>Reservations</NavLink>
         </div>
       ) : null}
 

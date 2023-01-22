@@ -1,36 +1,59 @@
 import React, { useState } from "react";
 import MovieList from "./MovieList";
+import { movieArray } from "./MovieData";
 
 export default function () {
-  const [movies, setMovies] = useState([
-    {
-      id: 1,
-      title: "Bram Stoker's Dracula",
-      text: "Bram Stoker's Dracula is a 1992 American Gothic horror film directed and produced by Francis Ford Coppola, based on the 1897 novel Dracula by Bram Stoker",
-      image:
-      "https://i.pinimg.com/originals/a2/b5/f7/a2b5f7baac617b3918457722da8a8767.jpg",
-    },
-    {
-      id: 2,
-      title: "Bram Stoker's Dracula",
-      text: "Bram Stoker's Dracula is a 1992 American Gothic horror film directed and produced by Francis Ford Coppola, based on the 1897 novel Dracula by Bram Stoker",
-      image:
-      "https://i.pinimg.com/originals/a2/b5/f7/a2b5f7baac617b3918457722da8a8767.jpg",
-    },
-    {
-      id: 3,
-      title: "Bram Stoker's Dracula",
-      text: "Bram Stoker's Dracula is a 1992 American Gothic horror film directed and produced by Francis Ford Coppola, based on the 1897 novel Dracula by Bram Stoker",
-      image:
-        "https://i.pinimg.com/originals/a2/b5/f7/a2b5f7baac617b3918457722da8a8767.jpg",
-    },
-  ]);
+  const [movies, setMovies] = useState(movieArray);
+  //variable to hold the value that the user is searching for
+  const [searchValue, setSearchValue] = useState(null);
+
+  //sets searchValue to the value entered by the user in the search field
+  const handlesSearch = (event) => {
+    setSearchValue(event.target.value);
+  };
+
   return (
     <section className="movies">
-      <input type="text" placeholder="Search.."></input>
-      <h2>Top Movies</h2>
-      <button>Sort</button>
-      <MovieList movies={movies} />
+      <div className="non-image-items">
+        <div className="movie-search-field">
+          <i className="fa-solid fa-magnifying-glass"></i>
+          <input
+            type="text"
+            placeholder="Search.."
+            onChange={handlesSearch}
+          ></input>
+        </div>
+        <h2>Top Movies</h2>
+        <button className="btn" id="movie-sort-btn">
+          Sort
+        </button>
+        <br />
+      </div>
+      <MovieList
+        movies={
+          searchValue === null || searchValue === ""
+            ? movies
+            : movies.filter((movie) =>
+                matchesSearchWithMovieResult(movie, searchValue)
+              )
+        }
+      />
     </section>
   );
+}
+
+function matchesSearchWithMovieResult(movie, searchValue) {
+  //prototype algoritm
+  let movieTitle = movie.title.toLowerCase();
+  let searchedTitle = searchValue.toLowerCase();
+  if (
+    movieTitle[0] === searchedTitle[0] &&
+    movieTitle[searchValue.length / 2] ===
+      searchedTitle[searchValue.length / 2] &&
+    movieTitle[searchValue.length - 1] === searchedTitle[searchValue.length - 1]
+  ) {
+    return true;
+  } else {
+    return false;
+  }
 }
