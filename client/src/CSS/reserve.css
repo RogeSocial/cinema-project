@@ -1,3 +1,11 @@
+section {
+  
+ 
+    justify-content: center;
+    align-items: center;
+    background-color: #242333;;
+}
+
 .section-seatPicker {
     display: flex;
     justify-content: center;
@@ -24,10 +32,7 @@
 }
 
 .screen {
- /*    border-left: 15px solid #550101;
-    border-right: 15px solid #550101;
-    border-top: 10px solid #550101;
-    border-bottom: 10px solid rgb(32, 31, 31); */
+
     height: 70px;
     width: 180px;
     background-color: white;
@@ -77,4 +82,34 @@
 .container{
     perspective: 200px;
     margin-bottom: 30px;
+}
+
+.seat.occupied {
+    background-color: red;
+}
+
+.seat-list {
+    display: flex;
+    width: 300px;
+    justify-content: center;
+}
+
+.message {
+    margin-left: 10px;
+}
+
+.seatsWrap{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); /* 8 equal-width columns */
+    grid-template-rows: repeat(6, 1fr); /* 6 equal-height rows */
+
+}
+
+.seating-chart {
+    
+  }
+
+
+  .seat.occupied {
+    background-color: rgb(207, 15, 15);
 }

@@ -16,9 +16,10 @@ import Calender from "./components/Calender.jsx"
 import Movies from './components/Movies'
 import Tickets from './components/Tickets'
 import Reservations from './components/Reservations';
-import Seatpicker from './components/Reserve';
 import Reserve from './components/Reserve'
-import Seats from './components/Seats';
+
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
@@ -32,8 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="movies" element={<Movies/>} />
               <Route path="tickets" element={<Tickets/>} />
               <Route path="reservations" element={<Reservations/>} />
+            
               <Route path="reserve" element={<Reserve/>} />
-              <Route path="seats" element={<Seats/>} />
 
           </Routes>
           <Footer />
