@@ -7,7 +7,7 @@ export default function ({ movies }) {
       
         <div className="movie-list" key={movie.id}>
           <h3> {movie.title} </h3>
-          <Link to="ticket-form"><img src={movie.image} alt="a picture of a movie" /></Link>
+          <Link to="/ticket-form"><img src={movie.image} alt="a picture of a movie" /></Link>
         </div>
         
       ))}
