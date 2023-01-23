@@ -1,20 +1,44 @@
 .calender-dropdown{
     background-color: #ffffff;
+    border-radius: 20px;
     color: #000000;
     text-align: center;
-    width: 10em;
+    width: 12em;
     height: 2em;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#calender-box {
+    position: absolute;
+    z-index: 999;
+    bottom: 200px;
 }
 
 .calender-dropdown-trigger > ul{
-    background-color: #2a5081;
+    background-color: #2a508100;
     text-align: center;
     list-style: none;
     height: 10em;
+    width: 12em;
     overflow-y: scroll;
     padding: 0;
     margin: 0;
+}
+
+.movie-list {
+    display: flex;
+}
+
+#movieImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    position: relative;
+    top: 100px;
 }
 
 .calender-list:hover{
@@ -37,12 +61,20 @@
 }
 
 .calender {
-    display: flex;
+    display: absolute;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    background-color: black;
+    background-color: #242333;
     color: var(--main_text_color);
     padding-top: 240px; /* amount moved down from navbar */
+}
+
+#calenderSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .calender h3 {

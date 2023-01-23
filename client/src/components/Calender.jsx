@@ -27,10 +27,11 @@ export default function() {
         }
         });
 
-    return <section className="calender">
+    return <section id="calenderSection" className="calender">
+    
             <h2>Buy Tickets</h2>
 
-            <div ref={calenderRef}>
+            <div id="calender-box" ref={calenderRef}>
             <div className="calender-dropdown" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
                 <div>{dateString}</div>
                 <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`}>
@@ -71,8 +72,9 @@ function MoviesOnDate(){
         <>
         {tmpArray.map((item) =>
             <div className="movie-list" key={item.id}>
+        
             <h3>{item.title}</h3>
-            <img src={item.image} alt="a picture of a movie"/>
+            <img id="movieImg" src={item.image} alt="a picture of a movie"/>
             </div>
         )}
         </>
