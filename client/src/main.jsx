@@ -18,6 +18,8 @@ import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
 import ScrollToTop from "./components/scrollToTop.jsx";
 import TicketForm from "./components/TicketForm.jsx";
+import Reserve from "./components/Reserve.jsx";
+import PageNotFound from "./components/pageNotFound.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
