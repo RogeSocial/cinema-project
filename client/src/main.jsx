@@ -15,6 +15,7 @@ import Calender from "./components/Calender.jsx"
 import Movies from './components/Movies'
 import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
+import ScrollToTop from "./components/scrollToTop.jsx";
 import TicketForm from "./components/TicketForm.jsx";
 import Reserve from "./components/Reserve.jsx"
 
@@ -22,9 +23,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
 
 
-        <BrowserRouter>
-            <Header />
-            <Routes>
+      <BrowserRouter>
+          <ScrollToTop/>
+          <Header />
+          <Routes>
 
                 <Route path="/" element={<Mainpage />} />
                 <Route path="calender" element={<Calender />} />
