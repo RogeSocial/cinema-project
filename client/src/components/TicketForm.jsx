@@ -12,8 +12,7 @@ export default function TicketForm() {
 
                 <div className={"movie-details"}>
                     <h1>{movie.title}</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, magna vel dictum porta,
-                        risus massa commodo dui, id vestibulum risus ipsum eu risus.</p>
+                    <p>{movie.text}</p>
                 </div>
                 <form className={"ticket-form"}>
                     <h3>Purchase tickets</h3>
