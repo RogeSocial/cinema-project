@@ -28,8 +28,7 @@ export default function() {
         });
 
     return <section className="calender">
-            <h2>Calender</h2>
-            <p>Here you will find a calender</p>
+            <h2>Buy Tickets</h2>
 
             <div ref={calenderRef}>
             <div className="calender-dropdown" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
