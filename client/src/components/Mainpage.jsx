@@ -4,33 +4,13 @@ import Movies from "./Movies";
 import MovieList from "./MovieList";
 import { Link } from "react-router-dom";
 import Quotes from "./Quotes.jsx";
+import { movieArray } from "./MovieData";
 
 
 export default function () {
-  const [movies] = useState([
-    {
-      id: 1,
-      title: "IT",
-      text: "After recent cases of disappearing local kids in the town of Derry, Maine, IT follows a group of kids dubbed 'The Losers Club' in the summer of 1989 and their discovery and scary encounters of a shape-shifting demonic entity, known to return every 27 years and preys on your own personal fears.",
-      image:
-        "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/09/06194231/it-capitulo-dos-1.jpg"
-    },
-    {
-      id: 2,
-      title: "IT",
-      text: "After recent cases of disappearing local kids in the town of Derry, Maine, IT follows a group of kids dubbed 'The Losers Club' in the summer of 1989 and their discovery and scary encounters of a shape-shifting demonic entity, known to return every 27 years and preys on your own personal fears.",
-      image:
-        "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/09/06194231/it-capitulo-dos-1.jpg"
-    },
-    {
-      id: 3,
-      title: "IT",
-      text: "After recent cases of disappearing local kids in the town of Derry, Maine, IT follows a group of kids dubbed 'The Losers Club' in the summer of 1989 and their discovery and scary encounters of a shape-shifting demonic entity, known to return every 27 years and preys on your own personal fears.",
-      image:
-        "https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2019/09/06194231/it-capitulo-dos-1.jpg",
-      link: "https://www.youtube.com/watch?v=xKJmEC5ieOk"
-    },
-]);
+  const [movies, setMovies] = useState(movieArray);
+
+
   return (
     <div>
       <section>
@@ -46,7 +26,14 @@ export default function () {
       <section className="section-top-movies">
         <h1 className="title">OUR TOP MOVIES</h1>
         <div className="top-movies">
-          <MovieList movies={movies} />
+          <MovieList movies={movieArray.filter( (movie) => {
+            if (movie.id === 1 || movie.id === 2 || movie.id === 3) {
+              return true;
+            } else {
+              return false;
+            }
+
+          })} />
         </div>
         <div className="center-btn">
           <Link to="movies"><button className="btn">MORE MOVIES</button></Link>
