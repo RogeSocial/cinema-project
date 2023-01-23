@@ -19,6 +19,7 @@
     justify-content: center;
     margin: 20px;
     font-size: 26px;
+    font-family:  'Fredericka the Great', cursive;;
    
 }
 
@@ -32,7 +33,7 @@
 }
 .wrapMovieList {
     display: flex;
-    /* background-color: #3a394556; */
+   /*  background-color: #3a394556; */
     
     border-radius: 20px;
     height: 100%;
@@ -66,6 +67,7 @@
     overflow-y: scroll;
     padding: 0;
     margin: 0;
+    font-family:  'Fredericka the Great', cursive;;
 }
 
 .movie-list {
@@ -80,19 +82,23 @@
     width: 700px;
     height: 500px;
     transition: 1s;
-    border: 5px solid rgba(17, 126, 162, 0.164);
-   
-
+    border-radius:15px;
+    border:2px solid#28616d41;
 }
+
+
+
+
 #movieImg:hover {
     transform:scale(1.05);
-    border-color: rgba(12, 123, 142, 0.594);
-    
+    border-color:#2ca3bb61;
 }
+
 .calender-list{
     font-size: 20px;
-    background-color: #2423338c;
+    background-color: #3a3a3a71;
 }
+
 .calender-list:hover{
     background: rgb(96, 99, 114);
     cursor: pointer;
@@ -120,7 +126,7 @@
     align-items: center;
     background-color: #242333;
     color: var(--main_text_color);
-    padding-top: 240px; /* amount moved down from navbar */
+    padding-top: 240px; 
 }
 
 #calenderSection {

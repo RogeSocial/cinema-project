@@ -37,7 +37,7 @@ export default function() {
             <div  className="btn" id="btn" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
             
              
-              
+            
                 <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`}>
                     {calculateCurrentDate()}
                     <ul onClick={()=>{setOpen(!open)}}>
