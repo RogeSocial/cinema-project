@@ -16,12 +16,15 @@ import Calender from "./components/Calender.jsx"
 import Movies from './components/Movies'
 import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
+import ScrollToTop from "./components/scrollToTop.jsx";
 import TicketForm from "./components/TicketForm.jsx";
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
 
 
       <BrowserRouter>
+          <ScrollToTop/>
           <Header />
           <Routes>
 
