@@ -16,7 +16,6 @@ import Calender from "./components/Calender.jsx"
 import Movies from './components/Movies'
 import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
-import PageNotFound from "./components/pageNotFound.jsx";
 import ScrollToTop from "./components/scrollToTop.jsx";
 import TicketForm from "./components/TicketForm.jsx";
 
@@ -35,6 +34,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="tickets" element={<Tickets/>} />
               <Route path="reservations" element={<Reservations/>} />
               <Route path="*" element={<PageNotFound/>}></Route>
+              <Route path="reserve" element={<Reserve />} />
+
               <Route path="ticket-form" element={<TicketForm />} />
               <Route path="user">
                 <Route path="login"/>
@@ -45,22 +46,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Footer />
       </BrowserRouter>
 
-      {/*<RouterProvider router={
-          createBrowserRouter(
-              createRoutesFromElements(
-              <Route path="/" element={<Header />}>
-                  <Route index element={<Mainpage />}/>
-                  {/*<Route path={"home"} element={<Mainpage/>}/>}
-                  <Route path="calender" element={<Calender/>}/>
-                  <Route path="movies" />
-                  <Route path="tickets" />
-                  <Route path={"movies"} element={<Movies/>}/>
-                  <Route path={"tickets"} element={<Tickets/>}/>
-                  <Route path={"reservations"} element={<Reservations/>}/>
-              </Route>
-                  )
-                  )
-                  }/> */}
+
 
   </React.StrictMode>
 )

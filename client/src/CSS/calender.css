@@ -16,17 +16,8 @@
 
 .calender-list:hover{
     background: burlywood;
+    cursor: pointer;
 }
-
-/*ul{
-    background: #8B95A6;
-    padding: 0;
-    margin: 0;
-}*/
-
-/*li:hover{
-    background: burlywood;
-}*/
 
 .calender-dropdown.a:hover{
     background: #8B95A6;
@@ -40,4 +31,32 @@
 .calender-dropdown-trigger.inactive{
     opacity: 0;
     visibility: hidden;
+}
+
+.calender {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: black;
+    color: var(--main_text_color);
+    padding-top: 240px; /* amount moved down from navbar */
+}
+
+.calender h3 {
+    position: absolute;
+    z-index: 2;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: 600;
+}
+
+.calender img{
+    position: relative;
+    border-radius: 20px;
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
