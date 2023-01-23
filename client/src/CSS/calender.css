@@ -75,11 +75,13 @@
     justify-content: center;
 }
 
-.lengthPos{
-    position: absolute;
-    right: 50px;
-    top: 0px;
+.movieLength{
+    color: #8c8c8c;
+    position: relative;
+    left: 100px;
     font-size: 20px;
+    z-index: 2;
+    visibility: visible;
 }
 
 @media screen and (min-width: 680px) {
