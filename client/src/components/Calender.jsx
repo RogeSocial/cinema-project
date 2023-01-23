@@ -29,12 +29,14 @@ export default function() {
 
     return <section id="calenderSection" className="calender">
         <div className="wrap">
+       
         <div id="selectedDate">{dateString}</div>
+        <hr />
             <h2 id="buyTicketsTitle">Buy Tickets</h2>
-        
+            <hr />
             <div id="calender-box" ref={calenderRef}>
        
-            <div  className="btn" id="btn" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
+            <div id="btn" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
             
              
             
@@ -83,7 +85,7 @@ function MoviesOnDate(){
        
             <div className="movie-list" key={item.id}>
         
-            <h3>{item.title}</h3>
+            <h3 id="moveTitle">{item.title}</h3>
             
             <img id="movieImg" src={item.image} alt="a picture of a movie"/>
             </div>
