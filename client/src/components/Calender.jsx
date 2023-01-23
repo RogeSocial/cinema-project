@@ -72,6 +72,7 @@ function MoviesOnDate(){
         {tmpArray.map((item) =>
             <div className="movie-list" key={item.id}>
             <h3>{item.title}</h3>
+                <div className={"lengthPos"}>{hoursAndMinutes(item.length)}</div>
             <img src={item.image} alt="a picture of a movie"/>
             </div>
         )}
@@ -92,6 +93,12 @@ function calculateCurrentDate(){
         object.id = i;
         dates.push(object);
     }
+}
+
+function hoursAndMinutes(inMinutes){
+    let hours = Math.trunc(inMinutes / 60);
+    let minutes = inMinutes % 60;
+    return (hours + "h " + minutes + "m");
 }
 
 //returns the name of the date, like "Monday", etc
