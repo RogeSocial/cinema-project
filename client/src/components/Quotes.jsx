@@ -38,16 +38,21 @@ const quoteData = [
     "– The Silence of the Lambs, 1991"
 ];
 
-const Quotes = () => {
+export default function () {
+
     const [index, setIndex] = useState(Math.floor(Math.random() * horrorQuote.length));
     const animationRef = React.createRef();
 
     useEffect(() => {
-        animationRef.current.addEventListener("animationiteration", handleIteration);
-        return () => {
-            animationRef.current.removeEventListener("animationiteration", handleIteration);
+        if (animationRef.current) {
+            animationRef.current.addEventListener("animationiteration", handleIteration);
         }
-    }, []);
+        return () => {
+            if (animationRef.current) {
+                animationRef.current.removeEventListener("animationiteration", handleIteration);
+            }
+        }
+    }, [animationRef]);
 
     const handleIteration = (event) => {
         setIndex(Math.floor(Math.random() * horrorQuote.length));
@@ -63,5 +68,3 @@ const Quotes = () => {
         </div>
     )
 }
-
-export default Quotes;
