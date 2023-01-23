@@ -43,7 +43,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
             </Routes>
             <Footer />
-        </BrowserRouter>zzz
+        </BrowserRouter>
 
         {/*<RouterProvider router={
           createBrowserRouter(
