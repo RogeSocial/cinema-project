@@ -5,11 +5,11 @@ import { movieArray } from "./MovieData";
 export default function () {
   const [movies, setMovies] = useState(movieArray);
   //variable to hold the value that the user is searching for
-  const [searchValue, setSearchValue] = useState(null);
+  const [searchString, setSearchString] = useState(null);
 
-  //sets searchValue to the value entered by the user in the search field
+  //sets searchString to the value entered by the user in the search field
   const handlesSearch = (event) => {
-    setSearchValue(event.target.value);
+    setSearchString(event.target.value);
   };
 
   return (
@@ -31,10 +31,10 @@ export default function () {
       </div>
       <MovieList
         movies={
-          searchValue === null || searchValue === ""
+          searchString === null || searchString === ""
             ? movies
             : movies.filter((movie) =>
-                matchesSearchWithMovieResult(movie, searchValue)
+                returnsMovieTitlesThatIncludesTheSearch(movie, searchString)
               )
         }
       />
@@ -42,16 +42,13 @@ export default function () {
   );
 }
 
-function matchesSearchWithMovieResult(movie, searchValue) {
+function returnsMovieTitlesThatIncludesTheSearch(movie, searchString) {
   //prototype algoritm
-  let movieTitle = movie.title.toLowerCase();
-  let searchedTitle = searchValue.toLowerCase();
-  if (
-    movieTitle[0] === searchedTitle[0] &&
-    movieTitle[searchValue.length / 2] ===
-      searchedTitle[searchValue.length / 2] &&
-    movieTitle[searchValue.length - 1] === searchedTitle[searchValue.length - 1]
-  ) {
+  let title = movie.title.toLowerCase();
+  let string = searchString.toLowerCase();
+
+  //if any part of the title includes the string that was searched
+  if (title.includes(string)) {
     return true;
   } else {
     return false;
