@@ -170,7 +170,9 @@
     justify-content: center;
 }
 
-@media screen and (min-width: 680px) {
+@media screen and (max-width: 550px){
+
+    
     .calender {
         justify-content: center;
         align-items: flex-start;
@@ -192,3 +194,21 @@
     }
 }
 
+
+
+@media screen and (max-width: 550px) {
+    .wrapMovieList {
+        flex-direction: column;
+    }
+
+    #movieImg {
+        width: 200px;
+        height: 200px;
+    }
+
+    .calender   {
+        justify-content: flex-start;
+        align-items: flex-start;
+        
+    }
+}
