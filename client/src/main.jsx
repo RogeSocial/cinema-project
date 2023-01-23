@@ -17,7 +17,7 @@ import Movies from './components/Movies'
 import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
 import PageNotFound from "./components/pageNotFound.jsx";
-
+import ScrollToTop from "./components/scrollToTop.jsx";
 import TicketForm from "./components/TicketForm.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -25,6 +25,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
 
       <BrowserRouter>
+          <ScrollToTop/>
           <Header />
           <Routes>
 
