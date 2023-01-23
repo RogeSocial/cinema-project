@@ -1,24 +1,25 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import '../CSS/ticket-form.css'
-import ticketImage from '../images/ticket.jpg';
+import { movieArray } from './MovieData';
 
-export default function TicketForm(props) {
-
+export default function TicketForm() {
+    const movieId = useParams().id
+    const movie = movieArray.find(m=>m.id == movieId)
     return (
         <div className={"ticket-form-page"}>
             <div className={"ticket-form-box form-row"}>
 
                 <div className={"movie-details"}>
-                    <h1>Name of the movie (props.movieName) {props.moviename}</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, magna vel dictum porta,
-                        risus massa commodo dui, id vestibulum risus ipsum eu risus.</p>
+                    <h1>{movie.title}</h1>
+                    <p>{movie.text}</p>
                 </div>
                 <form className={"ticket-form"}>
                     <h3>Purchase tickets</h3>
 
                     <ul className='ticket-list'>
-                        <li>The chosen date {props.date}</li>
-                        <li>The chosen time {props.time}</li>
+                        <li>The chosen date </li>
+                        <li>The chosen time </li>
                         <li>Movie theatre adress</li>
                         <li>Ticket price</li>
                     </ul>
