@@ -28,23 +28,31 @@ export default function() {
         });
 
     return <section id="calenderSection" className="calender">
-    
-            <h2>Buy Tickets</h2>
-
+        <div className="wrap">
+        <div id="selectedDate">{dateString}</div>
+            <h2 id="buyTicketsTitle">Buy Tickets</h2>
+        
             <div id="calender-box" ref={calenderRef}>
-            <div className="calender-dropdown" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
-                <div>{dateString}</div>
+       
+            <div  className="btn" id="btn" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
+            
+             
+              
                 <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`}>
                     {calculateCurrentDate()}
                     <ul onClick={()=>{setOpen(!open)}}>
                     {dates.map((item) =>
+                    
                         <div className="calender-list" key={dates.id}>
                             <div onClick={function (e){setDate(item.day, item.month, returnDayName(item.dayName))}}>
                                 {item.day} / {item.month} - {returnDayName(item.dayName)}
+                                
                             </div>
+                            
                         </div>
                     )}
                     </ul>
+                    </div>
                 </div>
             </div>
         <MoviesOnDate/>
@@ -69,15 +77,18 @@ function MoviesOnDate(){
         }
     }
     return(
-        <>
+      
+        <div className="wrapMovieList">
         {tmpArray.map((item) =>
+       
             <div className="movie-list" key={item.id}>
         
             <h3>{item.title}</h3>
+            
             <img id="movieImg" src={item.image} alt="a picture of a movie"/>
             </div>
         )}
-        </>
+        </div>
     );
 }
 

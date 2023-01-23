@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
 .calender-dropdown{
     background-color: #ffffff;
     border-radius: 20px;
@@ -12,11 +14,48 @@
     
 }
 
+#selectedDate {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    font-size: 26px;
+   
+}
+
+#buyTicketsTitle {
+    font-family:  'Fredericka the Great', cursive;;
+}
+
+
+#btn:hover {
+ 
+}
+.wrapMovieList {
+    display: flex;
+    /* background-color: #3a394556; */
+    
+    border-radius: 20px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
 #calender-box {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     z-index: 999;
     bottom: 200px;
+
 }
+
+
+.wrap h2 {
+    font-family: 'Fredericka the Great', cursive;
+}
+
+
 
 .calender-dropdown-trigger > ul{
     background-color: #2a508100;
@@ -31,19 +70,33 @@
 
 .movie-list {
     display: flex;
+ 
 }
 
 #movieImg {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    position: relative;
-    top: 100px;
-}
+    width: 700px;
+    height: 500px;
+    transition: 1s;
+    border: 5px solid rgba(17, 126, 162, 0.164);
+   
 
+}
+#movieImg:hover {
+    transform:scale(1.05);
+    border-color: rgba(12, 123, 142, 0.594);
+    
+}
+.calender-list{
+    font-size: 20px;
+    background-color: #2423338c;
+}
 .calender-list:hover{
-    background: burlywood;
+    background: rgb(96, 99, 114);
     cursor: pointer;
+   
 }
 
 .calender-dropdown.a:hover{
@@ -75,6 +128,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-image: url(../images/it5.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .calender h3 {
@@ -128,3 +185,4 @@
         margin-top: -0.2rem;
     }
 }
+
