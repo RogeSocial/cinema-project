@@ -1,5 +1,7 @@
 .calender-dropdown{
-    background-color: #8fb98c;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
     width: 10em;
     height: 2em;
     cursor: pointer;
@@ -7,6 +9,7 @@
 
 .calender-dropdown-trigger > ul{
     background-color: #2a5081;
+    text-align: center;
     list-style: none;
     height: 10em;
     overflow-y: scroll;
@@ -50,6 +53,17 @@
     font-weight: 600;
 }
 
+.calender h2{
+    margin: 1rem;
+    margin-top: 0.3rem;
+    color: white;
+    font-size: 33px;
+    min-width: 200px;
+    border: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: 400;
+}
+
 .calender img{
     position: relative;
     border-radius: 20px;
@@ -59,4 +73,35 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.movieLength{
+    color: #8c8c8c;
+    position: relative;
+    left: 100px;
+    font-size: 20px;
+    z-index: 2;
+    visibility: visible;
+}
+
+@media screen and (min-width: 680px) {
+    .calender {
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 260px;
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+    }
+
+    .non-image-items {
+        position: absolute;
+        top: 0;
+        width: 100vw;
+        margin-top: 3.5rem;
+    }
+    .calender h2 {
+        font-size: 50px;
+        min-width: 300px;
+        margin-top: -0.2rem;
+    }
 }

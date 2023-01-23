@@ -124,7 +124,16 @@
 .movie-list:hover {
   transform: scale(1.05);
   cursor: pointer;
-}     
+}
+
+.movieLength{
+  color: #8c8c8c;
+  position: relative;
+  left: 100px;
+  font-size: 20px;
+  z-index: 2;
+  visibility: visible;
+}
 
 @media screen and (min-width: 680px) {
   .movies {

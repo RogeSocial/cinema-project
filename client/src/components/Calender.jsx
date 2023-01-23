@@ -1,6 +1,8 @@
 import "../CSS/calender.css"
+import "../CSS/movies.css"
 import {useEffect, useRef, useState} from "react";
 import {movieArray} from "./MovieData.jsx";
+import MovieList, {hoursAndMinutes} from "./MovieList.jsx";
 
 let dates = [];
 const daysForward = 21;
@@ -12,6 +14,7 @@ let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 export default function() {
     {dates=[]}
     const [open, setOpen] = useState(false);
+    const[moviesOnDate1, setMoviesOnDate] = useState(movieArray);
 
     let calenderRef = useRef();
 
@@ -28,8 +31,7 @@ export default function() {
         });
 
     return <section className="calender">
-            <h2>Calender</h2>
-            <p>Here you will find a calender</p>
+            <h2>Buy Tickets</h2>
 
             <div ref={calenderRef}>
             <div className="calender-dropdown" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
@@ -58,6 +60,7 @@ function setDate(inDate, inMonth, inWeekDay) {
     dateString = dateInNumbers.date + " / " + dateInNumbers.month + "-" + dateInNumbers.weekDay;
 }
 
+
 //compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
 function MoviesOnDate(){
     let tmpArray = [];
@@ -72,8 +75,9 @@ function MoviesOnDate(){
         <>
         {tmpArray.map((item) =>
             <div className="movie-list" key={item.id}>
-            <h3>{item.title}</h3>
-            <img src={item.image} alt="a picture of a movie"/>
+                <h3>{item.title}</h3>
+                <img src={item.image} alt="a picture of a movie"/>
+                <div className={"movieLength"}>{hoursAndMinutes(item.length)}</div>
             </div>
         )}
         </>
@@ -99,29 +103,3 @@ function calculateCurrentDate(){
 function returnDayName(inIndex){
     return daysInWeek[inIndex];
 }
-
-//Sorting the array by date (numbers)
-function sortByDate(inArray){
-    for(let i=0; i<inArray.length - 1; i++){
-        if(inArray[i].date > inArray[i+1].date){
-            swap(movieArray, i, i+1);
-        }
-    }
-}
-
-//swap the two indexes
-function swap(inArray, index1, index2){
-    let tmp = inArray[index1];
-    inArray[index1] = inArray[index2];
-    inArray[index2] = tmp;
-}
-
-//sorting the array by letter(alphabetically)
-function sortByLetter(inArray) {
-    for (let i = 0; i < inArray.length - 1; i++) {
-        if (inArray[i].title > inArray[i + 1].title) {
-            swap(movieArray, i, i + 1);
-        }
-    }
-}
-
