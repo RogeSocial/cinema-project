@@ -23,20 +23,20 @@ export default function() {
             <div>
                 <h1>Quick menu</h1>
                 <ul>
-                    <li><Link to={"/"}>Home</Link></li>
-                    <li><Link to={"/movies"}>Movies</Link></li>
-                    <li><Link to={"/calender"}>Tickets</Link></li>
-                    <li><Link to={"/reservations"}>Reservations</Link></li>
-                    <li><Link to={"/tickets"}>Account</Link></li>
+                    <li className="footer-link"><Link to={"/"}>Home</Link></li>
+                    <li className="footer-link"><Link to={"/movies"}>Movies</Link></li>
+                    <li className="footer-link"><Link to={"/calender"}>Tickets</Link></li>
+                    <li className="footer-link"><Link to={"/reservations"}>Reservations</Link></li>
+                    <li className="footer-link"><Link to={"/tickets"}>Account</Link></li>
                 </ul>
             </div>
             <div>
                 <h1>Socials</h1>
                 <ul>
-                    <li><a href={"http://www.facebook.com"} target={"_blank"}>Facebook</a></li>
-                    <li><a href={"http://www.instagram.com/"} target={"_blank"}>Instagram</a></li>
-                    <li><a href={"http://twitter.com/codinematheatre"} target={"_blank"}>Twitter</a></li>
-                    <li><a href={"http://www.youtube.com/"} target={"_blank"}>Youtube</a></li>
+                    <li className="footer-link"><a href={"http://www.facebook.com"} target={"_blank"}>Facebook</a></li>
+                    <li className="footer-link"><a href={"http://www.instagram.com/"} target={"_blank"}>Instagram</a></li>
+                    <li className="footer-link"><a href={"http://twitter.com/codinematheatre"} target={"_blank"}>Twitter</a></li>
+                    <li className="footer-link"><a href={"http://www.youtube.com/"} target={"_blank"}>Youtube</a></li>
                 </ul>
             </div>
     </footer>
