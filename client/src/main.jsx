@@ -33,9 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
               <Route path="movies" element={<Movies/>} />
               <Route path="tickets" element={<Tickets/>} />
               <Route path="reservations" element={<Reservations/>} />
-              <Route path="*" element={<PageNotFound/>}></Route>
+              <Route path="*" element={<PageNotFound/>}/>
               <Route path="reserve" element={<Reserve />} />
-
               <Route path="ticket-form" element={<TicketForm />} />
               <Route path="user">
                 <Route path="login"/>
