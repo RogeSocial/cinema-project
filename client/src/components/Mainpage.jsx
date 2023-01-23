@@ -52,7 +52,6 @@ export default function () {
           <Link to="movies"><button className="btn">MORE MOVIES</button></Link>
         </div>
 
-      
       </section>
     </div>
   );
