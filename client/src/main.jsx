@@ -4,7 +4,6 @@ import './index.css'
 import './styles.css'
 import Mainpage from './components/Mainpage.jsx'
 import {
-
     Route,
     BrowserRouter,
     Routes
@@ -18,9 +17,10 @@ import Tickets from './components/Tickets'
 import Reservations from './components/Reservations'
 import ScrollToTop from "./components/scrollToTop.jsx";
 import TicketForm from "./components/TicketForm.jsx";
+import Reserve from "./components/Reserve.jsx"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+    <React.StrictMode>
 
 
       <BrowserRouter>
@@ -28,22 +28,24 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Header />
           <Routes>
 
-              <Route path="/" element={<Mainpage />} />
-              <Route path="calender" element={<Calender />} />
-              <Route path="movies" element={<Movies/>} />
-              <Route path="tickets" element={<Tickets/>} />
-              <Route path="reservations" element={<Reservations/>} />
-              <Route path="ticket-form" element={<TicketForm />} />
-              <Route path="user">
-                <Route path="login"/>
-                <Route path="register"/>
-              </Route>
+                <Route path="/" element={<Mainpage />} />
+                <Route path="calender" element={<Calender />} />
+                <Route path="movies" element={<Movies />} />
+                <Route path="tickets" element={<Tickets />} />
+                <Route path="reservations" element={<Reservations />} />
 
-              </Routes>
-          <Footer />
-      </BrowserRouter>
+                <Route path="reserve" element={<Reserve />} />
+                <Route path="ticket-form" element={<TicketForm />} />
+                <Route path="user">
+                    <Route path="login" />
+                    <Route path="register" />
+                </Route>
 
-      {/*<RouterProvider router={
+            </Routes>
+            <Footer />
+        </BrowserRouter>
+
+        {/*<RouterProvider router={
           createBrowserRouter(
               createRoutesFromElements(
               <Route path="/" element={<Header />}>
@@ -60,5 +62,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                   )
                   }/> */}
 
-  </React.StrictMode>
+    </React.StrictMode>
 )
