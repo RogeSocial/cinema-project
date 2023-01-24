@@ -34,7 +34,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="movies/:id/:param" element={<TicketForm />} />
                 <Route path="tickets" element={<Tickets />} />
                 <Route path="reservations" element={<Reservations />} />
-
                 <Route path="reserve" element={<Reserve />} />
                 <Route path="ticket-form" element={<TicketForm />} />
                 <Route path="user">
