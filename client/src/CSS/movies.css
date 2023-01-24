@@ -128,8 +128,8 @@
 
 .movieLength{
   color: #8c8c8c;
-  position: relative;
-  left: 100px;
+  position: inherit;
+  bottom: 5rem;
   font-size: 20px;
   z-index: 2;
   visibility: visible;
