@@ -8,28 +8,30 @@ export default function () {
   const [movies, setMovies] = useState(movieArray);
   const [searchParams, setSearchParams] = useSearchParams()
   const showActiveFilter = searchParams.get('filter') === 'active';
-const [alpha, alphaSetCount] = useState(0)
-const [reverse, setReverse] = useState(0)
-const previous = useRef(0);
+    const previous = useRef(0);
+  const [alpha, setAlpha] = useState(null)
+const [reverse, setReverse] = useState(null);
   const removeFilter = () => {
     setSearchParams({})
     window.location.reload();
   }
-    useEffect(() => {
-      if (showActiveFilter) {
-     setMovies(sortAlpha(movies));
-        previous.current = alpha;
+
+
+
+  useEffect(() => {
+
+      if (showActiveFilter ) {
+          setMovies(sortAlpha())
       }
     }, [alpha]);
 
  useEffect(() => {
     if (showActiveFilter) {
-      setMovies(reverseAlpha(movies));
-        previous.current = reverse;
+            setMovies(reverseAlpha)
+
     }
+
   }, [reverse]);
-
-
 
   //variable to hold the value that the user is searching for
   const [searchString, setSearchString] = useState(null);
@@ -51,15 +53,15 @@ const previous = useRef(0);
         </div>
         <h2>Top Movies</h2>
 
-        {showActiveFilter ? (
+        { showActiveFilter ? (
                 <div className={"sort"}>
                 <button className="btn" id="movie-sort-btn"
-                        onClick={() => removeFilter()} value="Reload Page">Reset filter</button>
+                        onClick={() => removeFilter()}>Reset filter</button>
                 <button className="btn" id="movie-sort-btn"
-                        onClick={() => alphaSetCount(alpha +2)}> A-Z</button>
+                        onClick={() => setAlpha(alpha +1)}> A-Z</button>
                   <button className="btn" id="movie-sort-btn"
-                          onClick={() => setReverse(reverse +2)}> Z-A</button>
-
+                          onClick={() => setReverse(reverse + 1)}> Z-A</button>
+                    {console.log(movies )}
                 </div>
 
         ): (
