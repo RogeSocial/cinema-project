@@ -184,14 +184,12 @@ hr {
 }
 
 .calender {
-    display: absolute;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     background-color: #242333;
     color: var(--main_text_color);
-    padding-top: 240px; 
-    
+    padding-top: 240px;
 }
 
 #calenderSection {
@@ -237,10 +235,17 @@ hr {
     justify-content: center;
 }
 
+.movieLength{
+    color: #8c8c8c;
+    position: relative;
+    left: 100px;
+    font-size: 20px;
+    z-index: 2;
+    visibility: visible;
+}
 
 @media screen and (max-width: 550px){
 
-    
     .calender {
         justify-content: center;
         align-items: flex-start;
