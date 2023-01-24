@@ -35,6 +35,7 @@ export default function TicketForm() {
         <div style={{background: `url(${movie.background})`, backgroundSize: 'cover'}} className="ticket-form-page">
             <div className={"ticket-form-box form-row"}>
 
+
                 <div className={"movie-details"}>
                     <h1>{movie.title}</h1>
                     <iframe src={`https://www.youtube.com/embed/${movie.trailer}`} width="1020" height="600" frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>

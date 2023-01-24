@@ -16,20 +16,22 @@ export let movieArray = [
   {
     id: 2,
     title: "Hellraiser",
+    stars: 'Stars: Odessa A’zion, Jamie Clayton, Adam Faison',
+    release: '28 september 2022',
     trailer: 'oUlgwJNdu2I',
     text: "A take on Clive Barker's 1987 horror classic where a young woman struggling with addiction comes into possession of an ancient puzzle box, unaware that its purpose is to summon the Cenobites.",
-    stars: 'Stars: Odessa A’zion, Jamie Clayton, Adam Faison',
     image:
       "https://decider.com/wp-content/uploads/2022/10/HELLRAISER-HULU-REVIEW.jpg?quality=75&strip=all",
     date:[11,12,13,14,15,16,17,18,19,20],
     length: 122,
     param: "hellraiser",
-    release: '28 september 2022',
     background: "https://img.hulu.com/user/v3/artwork/eb138082-5c40-4a8f-aa30-3fc66ef615fd?base_image_bucket_name=image_manager&base_image=bb8c33aa-6af6-4303-8cb7-2aa598039a75&size=1600x900&format=jpeg"
   },
   {
     id: 3,
     title: "It",
+    stars: 'Bill Skarsgård, Jaeden Martell, Finn Wolfhard',
+    release: '13 september 2017',
     trailer: 'xKJmEC5ieOk',
     text: "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.",
     image: "https://c4.wallpaperflare.com/wallpaper/149/736/981/it-clown-bill-skarsgard-horror-wallpaper-preview.jpg",
@@ -41,8 +43,10 @@ export let movieArray = [
   {
     id: 4,
     title: "Paranormal Activity",
+    stars: 'Chris J. Murray, Brit Shaw, Ivy George',
+    release: '23 oktober 2015',
     trailer: "zR2cc1BwdmI",
-    text: "The Shining is a 1980 psychological horror film produced and directed by Stanley Kubrick and co-written with novelist Diane Johnson.",
+    text: "Using a special camera that can see spirits, a family must protect their daughter from an evil entity with a sinister plan.",
     image:
       "https://images.tbs.com/tbs/$dyna_params/https%3A%2F%2Fi.cdn.tbs.com%2Fassets%2Fimages%2F2019%2F10%2FParanormal-Activity-1920x1080.jpg",
     date:[31,2,14,21,28],
@@ -53,8 +57,10 @@ export let movieArray = [
   {
     id: 5,
     title: "The Nun",
+    stars: 'Demián Bichir, Taissa Farmiga, Jonas Bloquet',
+    release: '7 september 2018',
     trailer: 'G7kORFktHnM',
-    text: "A take on Clive Barker's 1987 horror classic where a young woman struggling with addiction comes into possession of an ancient puzzle box, unaware that its purpose is to summon the Cenobites.",
+    text: "A priest with a haunted past and a novice on the threshold of her final vows are sent by the Vatican to investigate the death of a young nun in Romania and confront a malevolent force in the form of a demonic nun.",
     image:
       "https://w0.peakpx.com/wallpaper/307/417/HD-wallpaper-the-nun-movie-the-nun-movies-2018-movies.jpg",
     date:[1,8,15,22,29],
@@ -65,8 +71,10 @@ export let movieArray = [
   {
     id: 6,
     title: "The Grudge",
+    stars: 'Sarah Michelle, GellarJason, BehrClea DuVall',
+    release: '14 january 2005',
     trailer: 'O2NKzO-fxwQ',
-    text: "Land of the Dead (also known as George A. Romero's Land of the Dead) is a 2005 post-apocalyptic horror film written and directed by George A. Romero; the fourth of Romero's six Living Dead movies, it is preceded by Night of the Living Dead, Dawn of the Dead and Day of the Dead, and succeeded by Diary of the Dead and Survival of the Dead.",
+    text: "An American nurse living and working in Tokyo is exposed to a mysterious supernatural curse, one that locks a person in a powerful rage before claiming their life and spreading to another victim.",
     image:
       "https://c4.wallpaperflare.com/wallpaper/502/400/889/dark-demon-film-grudge-wallpaper-preview.jpg",
     date:[3,10,17,24,31],
@@ -78,7 +86,9 @@ export let movieArray = [
     id: 7,
     title: "Rings",
     trailer: 'uukQ_6szDm8',
-    text: "The Ring is a 2002 American supernatural horror film directed by Gore Verbinski from a screenplay by Ehren Kruger, starring Naomi Watts, Martin Henderson, David Dorfman, Brian Cox, and Daveigh Chase.",
+    stars: 'Matilda Anna, Ingrid LutzAlex, RoeJohnny Galecki',
+    release: '1 february 2017',
+    text: "A young woman finds herself on the receiving end of a terrifying curse that threatens to take her life in 7 days.",
     image: 'https://wallpapercave.com/wp/wp4357758.jpg' ,
     date:[4,11,18,25,1],
     length: 132,
@@ -88,8 +98,10 @@ export let movieArray = [
   {
     id: 8,
     title: "Scream",
+    stars: 'Neve Campbell,Courteney Cox, David Arquette',
+    release: '14 january 2022',
     trailer: 'beToTslH17s ',
-    text: "Scream is a 1996 American slasher film[5] directed by Wes Craven and written by Kevin Williamson. The film stars Neve Campbell, David Arquette, Courteney Cox, Matthew Lillard, Rose McGowan, Skeet Ulrich, Jamie Kennedy, and Drew Barrymore.",
+    text: "25 years after a streak of brutal murders shocked the quiet town of Woodsboro, Calif., a new killer dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town's deadly past.",
     image:
       "https://4kwallpapers.com/images/wallpapers/scream-2022-movies-horror-movies-thriller-black-background-1284x2778-6756.jpg",
     date:[5,12,19,26,2],
@@ -100,6 +112,8 @@ export let movieArray = [
   {
     id: 9,
     title: "Ouija: Origin of Evil",
+    stars: 'Elizabeth Reaser, Lulu Wilson, Annalise Basso',
+    release: '21 oktober 2016',
     trailer: 'MJIcZGEjjwo',
     text: "Ouija: Origin of Evil is a 2016 American supernatural horror film directed and edited by Mike Flanagan and written by Flanagan and Jeff Howard. The film is a prequel to the 2014 film Ouija and stars Elizabeth Reaser, Annalise Basso, and Henry Thomas.",
     image: "https://www.hdwallpapers.in/thumbs/2016/ouija_origin_of_evil_4k-t2.jpg",
