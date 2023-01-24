@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import '../CSS/ticket-form.css'
 import { movieArray } from './MovieData';
 
+
 export default function TicketForm() {
     const movieId = useParams().id
     const movie = movieArray.find(m=>m.id == movieId)
@@ -18,13 +19,30 @@ export default function TicketForm() {
         )
     }
 
+    self.addEventListener('fetch', event => {
+        event.respondWith(
+          (async function() {
+            const preloadResponse = await event.preloadResponse;
+            if (preloadResponse) {
+              return preloadResponse;
+            }
+            return fetch(event.request);
+          })()
+        );
+      });
+
+     
+
+
     return (
-        <div className={"ticket-form-page"}>
+        <div style={{background: `url(${movie.background})`, backgroundSize: 'cover'}} className="ticket-form-page">
             <div className={"ticket-form-box form-row"}>
 
                 <div className={"movie-details"}>
                     <h1>{movie.title}</h1>
-                    <p>{movie.text}</p>
+                    <iframe src={`https://www.youtube.com/embed/${movie.trailer}`} width="1020" height="600" frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>                    <p>{movie.text}</p>
+
+
                 </div>
                 <form className={"ticket-form"}>
                     <h3>Purchase tickets</h3>
@@ -45,8 +63,8 @@ export default function TicketForm() {
                     <div className='ticket-picker-in-form'>
                         Insert ticket-picker here
                     </div>
-
-                    <button type={"submit"} className={"ticket-submit btn"}>Chose seats</button>
+                    
+                    <button  type={"submit"} className={"ticket-submit btn "}>Chose seats</button>
                 </form>
 
         </div>

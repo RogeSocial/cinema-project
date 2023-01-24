@@ -3,6 +3,7 @@
 .ticket-form-page {
     background: url("../images/ticket.jpg");
     background-size: cover;
+    height: 100vh;
 }
 
 .ticket-form-box {
