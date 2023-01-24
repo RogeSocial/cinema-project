@@ -8,9 +8,9 @@ export default function () {
   const [movies, setMovies] = useState(movieArray);
   const [searchParams, setSearchParams] = useSearchParams()
   const showActiveFilter = searchParams.get('filter') === 'active';
-    const previous = useRef(0);
-  const [alpha, setAlpha] = useState(null)
-const [reverse, setReverse] = useState(null);
+
+  const [alpha, setAlpha] = useState(0)
+const [reverse, setReverse] = useState(0);
   const removeFilter = () => {
     setSearchParams({})
     window.location.reload();
@@ -21,14 +21,21 @@ const [reverse, setReverse] = useState(null);
   useEffect(() => {
 
       if (showActiveFilter ) {
-          setMovies(sortAlpha())
+          if(alpha <= 2){
+              setAlpha(alpha + 1)
+          setMovies(sortAlpha)
+              setAlpha(0)
+      }
       }
     }, [alpha]);
 
  useEffect(() => {
     if (showActiveFilter) {
-            setMovies(reverseAlpha)
-
+        if(reverse <= 2){
+            setReverse(reverse +1)
+        setMovies(reverseAlpha)
+            setReverse(0)
+    }
     }
 
   }, [reverse]);
@@ -61,7 +68,7 @@ const [reverse, setReverse] = useState(null);
                         onClick={() => setAlpha(alpha +1)}> A-Z</button>
                   <button className="btn" id="movie-sort-btn"
                           onClick={() => setReverse(reverse + 1)}> Z-A</button>
-                    {console.log(movies )}
+
                 </div>
 
         ): (
