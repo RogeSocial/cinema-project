@@ -17,8 +17,8 @@ function Seats() {
                 let plusSeat = false;
                 if(i === 3){
                     plusSeat = true;
-                    console.log("plusSeat");
                 }
+                
                 newSeats.push({ id: i * 8 + j + 1, seat: j + 1, row: i + 1, occupied: occupied, selected: false, available: true, plusSeat: plusSeat});
             }
         }
@@ -29,16 +29,7 @@ function Seats() {
         let element = event.target;
         let updatedSeats = [...seats];
         let selectedSeat = updatedSeats.find(seat => seat.id === parseInt(element.id));
-        let normalPrice = 0;
-        let plusPrice = 0;
-        if(selectedSeat.plusSeat){
-            plusPrice = 12;
-            console.log("plus");
-        }
-        else{
-            normalPrice = 10;
-            console.log("normal");
-        }
+      
         if(!selectedSeat.occupied){
             selectedSeat.selected = !selectedSeat.selected;
             setSeats(updatedSeats);
@@ -50,7 +41,6 @@ function Seats() {
             let selectedSeatsPlusCount = selectedSeatsPlus.length;
 
             // Update the message displayed in the "message" div
-            console.log("normal: " + selectedSeatsCount + " plus: "+ selectedSeatsPlusCount);
             setMessage(`You have selected ${selectedSeatsCount + selectedSeatsPlusCount} seats ${(selectedSeatsCount * 10) + (selectedSeatsPlusCount * 12)}$`);
         }
     }
