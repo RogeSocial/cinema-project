@@ -30,23 +30,32 @@ export default function() {
         }
         });
 
-    return <section className="calender">
-            <h2>Buy Tickets</h2>
-
-            <div ref={calenderRef}>
-            <div className="calender-dropdown" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
-                <div>{dateString}</div>
+    return <section id="calenderSection" className="calender">
+        <div className="wrap">
+       
+        <div id="selectedDate">{dateString}</div>
+        <hr />
+            <h2 id="buyTicketsTitle">Buy Tickets</h2>
+            <hr />
+            <div id="calender-box" ref={calenderRef}>
+       
+            <div id="btn" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
+        
                 <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`}>
                     {calculateCurrentDate()}
                     <ul onClick={()=>{setOpen(!open)}}>
                     {dates.map((item) =>
+                    
                         <div className="calender-list" key={dates.id}>
                             <div onClick={function (e){setDate(item.day, item.month, returnDayName(item.dayName))}}>
                                 {item.day} / {item.month} - {returnDayName(item.dayName)}
+                                
                             </div>
+                            
                         </div>
                     )}
                     </ul>
+                    </div>
                 </div>
             </div>
         <MoviesOnDate/>
@@ -72,15 +81,17 @@ function MoviesOnDate(){
         }
     }
     return(
-        <>
+      
+        <div className="wrapMovieList">
         {tmpArray.map((item) =>
+       
             <div className="movie-list" key={item.id}>
-                <h3>{item.title}</h3>
-                <img src={item.image} alt="a picture of a movie"/>
-                <div className={"movieLength"}>{hoursAndMinutes(item.length)}</div>
+            <h3 id="moveTitle">{item.title}</h3>
+            <img id="movieImg" src={item.image} alt="a picture of a movie"/>
+            <div className={"movieLength"}>{hoursAndMinutes(item.length)}</div>
             </div>
         )}
-        </>
+        </div>
     );
 }
 
