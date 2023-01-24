@@ -34,7 +34,7 @@ export default function () {
           searchString === null || searchString === ""
             ? movies
             : movies.filter((movie) =>
-                returnsMovieTitlesThatIncludesTheSearch(movie, searchString)
+                returnMoviesThatContainThisString(movie, searchString)
               )
         }
       />
@@ -42,7 +42,7 @@ export default function () {
   );
 }
 
-function returnsMovieTitlesThatIncludesTheSearch(movie, searchString) {
+function returnMoviesThatContainThisString(movie, searchString) {
   //prototype algoritm
   let title = movie.title.toLowerCase();
   let string = searchString.toLowerCase();
