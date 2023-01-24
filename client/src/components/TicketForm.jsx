@@ -31,18 +31,17 @@ export default function TicketForm() {
         );
       });
 
-     
-
-
     return (
         <div style={{background: `url(${movie.background})`, backgroundSize: 'cover'}} className="ticket-form-page">
             <div className={"ticket-form-box form-row"}>
 
                 <div className={"movie-details"}>
                     <h1>{movie.title}</h1>
-                    <iframe src={`https://www.youtube.com/embed/${movie.trailer}`} width="1020" height="600" frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>                    <p>{movie.text}</p>
-
-
+                    <iframe src={`https://www.youtube.com/embed/${movie.trailer}`} width="1020" height="600" frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    <p className='movieText'>{movie.text}</p>
+                    <p className='movieInfo'>Stars: {movie.stars}</p>
+                    <p className="movieInfo">Length: {movie.length}m</p>
+                    <p className="movieInfo">Release date: {movie.release}</p>
                 </div>
                 <form className={"ticket-form"}>
                     <h3>Purchase tickets</h3>

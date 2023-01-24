@@ -4,11 +4,13 @@ export let movieArray = [
     title: "Friday the 13th",
     trailer: 'cCfO1aB8CIE',
     text: "A group of young adults visit a boarded up campsite named Crystal Lake where they soon encounter the mysterious Jason Voorhees and his deadly intentions.",
+    stars: 'Jared Padalecki, Amanda Righetti, Derek Mears',
     image:
       "https://images5.alphacoders.com/442/442591.jpg",
     date:[11,2,3,4,5,6,7,8,9,10],
     param: "Friday-the-13th",
     length: 120,
+    release: '13 february 2009',
     background: "https://wallpapercave.com/wp/wp3940179.jpg"
   },
   {
