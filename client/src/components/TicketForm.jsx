@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import '../CSS/ticket-form.css'
 import { movieArray } from './MovieData';
 
@@ -34,7 +34,7 @@ export default function TicketForm() {
                         Insert ticket-picker here
                     </div>
 
-                    <button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button>
+                    <Link to="/reserve"><button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button></Link>
                 </form>
 
         </div>
