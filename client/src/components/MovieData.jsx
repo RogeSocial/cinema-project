@@ -1,90 +1,125 @@
 export let movieArray = [
   {
     id: 1,
-    title: "Bram Stoker's Dracula",
-    text: "Bram Stoker's Dracula is a 1992 American Gothic horror film directed and produced by Francis Ford Coppola, based on the 1897 novel Dracula by Bram Stoker",
+    title: "Friday the 13th",
+    trailer: 'cCfO1aB8CIE',
+    text: "A group of young adults visit a boarded up campsite named Crystal Lake where they soon encounter the mysterious Jason Voorhees and his deadly intentions.",
+    stars: 'Jared Padalecki, Amanda Righetti, Derek Mears',
     image:
-      "https://i.pinimg.com/originals/a2/b5/f7/a2b5f7baac617b3918457722da8a8767.jpg",
-    date:[1,2,3,4,5,6,7,8,9,10],
-    param: "bram-stokers-dracula",
-    length: 120
+      "https://images5.alphacoders.com/442/442591.jpg",
+    date:[11,2,3,4,5,6,7,8,9,10],
+    param: "Friday-the-13th",
+    length: 120,
+    release: '13 february 2009',
+    background: "https://wallpapercave.com/wp/wp3940179.jpg"
   },
   {
     id: 2,
     title: "Hellraiser",
-    text: "Hellraiser is a 1987 British supernatural horror film[6] written and directed by Clive Barker, and produced by Christopher Figg, based on Barker's 1986 novella The Hellbound Heart.",
+    stars: 'Stars: Odessa A’zion, Jamie Clayton, Adam Faison',
+    release: '28 september 2022',
+    trailer: 'oUlgwJNdu2I',
+    text: "A take on Clive Barker's 1987 horror classic where a young woman struggling with addiction comes into possession of an ancient puzzle box, unaware that its purpose is to summon the Cenobites.",
     image:
-      "https://e0.pxfuel.com/wallpapers/341/650/desktop-wallpaper-pinhead-pinhead-thumbnail.jpg",
+      "https://decider.com/wp-content/uploads/2022/10/HELLRAISER-HULU-REVIEW.jpg?quality=75&strip=all",
     date:[11,12,13,14,15,16,17,18,19,20],
     length: 122,
-    param: "hellraiser"
+    param: "hellraiser",
+    background: "https://img.hulu.com/user/v3/artwork/eb138082-5c40-4a8f-aa30-3fc66ef615fd?base_image_bucket_name=image_manager&base_image=bb8c33aa-6af6-4303-8cb7-2aa598039a75&size=1600x900&format=jpeg"
   },
   {
     id: 3,
-    title: "Jacob's Ladder",
-    text: "Jacob's Ladder is a 1990 American psychological horror film[4] directed by Adrian Lyne, produced by Alan Marshall and written by Bruce Joel Rubin.",
-    image: "http://wallpaperset.com/w/full/a/9/a/375399.jpg",
+    title: "It",
+    stars: 'Bill Skarsgård, Jaeden Martell, Finn Wolfhard',
+    release: '13 september 2017',
+    trailer: 'xKJmEC5ieOk',
+    text: "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.",
+    image: "https://c4.wallpaperflare.com/wallpaper/149/736/981/it-clown-bill-skarsgard-horror-wallpaper-preview.jpg",
     date:[21,22,23,24,25,26,27,28,29,30],
     length: 124,
-    param: "jacobs-ladder"
+    param: "jacobs-ladder",
+    background: "https://wallpaperaccess.com/full/37961.jpg"
   },
   {
     id: 4,
-    title: "The Shining",
-    text: "The Shining is a 1980 psychological horror film produced and directed by Stanley Kubrick and co-written with novelist Diane Johnson.",
+    title: "Paranormal Activity",
+    stars: 'Chris J. Murray, Brit Shaw, Ivy George',
+    release: '23 oktober 2015',
+    trailer: "zR2cc1BwdmI",
+    text: "Using a special camera that can see spirits, a family must protect their daughter from an evil entity with a sinister plan.",
     image:
-      "https://i.guim.co.uk/img/media/68a5a828e8ebf46df1b62fcb3f09ab78dcfbc33f/12_0_3440_2064/master/3440.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=bb24447c29573d2dcb7942acae72c56a",
+      "https://images.tbs.com/tbs/$dyna_params/https%3A%2F%2Fi.cdn.tbs.com%2Fassets%2Fimages%2F2019%2F10%2FParanormal-Activity-1920x1080.jpg",
     date:[31,2,14,21,28],
     length: 126,
-    param: "the-shining"
+    param: "the-shining",
+    background: "https://images.tbs.com/tbs/$dyna_params/https%3A%2F%2Fi.cdn.tbs.com%2Fassets%2Fimages%2F2019%2F10%2FParanormal-Activity-1920x1080.jpg"
   },
   {
     id: 5,
-    title: "The Mist",
-    text: "The Mist (also known as Stephen King's The Mist) is a 2007 American science-fiction horror film based on the 1980 novella The Mist by Stephen King. The film was written and directed by Frank Darabont.",
+    title: "The Nun",
+    stars: 'Demián Bichir, Taissa Farmiga, Jonas Bloquet',
+    release: '7 september 2018',
+    trailer: 'G7kORFktHnM',
+    text: "A priest with a haunted past and a novice on the threshold of her final vows are sent by the Vatican to investigate the death of a young nun in Romania and confront a malevolent force in the form of a demonic nun.",
     image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUMOJI5WGX4QxVYalQkhZCqv4RfNPPclbPsQ&usqp=CAU",
+      "https://w0.peakpx.com/wallpaper/307/417/HD-wallpaper-the-nun-movie-the-nun-movies-2018-movies.jpg",
     date:[1,8,15,22,29],
     length: 128,
-    param: "the-mist"
+    param: "the-mist",
+    background: "https://images2.alphacoders.com/936/936582.jpg"
   },
   {
     id: 6,
-    title: "Land of the Dead",
-    text: "Land of the Dead (also known as George A. Romero's Land of the Dead) is a 2005 post-apocalyptic horror film written and directed by George A. Romero; the fourth of Romero's six Living Dead movies, it is preceded by Night of the Living Dead, Dawn of the Dead and Day of the Dead, and succeeded by Diary of the Dead and Survival of the Dead.",
+    title: "The Grudge",
+    stars: 'Sarah Michelle, GellarJason, BehrClea DuVall',
+    release: '14 january 2005',
+    trailer: 'O2NKzO-fxwQ',
+    text: "An American nurse living and working in Tokyo is exposed to a mysterious supernatural curse, one that locks a person in a powerful rage before claiming their life and spreading to another victim.",
     image:
-      "https://thumbs.dreamstime.com/b/scary-tree-shadow-red-background-halloween-dark-creepy-forest-59589126.jpg",
+      "https://c4.wallpaperflare.com/wallpaper/502/400/889/dark-demon-film-grudge-wallpaper-preview.jpg",
     date:[3,10,17,24,31],
   length: 130,
-    param: "land-of-the-dead"
+    param: "land-of-the-dead",
+    background: 'https://r4.wallpaperflare.com/wallpaper/445/200/897/bunshinsaba-dark-evil-film-wallpaper-31b293f6a52789800ff3681dfeae5849.jpg'
   },
   {
     id: 7,
-    title: "The Ring",
-    text: "The Ring is a 2002 American supernatural horror film directed by Gore Verbinski from a screenplay by Ehren Kruger, starring Naomi Watts, Martin Henderson, David Dorfman, Brian Cox, and Daveigh Chase.",
-    image:
-      "https://horrorobsessive.com/wp-content/uploads/2021/06/ring-1280x720-1-e1624126343512.gif",
+    title: "Rings",
+    trailer: 'uukQ_6szDm8',
+    stars: 'Matilda Anna, Ingrid LutzAlex, RoeJohnny Galecki',
+    release: '1 february 2017',
+    text: "A young woman finds herself on the receiving end of a terrifying curse that threatens to take her life in 7 days.",
+    image: 'https://wallpapercave.com/wp/wp4357758.jpg' ,
     date:[4,11,18,25,1],
     length: 132,
-    param: "the-ring"
+    param: "the-ring",
+    background: 'https://images2.alphacoders.com/824/824908.jpg'
   },
   {
     id: 8,
     title: "Scream",
-    text: "Scream is a 1996 American slasher film[5] directed by Wes Craven and written by Kevin Williamson. The film stars Neve Campbell, David Arquette, Courteney Cox, Matthew Lillard, Rose McGowan, Skeet Ulrich, Jamie Kennedy, and Drew Barrymore.",
+    stars: 'Neve Campbell,Courteney Cox, David Arquette',
+    release: '14 january 2022',
+    trailer: 'beToTslH17s ',
+    text: "25 years after a streak of brutal murders shocked the quiet town of Woodsboro, Calif., a new killer dons the Ghostface mask and begins targeting a group of teenagers to resurrect secrets from the town's deadly past.",
     image:
       "https://4kwallpapers.com/images/wallpapers/scream-2022-movies-horror-movies-thriller-black-background-1284x2778-6756.jpg",
     date:[5,12,19,26,2],
     length: 134,
-    param: "scream"
+    param: "scream",
+    background: 'https://images7.alphacoders.com/122/1226941.jpg'
   },
   {
     id: 9,
     title: "Ouija: Origin of Evil",
+    stars: 'Elizabeth Reaser, Lulu Wilson, Annalise Basso',
+    release: '21 oktober 2016',
+    trailer: 'MJIcZGEjjwo',
     text: "Ouija: Origin of Evil is a 2016 American supernatural horror film directed and edited by Mike Flanagan and written by Flanagan and Jeff Howard. The film is a prequel to the 2014 film Ouija and stars Elizabeth Reaser, Annalise Basso, and Henry Thomas.",
-    image: "https://images3.alphacoders.com/808/thumb-1920-808740.jpg",
+    image: "https://www.hdwallpapers.in/thumbs/2016/ouija_origin_of_evil_4k-t2.jpg",
     date:[6,13,20,27,3],
     length: 136,
-    param: "ouija-origin-of-evil"
+    param: "ouija-origin-of-evil",
+    background: 'https://cdn-cc-image-api-p001.cc.vubiquity.com/sf-api/image?i=https://vucscdnprodne.azureedge.net/images/vmest_prod/1/furniture/VX-5841161_1920x1080.PNG?q=80'
   },
 ];

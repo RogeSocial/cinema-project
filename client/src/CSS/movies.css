@@ -7,7 +7,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: var(--main_text_color);
   padding-top: 240px; /* amount moved down from navbar */
 }
