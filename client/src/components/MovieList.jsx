@@ -15,3 +15,9 @@ export default function ({ movies }) {
     </>
   );
 }
+
+export function hoursAndMinutes(inMinutes){
+  let hours = Math.trunc(inMinutes / 60);
+  let minutes = inMinutes % 60;
+  return (hours + "h " + minutes + "m");
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 export default function() {
@@ -9,33 +10,35 @@ export default function() {
         <footer>
             <div>
                 <h1 className={"codinema"}>Codinema</h1>
-                I am a paragraph, Click here to add some extra text and stuff like that. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.
+                Codinema is the ultimate cinema for horror movie fans. Our state-of-the-art theater boasts high-definition projectors, surround sound, and comfortable seating, immersing you in a truly terrifying experience.
             </div>
             <div>
                 <h1>Contact</h1>
-                500 Terry francis street<br/>
-                San Fransisco CA 94158<br/>
-                info@mysite.se<br/>
-                tel: 123-456 789
+                Codinema<br/>
+                Nightmare avenue 666<br/>
+                211 20 Malmö
+                <p>info@codinematheatre.se<br/>
+                tel: 123-456 789</p>
             </div>
             <div>
                 <h1>Quick menu</h1>
                 <ul>
-                    <li><a href={"/movies"}>Movies</a></li>
-                    <li><a href={"/account"}>Account</a></li>
-                    <li><a href={"/home"}>Home</a></li>
+                    <li className="footer-link"><Link to={"/"}>Home</Link></li>
+                    <li className="footer-link"><Link to={"/movies"}>Movies</Link></li>
+                    <li className="footer-link"><Link to={"/calender"}>Tickets</Link></li>
+                    <li className="footer-link"><Link to={"/reservations"}>Reservations</Link></li>
+                    <li className="footer-link"><Link to={"/tickets"}>Account</Link></li>
                 </ul>
             </div>
             <div>
                 <h1>Socials</h1>
                 <ul>
-                    <li><a href={"http://www.facebook.com"} target={'blank'}>Facebook</a></li>
-                    <li><a href={"http://www.instagram.com"} target={'blank'}>Instagram</a></li>
-                    <li><a href={"http://www.twitter.com"} target={'blank'}>Twitter</a></li>
-                    <li><a href={"http://www.youtube.com"} target={'blank'}>Youtube</a></li>
+                    <li className="footer-link"><a href={"http://www.facebook.com"} target={"_blank"}>Facebook</a></li>
+                    <li className="footer-link"><a href={"http://www.instagram.com/"} target={"_blank"}>Instagram</a></li>
+                    <li className="footer-link"><a href={"http://twitter.com/codinematheatre"} target={"_blank"}>Twitter</a></li>
+                    <li className="footer-link"><a href={"http://www.youtube.com/"} target={"_blank"}>Youtube</a></li>
                 </ul>
             </div>
-
     </footer>
     </>
 }
