@@ -127,6 +127,17 @@
   text-decoration: none;
 }
 
+.movie-card h4 {
+  position: absolute;
+  color: lightgray;
+  font-size: 10px;
+  font-weight: 200;
+  padding-top: 21.5rem;
+  padding-left: 19.5rem;
+  z-index: 2;
+  font-size: 18px;
+}
+
 .movie-card:hover {
   cursor: pointer;
   transform: scale(1.05);
@@ -134,8 +145,8 @@
 
 .movieLength{
   color: #8c8c8c;
-  position: relative;
-  left: 100px;
+  position: inherit;
+  bottom: 5rem;
   font-size: 20px;
   z-index: 2;
   visibility: visible;
