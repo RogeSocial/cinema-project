@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
-/*
-* {
-    outline: solid 1px green;
-}
-*/
-
 :root {
     --body_background_color: rgb(6, 57, 84);
     --header_background_color: gray;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import '../CSS/ticket-form.css'
 import { movieArray } from './MovieData';
 
@@ -51,8 +51,18 @@ export default function TicketForm() {
                         { dateSelector()}
                         <li>The chosen time </li>
                     </ul>
-                    
-                    <button  type={"submit"} className={"ticket-submit btn "}>Chose seats</button>
+
+                    <h3>Your contact information</h3>
+                    <ul className='ticket-list'>
+                        <li>Phone: user account number</li>
+                        <li>E-mail: user account e-mail</li>
+                    </ul>
+
+                    <div className='ticket-picker-in-form'>
+                        Insert ticket-picker here
+                    </div>
+
+                    <Link to="/reserve"><button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button></Link>
                 </form>
                 </div>
 
