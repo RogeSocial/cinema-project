@@ -25,7 +25,7 @@ export default function () {
       </section>
       <section className="section-top-movies">
         <h1 className="title">OUR TOP MOVIES</h1>
-        <div className="top-movies">
+        <div id="top-movies">
           <MovieList movies={movieArray.filter( (movie) => {
             if (movie.id === 1 || movie.id === 2 || movie.id === 3) {
               return true;
