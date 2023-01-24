@@ -9,8 +9,6 @@ export default function ({ movies }) {
         <div className="movie-list" key={movie.id}>
           <h3> {movie.title} </h3>
           <Link to={`${movie.id}`}><img src={movie.image} alt="a picture of a movie" /></Link>
-          <div className={"movieLength"}>{hoursAndMinutes(movie.length)}</div>
-
         </div>
         
       ))}
