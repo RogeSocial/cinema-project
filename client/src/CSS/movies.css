@@ -108,6 +108,7 @@
   justify-content: center;
   text-align: center;
   padding: 1rem;
+  transition: 1s;
 }
 
 .movie-card img {
@@ -128,6 +129,7 @@
 
 .movie-card:hover {
   cursor: pointer;
+  transform: scale(1.05);
 }
 
 .movieLength{

@@ -1,8 +1,10 @@
 import "../CSS/calender.css"
 import "../CSS/movies.css"
-import {useEffect, useRef, useState} from "react";
-import {movieArray} from "./MovieData.jsx";
-import MovieList, {hoursAndMinutes} from "./MovieList.jsx";
+import "../CSS/home.css"
+
+import { useEffect, useRef, useState } from "react";
+import { movieArray } from "./MovieData.jsx";
+import MovieList, { hoursAndMinutes } from "./MovieList.jsx";
 
 let dates = [];
 const daysForward = 21;
@@ -14,7 +16,7 @@ let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 export default function() {
     {dates=[]}
     const [open, setOpen] = useState(false);
-    const[moviesOnDate1, setMoviesOnDate] = useState(movieArray);
+    const [movies] = useState(movieArray);
 
     let calenderRef = useRef();
 
@@ -29,6 +31,20 @@ export default function() {
             document.removeEventListener("mousedown", handler);
         }
         });
+
+
+    //compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
+    function moviesOnDate() {
+        let tmpArray = [];
+        for (let i = 0; i < movieArray.length; i++) {
+            for (let j = 0; j < movieArray[i].date.length; j++) {
+                if (movieArray[i].date[j] === dateInNumbers.date) {
+                    tmpArray.push(movieArray[i]);
+                }
+            }
+        }
+        return tmpArray;
+    }
 
     return <section id="calenderSection" className="calender">
         <div className="wrap">
@@ -46,20 +62,21 @@ export default function() {
                     <ul onClick={()=>{setOpen(!open)}}>
                     {dates.map((item) =>
                     
-                        <div className="calender-list" key={dates.id}>
+                        <div className="calender-list" key={item.id}>
                             <div onClick={function (e){setDate(item.day, item.month, returnDayName(item.dayName))}}>
                                 {item.day} / {item.month} - {returnDayName(item.dayName)}
-                                
                             </div>
                             
                         </div>
                     )}
                     </ul>
-                    </div>
                 </div>
             </div>
-        <MoviesOnDate/>
-            </section>
+        </div>
+        <div id="top-movies">
+            <MovieList movies={moviesOnDate()}/>
+        </div>
+    </section>
 }
 
 function setDate(inDate, inMonth, inWeekDay) {
@@ -69,35 +86,9 @@ function setDate(inDate, inMonth, inWeekDay) {
     dateString = dateInNumbers.date + " / " + dateInNumbers.month + "-" + dateInNumbers.weekDay;
 }
 
-
-//compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
-function MoviesOnDate(){
-    let tmpArray = [];
-    for(let i = 0; i < movieArray.length; i++){
-        for(let j = 0; j < movieArray[i].date.length; j++) {
-            if (movieArray[i].date[j] === dateInNumbers.date) {
-                tmpArray.push(movieArray[i]);
-            }
-        }
-    }
-    return(
-      
-        <div className="wrapMovieList">
-        {tmpArray.map((item) =>
-       
-            <div className="movie-card" key={item.id}>
-            <h3 id="moveTitle">{item.title}</h3>
-            <img id="movieImg" src={item.image} alt="a picture of a movie"/>
-            <div className={"movieLength"}>{hoursAndMinutes(item.length)}</div>
-            </div>
-        )}
-        </div>
-    );
-}
-
 //Calculates the dates and puts it in the array "dates"
-function calculateCurrentDate(){
-    for(let i = 0; i < daysForward; i++){
+function calculateCurrentDate() {
+    for (let i = 0; i < daysForward; i++) {
         let today = new Date();
         let dateLimit = new Date(new Date().setDate(today.getDate() + i));
         let object = {};
