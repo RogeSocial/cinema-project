@@ -7,7 +7,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: black;
+  background-color: rgb(0, 0, 0);
   color: var(--main_text_color);
   padding-top: 240px; /* amount moved down from navbar */
 }
@@ -101,16 +101,17 @@
     margin-top: 3.5rem;
 }
 
-.movie-list {
+.movie-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 1rem;
+  transition: 1s;
 }
 
-.movie-list img {
+.movie-card img {
   position: relative;
   border-radius: 20px;
   width: 300px;
@@ -121,10 +122,24 @@
   justify-content: center;
 }
 
-.movie-list:hover {
-  transform: scale(1.05);
+.movie-card h3 {
+  color: var(--main_text_color);
+  text-decoration: none;
+}
+
+.movie-card:hover {
   cursor: pointer;
-}     
+  transform: scale(1.05);
+}
+
+.movieLength{
+  color: #8c8c8c;
+  position: relative;
+  left: 100px;
+  font-size: 20px;
+  z-index: 2;
+  visibility: visible;
+}
 
 @media screen and (min-width: 680px) {
   .movies {

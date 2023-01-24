@@ -125,36 +125,31 @@ h2 {
     padding: 20px;
 }
 
-.top-movies {
+#top-movies {
     display: flex;
     justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
-    transition: all 2s ease-in-out;
 }
 
-.top-movies img {
-    height: 500px;
-    width: 500px;
-    transition: 1.5s;
+#top-movies img {
+    height: 400px;
+    width: 400px;
+
 }
 
-.top-movies img:hover {
+#top-movies img:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
 
-.top-movies h3 {
+#top-movies h3 {
     position: absolute;
     z-index: 2;
     font-size: 25px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont;
     font-weight: 600;
   }
-
-.top-movies h3:hover {
-    transform: scale(1.1);
-}
 
 @media screen and (max-width: 550px) {
     .top-movies img {

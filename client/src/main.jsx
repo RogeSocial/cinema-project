@@ -29,25 +29,23 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <ScrollToTop/>
           <Header />
           <Routes>
-
-              <Route path="/" element={<Mainpage />} />
-              <Route path="calender" element={<Calender />} />
-              <Route path="movies" element={<Movies/>} />
-              <Route path="tickets" element={<Tickets/>} />
-              <Route path="reservations" element={<Reservations/>} />
+                <Route path="/" element={<Mainpage />} />
+                <Route path="/:id/:param" element={<TicketForm />} />
+                <Route path="calender" element={<Calender />} />
+                <Route path="/calender/:id/:param" element={<TicketForm />} />
+                <Route path="movies" element={<Movies />} />
+                <Route path="movies/:id/:param" element={<TicketForm />} />
+                <Route path="tickets" element={<Tickets />} />
+                <Route path="reservations" element={<Reservations />} />
               <Route path="*" element={<PageNotFound/>}/>
-              <Route path="reserve" element={<Reserve />} />
-              <Route path="ticket-form" element={<TicketForm />} />
-              <Route path="user">
-                <Route path="login"/>
-                <Route path="register"/>
-              </Route>
-
-              </Routes>
-          <Footer />
-      </BrowserRouter>
-
-
-
+                  <Route path="reserve" element={<Reserve />} />
+                <Route path="ticket-form" element={<TicketForm />} />
+                <Route path="user">
+                    <Route path="login" />
+                    <Route path="register" />
+                </Route>
+            </Routes>
+            <Footer />
+        </BrowserRouter>
   </React.StrictMode>
 )

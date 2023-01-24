@@ -1,4 +1,4 @@
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useState } from "react";
 import MovieList from "./MovieList";
 import { movieArray } from "./MovieData";
 import { useSearchParams} from "react-router-dom";
@@ -42,6 +42,7 @@ const [reverse, setReverse] = useState(0);
 
   //variable to hold the value that the user is searching for
   const [searchString, setSearchString] = useState(null);
+
   //sets searchString to the value entered by the user in the search field
   const handlesSearch = (event) => {
     setSearchString(event.target.value);
@@ -83,10 +84,12 @@ const [reverse, setReverse] = useState(0);
       </div>
       <MovieList
         movies={
-          searchString === null || searchString === ""
-            ? movies
-            : movies.filter((movie) =>
-                returnsMovieTitlesThatIncludesTheSearch(movie, searchString)
+          ifSearchIsInvalid(searchString)
+            ? //then show all
+              movies
+            : //else
+              movies.filter((movie) =>
+                filterMoviesBasedOnSearch(movie, searchString)
               )
         }
       />
@@ -94,8 +97,15 @@ const [reverse, setReverse] = useState(0);
   );
 }
 
-function returnsMovieTitlesThatIncludesTheSearch(movie, searchString) {
-  //prototype algoritm
+function ifSearchIsInvalid(search) {
+  if (search === null || search === "") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function filterMoviesBasedOnSearch(movie, searchString) {
   let title = movie.title.toLowerCase();
   let string = searchString.toLowerCase();
 
