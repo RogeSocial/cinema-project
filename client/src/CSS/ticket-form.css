@@ -51,6 +51,10 @@
     list-style: none;
 }
 
+.date-picker {
+    min-width: 100px;
+}
+
 @media only screen and (min-width: 600px) {
     .ticket-form-page {
         display: flex;
@@ -77,6 +81,7 @@
     .form-row {
         display: flex;
         flex-direction: row;
+        max-width: 90%;
     }
 
     .ticket-form {

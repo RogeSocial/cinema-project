@@ -6,6 +6,18 @@ import { movieArray } from './MovieData';
 export default function TicketForm() {
     const movieId = useParams().id
     const movie = movieArray.find(m=>m.id == movieId)
+
+
+    function dateSelector() {
+        return (
+            <select name="dates" id="dates" className='date-picker'>
+                {movie.date.map((option, index) => {
+                    return <option key= {index} > {option} </option>
+                })}
+            </select>
+        )
+    }
+
     return (
         <div className={"ticket-form-page"}>
             <div className={"ticket-form-box form-row"}>
@@ -18,9 +30,9 @@ export default function TicketForm() {
                     <h3>Purchase tickets</h3>
 
                     <ul className='ticket-list'>
-                        <li>The chosen date </li>
+                        <li>Available dates:  </li>
+                        { dateSelector()}
                         <li>The chosen time </li>
-                        <li>Movie theatre adress</li>
                         <li>Ticket price</li>
                     </ul>
 
@@ -34,7 +46,7 @@ export default function TicketForm() {
                         Insert ticket-picker here
                     </div>
 
-                    <button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button>
+                    <button type={"submit"} className={"ticket-submit btn"}>Chose seats</button>
                 </form>
 
         </div>
