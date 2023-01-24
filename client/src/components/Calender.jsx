@@ -46,10 +46,9 @@ export default function() {
                     <ul onClick={()=>{setOpen(!open)}}>
                     {dates.map((item) =>
                     
-                        <div className="calender-list" key={dates.id}>
+                        <div className="calender-list" key={item.id}>
                             <div onClick={function (e){setDate(item.day, item.month, returnDayName(item.dayName))}}>
                                 {item.day} / {item.month} - {returnDayName(item.dayName)}
-                                
                             </div>
                             
                         </div>
@@ -84,7 +83,6 @@ function MoviesOnDate(){
       
         <div className="wrapMovieList">
         {tmpArray.map((item) =>
-       
             <div className="movie-list" key={item.id}>
             <h3 id="moveTitle">{item.title}</h3>
             <img id="movieImg" src={item.image} alt="a picture of a movie"/>
