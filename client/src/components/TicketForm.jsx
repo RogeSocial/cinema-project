@@ -34,8 +34,6 @@ export default function TicketForm() {
     return (
         <div style={{background: `url(${movie.background})`, backgroundSize: 'cover'}} className="ticket-form-page">
             <div className={"ticket-form-box form-row"}>
-
-
                 <div className={"movie-details"}>
                     <h1>{movie.title}</h1>
                     <iframe src={`https://www.youtube.com/embed/${movie.trailer}`} width="1020" height="600" frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
@@ -45,23 +43,12 @@ export default function TicketForm() {
                     <p className="movieInfo">Release date: {movie.release}</p>
                     <form className={"ticket-form"}>
                     <h3>Purchase tickets</h3>
-
                     <ul className='ticket-list'>
                         <li>Available dates:  </li>
                         { dateSelector()}
                         <li>The chosen time </li>
                     </ul>
-
-                    <h3>Your contact information</h3>
-                    <ul className='ticket-list'>
-                        <li>Phone: user account number</li>
-                        <li>E-mail: user account e-mail</li>
-                    </ul>
-
-                    <div className='ticket-picker-in-form'>
-                        Insert ticket-picker here
-                    </div>
-
+                   
                     <Link to="/reserve"><button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button></Link>
                 </form>
                 </div>
