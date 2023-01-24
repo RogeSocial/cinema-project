@@ -1,5 +1,6 @@
 import "../CSS/calender.css"
 import "../CSS/movies.css"
+
 import { useEffect, useRef, useState } from "react";
 import { movieArray } from "./MovieData.jsx";
 import MovieList, { hoursAndMinutes } from "./MovieList.jsx";
@@ -73,7 +74,9 @@ export default function () {
                 </div>
             </div>
         </div>
-        <MovieList movies={moviesOnDate()} />
+        <div id="top-movies">
+            <MovieList movies={moviesOnDate()}/>
+        </div>
     </section>
 }
 
