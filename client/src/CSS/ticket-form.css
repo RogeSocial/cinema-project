@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
 .ticket-form-page {
-    background: url("../images/ticket.jpg");
+
     background-size: cover;
-    height: 100vh;
+    min-height: 100vh;
+    position: relative;
 }
 
 .ticket-form-box {
@@ -34,11 +35,13 @@
     margin-bottom: 20px;
 }
 
+
+
 .ticket-form {
     background-color: #111111AA;
     padding: 15px;
     border-radius: 20px;
-    margin-bottom: 20px;
+
     position: relative;
 }
 

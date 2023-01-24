@@ -18,11 +18,13 @@ export let movieArray = [
     title: "Hellraiser",
     trailer: 'oUlgwJNdu2I',
     text: "A take on Clive Barker's 1987 horror classic where a young woman struggling with addiction comes into possession of an ancient puzzle box, unaware that its purpose is to summon the Cenobites.",
+    stars: 'Stars: Odessa A’zion, Jamie Clayton, Adam Faison',
     image:
       "https://decider.com/wp-content/uploads/2022/10/HELLRAISER-HULU-REVIEW.jpg?quality=75&strip=all",
     date:[11,12,13,14,15,16,17,18,19,20],
     length: 122,
     param: "hellraiser",
+    release: '28 september 2022',
     background: "https://img.hulu.com/user/v3/artwork/eb138082-5c40-4a8f-aa30-3fc66ef615fd?base_image_bucket_name=image_manager&base_image=bb8c33aa-6af6-4303-8cb7-2aa598039a75&size=1600x900&format=jpeg"
   },
   {
@@ -86,7 +88,7 @@ export let movieArray = [
   {
     id: 8,
     title: "Scream",
-    trailer: 'beToTslH17s',
+    trailer: 'beToTslH17s ',
     text: "Scream is a 1996 American slasher film[5] directed by Wes Craven and written by Kevin Williamson. The film stars Neve Campbell, David Arquette, Courteney Cox, Matthew Lillard, Rose McGowan, Skeet Ulrich, Jamie Kennedy, and Drew Barrymore.",
     image:
       "https://4kwallpapers.com/images/wallpapers/scream-2022-movies-horror-movies-thriller-black-background-1284x2778-6756.jpg",

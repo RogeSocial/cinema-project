@@ -43,6 +43,7 @@ export default function TicketForm() {
                     <p className="movieInfo">Length: {movie.length}m</p>
                     <p className="movieInfo">Release date: {movie.release}</p>
                 </div>
+
                 <form className={"ticket-form"}>
                     <h3>Purchase tickets</h3>
 
