@@ -1,5 +1,6 @@
 import "../CSS/calender.css"
 import "../CSS/movies.css"
+import "../CSS/home.css"
 
 import { useEffect, useRef, useState } from "react";
 import { movieArray } from "./MovieData.jsx";
