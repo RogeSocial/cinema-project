@@ -5,15 +5,19 @@ export default function ({ movies }) {
   return (
     <>
       {movies.map((movie) => (
-      
-        <div className="movie-list" key={movie.id}>
+        <Link to={`${movie.id}/${movie.param}`}>
+        <div className="movie-card" key={movie.id}>
           <h3> {movie.title} </h3>
-          <Link
-  to={`${movie.id}`}
-><img src={movie.image} alt="a picture of a movie" /></Link>
+            <img src={movie.image} alt="a picture of a movie" />
         </div>
-        
+        </Link>
       ))}
     </>
   );
+}
+
+export function hoursAndMinutes(inMinutes){
+  let hours = Math.trunc(inMinutes / 60);
+  let minutes = inMinutes % 60;
+  return (hours + "h " + minutes + "m");
 }
