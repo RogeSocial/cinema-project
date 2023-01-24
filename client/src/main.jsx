@@ -30,6 +30,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Header />
           <Routes>
                 <Route path="/" element={<Mainpage />} />
+                <Route path="/:id/:param" element={<TicketForm />} />
                 <Route path="calender" element={<Calender />} />
                 <Route path="movies" element={<Movies />} />
                 <Route path="movies/:id/:param" element={<TicketForm />} />
