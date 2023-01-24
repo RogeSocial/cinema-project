@@ -40,19 +40,19 @@ export default function () {
         <nav>
           <NavLink to={"/"} className={ActiveNav} id='navbar' >Home</NavLink>
           <NavLink to="movies" className={ActiveNav} id='navbar'>Movies</NavLink>
-          <NavLink to="calender" className={ActiveNav} id='navbar'>Tickets</NavLink>
+          <NavLink to="tickets" className={ActiveNav} id='navbar'>Tickets</NavLink>
           <NavLink to="reservations" className={ActiveNav} id='navbar'>Reservations</NavLink>
-          <NavLink to="tickets" className={ActiveNav} id='navbar'>Account</NavLink>
+          <NavLink to="account" className={ActiveNav} id='navbar'>Account</NavLink>
           
         </nav>
       </header>
       {openMenu ? (
         <div ref={menuRef}  className="dropdown-menu">
           <NavLink to="/" onClick={() => setOpenMenu(false)}> Home</NavLink>
-          <NavLink to="calender" onClick={() => setOpenMenu(false)}>Calender</NavLink>
           <NavLink to="movies" onClick={() => setOpenMenu(false)}>Movies</NavLink>
-          <NavLink to="tickets"onClick={() => setOpenMenu(false)}>Tickets</NavLink>
+          <NavLink to="tickets" onClick={() => setOpenMenu(false)}>Tickets</NavLink>
           <NavLink to="reservations"onClick={() => setOpenMenu(false)}>Reservations</NavLink>
+          <NavLink to="account"onClick={() => setOpenMenu(false)}>Account</NavLink>
         </div>
       ) : null}
 
