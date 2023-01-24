@@ -47,6 +47,18 @@ function Seats() {
 
     return (
         <section>
+        
+        <div id='showcaseSeat' className="seatsContainer">
+       <p>Available</p> 
+        <div id='showcaseSeat1' className="seat occupied"></div>
+        <p>Selected</p>
+        <div id='showcaseSeat2' className="seat selected"></div>
+        <p>Plus seat</p>
+        <div id='showcaseSeat3' className="seat occupied"></div>
+        <p>Occupied</p>
+        <div id='showcaseSeat4' className="seat occupied"></div>
+        </div>
+       
         <div className="screen"></div>
             <div className="seatsWrap">
 
