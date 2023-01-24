@@ -183,6 +183,19 @@
   }
 }
 
+@media screen and (max-width: 680px) {
+.movie-card h4 {
+  position: absolute;
+  color: lightgray;
+  font-size: 10px;
+  font-weight: 200;
+  padding-top: 11rem;
+  padding-left: 11rem;
+  z-index: 2;
+  font-size: 18px;
+}
+}
+
 @media screen and (min-width: 1000px) {
   .movies {
     grid-template-columns: repeat(3, max-content);
