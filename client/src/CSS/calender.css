@@ -39,7 +39,7 @@ hr {
 }
 
 
-.wrapMovieList {
+.wrapMovieList div {
     display: flex;   
     border-radius: 20px;
     height: 100%;
