@@ -32,16 +32,18 @@
     background-color: #111111AA;
     padding: 15px;
     border-radius: 20px;
-    margin-bottom: 20px;
+ 
 }
 
 
 
 .ticket-form {
+    
+    display: flex;
+    flex-direction: column;
     background-color: #111111AA;
     padding: 15px;
     border-radius: 20px;
-
     position: relative;
 }
 
@@ -56,13 +58,18 @@
     list-style: none;
 }
 
+.ticket-list li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
 .date-picker {
     min-width: 100px;
 }
 
 .movieText {
     font-size: 20px;
-    width: 50%;
+    
     padding: 20px;
 }
 
@@ -89,13 +96,12 @@
 
     .ticket-form {
         align-items: center;
-        margin-left: 50px;
     }
 
     .form-row {
         display: flex;
         flex-direction: row;
-        max-width: 90%;
+     /*    max-width: 90%; */
     }
 
     .ticket-form {
@@ -106,8 +112,29 @@
 
 
 @media screen and (max-width: 550px) {
+
+   
   iframe {
     width: 300px;
-    height: 150px;
+    height: 220px;
   }
+
+  .movieText {
+    font-size: 16px;
+    padding: 10px;
+}
+  }
+
+  @media (min-width: 480px) and (max-width: 897px) and (orientation: landscape) {
+    iframe {
+        width: 500px;
+        height: 220px;
+      }
+
+      .movieText {
+        font-size: 16px;
+        padding: 10px;
+    }
+
+
   }
