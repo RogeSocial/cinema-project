@@ -1,32 +1,36 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import MovieList from "./MovieList";
 import { movieArray } from "./MovieData";
 import { useSearchParams} from "react-router-dom";
+
+import {reverseAlpha, sortAlpha} from "./movieSort.jsx";
 export default function () {
   const [movies, setMovies] = useState(movieArray);
   const [searchParams, setSearchParams] = useSearchParams()
   const showActiveFilter = searchParams.get('filter') === 'active';
-  const newMovieArr = [...movieArray];
- const [newMovies, setNewMovies] = useState(newMovieArr)
+const [alpha, alphaSetCount] = useState(0)
+const [reverse, setReverse] = useState(0)
+const previous = useRef(0);
+  const removeFilter = () => {
+    setSearchParams({})
+    window.location.reload();
+  }
+    useEffect(() => {
+      if (showActiveFilter) {
+     setMovies(sortAlpha(movies));
+        previous.current = alpha;
+      }
+    }, [alpha]);
 
-  {/*seEffect(() => {
-    return () => {
-      effect
-    };
-  }, [input]);*/}
-
-const sortAlpha = () => {
-  return movies.sort((a,b)=>{
-    if (a.title < b.title) {
-      return -1;
-
+ useEffect(() => {
+    if (showActiveFilter) {
+      setMovies(reverseAlpha(movies));
+        previous.current = reverse;
     }
-    if (a.title > b.title) {
-      return 1;
-    }
-    return 0;
-  })
-}
+  }, [reverse]);
+
+
+
   //variable to hold the value that the user is searching for
   const [searchString, setSearchString] = useState(null);
   //sets searchString to the value entered by the user in the search field
@@ -50,9 +54,12 @@ const sortAlpha = () => {
         {showActiveFilter ? (
                 <div className={"sort"}>
                 <button className="btn" id="movie-sort-btn"
-                        onClick={() => setSearchParams({})}>Reset filter</button>
-                <button onClick={() => setMovies(sortAlpha)}> A-Z</button>
-                  {console.log(newMovies)}
+                        onClick={() => removeFilter()} value="Reload Page">Reset filter</button>
+                <button className="btn" id="movie-sort-btn"
+                        onClick={() => alphaSetCount(alpha +2)}> A-Z</button>
+                  <button className="btn" id="movie-sort-btn"
+                          onClick={() => setReverse(reverse +2)}> Z-A</button>
+
                 </div>
 
         ): (
