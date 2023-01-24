@@ -48,6 +48,10 @@ section {
     background-color: rgb(207, 15, 15);
 }
 
+.seat.plusSeat{
+    background-color: rgb(236, 150, 0);
+}
+
 .seat:not(.occupied):hover {
     background-color: #26d4f7;
     cursor: pointer;
