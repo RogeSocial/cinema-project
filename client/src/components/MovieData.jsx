@@ -8,6 +8,7 @@ export let movieArray = [
     image:
       "https://images5.alphacoders.com/442/442591.jpg",
     date:[11,2,3,4,5,6,7,8,9,10],
+    time:["18:10","20:10","22:10"],
     param: "Friday-the-13th",
     length: 120,
     release: '13 february 2009',
@@ -23,6 +24,7 @@ export let movieArray = [
     image:
       "https://decider.com/wp-content/uploads/2022/10/HELLRAISER-HULU-REVIEW.jpg?quality=75&strip=all",
     date:[11,12,13,14,15,16,17,18,19,20],
+    time:["19:15","21:15","23:15"],
     length: 122,
     param: "hellraiser",
     background: "https://img.hulu.com/user/v3/artwork/eb138082-5c40-4a8f-aa30-3fc66ef615fd?base_image_bucket_name=image_manager&base_image=bb8c33aa-6af6-4303-8cb7-2aa598039a75&size=1600x900&format=jpeg"
@@ -36,6 +38,7 @@ export let movieArray = [
     text: "In the summer of 1989, a group of bullied kids band together to destroy a shape-shifting monster, which disguises itself as a clown and preys on the children of Derry, their small Maine town.",
     image: "https://c4.wallpaperflare.com/wallpaper/149/736/981/it-clown-bill-skarsgard-horror-wallpaper-preview.jpg",
     date:[21,22,23,24,25,26,27,28,29,30],
+    time:["16:20","18:20","20:20"],
     length: 124,
     param: "jacobs-ladder",
     background: "https://wallpaperaccess.com/full/37961.jpg"
@@ -50,6 +53,7 @@ export let movieArray = [
     image:
       "https://images.tbs.com/tbs/$dyna_params/https%3A%2F%2Fi.cdn.tbs.com%2Fassets%2Fimages%2F2019%2F10%2FParanormal-Activity-1920x1080.jpg",
     date:[31,2,14,21,28],
+    time:["17:25","19:25","21:25"],
     length: 126,
     param: "the-shining",
     background: "https://images.tbs.com/tbs/$dyna_params/https%3A%2F%2Fi.cdn.tbs.com%2Fassets%2Fimages%2F2019%2F10%2FParanormal-Activity-1920x1080.jpg"
@@ -64,6 +68,7 @@ export let movieArray = [
     image:
       "https://w0.peakpx.com/wallpaper/307/417/HD-wallpaper-the-nun-movie-the-nun-movies-2018-movies.jpg",
     date:[1,8,15,22,29],
+    time:["18:10","20:10","22:10"],
     length: 128,
     param: "the-mist",
     background: "https://images2.alphacoders.com/936/936582.jpg"
@@ -78,7 +83,8 @@ export let movieArray = [
     image:
       "https://c4.wallpaperflare.com/wallpaper/502/400/889/dark-demon-film-grudge-wallpaper-preview.jpg",
     date:[3,10,17,24,31],
-  length: 130,
+    time:["16:35","18:35","20:35"],
+    length: 130,
     param: "land-of-the-dead",
     background: 'https://r4.wallpaperflare.com/wallpaper/445/200/897/bunshinsaba-dark-evil-film-wallpaper-31b293f6a52789800ff3681dfeae5849.jpg'
   },
@@ -91,6 +97,7 @@ export let movieArray = [
     text: "A young woman finds herself on the receiving end of a terrifying curse that threatens to take her life in 7 days.",
     image: 'https://wallpapercave.com/wp/wp4357758.jpg' ,
     date:[4,11,18,25,1],
+    time:["14:40","18:40","22:40"],
     length: 132,
     param: "the-ring",
     background: 'https://images2.alphacoders.com/824/824908.jpg'
@@ -105,6 +112,7 @@ export let movieArray = [
     image:
       "https://4kwallpapers.com/images/wallpapers/scream-2022-movies-horror-movies-thriller-black-background-1284x2778-6756.jpg",
     date:[5,12,19,26,2],
+    time:["20:45","22:45","23:45"],
     length: 134,
     param: "scream",
     background: 'https://images7.alphacoders.com/122/1226941.jpg'
@@ -118,6 +126,7 @@ export let movieArray = [
     text: "Ouija: Origin of Evil is a 2016 American supernatural horror film directed and edited by Mike Flanagan and written by Flanagan and Jeff Howard. The film is a prequel to the 2014 film Ouija and stars Elizabeth Reaser, Annalise Basso, and Henry Thomas.",
     image: "https://www.hdwallpapers.in/thumbs/2016/ouija_origin_of_evil_4k-t2.jpg",
     date:[6,13,20,27,3],
+    time:["15:50","17:50","19:50"],
     length: 136,
     param: "ouija-origin-of-evil",
     background: 'https://cdn-cc-image-api-p001.cc.vubiquity.com/sf-api/image?i=https://vucscdnprodne.azureedge.net/images/vmest_prod/1/furniture/VX-5841161_1920x1080.PNG?q=80'
