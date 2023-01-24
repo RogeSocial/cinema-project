@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
 import '../CSS/home.css';
 import '../CSS/quotes.css';
+import React, { useState, useEffect } from 'react';
 
 //The elements of both arrays must be kept in the right order
 // because the index of each horrorQuote corresponds to the index of each quoteData
-
 const horrorQuote = [
     "\"Here's Johnny!\"",
     "\"I see dead people\"",
@@ -39,41 +38,33 @@ const quoteData = [
     "– The Silence of the Lambs, 1991"
 ];
 
-export default class Quotes extends Component {
-    constructor() {
-        super();
+export default function () {
 
-        this.animationRef = React.createRef();
+    const [index, setIndex] = useState(Math.floor(Math.random() * horrorQuote.length));
+    const animationRef = React.createRef();
 
-        //This is the index (random number) that will be fetched from the two arrays.
-        this.state = {
-            index: Math.floor(Math.random() * horrorQuote.length),
-        };
+    useEffect(() => {
+        if (animationRef.current) {
+            animationRef.current.addEventListener("animationiteration", handleIteration);
+        }
+        return () => {
+            if (animationRef.current) {
+                animationRef.current.removeEventListener("animationiteration", handleIteration);
+            }
+        }
+    }, [animationRef]);
+
+    const handleIteration = (event) => {
+        setIndex(Math.floor(Math.random() * horrorQuote.length));
     }
 
-    //This function is called whenever an animation iterates in the quote div, it changes the quote index
-    handleIteration = (event) => {
-        this.setState({ index: Math.floor(Math.random() * horrorQuote.length) });
-    }
+    let movieQuote = horrorQuote[index];
+    let byline = quoteData[index];
 
-    //componentDidMount will be called when the component is mounted
-    componentDidMount() {
-        this.animationRef.current.addEventListener("animationiteration", this.handleIteration);
-    }
-
-    componentWillUnmount() {
-        this.animationRef.current.removeEventListener("animationiteration", this.handleIteration);
-    }
-
-    render() {
-    let movieQuote = horrorQuote[this.state.index];
-        let byline = quoteData[this.state.index];
-
-        return (
-            <div className={"quotebox"}>
-                <div ref={this.animationRef} className={"quote fading"}>{movieQuote}</div>
-                <div className={"byline fading"}>{byline}</div>
-            </div>
-        )
-    }
+    return (
+        <div className={"quotebox"}>
+            <div ref={animationRef} className={"quote fading"}>{movieQuote}</div>
+            <div className={"byline fading"}>{byline}</div>
+        </div>
+    )
 }
