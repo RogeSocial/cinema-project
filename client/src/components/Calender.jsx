@@ -15,7 +15,6 @@ let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 export default function () {
     { dates = [] }
     const [open, setOpen] = useState(false);
-    const [moviesOnDate1, setMoviesOnDate] = useState(movieArray);
     const [movies] = useState(movieArray);
 
     let calenderRef = useRef();
