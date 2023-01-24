@@ -19,6 +19,16 @@ export default function TicketForm() {
         )
     }
 
+    function timeSelector() {
+        return (
+            <select name="times" id="times" className='date-picker'>
+                {movie.time.map((option, index) => {
+                    return <option key= {index} > {option} </option>
+                })}
+            </select>
+        )
+    }
+
     self.addEventListener('fetch', event => {
         event.respondWith(
           (async function() {
@@ -47,6 +57,7 @@ export default function TicketForm() {
                         <li>Available dates:  </li>
                         { dateSelector()}
                         <li>The chosen time </li>
+                        { timeSelector()}
                     </ul>
                    
                     <Link to="/reserve"><button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button></Link>
