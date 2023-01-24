@@ -124,7 +124,7 @@ export let movieArray = [
     release: '21 oktober 2016',
     trailer: 'MJIcZGEjjwo',
     text: "Ouija: Origin of Evil is a 2016 American supernatural horror film directed and edited by Mike Flanagan and written by Flanagan and Jeff Howard. The film is a prequel to the 2014 film Ouija and stars Elizabeth Reaser, Annalise Basso, and Henry Thomas.",
-    image: "https://www.hdwallpapers.in/thumbs/2016/ouija_origin_of_evil_4k-t2.jpg",
+    image: "https://images7.alphacoders.com/808/808738.jpg",
     date:[6,13,20,27,3],
     time:["15:50","17:50","19:50"],
     length: 136,

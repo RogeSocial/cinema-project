@@ -99,6 +99,7 @@ section {
 }
 
 .message {
+    font-size: 20px;
     margin-left: 10px;
 }
 
@@ -117,3 +118,61 @@ section {
   .seat.occupied {
     background-color: rgb(207, 15, 15);
 }
+
+.seatsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid rgba(96, 94, 94, 0.494) ;
+}
+
+.seatsContainer p {
+    font-size: 20px;
+}
+
+#showcaseSeat {
+    cursor: default;
+    margin-right: 10px;
+    margin-left: 5px;
+    border-bottom: 2px solid rgba(96, 94, 94, 0.494) ;
+}
+
+
+#showcaseSeat1 {
+    background-color: #444451;
+   
+}
+
+#showcaseSeat2 {
+    transform: scale(1);
+    cursor: default;
+}
+
+#showcaseSeat3 {
+    background-color:#EC9600 ;
+}
+
+#showcaseSeat1, #showcaseSeat2, #showcaseSeat3, #showcaseSeat4 {
+    margin-right: 10px;
+    margin-left: 5px;
+}
+
+
+
+#showcaseSeat:not(.plusseat):hover {
+    
+}
+
+@media screen and (max-width: 550px) { 
+    #showcaseSeat p {
+        font-size: 14px;
+    }
+ }
+
+
+ @media only screen and (min-device-width: 320px) and (max-device-width: 915px) and (orientation: landscape) { 
+    #showcaseSeat {
+        margin-top: 100px;
+    }
+
+  }
