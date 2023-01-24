@@ -4,10 +4,11 @@ import { movieArray } from "./MovieData";
 
 export default function () {
   const [movies, setMovies] = useState(movieArray);
+
   //variable to hold the value that the user is searching for
   const [searchString, setSearchString] = useState(null);
 
-  //sets searchString to the value entered by the user in the search field
+  //sets searchString to the string entered by the user in the search field
   const handlesSearch = (event) => {
     setSearchString(event.target.value);
   };
@@ -31,10 +32,12 @@ export default function () {
       </div>
       <MovieList
         movies={
-          searchString === null || searchString === ""
-            ? movies
-            : movies.filter((movie) =>
-                returnMoviesThatContainThisString(movie, searchString)
+          ifSearchIsInvalid(searchString)
+            ? //then show all
+              movies
+            : //else
+              movies.filter((movie) =>
+                filterMoviesBasedOnSearch(movie, searchString)
               )
         }
       />
@@ -42,8 +45,15 @@ export default function () {
   );
 }
 
-function returnMoviesThatContainThisString(movie, searchString) {
-  //prototype algoritm
+function ifSearchIsInvalid(search) {
+  if (search === null || search === "") {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+function filterMoviesBasedOnSearch(movie, searchString) {
   let title = movie.title.toLowerCase();
   let string = searchString.toLowerCase();
 

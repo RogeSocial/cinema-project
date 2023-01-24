@@ -118,7 +118,7 @@ hr {
     
 }
 
-.movie-list {
+.movie-card {
     display: flex;
  
 }
@@ -272,7 +272,7 @@ hr {
         
     }
 
-    .movie-list h3 {
+    .movie-card h3 {
         font-size: 15px;
     }
 

@@ -101,7 +101,7 @@
     margin-top: 3.5rem;
 }
 
-.movie-list {
+.movie-card {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,7 +110,7 @@
   padding: 1rem;
 }
 
-.movie-list img {
+.movie-card img {
   position: relative;
   border-radius: 20px;
   width: 300px;
@@ -121,8 +121,23 @@
   justify-content: center;
 }
 
-.movie-list:hover {
- /*  transform: scale(1.05); */
+.movie-card h3 {
+  color: var(--main_text_color);
+  text-decoration: none;
+}
+
+.movie-card h4 {
+  position: absolute;
+  color: lightgray;
+  font-size: 10px;
+  font-weight: 200;
+  padding-top: 13.5rem;
+  padding-left: 13.5rem;
+  z-index: 2;
+  font-size: 18px;
+}
+
+.movie-card:hover {
   cursor: pointer;
 }
 
