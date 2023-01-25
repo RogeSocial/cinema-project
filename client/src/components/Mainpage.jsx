@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import '../CSS/home.css'
-import Movies from "./Movies";
 import MovieList from "./MovieList";
 import { Link } from "react-router-dom";
 import Quotes from "./Quotes.jsx";
 import { movieArray } from "./MovieData";
 
-
 export default function () {
   const [movies, setMovies] = useState(movieArray);
-
 
   return (
     <div>

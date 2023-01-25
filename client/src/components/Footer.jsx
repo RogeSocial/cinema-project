@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
 export default function() {
     return <>
     <div className={'line-container'}>
@@ -25,9 +24,9 @@ export default function() {
                 <ul>
                     <li className="footer-link"><Link to={"/"}>Home</Link></li>
                     <li className="footer-link"><Link to={"/movies"}>Movies</Link></li>
-                    <li className="footer-link"><Link to={"/calender"}>Tickets</Link></li>
+                    <li className="footer-link"><Link to={"/tickets"}>Tickets</Link></li>
                     <li className="footer-link"><Link to={"/reservations"}>Reservations</Link></li>
-                    <li className="footer-link"><Link to={"/tickets"}>Account</Link></li>
+                    <li className="footer-link"><Link to={"/account"}>Account</Link></li>
                 </ul>
             </div>
             <div>

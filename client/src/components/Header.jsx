@@ -7,7 +7,6 @@ export default function () {
     setOpenMenu(!openMenu);
   };
 
-
   //Close hamburger menu when click outside.
   let menuRef = useRef();
   useEffect(() => {

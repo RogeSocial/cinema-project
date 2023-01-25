@@ -11,10 +11,8 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header.jsx";
 import Footer from './components/Footer.jsx'
-import Calender from "./components/Calender.jsx"
-
 import Movies from './components/Movies'
-import Tickets from './components/Tickets'
+import Tickets from './components/Tickets.jsx'
 import Reservations from './components/Reservations'
 import ScrollToTop from "./components/scrollToTop.jsx";
 import TicketForm from "./components/TicketForm.jsx";
@@ -31,7 +29,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Routes>
                 <Route path="/" element={<Mainpage />} />
                 <Route path="/:id/:param" element={<TicketForm />} />
-                <Route path="tickets" element={<Calender />} />
                 <Route path="/tickets/:id/:param" element={<TicketForm />} />
                 <Route path="movies" element={<Movies />} />
                 <Route path="movies/:id/:param" element={<TicketForm />} />

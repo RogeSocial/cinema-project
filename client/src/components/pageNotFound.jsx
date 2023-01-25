@@ -1,5 +1,4 @@
 import React from 'react';
-import {useActionData} from "react-router-dom";
 import '../CSS/pageNotFound.css'
 function PageNotFound() {
     return (

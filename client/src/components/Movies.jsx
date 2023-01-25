@@ -8,7 +8,6 @@ export default function () {
   const [movies, setMovies] = useState(movieArray);
   const [searchParams, setSearchParams] = useSearchParams()
   const showActiveFilter = searchParams.get('filter') === 'active';
-
   const [alpha, setAlpha] = useState(0)
 const [reverse, setReverse] = useState(0);
   const removeFilter = () => {
@@ -16,10 +15,7 @@ const [reverse, setReverse] = useState(0);
     window.location.reload();
   }
 
-
-
   useEffect(() => {
-
       if (showActiveFilter ) {
           if(alpha <= 2){
               setAlpha(alpha + 1)
