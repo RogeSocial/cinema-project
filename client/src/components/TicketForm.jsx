@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import '../CSS/ticket-form.css'
 import { movieArray } from './MovieData';
 
-
 export default function TicketForm() {
     const movieId = useParams().id
     const movie = movieArray.find(m=>m.id == movieId)
@@ -63,9 +62,6 @@ export default function TicketForm() {
                     <Link to="/reserve"><button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button></Link>
                 </form>
                 </div>
-
-                
-
         </div>
     </div>
 

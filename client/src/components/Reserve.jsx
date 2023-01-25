@@ -18,7 +18,7 @@ function Seats() {
                 if(i === 3){
                     plusSeat = true;
                 }
-                
+
                 newSeats.push({ id: i * 8 + j + 1, seat: j + 1, row: i + 1, occupied: occupied, selected: false, available: true, plusSeat: plusSeat});
             }
         }
@@ -40,7 +40,6 @@ function Seats() {
             let selectedSeatsPlus = updatedSeats.filter(seat => seat.selected === true && seat.plusSeat === true);
             let selectedSeatsPlusCount = selectedSeatsPlus.length;
 
-            // Update the message displayed in the "message" div
             setMessage(`You have selected ${selectedSeatsCount + selectedSeatsPlusCount} seats ${(selectedSeatsCount * 10) + (selectedSeatsPlusCount * 12)}$`);
         }
     }
@@ -49,7 +48,7 @@ function Seats() {
         <section>
         
         <div id='showcaseSeat' className="seatsContainer">
-       <p>Available</p> 
+        <p>Available</p>
         <div id='showcaseSeat1' className="seat occupied"></div>
         <p>Selected</p>
         <div id='showcaseSeat2' className="seat selected"></div>
