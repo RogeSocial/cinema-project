@@ -23,7 +23,7 @@ export function hoursAndMinutes(inMinutes) {
 }
 
 function showsMovieLength(movie) {
-  if (window.location.pathname === "/calender") {
+  if (window.location.pathname === "/tickets") {
     return hoursAndMinutes(movie.length);
   } else {
     return null;
