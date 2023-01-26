@@ -132,7 +132,7 @@ aside {
   }
 }
 
-@media (min-width: 1080px) and (max-width: 897px) and (orientation: landscape) {
+@media (min-width: 480px) and (max-width: 897px) and (orientation: landscape) {
   aside {
     display: flex;
   }

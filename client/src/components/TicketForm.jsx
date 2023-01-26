@@ -41,7 +41,7 @@ export default function TicketForm() {
     });
 
     return (
-        <div style={{ background: `url(${movie.background})`, backgroundSize: 'cover' }} className="ticket-form-page">
+        <div style={{ background: `url(${movie.background})`, backgroundSize: 'cover', }} className="ticket-form-page">
             <div className={"ticket-form-box form-row"}>
                 <div className={"movie-details"}>
                     <h1>{movie.title}</h1>
