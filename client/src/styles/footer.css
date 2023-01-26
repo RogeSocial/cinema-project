@@ -18,104 +18,96 @@ body {
     margin: 0;
 }
 
+
 footer {
     background-color: var(--footer_background_color);
-    min-height: 100px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-around;
     color: #8B95A6;
     font-family: Questrial;
-    font-size: small;
-    padding-bottom: 5vh;
     flex-direction: column;
-    padding-left: 20%;
+    align-items: flex-start;
 }
 
-footer h1 {
+.footer-content {
+    margin-left: 20%;
+}
+
+footer h2 {
     font-family: Poppins;
     font-size: 1.2em;
-    color: #8B95A6;
-    margin: 0;
+    color: var(--font_color);
+    margin: 0px;
+    text-align: left;
 }
 
-footer .codinema {
-    color: #CACCCD;
+footer h3 {
     font-family: Poppins;
-}
-
-footer ul {
+    color: #8B95A6;
     margin: 0;
 }
 
 footer li {
     list-style: none;
-    margin-left: -3em;
+    margin-left: -40px;
+    margin-bottom: 5px;
 }
 
-footer div {
-    max-width: 20em;
-    margin-top: 2vh;
+footer ul {
+    margin: 0 0 30px;
+}
+
+#footer-line {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+footer p {
+    margin: 0 0 30px;
+    max-width: 450px;
 }
 
 footer a {
-    text-decoration: none;
-    color: #8B95A6;
-}
-
-footer a:visited {
-    text-decoration: none;
     color: #8B95A6;
 }
 
 footer a:active {
-    text-decoration: none;
     color: #8B95A6;
 }
 
-hr {
-    width: 60%;
-    height: 1px;
-    border-width: 0;
-    background-color: #8B95A6;
-    margin: 0;
+footer a:visited {
+    color: #8B95A6;
 }
 
-.line-container {
-    display: flex;
-    background-color: #0B1321;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    justify-content: center;
+#mail-and-phone {
+    margin-top: 20px;
 }
 
-.footer-link {
-    padding-top: 7px;
-    font-size: 1.2em;
-    padding-left: 0.4em;
-}
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 992px) {
     footer {
         flex-direction: row;
-        padding-left: 0;
+        justify-content: space-around;
+        padding: 0;
+        column-count: 4;
+        min-height: 220px;
+        break-before: auto;
     }
 
-    footer div {
-        margin-top: 0;
+    .footer-content {
+        margin-left: 0;
+        margin-top: 50px;
     }
 
-    footer h1 {
-        margin-bottom: 1vh;
+    footer h2 {
+        text-align: left;
     }
 
-    hr {
-        width: 84%;
+    #footer-line {
+        position: absolute;
     }
 
-    .footer-link {
-        padding-top: 0px;
-        font-size: 1em;
-        padding-left: 0;
+    footer li {
+        margin-bottom: 0px;
     }
 }
