@@ -8,9 +8,13 @@ export default function () {
     const animationRef = React.createRef();
 
     useEffect(() => {
+        if (animationRef.current){
         animationRef.current.addEventListener("animationiteration", handleIteration);
+        
         return () => {
+            if (animationRef.current){
             animationRef.current.removeEventListener("animationiteration", handleIteration);
+        }}
         }
     }, [animationRef]);
 
