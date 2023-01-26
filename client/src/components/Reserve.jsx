@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/reserve.css'
+import '../styles/home.css'
 
 function Seats() {
     const [seats, setSeats] = useState([]);
@@ -69,7 +70,7 @@ function Seats() {
             <br />
             <div className="message"> {message} </div>
             <br />
-            <button className="btn">Buy</button>
+            <button className="button">Buy</button>
 
         </section>
     )
