@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../styles/ticket-form.css'
-import { movieArray } from './MovieData';
+import { movieArray } from '../components/MovieData.jsx';
 
 export default function TicketForm() {
     const movieId = useParams().id

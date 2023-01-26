@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './styles.css'
-import Mainpage from './components/Mainpage.jsx'
+import Mainpage from './pages/Mainpage.jsx'
 import {
 
     Route,
@@ -12,12 +12,12 @@ import {
 } from "react-router-dom";
 
 import Movies from './pages/Movies.jsx'
-import Tickets from './components/Tickets.jsx'
-import Reservations from './components/Reservations'
+import Tickets from './pages/Tickets.jsx'
+import Reservations from './pages/Reservations'
 
-import TicketForm from "./components/TicketForm.jsx";
-import Reserve from "./components/Reserve.jsx";
-import PageNotFound from "./components/pageNotFound.jsx";
+import TicketForm from "./pages/TicketForm.jsx";
+import Reserve from "./pages/Reserve.jsx";
+import PageNotFound from "./pages/pageNotFound.jsx";
 import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
