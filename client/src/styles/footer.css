@@ -61,7 +61,6 @@ footer ul {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-
 }
 
 footer p {
@@ -85,6 +84,13 @@ footer a:visited {
     margin-top: 20px;
 }
 
+hr {
+    width: 60%;
+    height: 1px;
+    border-width: 0;
+    background-color: #8B95A6;
+    margin: 0;
+}
 
 @media only screen and (min-width: 992px) {
     footer {
