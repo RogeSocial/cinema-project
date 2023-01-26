@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../CSS/home.css'
+import '../styles/home.css'
 import MovieList from "./MovieList";
 import { Link } from "react-router-dom";
 import Quotes from "./Quotes.jsx";
@@ -18,12 +18,12 @@ export default function () {
             <Link to="user/registers"><button className="btn">SIGNUP</button></Link>
           </div>
           <div className="darken-lower-part"></div>
-         </div> 
+        </div>
       </section>
       <section className="section-top-movies">
         <h1 className="title">OUR TOP MOVIES</h1>
         <div id="top-movies">
-          <MovieList movies={movieArray.filter( (movie) => {
+          <MovieList movies={movieArray.filter((movie) => {
             if (movie.id === 1 || movie.id === 2 || movie.id === 3) {
               return true;
             } else {

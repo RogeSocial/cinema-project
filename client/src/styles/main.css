@@ -1,5 +1,4 @@
 :root {
-   
   --body_background_color: rgb(6, 57, 84);
   --header_background_color: gray;
   --section_background_color: rgb(41, 41, 41);
@@ -7,7 +6,7 @@
   --font_color: white;
   --navbar_padding: 0px 20px 0px 20px;
   --dropdown_padding: 20px;
-  
+
 }
 
 body {
@@ -15,7 +14,7 @@ body {
   color: var(--font_color);
   overflow-x: hidden;
   margin: 0;
-  
+
 }
 
 header {
@@ -27,18 +26,19 @@ header {
 }
 
 nav a {
-padding: var(--navbar_padding);
-text-decoration: none;
-color: white;
+  padding: var(--navbar_padding);
+  text-decoration: none;
+  color: white;
 }
 
 header h1 {
-padding: var(--navbar_padding);
+  padding: var(--navbar_padding);
 }
 
 aside {
   padding: var(--navbar_padding);
 }
+
 section {
   background-color: var(--section_background_color);
   min-height: 100vh;
@@ -55,4 +55,3 @@ footer {
   align-items: center;
   justify-content: center;
 }
-
