@@ -44,8 +44,9 @@ section {
     background-color: rgb(207, 15, 15);
 }
 
-.seat.plusSeat {
+.plusSeat {
     background-color: rgb(236, 150, 0);
+    margin-top: 7px;
 }
 
 .seat:not(.occupied):hover {
@@ -66,6 +67,7 @@ section {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
+
 }
 
 .showcase li {
@@ -117,50 +119,55 @@ section {
     align-items: center;
     justify-content: center;
     border-top: 2px solid rgba(96, 94, 94, 0.494);
-}
-
-.seatsContainer p {
-    font-size: 20px;
-}
-
-#showcaseSeat {
-    cursor: default;
-    margin-right: 10px;
-    margin-left: 5px;
     border-bottom: 2px solid rgba(96, 94, 94, 0.494);
+    padding-bottom: 10px;
 }
 
-#showcaseSeat1 {
-    background-color: #444451;
+.seatsContainer h3 {
+    font-size: 20px;
+    margin: 10px;
 }
 
-#showcaseSeat2 {
+.showCaseSeat .seat.occupied {
+    background-color: red;
+}
+
+.showCaseSeat .seat.selected {
+    background-color: #26d4f7;
     transform: scale(1);
     cursor: default;
 }
 
-#showcaseSeat3 {
+.showCaseSeat .seat.plusSeat {
     background-color: #EC9600;
 }
 
-#showcaseSeat1,
-#showcaseSeat2,
-#showcaseSeat3,
-#showcaseSeat4 {
-    margin-right: 10px;
-    margin-left: 5px;
+.showCaseSeat .seat.grey {
+    background-color: #444451
+}
+
+.showCaseSeat .seat {
+    background-color: #444451;
+}
+
+.showCaseSeat .seat {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 @media screen and (max-width: 550px) {
-    #showcaseSeat p {
-        font-size: 14px;
+
+   
+    .showCaseSeat h3 {
+        font-size: 16px;
     }
+
 }
 
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 915px) and (orientation: landscape) {
-    #showcaseSeat {
-        margin-top: 100px;
-    }
 
+    .reserveSection {
+        height: 150vh;
+    }
 }

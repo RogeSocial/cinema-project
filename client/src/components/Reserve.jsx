@@ -45,22 +45,29 @@ function Seats() {
     }
 
     return (
-        <section>
+        <section className='reserveSection'>
 
-            <div id='showcaseSeat' className="seatsContainer">
-                <p>Available</p>
-                <div id='showcaseSeat1' className="seat occupied"></div>
-                <p>Selected</p>
-                <div id='showcaseSeat2' className="seat selected"></div>
-                <p>Plus seat</p>
-                <div id='showcaseSeat3' className="seat occupied"></div>
-                <p>Occupied</p>
-                <div id='showcaseSeat4' className="seat occupied"></div>
+            <div className="seatsContainer">
+            <div className="showCaseSeat">
+                <h3>Available</h3>
+                <div className="seat occupied grey"></div>
+                </div>
+                <div className="showCaseSeat">
+                <h3>Selected</h3>               
+                <div className="seat selected"></div>
+                </div>
+                <div className="showCaseSeat">
+                <h3>Plusseat</h3>
+                <div className="seat occupied plusSeat"></div>
+                </div>
+                <div className="showCaseSeat">
+                <h3>Occupied</h3>
+                <div className="seat occupied"></div>
+                </div>
             </div>
 
             <div className="screen"></div>
             <div className="seatsWrap">
-
                 {seats.map((seat) => (
                     <div key={seat.id} className={`seat ${seat.occupied ? 'occupied' : seat.selected ? 'selected' : seat.plusSeat ? 'plusSeat' : 'available'}`} id={seat.id} onClick={handleClick}></div>
                 ))}

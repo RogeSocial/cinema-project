@@ -31,6 +31,9 @@
     background-color: #111111AA;
     padding: 15px;
     border-radius: 20px;
+    justify-content: center;
+    align-items: center;
+   
 }
 
 .ticket-form {
@@ -68,22 +71,33 @@
     padding: 20px;
 }
 
+
 @media only screen and (min-width: 600px) {
+    iframe {
+        width: 800px;
+        height: 420px;
+    }
+
     .ticket-form-page {
         display: flex;
         justify-content: center;
-        background: url("../images/ticket.jpg");
         background-repeat: no-repeat;
         background-position: center;
-        background-size: cover;
+        width: 100%;
+        height: auto;
     }
 
+    .movieText {
+        width: 800px;
+    }
     .movie-details {
-        width: 100%;
+        width:80vw;
         background-color: #111111AA;
         padding-left: 15px;
         padding-right: 15px;
         border-radius: 20px;
+        display: flex;
+
     }
 
     .ticket-form {
