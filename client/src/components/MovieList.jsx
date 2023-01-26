@@ -7,7 +7,7 @@ export default function ({ movies }) {
         <Link to={`${movie.id}/${movie.param}`} key={movie.id}>
           <div className="movie-card">
             <h3> {movie.title} </h3>
-            <img src={movie.image} alt="a picture of a movie" />
+            <img src={movie.image} alt={movie.alt} />
             <h4>{showsMovieLength(movie)}</h4>
           </div>
         </Link>
