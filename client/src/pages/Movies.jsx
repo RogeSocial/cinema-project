@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import MovieList from "./MovieList";
-import { movieArray } from "./MovieData";
+import MovieList from "../components/MovieList.jsx";
+import { movieArray } from "../components/MovieData.jsx";
 import { useSearchParams } from "react-router-dom";
-import { reverseAlpha, sortAlpha } from "./movieSort.jsx";
-import MovieSearch  from "./movieSearch.jsx";
-import {filterMoviesBasedOnSearch, ifSearchIsInvalid} from "./searchFilter.jsx";
+import { reverseAlpha, sortAlpha } from "../components/movieSort.jsx";
+import MovieSearch  from "../components/movieSearch.jsx";
+import {filterMoviesBasedOnSearch, ifSearchIsInvalid} from "../components/searchFilter.jsx";
 
 
 export default function () {

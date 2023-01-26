@@ -11,7 +11,7 @@ import {
     createRoutesFromElements
 } from "react-router-dom";
 
-import Movies from './components/Movies'
+import Movies from './pages/Movies.jsx'
 import Tickets from './components/Tickets.jsx'
 import Reservations from './components/Reservations'
 
