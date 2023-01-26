@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { NavLink } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function () {
   const [openMenu, setOpenMenu] = useState(false);
@@ -24,34 +24,32 @@ export default function () {
   });
 
 
-  const ActiveNav = ({ isActive }) => {
-    return isActive ? 'active' : 'inactive';
-  }
+
   return (
     <>
       <header>
-        <NavLink to={'/'}> <h1>Codinema</h1></NavLink>
+        <Link to={'/'}> <h1>Codinema</h1></Link>
         <aside>
           <div className="hamburger-icon" onClick={toggleMenu}>
             <i className="fa-solid fa-bars"></i>
           </div>
         </aside>
         <nav>
-          <NavLink to={"/"} className={ActiveNav} id='navbar' >Home</NavLink>
-          <NavLink to="movies" className={ActiveNav} id='navbar'>Movies</NavLink>
-          <NavLink to="tickets" className={ActiveNav} id='navbar'>Tickets</NavLink>
-          <NavLink to="reservations" className={ActiveNav} id='navbar'>Reservations</NavLink>
-          <NavLink to="account" className={ActiveNav} id='navbar'>Account</NavLink>
-
+          <Link to={"/"}  id='navbar' >Home</Link>
+          <Link to="movies"  id='navbar'>Movies</Link>
+          <Link to="tickets"  id='navbar'>Tickets</Link>
+          <Link to="reservations"  id='navbar'>Reservations</Link>
+          <Link to="account"  id='navbar'>Account</Link>
+          
         </nav>
       </header>
       {openMenu ? (
-        <div ref={menuRef} className="dropdown-menu">
-          <NavLink to="/" onClick={() => setOpenMenu(false)}> Home</NavLink>
-          <NavLink to="movies" onClick={() => setOpenMenu(false)}>Movies</NavLink>
-          <NavLink to="tickets" onClick={() => setOpenMenu(false)}>Tickets</NavLink>
-          <NavLink to="reservations" onClick={() => setOpenMenu(false)}>Reservations</NavLink>
-          <NavLink to="account" onClick={() => setOpenMenu(false)}>Account</NavLink>
+        <div ref={menuRef}  className="dropdown-menu">
+          <Link to="/" onClick={() => setOpenMenu(false)}> Home</Link>
+          <Link to="movies" onClick={() => setOpenMenu(false)}>Movies</Link>
+          <Link to="tickets" onClick={() => setOpenMenu(false)}>Tickets</Link>
+          <Link to="reservations"onClick={() => setOpenMenu(false)}>Reservations</Link>
+          <Link to="account"onClick={() => setOpenMenu(false)}>Account</Link>
         </div>
       ) : null}
 
