@@ -18,7 +18,6 @@ body {
     margin: 0;
 }
 
-
 footer {
     background-color: var(--footer_background_color);
     color: #8B95A6;
@@ -47,14 +46,14 @@ footer h3 {
     margin: 0;
 }
 
+footer ul {
+    margin: 0 0 30px;
+}
+
 footer li {
     list-style: none;
     margin-left: -40px;
     margin-bottom: 5px;
-}
-
-footer ul {
-    margin: 0 0 30px;
 }
 
 #footer-line {
