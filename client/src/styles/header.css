@@ -11,12 +11,11 @@ header {
 
 }
 
-
-
 @keyframes slideInFromTop {
   0% {
     transform: translatey(-100%);
   }
+
   100% {
     transform: translatey(0);
   }
@@ -41,15 +40,16 @@ nav {
 
 }
 
-nav a  {
+nav a {
   font-family: 'Poppins', sans-serif;
   padding: 0.45rem 3.5vw;
   font-weight: 600;
 }
 
-a{
+a {
   text-decoration: none;
 }
+
 #navbar {
   font-size: 18px;
   color: #e1e1e1;
@@ -91,7 +91,6 @@ a{
   transition-property: width, left;
 }
 
-
 .hamburger-icon {
   cursor: pointer;
 }
@@ -105,15 +104,13 @@ a{
   align-items: space-around;
 }
 
-
-
 .dropdown-menu {
   position: fixed;
   right: 0;
   top: 0;
   height: 100%;
   width: 50%;
-  background-color: #0b1321; 
+  background-color: #0b1321;
   text-align: center;
   z-index: 999;
   font-family: 'Poppins', sans-serif;
@@ -128,19 +125,17 @@ aside {
   aside {
     display: flex;
   }
-  
+
 
   nav {
     display: none;
   }
 }
 
-
 @media (min-width: 480px) and (max-width: 897px) and (orientation: landscape) {
   aside {
     display: flex;
   }
-  
 
   nav {
     display: none;

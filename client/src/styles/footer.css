@@ -47,6 +47,7 @@ footer .codinema {
 footer ul {
     margin: 0;
 }
+
 footer li {
     list-style: none;
     margin-left: -3em;
@@ -62,7 +63,7 @@ footer a {
     color: #8B95A6;
 }
 
-footer a:visited{
+footer a:visited {
     text-decoration: none;
     color: #8B95A6;
 }

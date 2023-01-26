@@ -12,8 +12,6 @@
     height: 100vh;
 }
 
-
-
 .btn {
     font-size: 17px;
     text-transform: uppercase;
@@ -28,9 +26,7 @@
     color: black;
     background-color: rgb(255, 254, 254);
     cursor: pointer;
-    margin: 10px;
-    
-  
+    margin: 10px; 
    }
    
    .btn:hover {
@@ -68,7 +64,6 @@
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
    }
-
 
 .darken-lower-part {
     position: relative;
@@ -118,8 +113,6 @@ h2 {
     margin-right: auto;
     margin-top: 40px;
 }
-
-
 
 .more-movies {
     padding: 20px;

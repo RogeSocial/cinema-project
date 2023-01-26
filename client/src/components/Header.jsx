@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export default function () {
   const [openMenu, setOpenMenu] = useState(false);
@@ -19,13 +19,13 @@ export default function () {
     document.addEventListener('mousedown', handler);
 
     return () => {
-    document.removeEventListener('mousedown', handler)
+      document.removeEventListener('mousedown', handler)
     }
   });
 
 
   const ActiveNav = ({ isActive }) => {
-     return isActive ? 'active' : 'inactive';
+    return isActive ? 'active' : 'inactive';
   }
   return (
     <>
@@ -42,16 +42,16 @@ export default function () {
           <NavLink to="tickets" className={ActiveNav} id='navbar'>Tickets</NavLink>
           <NavLink to="reservations" className={ActiveNav} id='navbar'>Reservations</NavLink>
           <NavLink to="account" className={ActiveNav} id='navbar'>Account</NavLink>
-          
+
         </nav>
       </header>
       {openMenu ? (
-        <div ref={menuRef}  className="dropdown-menu">
+        <div ref={menuRef} className="dropdown-menu">
           <NavLink to="/" onClick={() => setOpenMenu(false)}> Home</NavLink>
           <NavLink to="movies" onClick={() => setOpenMenu(false)}>Movies</NavLink>
           <NavLink to="tickets" onClick={() => setOpenMenu(false)}>Tickets</NavLink>
-          <NavLink to="reservations"onClick={() => setOpenMenu(false)}>Reservations</NavLink>
-          <NavLink to="account"onClick={() => setOpenMenu(false)}>Account</NavLink>
+          <NavLink to="reservations" onClick={() => setOpenMenu(false)}>Reservations</NavLink>
+          <NavLink to="account" onClick={() => setOpenMenu(false)}>Account</NavLink>
         </div>
       ) : null}
 
