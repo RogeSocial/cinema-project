@@ -12,7 +12,7 @@ export default function () {
         </div>
         <div className={"footer-content"}>
             <h3>Contact</h3>
-            <adress id={"our-adress"}>Codinema<br />Nightmare avenue 666<br />211 20 Malmö <br />
+            <adress>Codinema<br />Nightmare avenue 666<br />211 20 Malmö <br />
                 <p id={"mail-and-phone"}><a href={'mailto:info@codinematheatre.se'}>info@codinematheatre.se</a><br />
                     tel: 123-456 789</p>
             </adress>

@@ -25,10 +25,12 @@ footer {
     font-family: Questrial;
     flex-direction: column;
     align-items: flex-start;
+    font-size: 1em;
 }
 
 .footer-content {
     margin-left: 20%;
+    max-width: 65%;
 }
 
 footer h2 {
@@ -92,6 +94,7 @@ footer a:visited {
         column-count: 4;
         min-height: 220px;
         break-before: auto;
+        font-size: 0.8em;
     }
 
     .footer-content {
