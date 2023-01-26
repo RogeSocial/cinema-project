@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import {Link, NavLink} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function () {
   const [openMenu, setOpenMenu] = useState(false);
@@ -19,9 +19,10 @@ export default function () {
     document.addEventListener('mousedown', handler);
 
     return () => {
-    document.removeEventListener('mousedown', handler)
+      document.removeEventListener('mousedown', handler)
     }
   });
+
 
 
   return (

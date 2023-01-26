@@ -1,5 +1,5 @@
-import '../CSS/home.css';
-import '../CSS/quotes.css';
+import '../styles/home.css';
+import '../styles/quotes.css';
 import React, { useState, useEffect } from 'react';
 
 //The elements of both arrays must be kept in the right order

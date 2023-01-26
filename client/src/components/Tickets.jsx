@@ -1,6 +1,6 @@
-import "../CSS/tickets.css"
-import "../CSS/movies.css"
-import "../CSS/home.css"
+import "../styles/tickets.css"
+import "../styles/movies.css"
+import "../styles/home.css"
 
 import { useEffect, useRef, useState } from "react";
 import { movieArray } from "./MovieData.jsx";
@@ -9,28 +9,28 @@ import MovieList from "./MovieList.jsx";
 let dates = [];
 const daysForward = 21;
 let dateString = null;
-let dateInNumbers = [{date:null, month:null, weekDay:null}];
+let dateInNumbers = [{ date: null, month: null, weekDay: null }];
 
 let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-export default function() {
-    {dates=[]}
+export default function () {
+    { dates = [] }
     const [open, setOpen] = useState(false);
     const [movies] = useState(movieArray);
 
     let calenderRef = useRef();
 
     useEffect(() => {
-        let handler = (e) =>{
-            if(!calenderRef.current.contains(e.target)) {
+        let handler = (e) => {
+            if (!calenderRef.current.contains(e.target)) {
                 setOpen(false);
             }
         };
         document.addEventListener("mousedown", handler);
-        return() =>{
+        return () => {
             document.removeEventListener("mousedown", handler);
         }
-        });
+    });
 
 
     //compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
@@ -48,33 +48,33 @@ export default function() {
 
     return <section id="calenderSection" className="calender">
         <div className="wrap">
-       
-        <div id="selectedDate">{dateString}</div>
-        <hr />
+
+            <div id="selectedDate">{dateString}</div>
+            <hr />
             <h2 id="buyTicketsTitle">Buy Tickets</h2>
             <hr />
             <div id="calender-box" ref={calenderRef}>
-       
-            <div id="btn" onClick={()=>{setOpen(!open)}}>Pick a Date</div>
-        
-                <div className={`calender-dropdown-trigger ${open? 'active' : 'inactive'}`}>
+
+                <div id="btn" onClick={() => { setOpen(!open) }}>Pick a Date</div>
+
+                <div className={`calender-dropdown-trigger ${open ? 'active' : 'inactive'}`}>
                     {calculateCurrentDate()}
-                    <ul onClick={()=>{setOpen(!open)}}>
-                    {dates.map((item) =>
-                    
-                        <div className="calender-list" key={item.id}>
-                            <div onClick={function (e){setDate(item.day, item.month, returnDayName(item.dayName))}}>
-                                {item.day} / {item.month} - {returnDayName(item.dayName)}
+                    <ul onClick={() => { setOpen(!open) }}>
+                        {dates.map((item) =>
+
+                            <div className="calender-list" key={item.id}>
+                                <div onClick={function (e) { setDate(item.day, item.month, returnDayName(item.dayName)) }}>
+                                    {item.day} / {item.month} - {returnDayName(item.dayName)}
+                                </div>
+
                             </div>
-                            
-                        </div>
-                    )}
+                        )}
                     </ul>
                 </div>
             </div>
         </div>
         <div id="top-movies">
-            <MovieList movies={moviesOnDate()}/>
+            <MovieList movies={moviesOnDate()} />
         </div>
     </section>
 }
@@ -100,6 +100,6 @@ function calculateCurrentDate() {
     }
 }
 
-function returnDayName(inIndex){
+function returnDayName(inIndex) {
     return daysInWeek[inIndex];
 }

@@ -1,6 +1,4 @@
 section {
-  
- 
     justify-content: center;
     align-items: center;
     background-color: #242333;
@@ -23,7 +21,6 @@ section {
     margin: 3px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    
 }
 
 .row {
@@ -32,7 +29,6 @@ section {
 }
 
 .screen {
-
     height: 70px;
     width: 180px;
     background-color: white;
@@ -48,7 +44,7 @@ section {
     background-color: rgb(207, 15, 15);
 }
 
-.seat.plusSeat{
+.seat.plusSeat {
     background-color: rgb(236, 150, 0);
 }
 
@@ -83,7 +79,7 @@ section {
     margin-left: 10px;
 }
 
-.container{
+.container {
     perspective: 200px;
     margin-bottom: 30px;
 }
@@ -103,19 +99,16 @@ section {
     margin-left: 10px;
 }
 
-.seatsWrap{
+.seatsWrap {
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* 8 equal-width columns */
-    grid-template-rows: repeat(6, 1fr); /* 6 equal-height rows */
-
+    grid-template-columns: repeat(8, 1fr);
+    /* 8 equal-width columns */
+    grid-template-rows: repeat(6, 1fr);
+    /* 6 equal-height rows */
 }
 
-.seating-chart {
-    
-  }
 
-
-  .seat.occupied {
+.seat.occupied {
     background-color: rgb(207, 15, 15);
 }
 
@@ -123,7 +116,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 2px solid rgba(96, 94, 94, 0.494) ;
+    border-top: 2px solid rgba(96, 94, 94, 0.494);
 }
 
 .seatsContainer p {
@@ -134,13 +127,11 @@ section {
     cursor: default;
     margin-right: 10px;
     margin-left: 5px;
-    border-bottom: 2px solid rgba(96, 94, 94, 0.494) ;
+    border-bottom: 2px solid rgba(96, 94, 94, 0.494);
 }
-
 
 #showcaseSeat1 {
     background-color: #444451;
-   
 }
 
 #showcaseSeat2 {
@@ -149,30 +140,27 @@ section {
 }
 
 #showcaseSeat3 {
-    background-color:#EC9600 ;
+    background-color: #EC9600;
 }
 
-#showcaseSeat1, #showcaseSeat2, #showcaseSeat3, #showcaseSeat4 {
+#showcaseSeat1,
+#showcaseSeat2,
+#showcaseSeat3,
+#showcaseSeat4 {
     margin-right: 10px;
     margin-left: 5px;
 }
 
-
-
-#showcaseSeat:not(.plusseat):hover {
-    
-}
-
-@media screen and (max-width: 550px) { 
+@media screen and (max-width: 550px) {
     #showcaseSeat p {
         font-size: 14px;
     }
- }
+}
 
 
- @media only screen and (min-device-width: 320px) and (max-device-width: 915px) and (orientation: landscape) { 
+@media only screen and (min-device-width: 320px) and (max-device-width: 915px) and (orientation: landscape) {
     #showcaseSeat {
         margin-top: 100px;
     }
 
-  }
+}

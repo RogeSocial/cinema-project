@@ -1,11 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function() {
+export default function () {
     return <>
-    <div className={'line-container'}>
-        <hr/>
-    </div>
+        <div className={'line-container'}>
+            <hr />
+        </div>
         <footer>
             <div>
                 <h1 className={"codinema"}>Codinema</h1>
@@ -13,11 +13,11 @@ export default function() {
             </div>
             <div>
                 <h1>Contact</h1>
-                Codinema<br/>
-                Nightmare avenue 666<br/>
+                Codinema<br />
+                Nightmare avenue 666<br />
                 211 20 Malmö
-                <p>info@codinematheatre.se<br/>
-                tel: 123-456 789</p>
+                <p>info@codinematheatre.se<br />
+                    tel: 123-456 789</p>
             </div>
             <div>
                 <h1>Quick menu</h1>
@@ -38,6 +38,6 @@ export default function() {
                     <li className="footer-link"><a href={"http://www.youtube.com/"} target={"_blank"}>Youtube</a></li>
                 </ul>
             </div>
-    </footer>
+        </footer>
     </>
 }

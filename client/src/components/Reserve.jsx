@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../CSS/reserve.css'
+import '../styles/reserve.css'
 
 function Seats() {
     const [seats, setSeats] = useState([]);
@@ -15,11 +15,11 @@ function Seats() {
                     occupied = true;
                 }
                 let plusSeat = false;
-                if(i === 3){
+                if (i === 3) {
                     plusSeat = true;
                 }
 
-                newSeats.push({ id: i * 8 + j + 1, seat: j + 1, row: i + 1, occupied: occupied, selected: false, available: true, plusSeat: plusSeat});
+                newSeats.push({ id: i * 8 + j + 1, seat: j + 1, row: i + 1, occupied: occupied, selected: false, available: true, plusSeat: plusSeat });
             }
         }
         setSeats(newSeats);
@@ -29,8 +29,8 @@ function Seats() {
         let element = event.target;
         let updatedSeats = [...seats];
         let selectedSeat = updatedSeats.find(seat => seat.id === parseInt(element.id));
-      
-        if(!selectedSeat.occupied){
+
+        if (!selectedSeat.occupied) {
             selectedSeat.selected = !selectedSeat.selected;
             setSeats(updatedSeats);
 
@@ -46,32 +46,33 @@ function Seats() {
 
     return (
         <section>
-        
-        <div id='showcaseSeat' className="seatsContainer">
-        <p>Available</p>
-        <div id='showcaseSeat1' className="seat occupied"></div>
-        <p>Selected</p>
-        <div id='showcaseSeat2' className="seat selected"></div>
-        <p>Plus seat</p>
-        <div id='showcaseSeat3' className="seat occupied"></div>
-        <p>Occupied</p>
-        <div id='showcaseSeat4' className="seat occupied"></div>
-        </div>
-       
-        <div className="screen"></div>
+
+            <div id='showcaseSeat' className="seatsContainer">
+                <p>Available</p>
+                <div id='showcaseSeat1' className="seat occupied"></div>
+                <p>Selected</p>
+                <div id='showcaseSeat2' className="seat selected"></div>
+                <p>Plus seat</p>
+                <div id='showcaseSeat3' className="seat occupied"></div>
+                <p>Occupied</p>
+                <div id='showcaseSeat4' className="seat occupied"></div>
+            </div>
+
+            <div className="screen"></div>
             <div className="seatsWrap">
 
                 {seats.map((seat) => (
                     <div key={seat.id} className={`seat ${seat.occupied ? 'occupied' : seat.selected ? 'selected' : seat.plusSeat ? 'plusSeat' : 'available'}`} id={seat.id} onClick={handleClick}></div>
                 ))}
             </div>
-          
+
             <br />
             <div className="message"> {message} </div>
-            <br />        
+            <br />
             <button className="btn">Buy</button>
-            
-        </section>
-    )}
 
-    export default Seats;
+        </section>
+    )
+}
+
+export default Seats;
