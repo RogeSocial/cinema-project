@@ -26,13 +26,6 @@
     margin-right: auto;
 }
 
-.movie-details {
-    flex-direction: column;
-    background-color: #111111AA;
-    padding: 15px;
-    border-radius: 20px;
-}
-
 .ticket-form {
     display: flex;
     flex-direction: column;
@@ -40,13 +33,6 @@
     padding: 15px;
     border-radius: 20px;
     position: relative;
-}
-
-.ticket-picker-in-form {
-    min-width: 200px;
-    min-height: 200px;
-    background-color: darkcyan;
-    margin-bottom: 15px;
 }
 
 .ticket-list {
@@ -64,7 +50,6 @@
 
 .movieText {
     font-size: 20px;
-
     padding: 20px;
 }
 
@@ -93,7 +78,6 @@
     .form-row {
         display: flex;
         flex-direction: row;
-        /*    max-width: 90%; */
     }
 
     .ticket-form {
