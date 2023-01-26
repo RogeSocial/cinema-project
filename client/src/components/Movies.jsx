@@ -59,18 +59,18 @@ export default function () {
 
         {showActiveFilter ? (
           <div className={"sort"}>
-            <button className="btn" id="movie-sort-btn"
+            <button className="button" id="movie-sort-btn"
               onClick={() => removeFilter()}>Reset filter</button>
-            <button className="btn" id="movie-sort-btn"
+            <button className="button" id="movie-sort-btn"
               onClick={() => setAlpha(alpha + 1)}> A-Z</button>
-            <button className="btn" id="movie-sort-btn"
+            <button className="button" id="movie-sort-btn"
               onClick={() => setReverse(reverse + 1)}> Z-A</button>
 
           </div>
 
         ) : (
 
-          <button className="btn" id="movie-sort-btn"
+          <button className="button" id="movie-sort-btn"
             onClick={() => setSearchParams({ filter: 'active' })}>
             Sort
           </button>
