@@ -1,7 +1,7 @@
-@import "CSS/main.css";
-@import "CSS/header.css";
-@import "CSS/footer.css";
-@import "CSS/home.css";
-@import "CSS/movies.css";
-@import "CSS/tickets.css";
-@import "CSS/reservations.css";
+@import "styles/main.css";
+@import "styles/header.css";
+@import "styles/footer.css";
+@import "styles/home.css";
+@import "styles/movies.css";
+@import "styles/tickets.css";
+@import "styles/reservations.css";

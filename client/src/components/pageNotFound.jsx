@@ -1,5 +1,6 @@
 import React from 'react';
-import '../CSS/pageNotFound.css'
+import '../styles/pageNotFound.css'
+
 function PageNotFound() {
     return (
         <section className="error">

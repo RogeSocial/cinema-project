@@ -4,7 +4,6 @@ import './index.css'
 import './styles.css'
 import Mainpage from './components/Mainpage.jsx'
 import {
-
     Route,
     BrowserRouter,
     Routes
@@ -20,13 +19,13 @@ import Reserve from "./components/Reserve.jsx";
 import PageNotFound from "./components/pageNotFound.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+    <React.StrictMode>
 
 
-      <BrowserRouter>
-          <ScrollToTop/>
-          <Header />
-          <Routes>
+        <BrowserRouter>
+            <ScrollToTop />
+            <Header />
+            <Routes>
                 <Route path="/" element={<Mainpage />} />
                 <Route path="/:id/:param" element={<TicketForm />} />
                 <Route path="/tickets/:id/:param" element={<TicketForm />} />
@@ -34,8 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                 <Route path="movies/:id/:param" element={<TicketForm />} />
                 <Route path="tickets" element={<Tickets />} />
                 <Route path="reservations" element={<Reservations />} />
-              <Route path="*" element={<PageNotFound/>}/>
-                  <Route path="reserve" element={<Reserve />} />
+                <Route path="*" element={<PageNotFound />} />
+                <Route path="reserve" element={<Reserve />} />
                 <Route path="ticket-form" element={<TicketForm />} />
                 <Route path="user">
                     <Route path="login" />
@@ -44,5 +43,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
             </Routes>
             <Footer />
         </BrowserRouter>
-  </React.StrictMode>
+    </React.StrictMode>
 )
