@@ -1,6 +1,3 @@
-import { movieArray } from "./MovieData";
-import { useParams } from "react-router-dom";
-
 export function hoursAndMinutes(inMinutes) {
     let hours = Math.trunc(inMinutes / 60);
     let minutes = inMinutes % 60;
