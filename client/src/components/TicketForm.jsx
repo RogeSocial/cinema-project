@@ -3,30 +3,32 @@ import { Link, useParams } from 'react-router-dom';
 import '../styles/ticket-form.css'
 import { movieArray } from './MovieData';
 import '../styles/home.css'
+import { dateSelector } from './Utilities';
+import { timeSelector } from './Utilities';
 
 export default function TicketForm() {
     const movieId = useParams().id
     const movie = movieArray.find(m => m.id == movieId)
 
     function dateSelector() {
-        return (
-            <select name="dates" id="dates" className='date-picker'>
-                {movie.date.map((option, index) => {
-                    return <option key={index} > {option} </option>
-                })}
-            </select>
-        )
-    }
-
+          return (
+              <select name="dates" id="dates" className='date-picker'>
+                  {movie.date.map((option, index) => {
+                      return <option key={index} > {option} </option>
+                  })}
+              </select>
+          )
+      }
+      
     function timeSelector() {
-        return (
-            <select name="times" id="times" className='date-picker'>
-                {movie.time.map((option, index) => {
-                    return <option key={index} > {option} </option>
-                })}
-            </select>
-        )
-    }
+          return (
+              <select name="times" id="times" className='date-picker'>
+                  {movie.time.map((option, index) => {
+                      return <option key={index} > {option} </option>
+                  })}
+              </select>
+          )
+      }
 
     self.addEventListener('fetch', event => {
         event.respondWith(

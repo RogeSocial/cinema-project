@@ -69,7 +69,7 @@ function Seats() {
             <br />
             <div className="message"> {message} </div>
             <br />
-            <button className="btn">Buy</button>
+            <button className="button">Buy</button>
 
         </section>
     )
