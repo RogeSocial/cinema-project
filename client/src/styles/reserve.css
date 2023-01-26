@@ -1,4 +1,4 @@
-section {
+.reserveSection {
     justify-content: center;
     align-items: center;
     background-color: #242333;
@@ -23,10 +23,6 @@ section {
     border-top-right-radius: 10px;
 }
 
-.row {
-    display: flex;
-    justify-content: center;
-}
 
 .screen {
     height: 70px;
@@ -60,16 +56,6 @@ section {
     transform: 1;
 }
 
-.showcase {
-    background-color: rgba(0, 0, 0, 0.1);
-    padding: 5px 10px;
-    border-radius: 5px;
-    list-style-type: none;
-    display: flex;
-    justify-content: space-around;
-
-}
-
 .showcase li {
     display: flex;
     align-items: center;
@@ -77,14 +63,6 @@ section {
     margin: 0 10px;
 }
 
-.showcase li small {
-    margin-left: 10px;
-}
-
-.container {
-    perspective: 200px;
-    margin-bottom: 30px;
-}
 
 .seat.occupied {
     background-color: red;
@@ -108,7 +86,6 @@ section {
     grid-template-rows: repeat(6, 1fr);
     /* 6 equal-height rows */
 }
-
 
 .seat.occupied {
     background-color: rgb(207, 15, 15);
@@ -147,17 +124,12 @@ section {
 }
 
 .showCaseSeat .seat {
-    background-color: #444451;
-}
-
-.showCaseSeat .seat {
     margin-right: auto;
     margin-left: auto;
 }
 
 @media screen and (max-width: 550px) {
-
-   
+    
     .showCaseSeat h3 {
         font-size: 16px;
     }
