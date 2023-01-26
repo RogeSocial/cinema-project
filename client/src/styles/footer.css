@@ -47,7 +47,7 @@ footer h3 {
 }
 
 footer ul {
-    margin: 0 0 30px;
+    margin-top: 5px;
 }
 
 footer li {
@@ -63,7 +63,7 @@ footer li {
 }
 
 footer p {
-    margin: 0 0 30px;
+    margin-top: 5px;
     max-width: 450px;
 }
 
@@ -79,16 +79,16 @@ footer a:visited {
     color: #8B95A6;
 }
 
-#mail-and-phone {
-    margin-top: 20px;
-}
-
 hr {
     width: 60%;
     height: 1px;
     border-width: 0;
     background-color: #8B95A6;
     margin: 0;
+}
+
+#phone-and-email {
+
 }
 
 @media only screen and (min-width: 992px) {
