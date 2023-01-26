@@ -16,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: solid 1px white;
+  border: solid 1px var(--main_text_color);
   padding: 0.6rem;
   padding-right: 4.2rem;
 }
@@ -40,22 +40,17 @@
 }
 
 ::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  /* for Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--main_text_color);
-  opacity: 1; /* Firefox */
+  opacity: 1; /* for Firefox */
   font-size: 18px;
   font-weight: 500;
   display: flex;
   align-items: center;
 }
 
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: var(--main_text_color);
-}
-
 ::-ms-input-placeholder {
-  /* Microsoft Edge */
+  /* for Microsoft Edge */
   color: var(--main_text_color);
 }
 
@@ -97,9 +92,9 @@
   align-items: center;
   justify-content: center;
   position: absolute;
-    top: 0;
-    width: 100vw;
-    margin-top: 3.5rem;
+  top: 0;
+  width: 100vw;
+  margin-top: 3.5rem;
 }
 
 .movie-card {
@@ -143,7 +138,7 @@
   transform: scale(1.05);
 }
 
-.movieLength{
+.movieLength {
   color: #8c8c8c;
   position: inherit;
   bottom: 5rem;
@@ -186,7 +181,6 @@
 @media screen and (min-width: 1000px) {
   .movies {
     grid-template-columns: repeat(3, max-content);
-    /*     review if js plugin needed to maintain grid-gap when adding an even amount of movies */
     grid-template-rows: repeat(3, max-content);
   }
 }
