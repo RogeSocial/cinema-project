@@ -87,10 +87,6 @@ hr {
     margin: 0;
 }
 
-#phone-and-email {
-
-}
-
 @media only screen and (min-width: 992px) {
     footer {
         flex-direction: row;

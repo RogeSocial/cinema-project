@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 export default function () {
     return <footer>
-        <hr id={"footer-line"} />
+        <hr id={"footer-line"}/>
         <div className={"footer-content"}>
             <h2>Codinema</h2>
             <p>Codinema is the ultimate cinema for horror movie fans. Our state-of-the-art theater boasts
@@ -13,8 +13,8 @@ export default function () {
         <div className={"footer-content"}>
             <h3>Contact</h3>
             <p>Codinema<br />Nightmare avenue 666<br />211 20 Malmö<br /></p>
-              <p id={"phone-and-email"}><a href={'mailto:info@codinematheatre.se'}>info@codinematheatre.se</a><br />
-                    tel: 123-456 789</p>
+            <p id={"phone-and-email"}><a href={'mailto:info@codinematheatre.se'}>info@codinematheatre.se</a><br/>
+                tel: 123-456 789</p>
         </div>
         <div className={"footer-content"}>
             <h3>Quick menu</h3>
@@ -31,7 +31,8 @@ export default function () {
             <ul>
                 <li className="footer-link"><a href={"http://www.facebook.com"} target={"_blank"}>Facebook</a></li>
                 <li className="footer-link"><a href={"http://www.instagram.com/"} target={"_blank"}>Instagram</a></li>
-                <li className="footer-link"><a href={"http://twitter.com/codinematheatre"} target={"_blank"}>Twitter</a></li>
+                <li className="footer-link"><a href={"http://twitter.com/codinematheatre"} target={"_blank"}>Twitter</a>
+                </li>
                 <li className="footer-link"><a href={"http://www.youtube.com/"} target={"_blank"}>Youtube</a></li>
             </ul>
         </div>
