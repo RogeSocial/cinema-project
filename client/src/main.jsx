@@ -6,8 +6,9 @@ import Mainpage from './components/Mainpage.jsx'
 import {
 
     Route,
-    BrowserRouter,
-    Routes, RouterProvider, createBrowserRouter, createRoutesFromElements
+     RouterProvider,
+    createBrowserRouter,
+    createRoutesFromElements
 } from "react-router-dom";
 
 import Movies from './components/Movies'
@@ -17,7 +18,7 @@ import Reservations from './components/Reservations'
 import TicketForm from "./components/TicketForm.jsx";
 import Reserve from "./components/Reserve.jsx";
 import PageNotFound from "./components/pageNotFound.jsx";
-import App from "./components/App.jsx";
+import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
