@@ -3,8 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import '../styles/ticket-form.css'
 import { movieArray } from './MovieData';
 import '../styles/home.css'
-import { dateSelector } from './Utilities';
-import { timeSelector } from './Utilities';
 
 export default function TicketForm() {
     const movieId = useParams().id
