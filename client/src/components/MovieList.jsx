@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { showsMovieLength } from "./Utilities";
 
 export default function ({ movies }) {
   return (
@@ -8,7 +9,7 @@ export default function ({ movies }) {
           <div className="movie-card">
             <h3> {movie.title} </h3>
             <img src={movie.image} alt={movie.alt} />
-            <h4>{showsMovieLength(movie)}</h4>
+            <h4>{showsMovieLength(movie, "/tickets")}</h4>
           </div>
         </Link>
       ))}
@@ -16,16 +17,3 @@ export default function ({ movies }) {
   );
 }
 
-export function hoursAndMinutes(inMinutes) {
-  let hours = Math.trunc(inMinutes / 60);
-  let minutes = inMinutes % 60;
-  return hours + "h " + minutes + "m";
-}
-
-function showsMovieLength(movie) {
-  if (window.location.pathname === "/tickets") {
-    return hoursAndMinutes(movie.length);
-  } else {
-    return null;
-  }
-}
