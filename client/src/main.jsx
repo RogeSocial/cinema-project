@@ -7,42 +7,41 @@ import {
 
     Route,
     BrowserRouter,
-    Routes
+    Routes, RouterProvider, createBrowserRouter, createRoutesFromElements
 } from "react-router-dom";
-import Header from "./components/Header.jsx";
-import Footer from './components/Footer.jsx'
+
 import Movies from './components/Movies'
 import Tickets from './components/Tickets.jsx'
 import Reservations from './components/Reservations'
-import ScrollToTop from "./components/scrollToTop.jsx";
+
 import TicketForm from "./components/TicketForm.jsx";
 import Reserve from "./components/Reserve.jsx";
 import PageNotFound from "./components/pageNotFound.jsx";
+import App from "./components/App.jsx";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-
-
-      <BrowserRouter>
-          <ScrollToTop/>
-          <Header />
-          <Routes>
-                <Route path="/" element={<Mainpage />} />
-                <Route path="/:id/:param" element={<TicketForm />} />
-                <Route path="/tickets/:id/:param" element={<TicketForm />} />
-                <Route path="movies" element={<Movies />} />
-                <Route path="movies/:id/:param" element={<TicketForm />} />
-                <Route path="tickets" element={<Tickets />} />
-                <Route path="reservations" element={<Reservations />} />
-              <Route path="*" element={<PageNotFound/>}/>
-                  <Route path="reserve" element={<Reserve />} />
-                <Route path="ticket-form" element={<TicketForm />} />
-                <Route path="user">
-                    <Route path="login" />
-                    <Route path="register" />
-                </Route>
-            </Routes>
-            <Footer />
-        </BrowserRouter>
-  </React.StrictMode>
-)
+    <React.StrictMode>
+       <RouterProvider router={
+           createBrowserRouter(
+               createRoutesFromElements(
+                       <Route path="/" element={<App/>}>
+                       <Route index element={<Mainpage/>}/>
+                       <Route path="/:id/:param" element={<TicketForm/>}/>
+                       <Route path="/tickets/:id/:param" element={<TicketForm/>}/>
+                       <Route path="movies" element={<Movies/>}/>
+                       <Route path="movies/:id/:param" element={<TicketForm/>}/>
+                       <Route path="tickets" element={<Tickets/>}/>
+                       <Route path="reservations" element={<Reservations/>}/>
+                       <Route path="*" element={<PageNotFound/>}/>
+                       <Route path="reserve" element={<Reserve/>}/>
+                       <Route path="ticket-form" element={<TicketForm/>}/>
+                       <Route path="user">
+                           <Route path="login"/>
+                           <Route path="register"/>
+                       </Route>
+                       </Route>
+               )
+           )
+       }/>
+    </React.StrictMode>
+);
