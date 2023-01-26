@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lacquer&family=Metal+Mania&family=Niconne&family=Poppins:wght@200&family=Rubik+Wet+Paint&family=Slackey&family=Yuji+Boku&display=swap');
 
+.section-top-movies{
 
+    display: flex;
+    align-items: center;
+ 
+}
 
 .background-image {
     display: flex;
