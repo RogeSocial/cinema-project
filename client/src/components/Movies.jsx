@@ -10,12 +10,13 @@ import ReverseAlphabeticButton from "./ReverseAlphabeticButton";
 import MovieSortButton from "./MovieSortButton";
 
 export default function () {
-  const [movies, setMovies] = useState(movieArray);
+  //handles the searching for movies
+  const [allMovies, setAllMovies] = useState(movieArray);
   const [searchString, setSearchString] = useState(null);
   const addUserSearchString = (event) => {
     setSearchString(event.target.value);
   };
-
+  //handles the sorting of movies
   const [searchParams, setSearchParams] = useSearchParams();
   const activeSortingFilter = searchParams.get("filter") === "active";
   const [alpha, setAlpha] = useState(0);
@@ -29,7 +30,7 @@ export default function () {
     if (activeSortingFilter) {
       if (alpha <= 2) {
         setAlpha(alpha + 1);
-        setMovies(sortAlpha);
+        setAllMovies(sortAlpha);
         setAlpha(0);
       }
     }
@@ -39,7 +40,7 @@ export default function () {
     if (activeSortingFilter) {
       if (reverse <= 2) {
         setReverse(reverse + 1);
-        setMovies(reverseAlpha);
+        setAllMovies(reverseAlpha);
         setReverse(0);
       }
     }
@@ -71,10 +72,10 @@ export default function () {
         )}
       </div>
       <MovieList
-        movies={
+        showTheseMovies={
           ifSearchIsInvalid(searchString)
-            ? movies
-            : movies.filter((movie) =>
+            ? allMovies
+            : allMovies.filter((movie) =>
                 filterMoviesBasedOnSearch(movie, searchString)
               )
         }
