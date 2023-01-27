@@ -2,6 +2,7 @@
 .error h2 {
     color: indianred;
     font-family: 'Poppins', cursive;
+    font-size: x-large;
 }
 .error {
     font-family: 'Lacquer', cursive;
