@@ -1,4 +1,8 @@
+body {
+    background-color: black;
+}
 .error {
+    font-family: 'Lacquer', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,4 +10,5 @@
     padding: 1rem;
     background-color: black;
     padding-top: 3.7rem;
+    color: red;
 }
