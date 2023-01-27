@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import '../styles/home.css'
+import mirror3 from '../images/mirror3.png';
 import MovieList from "../components/MovieList.jsx";
 import { Link } from "react-router-dom";
 import Quotes from "../components/Quotes.jsx";
@@ -12,7 +13,10 @@ export default function () {
     <div>
       <section>
         <div className="background-image">
-          <h2 className={"transparent-background"}><Quotes /></h2>
+        <div className="mirror-container">
+        <img className="mirror" src={mirror3} alt="" />
+          <h2 id="backgroundQuote" className={"transparent-background"}><Quotes /></h2>
+          </div>
           <div>
             <Link to="user/logins" ><button className="button">LOGIN</button></Link>
             <Link to="user/registers"><button className="button">SIGNUP</button></Link>
