@@ -26,9 +26,9 @@
     color: black;
     background-color: rgb(255, 254, 254);
     cursor: pointer;
-    margin: 10px; 
+    margin: 10px;
    }
-   
+
    .button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
