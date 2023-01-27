@@ -3,16 +3,21 @@ import MovieList from "./MovieList";
 import { movieArray } from "./MovieData";
 import { useSearchParams } from "react-router-dom";
 import { reverseAlpha, sortAlpha } from "./movieSort.jsx";
-import MovieSearch from "./MovieSearch";
-import ResetFilter from "./ResetFilter";
-import AlphabeticOrder from "./AlphabeticOrder";
-import ReverseAlphabeticOrder from "./ReverseAlphabeticOrder";
-import SortMovies from "./SortMovies";
+import MovieSearchField from "./MovieSearchField";
+import ResetFilterButton from "./ResetFilterButton";
+import AlphabeticButton from "./AlphabeticButton";
+import ReverseAlphabeticButton from "./ReverseAlphabeticButton";
+import MovieSortButton from "./MovieSortButton";
 
 export default function () {
   const [movies, setMovies] = useState(movieArray);
+  const [searchString, setSearchString] = useState(null);
+  const addUserSearchString = (event) => {
+    setSearchString(event.target.value);
+  };
+
   const [searchParams, setSearchParams] = useSearchParams();
-  const showActiveFilter = searchParams.get("filter") === "active";
+  const activeSortingFilter = searchParams.get("filter") === "active";
   const [alpha, setAlpha] = useState(0);
   const [reverse, setReverse] = useState(0);
   const removeFilter = () => {
@@ -21,7 +26,7 @@ export default function () {
   };
 
   useEffect(() => {
-    if (showActiveFilter) {
+    if (activeSortingFilter) {
       if (alpha <= 2) {
         setAlpha(alpha + 1);
         setMovies(sortAlpha);
@@ -31,7 +36,7 @@ export default function () {
   }, [alpha]);
 
   useEffect(() => {
-    if (showActiveFilter) {
+    if (activeSortingFilter) {
       if (reverse <= 2) {
         setReverse(reverse + 1);
         setMovies(reverseAlpha);
@@ -39,43 +44,37 @@ export default function () {
       }
     }
   }, [reverse]);
-  const [searchString, setSearchString] = useState(null);
-  const handlesSearch = (event) => {
-    setSearchString(event.target.value);
-  };
-  const plusAlpha = () => {
+
+  const showInAscendingOrder = () => {
     setAlpha(alpha + 1);
   };
-  const plusReverse = () => {
+  const showInDescendingOrder = () => {
     setReverse(reverse + 1);
   };
-  const activeFilter = () => {
+  const showSortingOptions = () => {
     setSearchParams({ filter: "active" });
   };
 
   return (
     <section className="movies">
-      <div className="search-filter">
-        <MovieSearch handlesSearch={handlesSearch} />
+      <div className="movie-search-and-sorting-area">
+        <MovieSearchField handleSearch={addUserSearchString} />
         <h2>Movies</h2>
-        {!showActiveFilter ? (
-          <SortMovies activeFilter={activeFilter} />
+        {!activeSortingFilter ? (
+          <MovieSortButton handleClick={showSortingOptions} />
         ) : (
-          <div className={"sort"}>
-            <ResetFilter removeFilter={removeFilter} />
-            <AlphabeticOrder plusAlpha={plusAlpha} />
-            <ReverseAlphabeticOrder plusReverse={plusReverse} />
+          <div className={"sorting-options"}>
+            <ResetFilterButton handleClick={removeFilter} />
+            <AlphabeticButton handleClick={showInAscendingOrder} />
+            <ReverseAlphabeticButton handleClick={showInDescendingOrder} />
           </div>
         )}
-        <br />
       </div>
       <MovieList
         movies={
           ifSearchIsInvalid(searchString)
-            ? //then show all
-              movies
-            : //else
-              movies.filter((movie) =>
+            ? movies
+            : movies.filter((movie) =>
                 filterMoviesBasedOnSearch(movie, searchString)
               )
         }

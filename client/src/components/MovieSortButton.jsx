@@ -1,12 +1,12 @@
-export default function ({ activeFilter }) {
-    if (!{ activeFilter }) {
+export default function ({ handleClick }) {
+    if (!{ handleClick }) {
       return null;
     }
     return (
         <button
             className="button"
             id="movie-sort-btn"
-            onClick={activeFilter}
+            onClick={handleClick}
           >
             Sort
           </button>

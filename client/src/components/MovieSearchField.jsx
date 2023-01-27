@@ -1,5 +1,5 @@
-export default function ({ handlesSearch }) {
-  if (!{ handlesSearch }) {
+export default function ({ handleSearch }) {
+  if (!{ handleSearch }) {
     return null;
   }
   return (
@@ -8,7 +8,7 @@ export default function ({ handlesSearch }) {
       <input
         type="text"
         placeholder="Search.."
-        onChange={handlesSearch}
+        onChange={handleSearch}
       ></input>
     </div>
   );
