@@ -11,7 +11,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 #selectedDate {
@@ -19,18 +18,15 @@
     justify-content: center;
     margin: 20px;
     font-size: 26px;
-    font-family: 'Fredericka the Great', cursive;
-    ;
-
+    font-family: 'Fredericka the Great', cursive;;
 }
 
-#buyTitecktsTitle {
+/*#buyTitecktsTitle {
     background-color: #2423335b;
-}
+}*/
 
 #buyTicketsTitle {
-    font-family: 'Fredericka the Great', cursive;
-    ;
+    font-family: 'Fredericka the Great', cursive;;
     padding: 20px;
 }
 
@@ -93,11 +89,11 @@ hr {
     color: white;
 }
 
-.wrap h2 {
+/*.wrap h2 {
     font-family: 'Fredericka the Great', cursive;
-}
+}*/
 
-.calender-dropdown-trigger>ul {
+.calender-dropdown-trigger > ul {
     background-color: #2a508100;
     text-align: center;
     list-style: none;
@@ -121,7 +117,7 @@ hr {
     height: 500px;
     transition: 1s;
     border-radius: 15px;
-    border: 2px solid#28616d41;
+    border: 2px solid #28616d41;
 }
 
 #movieImg:hover {
@@ -187,13 +183,27 @@ hr {
     padding-top: 0;
 }
 
-.calender h3 {
+/*.calender{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-image: url(../images/it5.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #242333;
+    color: var(--main_text_color);
+    padding-top: 0px;
+}*/
+
+/*.calender h3 {
     position: absolute;
     z-index: 2;
     font-size: 25px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont;
     font-weight: 600;
-}
+}*/
 
 .calender h2 {
     margin: 1rem;
@@ -250,18 +260,16 @@ hr {
     }
 
     #calenderSection {
-
         padding-top: 50px;
 
     }
 
-    .movie-card h3 {
+/*    .movie-card h3 {
         font-size: 15px;
-    }
+    }*/
 
 
 }
-
 
 
 @media screen and (max-width: 550px) {
@@ -277,10 +285,7 @@ hr {
     .calender {
         justify-content: flex-start;
         align-items: flex-start;
-
     }
-
-
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 890px) and (orientation: landscape) {
@@ -294,9 +299,9 @@ hr {
     }
 
 
-    nav {
+/*    nav {
         display: none;
-    }
+    }*/
 
     .wrapMovieList {
         flex-direction: column;
