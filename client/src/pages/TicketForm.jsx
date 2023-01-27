@@ -2,31 +2,31 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../styles/ticket-form.css'
 import { movieArray } from '../components/MovieData.jsx';
+import '../styles/home.css'
 
 export default function TicketForm() {
     const movieId = useParams().id
     const movie = movieArray.find(m => m.id == movieId)
 
-
     function dateSelector() {
-        return (
-            <select name="dates" id="dates" className='date-picker'>
-                {movie.date.map((option, index) => {
-                    return <option key={index} > {option} </option>
-                })}
-            </select>
-        )
-    }
+          return (
+              <select name="dates" id="dates" className='date-picker'>
+                  {movie.date.map((option, index) => {
+                      return <option key={index} > {option} </option>
+                  })}
+              </select>
+          )
+      }
 
     function timeSelector() {
-        return (
-            <select name="times" id="times" className='date-picker'>
-                {movie.time.map((option, index) => {
-                    return <option key={index} > {option} </option>
-                })}
-            </select>
-        )
-    }
+          return (
+              <select name="times" id="times" className='date-picker'>
+                  {movie.time.map((option, index) => {
+                      return <option key={index} > {option} </option>
+                  })}
+              </select>
+          )
+      }
 
     self.addEventListener('fetch', event => {
         event.respondWith(

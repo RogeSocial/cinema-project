@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/reserve.css'
+import '../styles/home.css'
 
 function Seats() {
     const [seats, setSeats] = useState([]);
