@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
 .ticket-form-page {
-    background-size: cover;
-    min-height: 100vh;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: auto;
 }
 
 .ticket-form-box {
@@ -18,21 +21,33 @@
     padding-left: 0;
 }
 
-.ticket-submit {
-    display: block;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    margin-left: auto;
-    margin-right: auto;
+
+.movie-details {
+    flex-direction: column;
+    background-color: #111111AA;
+    padding: 15px;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;
 }
 
 .ticket-form {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background-color: #111111AA;
     padding: 15px;
     border-radius: 20px;
     position: relative;
+    background-color: rgba(255, 0, 0, 0.284);
+
+}
+
+.ticket-picker-in-form {
+    min-width: 200px;
+    min-height: 200px;
+    background-color: darkcyan;
+    margin-bottom: 15px;
 }
 
 .ticket-list {
@@ -50,44 +65,38 @@
 
 .movieText {
     font-size: 20px;
+
     padding: 20px;
 }
 
-@media only screen and (min-width: 600px) {
-    .ticket-form-page {
-        display: flex;
-        justify-content: center;
-        background: url("../images/ticket.jpg");
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-    }
-
-    .movie-details {
-        width: 100%;
-        background-color: #111111AA;
-        padding-left: 15px;
-        padding-right: 15px;
-        border-radius: 20px;
-    }
-
-    .ticket-form {
-        align-items: center;
-    }
-
-    .form-row {
-        display: flex;
-        flex-direction: row;
-    }
-
-    .ticket-form {
-        background-color: #111111AA;
-        border-radius: 20px;
-    }
+iframe {
+    width: 40vw;
+    height: 420px;
 }
 
+.ticket-form-page {
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: auto;
+}
 
-@media screen and (max-width: 550px) {
+.movieText {
+    width: 600px;
+}
+.movie-details {
+    width:80vw;
+    background-color: #111111AA;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 20px;
+    display: flex;
+
+}
+
+@media screen and (max-width: 750px) {
     iframe {
         width: 300px;
         height: 220px;
@@ -96,10 +105,27 @@
     .movieText {
         font-size: 16px;
         padding: 10px;
+        width: 300px;
     }
+
+   
+    .ticket-form h3 {
+        display: flex;
+        justify-content: center;
+    }
+
+
+     .ticket-form {
+        display:flex;
+        justify-content: center;
+        background-color: rgba(255, 0, 0, 0.284);
+
+     }
+
+     
 }
 
-@media (min-width: 480px) and (max-width: 897px) and (orientation: landscape) {
+@media (min-width: 480px) and (max-width: 950px) and (orientation: landscape) {
     iframe {
         width: 500px;
         height: 220px;
@@ -108,7 +134,13 @@
     .movieText {
         font-size: 16px;
         padding: 10px;
+        width: 500px;
     }
 
+    .ticket-form {
+        display:flex;
+        justify-content: center;
+        background-color: rgba(255, 0, 0, 0.284);
 
+     }
 }
