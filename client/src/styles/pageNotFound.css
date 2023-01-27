@@ -1,9 +1,4 @@
-body {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
+
 .error h2 {
     color: indianred;
     font-family: 'Poppins', cursive;
