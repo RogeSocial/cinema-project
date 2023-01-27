@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import MovieList from "./MovieList";
 import { movieArray } from "./MovieData";
 import { useSearchParams } from "react-router-dom";
-import { reverseAlpha, sortAlpha } from "./movieSort.jsx";
+import { reverseAlphabet, sortAlphabet } from "./movieSort.jsx";
 import MovieSearchField from "./MovieSearchField";
 import ResetFilterButton from "./ResetFilterButton";
 import AlphabeticButton from "./AlphabeticButton";
@@ -17,44 +17,43 @@ export default function () {
     setSearchString(event.target.value);
   };
   //handles the sorting of movies
-  const [searchParams, setSearchParams] = useSearchParams();
-  const activeSortingFilter = searchParams.get("filter") === "active";
-  const [alpha, setAlpha] = useState(0);
-  const [reverse, setReverse] = useState(0);
+  const [filterParam, setFilterParam] = useSearchParams();
+  const activeSortingFilter = filterParam.get("filter") === "active";
+  const [alphabeticalOrder, setAlphabeticalOrder] = useState(0);
+  const [zetabeticalOrder, setZetabeticalOrder] = useState(0);
+  const showInAscendingOrder = () => {
+    setAlphabeticalOrder(alphabeticalOrder + 1);
+  };
+  const showInDescendingOrder = () => {
+    setZetabeticalOrder(zetabeticalOrder + 1);
+  };
+  const showSortingOptions = () => {
+    setFilterParam({ filter: "active" });
+  };
   const removeFilter = () => {
-    setSearchParams({});
+    setFilterParam({});
     window.location.reload();
   };
 
   useEffect(() => {
     if (activeSortingFilter) {
-      if (alpha <= 2) {
-        setAlpha(alpha + 1);
-        setAllMovies(sortAlpha);
-        setAlpha(0);
+      if (alphabeticalOrder <= 2) {
+        setAlphabeticalOrder(alphabeticalOrder + 1);
+        setAllMovies(sortAlphabet);
+        setAlphabeticalOrder(0);
       }
     }
-  }, [alpha]);
+  }, [alphabeticalOrder]);
 
   useEffect(() => {
     if (activeSortingFilter) {
-      if (reverse <= 2) {
-        setReverse(reverse + 1);
-        setAllMovies(reverseAlpha);
-        setReverse(0);
+      if (zetabeticalOrder <= 2) {
+        setZetabeticalOrder(zetabeticalOrder + 1);
+        setAllMovies(reverseAlphabet);
+        setZetabeticalOrder(0);
       }
     }
-  }, [reverse]);
-
-  const showInAscendingOrder = () => {
-    setAlpha(alpha + 1);
-  };
-  const showInDescendingOrder = () => {
-    setReverse(reverse + 1);
-  };
-  const showSortingOptions = () => {
-    setSearchParams({ filter: "active" });
-  };
+  }, [zetabeticalOrder]);
 
   return (
     <section className="movies">
@@ -72,7 +71,7 @@ export default function () {
         )}
       </div>
       <MovieList
-        showTheseMovies={
+        movies={
           ifSearchIsInvalid(searchString)
             ? allMovies
             : allMovies.filter((movie) =>
@@ -96,7 +95,6 @@ function filterMoviesBasedOnSearch(movie, searchString) {
   let title = movie.title.toLowerCase();
   let string = searchString.toLowerCase();
 
-  //if any part of the title includes the string that was searched
   if (title.includes(string)) {
     return true;
   } else {
