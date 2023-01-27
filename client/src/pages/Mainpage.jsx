@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import '../styles/home.css'
-import MovieList from "./MovieList";
+import MovieList from "../components/MovieList.jsx";
 import { Link } from "react-router-dom";
-import Quotes from "./Quotes.jsx";
-import { movieArray } from "./MovieData";
+import Quotes from "../components/Quotes.jsx";
+import { movieArray } from "../components/MovieData.jsx";
 
 export default function () {
   const [movies, setMovies] = useState(movieArray);
