@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../styles/ticket-form.css'
-import { movieArray } from './MovieData';
+import { movieArray } from '../components/MovieData.jsx';
 import '../styles/home.css'
 
 export default function TicketForm() {
@@ -17,7 +17,7 @@ export default function TicketForm() {
               </select>
           )
       }
-      
+
     function timeSelector() {
           return (
               <select name="times" id="times" className='date-picker'>
@@ -58,10 +58,12 @@ export default function TicketForm() {
                             <li>The chosen time </li>
                             {timeSelector()}
                         </ul>
-                        <Link to="/reserve"><button type={"submit"} className={"ticket-submit button"}>Purchase tickets</button></Link>
+
+                        <Link to="/reserve"><button type={"submit"} className={"ticket-submit btn"}>Purchase tickets</button></Link>
                     </form>
                 </div>
             </div>
         </div>
+
     );
 }
