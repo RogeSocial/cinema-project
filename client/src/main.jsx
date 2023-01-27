@@ -29,7 +29,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                         path="/"
                         element={<App/>}
                         errorElement={<ErrorBoundary/>}>
-                        
+
                         <Route index element={<Mainpage/>}/>
                         <Route path="/:id/:param" element={<TicketForm/>}/>
                         <Route path="/tickets/:id/:param" element={<TicketForm/>}/>
