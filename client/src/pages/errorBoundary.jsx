@@ -26,7 +26,8 @@ function ErrorBoundary() {
         if (error.status === 418) {
             return <div className={"error"}>
                 <h2>Error 418</h2>
-                I'm a teapot 🫖</div>;
+               <h3> I'm a teapot 🫖</h3>
+            </div>;
         }
     }
     return <div className={"error"}>
