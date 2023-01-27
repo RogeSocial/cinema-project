@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/pageNotFound.css'
+import '../styles/errorBoundary.css'
 import {isRouteErrorResponse, useRouteError} from "react-router-dom";
 
 function ErrorBoundary() {
