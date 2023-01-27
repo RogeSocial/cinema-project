@@ -1,17 +1,14 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../styles/ticket-form.css'
-import { movieArray } from './MovieData';
+import { movieArray } from '../components/MovieData.jsx';
 import '../styles/home.css'
-import { timeSelector } from './Utilities';
-import { dateSelector } from './Utilities';
+import { timeSelector } from '../components/Utilities';
+import { dateSelector } from '../components/Utilities';
 
 export default function TicketForm() {
     const movieId = useParams().id
     const movie = movieArray.find(m => m.id == movieId)
-
-
-
 
     self.addEventListener('fetch', event => {
         event.respondWith(
@@ -43,10 +40,12 @@ export default function TicketForm() {
                             <li>The chosen time </li>
                             {timeSelector(movie)}
                         </ul>
+
                         <Link to="/reserve"><button type={"submit"} className={"ticket-submit button"}>Purchase tickets</button></Link>
                     </form>
                 </div>
             </div>
         </div>
+
     );
 }

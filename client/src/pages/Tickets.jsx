@@ -3,8 +3,8 @@ import "../styles/movies.css"
 import "../styles/home.css"
 
 import { useEffect, useRef, useState } from "react";
-import { movieArray } from "./MovieData.jsx";
-import MovieList from "./MovieList.jsx";
+import { movieArray } from "../components/MovieData.jsx";
+import MovieList from "../components/MovieList.jsx";
 
 let dates = [];
 const daysForward = 21;
