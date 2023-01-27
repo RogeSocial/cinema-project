@@ -1,4 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lacquer&family=Metal+Mania&family=Niconne&family=Poppins:wght@200&family=Rubik+Wet+Paint&family=Slackey&family=Yuji+Boku&display=swap');
+
+.section-top-movies{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ 
+}
+
 .background-image {
     display: flex;
     flex-direction: column;
@@ -26,9 +35,9 @@
     color: black;
     background-color: rgb(255, 254, 254);
     cursor: pointer;
-    margin: 10px; 
+    margin: 10px;
    }
-   
+
    .button:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -77,7 +86,6 @@
     width: 100%;
     height: 20%;
     background: linear-gradient(to bottom, #0000001c,  #000000f4);
-    
   }
 
 .transparent-background {
@@ -92,7 +100,6 @@ h2 {
     font-family: 'Lacquer', cursive;
     text-align: center;
     margin: 1rem;
-   
 }
 
 .section-top-movies {
@@ -108,9 +115,11 @@ h2 {
 
 #top-movies {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
 }
 
 #top-movies img {
@@ -130,10 +139,16 @@ h2 {
     font-weight: 600;
   }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 750px) {
     #top-movies img {
-        height: 200px;
-        width: 200px;
+        position: relative;
+        border-radius: 20px;
+        width: 225px;
+        height: 225px;
+        object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     #top-movies {
@@ -145,16 +160,7 @@ h2 {
         padding: 1rem;
       }
       
-      #top-movies img {
-        position: relative;
-        border-radius: 20px;
-        width: 225px;
-        height: 225px;
-        object-fit: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
+
 
       .transparent-background {
         background-color: rgba(249, 245, 245, 0.642);
@@ -162,7 +168,7 @@ h2 {
         width: 90vw;
     }
 }
-
+/* 
 @media screen and (max-height: 550px) {
     #top-movies img {
         height: 200px;
@@ -188,4 +194,18 @@ h2 {
         align-items: center;
         justify-content: center;
       }
-}
+} */
+
+
+
+@media screen and (min-width:1300px ) {
+    #top-movies img {
+        width: 400px;
+        height: 700px;
+    }
+
+    #top-movies {
+        flex-direction: row;
+    }
+    }
+

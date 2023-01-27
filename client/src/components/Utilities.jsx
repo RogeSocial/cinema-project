@@ -11,3 +11,23 @@ export function showsMovieLengthOnThisPage(movie, page) {
     return null;
   }
 }
+
+export function dateSelector(movie) {
+  return (
+      <select name="dates" id="dates" className='date-picker'>
+          {movie.date.map((option, index) => {
+              return <option key={index} > {option} </option>
+          })}
+      </select>
+  )
+}
+
+export function timeSelector(movie) {
+  return (
+      <select name="times" id="times" className='date-picker'>
+          {movie.time.map((option, index) => {
+              return <option key={index} > {option} </option>
+          })}
+      </select>
+  )
+}
