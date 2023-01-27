@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import MovieList from "./MovieList";
-import { movieArray } from "./MovieData";
+import MovieList from "../components/MovieList";
+import { movieArray } from "../components/MovieData";
 import { useSearchParams } from "react-router-dom";
-import { reverseAlphabet, sortAlphabet } from "./movieSort.jsx";
-import MovieSearchField from "./MovieSearchField";
-import ResetFilterButton from "./ResetFilterButton";
-import AlphabeticButton from "./AlphabeticButton";
-import ReverseAlphabeticButton from "./ReverseAlphabeticButton";
-import MovieSortButton from "./MovieSortButton";
+import { reverseAlphabet, sortAlphabet } from "../components/movieSort.jsx";
+import MovieSearchField from "../components/MovieSearchField";
+import ResetFilterButton from "../components/ResetFilterButton";
+import AlphabeticButton from "../components/AlphabeticButton";
+import ReverseAlphabeticButton from "../components/ReverseAlphabeticButton";
+import MovieSortButton from "../components/MovieSortButton";
 
 export default function () {
   //handles the searching for movies
