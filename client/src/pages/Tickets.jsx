@@ -2,9 +2,10 @@ import "../styles/tickets.css"
 import "../styles/movies.css"
 import "../styles/home.css"
 
-import {useEffect, useRef, useState} from "react";
-import {movieArray} from "./MovieData.jsx";
-import MovieList from "./MovieList.jsx";
+import { useEffect, useRef, useState } from "react";
+import { movieArray } from "../components/MovieData.jsx";
+import MovieList from "../components/MovieList.jsx";
+
 
 const daysForward = 21;
 let dateString = null;

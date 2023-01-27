@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
-import MovieList from "./MovieList";
-import { movieArray } from "./MovieData";
+import MovieList from "../components/MovieList.jsx";
+import { movieArray } from "../components/MovieData.jsx";
 import { useSearchParams } from "react-router-dom";
-import { reverseAlpha, sortAlpha } from "./movieSort.jsx";
+import { reverseAlpha, sortAlpha } from "../components/movieSort.jsx";
+import MovieSearch  from "../components/movieSearch.jsx";
+import {filterMoviesBasedOnSearch, ifSearchIsInvalid} from "../components/searchFilter.jsx";
+
 
 export default function () {
+  const [searchString, setSearchString] = useState(null);
+
   const [movies, setMovies] = useState(movieArray);
   const [searchParams, setSearchParams] = useSearchParams()
   const showActiveFilter = searchParams.get('filter') === 'active';
@@ -37,24 +42,14 @@ export default function () {
   }, [reverse]);
 
   //variable to hold the value that the user is searching for
-  const [searchString, setSearchString] = useState(null);
 
   //sets searchString to the value entered by the user in the search field
-  const handlesSearch = (event) => {
-    setSearchString(event.target.value);
-  };
+
 
   return (
     <section className="movies">
       <div className="non-image-items">
-        <div className="movie-search-field">
-          <i className="fa-solid fa-magnifying-glass"></i>
-          <input
-            type="text"
-            placeholder="Search.."
-            onChange={handlesSearch}
-          ></input>
-        </div>
+        <MovieSearch/>
         <h2>Top Movies</h2>
 
         {showActiveFilter ? (
@@ -93,22 +88,4 @@ export default function () {
   );
 }
 
-function ifSearchIsInvalid(search) {
-  if (search === null || search === "") {
-    return true;
-  } else {
-    return false;
-  }
-}
 
-function filterMoviesBasedOnSearch(movie, searchString) {
-  let title = movie.title.toLowerCase();
-  let string = searchString.toLowerCase();
-
-  //if any part of the title includes the string that was searched
-  if (title.includes(string)) {
-    return true;
-  } else {
-    return false;
-  }
-}
