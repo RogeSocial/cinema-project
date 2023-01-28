@@ -114,6 +114,15 @@
     margin-left: auto;
 }
 
+.seatsStatus {
+    font-size: 18px;
+    padding: 20px;
+}
+
+.seatsStatus span {
+    color: rgb(22, 204, 22);
+}
+
 @media screen and (max-width: 550px) {
     
     .showCaseSeat h3 {

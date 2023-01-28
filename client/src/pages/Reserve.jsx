@@ -5,24 +5,28 @@ import '../styles/home.css'
 function Seats() {
     const [seats, setSeats] = useState([]);
     const [message, setMessage] = useState('Select your seat');
+    const [occupiedSeats, setOccupiedSeats] = useState(0)
 
     // Initialize the seats state variable
     useEffect(() => {
-        const newSeats = [];
+        let newSeats = [];
+        let occupied = 0;
         for (let i = 0; i < 6; i++) {
             for (let j = 0; j < 8; j++) {
-                let occupied = false;
+                let isOccupied = false;
                 if (i * 8 + j + 1 <= 13) {
-                    occupied = true;
+                    isOccupied = true;
+                    occupied++
                 }
                 let plusSeat = false;
                 if (i === 3) {
                     plusSeat = true;
                 }
 
-                newSeats.push({ id: i * 8 + j + 1, seat: j + 1, row: i + 1, occupied: occupied, selected: false, available: true, plusSeat: plusSeat });
+                newSeats.push({ id: i * 8 + j + 1, seat: j + 1, row: i + 1, occupied: isOccupied, selected: false, available: true, plusSeat: plusSeat });
             }
         }
+        setOccupiedSeats(48 - occupied);
         setSeats(newSeats);
     }, []);
 
@@ -48,6 +52,8 @@ function Seats() {
     return (
         <section className='reserveSection'>
 
+            <div className="seatsStatus"> Seats left: <span>{occupiedSeats}</span> </div>
+        
             <div className="seatsContainer">
             <div className="showCaseSeat">
                 <h3>Available</h3>
