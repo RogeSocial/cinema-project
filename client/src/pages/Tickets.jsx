@@ -36,7 +36,7 @@ export default function () {
 
     //shows the current selected date
     const SelectedDateComp = () => (
-        <div id="selectedDate">
+        <div className="selectedDate">
             {dateString}
         </div>
     );
@@ -77,7 +77,7 @@ export default function () {
     );
 
     const TitleComp = () => (
-        <h2 id="buyTicketsTitle">Buy Tickets</h2>
+        <h2>Buy Tickets</h2>
     );
 
     //for the button and the dropdown menu to choose date
@@ -88,7 +88,7 @@ export default function () {
         </div>
     );
 
-    return <section id="calenderSection" className="calender">
+    return <section className="calender">
         <div className="wrap">
             <SelectedDateComp/>
             <hr/>
@@ -96,7 +96,7 @@ export default function () {
             <hr/>
             <CalenderBoxComp/>
         </div>
-        <div id="top-movies">
+        <div className="movieTickets">
             <MovieList movies={moviesOnDate()}/>
         </div>
     </section>

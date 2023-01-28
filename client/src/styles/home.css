@@ -151,7 +151,7 @@ h2 {
         justify-content: center;
     }
 
-    #top-movies {
+    .movieTickets{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -196,8 +196,6 @@ h2 {
       }
 } */
 
-
-
 @media screen and (min-width:1300px ) {
     #top-movies img {
         width: 400px;
@@ -209,3 +207,6 @@ h2 {
     }
     }
 
+.movieTickets {
+    display: flex;
+}
