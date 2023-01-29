@@ -13,6 +13,10 @@
     align-items: center;
 }
 
+.movieTickets {
+    display: flex;
+}
+
 hr {
     background-color: rgba(251, 252, 253, 0.616);
     margin: 20px;
@@ -93,6 +97,7 @@ hr {
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #242333;
+    padding-top: 50px;
 }
 
 .calender h2 {
