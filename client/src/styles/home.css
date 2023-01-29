@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lacquer&family=Metal+Mania&family=Niconne&family=Poppins:wght@200&family=Rubik+Wet+Paint&family=Slackey&family=Yuji+Boku&display=swap');
 
-.section-top-movies{
+.section-top-movies {
 
     display: flex;
     align-items: center;
     justify-content: center;
- 
+
 }
 
 .background-image {
@@ -36,6 +36,10 @@
     background-color: rgb(255, 254, 254);
     cursor: pointer;
     margin: 10px;
+}
+
+.button:hover {
+    margin: 10px;
    }
 
    .button:hover {
@@ -45,14 +49,14 @@
     background-color: rgb(178, 29, 29);
     transition: .4s;
     color: white;
-   }
-   
-   .button:active {
+}
+
+.button:active {
     transform: translateY(-1px);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-   }
-   
-   .button::after {
+}
+
+.button::after {
     content: "";
     display: inline-block;
     height: 100%;
@@ -63,20 +67,20 @@
     left: 0;
     z-index: -1;
     transition: all 1s;
-   }
-   
-   .button::after {
+}
+
+.button::after {
     background-color: #fff;
-   }
-   
-   .button:hover::after {
+}
+
+.button:hover::after {
     transform: scaleX(1.4) scaleY(1.6);
     opacity: 0;
-   }
+}
 
 .darken-lower-part {
     position: relative;
-  }
+}
 
 .darken-lower-part {
     content: "";
@@ -85,13 +89,12 @@
     left: 0;
     width: 100%;
     height: 20%;
-    background: linear-gradient(to bottom, #0000001c,  #000000f4);
-  }
+    background: linear-gradient(to bottom, #0000001c, #000000f4);
+}
 
 .transparent-background {
-    background-color: rgba(249, 245, 245, 0.611);
-    opacity: 0.8;
     width: 400px;
+    background: linear-gradient(to right, #5e5b5be0, #99a8b7fe);
 }
 
 h2 {
@@ -137,7 +140,7 @@ h2 {
     font-size: 25px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont;
     font-weight: 600;
-  }
+}
 
 @media screen and (max-width: 750px) {
     #top-movies img {
@@ -151,27 +154,10 @@ h2 {
         justify-content: center;
     }
 
-    #top-movies {
+    .mirror-container {
+        position: relative;
         display: flex;
-        flex-direction: column;
         align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 1rem;
-      }
-      
-
-
-      .transparent-background {
-        background-color: rgba(249, 245, 245, 0.642);
-        opacity: 0.8;
-        width: 90vw;
-    }
-}
-/* 
-@media screen and (max-height: 550px) {
-    #top-movies img {
-        height: 200px;
         width: 200px;
     }
 
@@ -182,23 +168,18 @@ h2 {
         justify-content: center;
         text-align: center;
         padding: 1rem;
-      }
-      
-      #top-movies img {
-        position: relative;
-        border-radius: 20px;
-        width: 225px;
-        height: 225px;
-        object-fit: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-} */
+    }
 
+    .quotebox {
+        width: 220px;
+    }
 
+    #backgroundQuote {
+        width: 250px;
+    }
+}
 
-@media screen and (min-width:1300px ) {
+@media screen and (min-width:1300px) {
     #top-movies img {
         width: 400px;
         height: 700px;
@@ -207,5 +188,34 @@ h2 {
     #top-movies {
         flex-direction: row;
     }
-    }
+}
 
+.mirror-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mirror {
+    width: 500px;
+    height: 250px;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.mirror-container {
+    margin: 0;
+    padding: 0;
+}
+
+.transparent-background {
+    display: flex;
+    position: absolute;
+    width: 390px;
+    height: 175px;
+    justify-content: center;
+    align-items: center;
+}
