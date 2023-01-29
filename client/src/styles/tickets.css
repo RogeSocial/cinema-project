@@ -13,21 +13,8 @@
     align-items: center;
 }
 
-#selectedDate {
+.movieTickets {
     display: flex;
-    justify-content: center;
-    margin: 20px;
-    font-size: 26px;
-    font-family: 'Fredericka the Great', cursive;;
-}
-
-/*#buyTitecktsTitle {
-    background-color: #2423335b;
-}*/
-
-#buyTicketsTitle {
-    font-family: 'Fredericka the Great', cursive;;
-    padding: 20px;
 }
 
 hr {
@@ -35,22 +22,11 @@ hr {
     margin: 20px;
 }
 
-
-.wrapMovieList {
-    display: flex;
-    border-radius: 20px;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    /* background-color: #24233359; */
-}
-
 #calender-box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    /*  z-index: 999; */
     bottom: 200px;
 }
 
@@ -62,39 +38,13 @@ hr {
     margin: 20px;
 }
 
-
-#btn {
-    font-size: 17px;
-    text-transform: uppercase;
-    text-decoration: none;
-    padding: 1em 2.5em;
-    display: inline-block;
-    border-radius: 50px;
-    transition: all .4s;
-    border: none;
-    font-family: inherit;
-    font-weight: 500;
-    color: black;
-    background-color: rgb(255, 254, 254);
-    cursor: pointer;
-    margin: 10px;
-}
-
-#btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border: none;
-    background-color: rgb(178, 29, 29);
-    transition: .4s;
-    color: white;
-}
-
-/*.wrap h2 {
+.selectedDate{
     font-family: 'Fredericka the Great', cursive;
-}*/
+    font-size: 20px;
+}
 
-.calender-dropdown-trigger > ul {
-    background-color: #2a508100;
+.calender-dropdown-trigger>ul {
+    background-color: #fff8f100;
     text-align: center;
     list-style: none;
     height: 10em;
@@ -105,40 +55,15 @@ hr {
     font-family: 'Fredericka the Great', cursive;
 }
 
-.movie-card {
-    display: flex;
-}
-
-#movieImg {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 700px;
-    height: 500px;
-    transition: 1s;
-    border-radius: 15px;
-    border: 2px solid #28616d41;
-}
-
-#movieImg:hover {
-    transform: scale(1.05);
-    border-color: #2ca3bb61;
-}
-
 .calender-list {
     font-size: 20px;
-    background-color: #3a3a3a71;
+    background-color: #7a212171;
 }
 
 .calender-list:hover {
-    background: rgb(96, 99, 114);
+    background: rgba(37, 11, 10, 0.567);
     cursor: pointer;
 }
-
-.calender-dropdown.a:hover {
-    background: #8B95A6;
-}
-
 
 .calender-dropdown-trigger {
     position: fixed;
@@ -163,15 +88,6 @@ hr {
 }
 
 .calender {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #242333;
-    color: var(--main_text_color);
-    padding-top: 240px;
-}
-
-#calenderSection {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -180,30 +96,9 @@ hr {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    padding-top: 0;
-}
-
-/*.calender{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    background-image: url(../images/it5.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
     background-color: #242333;
-    color: var(--main_text_color);
-    padding-top: 0px;
-}*/
-
-/*.calender h3 {
-    position: absolute;
-    z-index: 2;
-    font-size: 25px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont;
-    font-weight: 600;
-}*/
+    padding-top: 50px;
+}
 
 .calender h2 {
     margin: 1rem;
@@ -212,109 +107,44 @@ hr {
     font-size: 33px;
     min-width: 200px;
     border: none;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-family: 'Fredericka the Great', cursive;
     font-weight: 400;
 }
 
-.calender img {
-    position: relative;
-    border-radius: 20px;
-    width: 300px;
-    height: 250px;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.movieLength {
-    color: #8c8c8c;
-    position: relative;
-    left: 100px;
-    font-size: 20px;
-    z-index: 2;
-    visibility: visible;
-}
-
 @media screen and (max-width: 550px) {
+    .calender h2 {
+        display: flex;
+        font-size: 50px;
+    }
 
     .calender {
-        justify-content: center;
-        align-items: flex-start;
-        padding-top: 260px;
-        display: grid;
-        grid-template-columns: repeat(2, max-content);
-    }
-
-    .non-image-items {
-        position: absolute;
-        top: 0;
-        width: 100vw;
-        margin-top: 3.5rem;
-    }
-
-    .calender h2 {
-        font-size: 50px;
-        min-width: 300px;
-        margin-top: -0.2rem;
-    }
-
-    #calenderSection {
         padding-top: 50px;
-
     }
-
-/*    .movie-card h3 {
-        font-size: 15px;
-    }*/
-
-
 }
 
-
-@media screen and (max-width: 550px) {
-    .wrapMovieList {
+@media screen and (max-width: 1000px) {
+    .movieTickets {
         flex-direction: column;
     }
 
-    #movieImg {
-        width: 200px;
-        height: 200px;
+    .calender h2 {
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
     }
 
     .calender {
-        justify-content: flex-start;
-        align-items: flex-start;
+        padding-top: 50px;
     }
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 890px) and (orientation: landscape) {
-
-    #calenderSection {
-        padding-top: 30px;
+    .calender {
+        padding-top: 40px;
     }
-
-    aside {
-        display: flex;
-    }
-
-
-/*    nav {
-        display: none;
-    }*/
-
-    .wrapMovieList {
-        flex-direction: column;
-    }
-
+    
     #movieImg {
         width: 200px;
         height: 200px;
-    }
-
-    .calender {
-        justify-content: flex-start;
-        align-items: flex-start;
-
     }
 }

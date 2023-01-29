@@ -19,6 +19,7 @@
   border: solid 1px var(--main_text_color);
   padding: 0.6rem;
   padding-right: 4.2rem;
+
 }
 
 .movie-search-field i {
@@ -71,6 +72,8 @@
   border: none;
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   font-weight: 400;
+  font-family: 'Fredericka the Great', cursive;
+  padding-top: 20px;
 }
 
 .movies button {
