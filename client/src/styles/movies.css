@@ -9,7 +9,7 @@
   align-items: center;
   background-color: rgb(0, 0, 0);
   color: var(--main_text_color);
-  padding-top: 240px; /* amount moved down from navbar */
+  padding-top: 280px; /* amount movies are moved down from navbar */
 }
 
 .movie-search-field {
@@ -89,7 +89,7 @@
   padding: 0.5rem 1rem 0.5rem 1rem;
 }
 
-.non-image-items {
+.movie-search-and-sorting-area {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -97,7 +97,7 @@
   position: absolute;
   top: 0;
   width: 100vw;
-  margin-top: 3.5rem;
+  margin-top: 5rem;
 }
 
 .movie-card {
@@ -154,16 +154,16 @@
   .movies {
     justify-content: center;
     align-items: flex-start;
-    padding-top: 260px;
+    padding-top: 280px;
     display: grid;
     grid-template-columns: repeat(2, max-content);
   }
 
-  .non-image-items {
+  .movie-search-and-sorting-area {
     position: absolute;
     top: 0;
     width: 100vw;
-    margin-top: 3.5rem;
+    margin-top: 5rem;
   }
   .movies h2 {
     font-size: 50px;
@@ -179,6 +179,7 @@
   .movies input {
     width: 270px;
   }
+
 }
 
 @media screen and (min-width: 1000px) {

@@ -1,91 +1,103 @@
 import React, { useEffect, useState } from "react";
-import MovieList from "../components/MovieList.jsx";
-import { movieArray } from "../components/MovieData.jsx";
+import MovieList from "../components/MovieList";
+import { movieArray } from "../components/MovieData";
 import { useSearchParams } from "react-router-dom";
-import { reverseAlpha, sortAlpha } from "../components/movieSort.jsx";
-import MovieSearch  from "../components/movieSearch.jsx";
-import {filterMoviesBasedOnSearch, ifSearchIsInvalid} from "../components/searchFilter.jsx";
-
+import { reverseAlphabet, sortAlphabet } from "../components/movieSort.jsx";
+import MovieSearchField from "../components/MovieSearchField";
+import ResetFilterButton from "../components/ResetFilterButton";
+import AlphabeticButton from "../components/AlphabeticButton";
+import ReverseAlphabeticButton from "../components/ReverseAlphabeticButton";
+import MovieSortButton from "../components/MovieSortButton";
 
 export default function () {
+  //handles the searching for movies
+  const [allMovies, setAllMovies] = useState(movieArray);
   const [searchString, setSearchString] = useState(null);
-
-  const [movies, setMovies] = useState(movieArray);
-  const [searchParams, setSearchParams] = useSearchParams()
-  const showActiveFilter = searchParams.get('filter') === 'active';
-  const [alpha, setAlpha] = useState(0)
-  const [reverse, setReverse] = useState(0);
+  const addUserSearchString = (event) => {
+    setSearchString(event.target.value);
+  };
+  //handles the sorting of movies
+  const [filterParam, setFilterParam] = useSearchParams();
+  const activeSortingFilter = filterParam.get("filter") === "active";
+  const [alphabeticalOrder, setAlphabeticalOrder] = useState(0);
+  const [zetabeticalOrder, setZetabeticalOrder] = useState(0);
+  const showInAscendingOrder = () => {
+    setAlphabeticalOrder(alphabeticalOrder + 1);
+  };
+  const showInDescendingOrder = () => {
+    setZetabeticalOrder(zetabeticalOrder + 1);
+  };
+  const showSortingOptions = () => {
+    setFilterParam({ filter: "active" });
+  };
   const removeFilter = () => {
-    setSearchParams({})
+    setFilterParam({});
     window.location.reload();
-  }
+  };
 
   useEffect(() => {
-    if (showActiveFilter) {
-      if (alpha <= 2) {
-        setAlpha(alpha + 1)
-        setMovies(sortAlpha)
-        setAlpha(0)
+    if (activeSortingFilter) {
+      if (alphabeticalOrder <= 2) {
+        setAlphabeticalOrder(alphabeticalOrder + 1);
+        setAllMovies(sortAlphabet);
+        setAlphabeticalOrder(0);
       }
     }
-  }, [alpha]);
+  }, [alphabeticalOrder]);
 
   useEffect(() => {
-    if (showActiveFilter) {
-      if (reverse <= 2) {
-        setReverse(reverse + 1)
-        setMovies(reverseAlpha)
-        setReverse(0)
+    if (activeSortingFilter) {
+      if (zetabeticalOrder <= 2) {
+        setZetabeticalOrder(zetabeticalOrder + 1);
+        setAllMovies(reverseAlphabet);
+        setZetabeticalOrder(0);
       }
     }
-
-  }, [reverse]);
-
-  //variable to hold the value that the user is searching for
-
-  //sets searchString to the value entered by the user in the search field
-
+  }, [zetabeticalOrder]);
 
   return (
     <section className="movies">
-      <div className="non-image-items">
-        <MovieSearch/>
-        <h2>Top Movies</h2>
-
-        {showActiveFilter ? (
-          <div className={"sort"}>
-            <button className="button" id="movie-sort-btn"
-              onClick={() => removeFilter()}>Reset filter</button>
-            <button className="button" id="movie-sort-btn"
-              onClick={() => setAlpha(alpha + 1)}> A-Z</button>
-            <button className="button" id="movie-sort-btn"
-              onClick={() => setReverse(reverse + 1)}> Z-A</button>
-
-          </div>
-
+      <div className="movie-search-and-sorting-area">
+        <MovieSearchField handleSearch={addUserSearchString} />
+        <h2>Movies</h2>
+        {!activeSortingFilter ? (
+          <MovieSortButton handleClick={showSortingOptions} />
         ) : (
-
-          <button className="button" id="movie-sort-btn"
-            onClick={() => setSearchParams({ filter: 'active' })}>
-            Sort
-          </button>
-
+          <div className={"sorting-options"}>
+            <ResetFilterButton handleClick={removeFilter} />
+            <AlphabeticButton handleClick={showInAscendingOrder} />
+            <ReverseAlphabeticButton handleClick={showInDescendingOrder} />
+          </div>
         )}
-        <br />
       </div>
       <MovieList
         movies={
           ifSearchIsInvalid(searchString)
-            ? //then show all
-            movies
-            : //else
-            movies.filter((movie) =>
-              filterMoviesBasedOnSearch(movie, searchString)
-            )
+            ? allMovies
+            : allMovies.filter((movie) =>
+                filterMoviesBasedOnSearch(movie, searchString)
+              )
         }
       />
     </section>
   );
 }
 
+function ifSearchIsInvalid(search) {
+  if (search === null || search === "") {
+    return true;
+  } else {
+    return false;
+  }
+}
 
+function filterMoviesBasedOnSearch(movie, searchString) {
+  let title = movie.title.toLowerCase();
+  let string = searchString.toLowerCase();
+
+  if (title.includes(string)) {
+    return true;
+  } else {
+    return false;
+  }
+}
