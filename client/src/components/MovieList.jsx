@@ -5,7 +5,7 @@ export default function ({ movies }) {
   return (
     <>
       {movies.map((movie) => (
-        <Link to={`${movie.id}/${movie.param}`} key={movie.id}>
+        <Link to={`../${movie.id}/${movie.param}`} key={movie.id}>
           <MovieCard movie={movie} />
         </Link>
       ))}
