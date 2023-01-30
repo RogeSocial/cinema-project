@@ -1,0 +1,91 @@
+import { useState, useEffect } from "react";
+import "../styles/reserve.css";
+import "../styles/home.css";
+
+export default function () {
+  const [seats, setSeats] = useState([]);
+  const [message, setMessage] = useState("Select your seat");
+
+  // Initialize the seats state variable
+  useEffect(() => {
+    const newSeats = [];
+    for (let i = 0; i < 6; i++) {
+      for (let j = 0; j < 8; j++) {
+        let occupied = false;
+        if (i * 8 + j + 1 <= 13) {
+          occupied = true;
+        }
+        let plusSeat = false;
+        if (i === 3) {
+          plusSeat = true;
+        }
+
+        newSeats.push({
+          id: i * 8 + j + 1,
+          seat: j + 1,
+          row: i + 1,
+          occupied: occupied,
+          selected: false,
+          available: true,
+          plusSeat: plusSeat,
+        });
+      }
+    }
+    setSeats(newSeats);
+  }, []);
+
+  return (
+    <>
+      <div className="seatsWrap">
+        {seats.map((seat) => (
+          <div
+            key={seat.id}
+            className={`seat ${seatStatus(seat)}`}
+            id={seat.id}
+            onClick={handleSeatSelect}
+          ></div>
+        ))}
+      </div>
+      <div className="message"> {message} </div>
+    </>
+  );
+
+  function seatStatus(seat) {
+    if (seat.occupied) {
+        return "occupied"
+    } else if (seat.selected) {
+        return "selected"
+    } else if (seat.plusSeat) {
+        return "plusSeat"
+    } else return "available"
+  }
+
+  function handleSeatSelect(event) {
+    let element = event.target;
+    let updatedSeats = [...seats];
+    let selectedSeat = updatedSeats.find(
+      (seat) => seat.id === parseInt(element.id)
+    );
+
+    if (!selectedSeat.occupied) {
+      selectedSeat.selected = !selectedSeat.selected;
+      setSeats(updatedSeats);
+
+      let selectedSeats = updatedSeats.filter(
+        (seat) => seat.selected === true && seat.plusSeat === false
+      );
+      let selectedSeatsCount = selectedSeats.length;
+
+      let selectedSeatsPlus = updatedSeats.filter(
+        (seat) => seat.selected === true && seat.plusSeat === true
+      );
+      let selectedSeatsPlusCount = selectedSeatsPlus.length;
+
+      setMessage(
+        `You have selected ${
+          selectedSeatsCount + selectedSeatsPlusCount
+        } seats ${selectedSeatsCount * 10 + selectedSeatsPlusCount * 12}$`
+      );
+    }
+  }
+}
