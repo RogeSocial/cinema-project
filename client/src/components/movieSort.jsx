@@ -1,6 +1,6 @@
 import { movieArray } from "./MovieData.jsx";
 const [movies, setMovies] = [movieArray];
-export const sortAlpha = () => {
+export const sortAlphabet = () => {
     return movies.sort((a, b) => {
         if (a.title < b.title) {
             return -1;
@@ -12,7 +12,7 @@ export const sortAlpha = () => {
         return 0;
     })
 }
-export const reverseAlpha = () => {
+export const reverseAlphabet = () => {
     return movies.sort((a, b) => {
         if (a.title > b.title) {
             return -1;

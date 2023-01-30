@@ -14,7 +14,6 @@ import {
 import Movies from './pages/Movies.jsx'
 import Tickets from './pages/Tickets.jsx'
 import Reservations from './pages/Reservations'
-
 import TicketForm from "./pages/TicketForm.jsx";
 import Reserve from "./pages/Reserve.jsx";
 import ErrorBoundary from "./pages/errorBoundary.jsx";
@@ -31,10 +30,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                         errorElement={<ErrorBoundary/>}>
 
                         <Route index element={<Mainpage/>}/>
-                        <Route path="/:id/:param" element={<TicketForm/>}/>
-                        <Route path="/tickets/:id/:param" element={<TicketForm/>}/>
+                        <Route path=":id/:param" element={<TicketForm/>}/>
                         <Route path="movies" element={<Movies/>}/>
-                        <Route path="movies/:id/:param" element={<TicketForm/>}/>
                         <Route path="tickets" element={<Tickets/>}/>
                         <Route path="reservations" element={<Reservations/>}/>
                         <Route path="reserve" element={<Reserve/>}/>
