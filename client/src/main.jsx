@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 
 import MoviePage from './pages/MoviePage.jsx'
-import MovieDetails from "./pages/MovieDetails.jsx";
+import MovieDetailsPage from "./pages/MovieDetailsPage.jsx";
 import Reserve from "./pages/Reserve.jsx";
 import ErrorBoundary from "./pages/errorBoundary.jsx";
 import App from "./App.jsx";
@@ -23,7 +23,7 @@ const router = createBrowserRouter(
             <Route index element={<HomePage/>}/>
             <Route path="movies">
                 <Route index element={<MoviePage/>}/>
-                <Route path=":id/:param" element={<MovieDetails/>}/>
+                <Route path=":id/:param" element={<MovieDetailsPage/>}/>
             </Route>
             <Route path="tickets" element={<CalendarPage/>}/>
             <Route path="reserve" element={<Reserve/>}/>

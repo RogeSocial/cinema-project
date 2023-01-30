@@ -5,7 +5,7 @@ import { movieArray } from '../components/movie-data.js';
 import '../styles/movie-details.css'
 import '../styles/home.css'
 
-export default function MovieDetails() {
+export default function MovieDetailsPage() {
     const movieId = useParams().id
     const movie = movieArray.find(m => m.id == movieId)
 
