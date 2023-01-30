@@ -18,6 +18,7 @@ import TicketForm from "./pages/TicketForm.jsx";
 import Reserve from "./pages/Reserve.jsx";
 import PageNotFound from "./pages/pageNotFound.jsx";
 import App from "./App.jsx";
+import Login from "./pages/Login"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
@@ -32,8 +33,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
                         <Route path="reservations" element={<Reservations />} />
                         <Route path="*" element={<PageNotFound />} />
                         <Route path="reserve" element={<Reserve />} />
+                        <Route path="login" element={<Login />}/>
                         <Route path="user">
-                        <Route path="login" />
                         <Route path="register" />
                         </Route>
                     </Route>
