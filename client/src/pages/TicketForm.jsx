@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import '../styles/ticket-form.css'
-import { movieArray } from '../components/MovieData.jsx';
+import { movieArray } from '../components/movie-data.js';
 import '../styles/home.css'
 import { timeSelector } from '../components/Utilities';
 import { dateSelector } from '../components/Utilities';
