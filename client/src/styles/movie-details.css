@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Questrial');
 
-
-.ticket-form-page {
+.movie-details-page {
     display: flex;
     justify-content: center;
     background-repeat: no-repeat;
@@ -11,35 +10,52 @@
 }
 
 .content-frame {
-    font-family: Questrial;
-    margin-top: 100px;
-    margin-bottom: 60px;
+    display: flex;
     flex-direction: column;
-    background-color: #111111AA;
-    border-radius: 20px;
     justify-content: center;
     align-items: center;
+    font-family: Questrial;
+    background-color: #111111AA;
+    margin-top: 100px;
+    margin-bottom: 60px;
+    border-radius: 20px;
     width: 80vw;
-    display: flex;
 }
 
 .date-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #111111AA;
+    background-color: rgba(255, 0, 0, 0.284);
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 20px;
-    background-color: rgba(255, 0, 0, 0.284);
 }
 
-.ticket-form-page li {
+.movie-text{
+    max-width: 600px;
+    font-size: 20px;
+    margin-bottom: 5vh;
+}
+
+.movie-info {
+    width: 80%;
+    text-align: center;
+}
+
+#detail-list {
+    display: flex;
+    flex-direction: column;
+    max-width: 95%;
+    align-items: center;
+}
+
+.movie-details-page li {
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.ticket-form-page ul {
+.movie-details-page ul {
     list-style: none;
     padding: 0px;
 }
@@ -48,20 +64,10 @@
     min-width: 100px;
 }
 
-.movie-info {
-    width: 80%;
-}
-
-#detail-list {
-    max-width: 95%;
-}
-
 iframe {
-    width: 600px;
-    height: 400px;
+    width: 40vw;
+    height: 420px;
 }
-
-
 
 @media screen and (max-width: 750px) {
     iframe {
@@ -93,9 +99,7 @@ iframe {
         width: 500px;
     }
 
-    .ticket-form {
-        display:flex;
+    .date-form {
         justify-content: center;
-        background-color: rgba(255, 0, 0, 0.284);
      }
 }
