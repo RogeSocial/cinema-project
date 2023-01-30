@@ -6,10 +6,10 @@ export default function({currentMovie}) {
         <h1>{movie.title}</h1>
         <iframe id={"trailer"} src={`https://www.youtube.com/embed/${movie.trailer}`} frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
             <ul id={"detail-list"}>
-                <li className='movieText'>{movie.text}</li>
-                <li className='movieInfo'>Stars: {movie.stars}</li>
-                <li className="movieInfo">Length: {movie.length}</li>
-                <li className="movieInfo">Release date: {movie.release}</li>
+                <li className='movie-text'>{movie.text}</li>
+                <li className='movie-info'>Stars: {movie.stars}</li>
+                <li className="movie-info">Length: {movie.length}</li>
+                <li className="movie-info">Release date: {movie.release}</li>
             </ul>
         </>
 }

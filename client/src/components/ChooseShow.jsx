@@ -5,7 +5,7 @@ import React from "react";
 export default function({currentMovie}) {
     const movie = currentMovie;
 
-    return <form className={"ticket-form"}>
+    return <form className={"date-form"}>
         <h3>Purchase tickets</h3>
         <ul>
             <li>Available dates:  </li>

@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import '../styles/ticket-form.css'
 import { movieArray } from '../components/movie-data.js';
 import '../styles/home.css'
-import { timeSelector } from '../components/Utilities';
-import { dateSelector } from '../components/Utilities';
 import MovieInformation from "../components/MovieInformation.jsx";
 import ChooseShow from "../components/ChooseShow.jsx";
 
@@ -26,11 +24,10 @@ export default function TicketForm() {
 
     return (
         <div style={{ background: `url(${movie.background})`, backgroundSize: 'cover', }} className="ticket-form-page">
-            <div className={"movie-details ticket-form-box"}>
+            <div className={"content-frame"}>
                 <MovieInformation currentMovie={movie} />
                 <ChooseShow currentMovie={movie} />
             </div>
         </div>
-
     );
 }
