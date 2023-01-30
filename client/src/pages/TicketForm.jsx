@@ -24,27 +24,26 @@ export default function TicketForm() {
 
     return (
         <div style={{ background: `url(${movie.background})`, backgroundSize: 'cover', }} className="ticket-form-page">
-            <div className={"ticket-form-box form-row"}>
-                <div className={"movie-details"}>
+                <div className={"movie-details ticket-form-box"}>
                     <h1>{movie.title}</h1>
-                    <iframe src={`https://www.youtube.com/embed/${movie.trailer}`} width="1020" height="600" frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
-                    <p className='movieText'>{movie.text}</p>
-                    <p className='movieInfo'>Stars: {movie.stars}</p>
-                    <p className="movieInfo">Length: {movie.length}m</p>
-                    <p className="movieInfo">Release date: {movie.release}</p>
+                    <iframe id={"trailer"} src={`https://www.youtube.com/embed/${movie.trailer}`} frameBorder="0" allowFullScreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+                    <ul id={"detail-list"}>
+                        <li className='movieText'>{movie.text}</li>
+                        <li className='movieInfo'>Stars: {movie.stars}</li>
+                        <li className="movieInfo">Length: {movie.length}m</li>
+                        <li className="movieInfo">Release date: {movie.release}</li>
+                    </ul>
                     <form className={"ticket-form"}>
                         <h3>Purchase tickets</h3>
-                        <ul className='ticket-list'>
+                        <ul>
                             <li>Available dates:  </li>
                             {dateSelector(movie)}
                             <li>The chosen time </li>
                             {timeSelector(movie)}
                         </ul>
-
                         <Link to="/reserve"><button type={"submit"} className={"ticket-submit button"}>Purchase tickets</button></Link>
                     </form>
                 </div>
-            </div>
         </div>
 
     );

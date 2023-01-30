@@ -9,23 +9,15 @@
     height: auto;
 }
 
+.ticket-form-page ul {
+    list-style: none;
+}
+
 .ticket-form-box {
     font-family: Questrial;
-    padding-top: 100px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.ticket-list {
-    padding-right: 0;
-    padding-left: 0;
-}
-
-
-.movie-details {
+    padding: 100px 15px 15px 15px;
     flex-direction: column;
     background-color: #111111AA;
-    padding: 15px;
     border-radius: 20px;
     justify-content: center;
     align-items: center;
@@ -40,21 +32,9 @@
     border-radius: 20px;
     position: relative;
     background-color: rgba(255, 0, 0, 0.284);
-
 }
 
-.ticket-picker-in-form {
-    min-width: 200px;
-    min-height: 200px;
-    background-color: darkcyan;
-    margin-bottom: 15px;
-}
-
-.ticket-list {
-    list-style: none;
-}
-
-.ticket-list li {
+.ticket-form-page li {
     padding-top: 10px;
     padding-bottom: 10px;
 }
@@ -66,35 +46,25 @@
 .movieText {
     font-size: 20px;
 
-    padding: 20px;
+    list-style: none;
 }
 
 iframe {
-    width: 40vw;
-    height: 420px;
-}
-
-.ticket-form-page {
-    display: flex;
-    justify-content: center;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 100%;
-    height: auto;
+    width: 600px;
+    height: 400px;
 }
 
 .movieText {
     width: 600px;
 }
+
 .movie-details {
-    width:80vw;
+    width: 80vw;
     background-color: #111111AA;
-    padding-left: 15px;
-    padding-right: 15px;
     border-radius: 20px;
     display: flex;
-
 }
+
 
 @media screen and (max-width: 750px) {
     iframe {
@@ -108,21 +78,10 @@ iframe {
         width: 300px;
     }
 
-   
     .ticket-form h3 {
         display: flex;
         justify-content: center;
     }
-
-
-     .ticket-form {
-        display:flex;
-        justify-content: center;
-        background-color: rgba(255, 0, 0, 0.284);
-
-     }
-
-     
 }
 
 @media (min-width: 480px) and (max-width: 950px) and (orientation: landscape) {
@@ -141,6 +100,5 @@ iframe {
         display:flex;
         justify-content: center;
         background-color: rgba(255, 0, 0, 0.284);
-
      }
 }
