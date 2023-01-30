@@ -1,5 +1,5 @@
 import { movieArray } from "./movie-data.js";
-const [movies, _] = [movieArray];
+const [movies] = [movieArray];
 export  function sortAlphabet()  {
     return movies.sort((a, b) => {
         if (a.title < b.title) {
