@@ -18,7 +18,7 @@ import TicketForm from "./pages/TicketForm.jsx";
 import Reserve from "./pages/Reserve.jsx";
 import PageNotFound from "./pages/pageNotFound.jsx";
 import App from "./App.jsx";
-import Login from "./pages/Login"
+import Login from "./pages/LoginPage"
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>

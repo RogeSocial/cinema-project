@@ -11,8 +11,8 @@ export default function () {
                     <input type="password" placeholder="password"></input>
 
                     <div className="button-container">
-                        <button>LOGIN</button>
-                        <button>REGISTER</button>
+                        <div id="button">LOGIN</div>
+                        <div id="button">REGISTER</div>
                     </div>
                 </div>
             </section>
