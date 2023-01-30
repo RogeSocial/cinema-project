@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lacquer&family=Metal+Mania&family=Niconne&family=Poppins:wght@200&family=Rubik+Wet+Paint&family=Slackey&family=Yuji+Boku&display=swap');
 
-.section-top-movies {
+.top-movies {
 
     display: flex;
     align-items: center;
@@ -78,11 +78,7 @@
     opacity: 0;
 }
 
-.darken-lower-part {
-    position: relative;
-}
-
-.darken-lower-part {
+.background-image-transition {
     content: "";
     position: absolute;
     bottom: 0;
@@ -105,7 +101,7 @@ h2 {
     margin: 1rem;
 }
 
-.section-top-movies {
+.top-movies {
     background-color: black;
 }
 
