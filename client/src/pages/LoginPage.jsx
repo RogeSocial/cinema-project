@@ -18,7 +18,7 @@ export default function () {
                 <input type="password" placeholder="password"></input>
                 <div className="button-container">
                     <div id="button" onClick={popup}>LOGIN</div>
-                    <div id="button">REGISTER</div>
+                    <Link to ="/register"><div id="button">REGISTER</div></Link>
                 </div>
 
                 <div className={popupStyle}>
