@@ -15,10 +15,10 @@ export default function () {
         <section>
             <div className="cover">
                 <input type="email" placeholder="email"></input>
-                <input type="password" placeholder="password"></input>
+                <input type="password" placeholder="password" minLength="8"></input>
                 <div className="button-container">
-                    <div id="button" onClick={popup}>LOGIN</div>
-                    <Link to ="/register"><div id="button">REGISTER</div></Link>
+                    <button className="button" onClick={popup}>LOGIN</button>
+                    <Link to ="/register"><button className="button">REGISTER</button></Link>
                 </div>
 
                 <div className={popupStyle}>

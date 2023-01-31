@@ -4,7 +4,7 @@
 }
 
 .cover {
-    background-color: rgba(255, 255, 255, 0.884);
+    background-color: rgba(0, 0, 0, 0.548);
     width: 30em;
     height: 35em;
     position: relative;
@@ -17,22 +17,9 @@
     margin: auto;
 }
 
-#button {
-    position: relative;
-    width: 150px;
-    height: 3em;
-    background-color: rgb(250, 0, 0);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.5s;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
-#button:hover {
-    transform: scale(1.05);
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .button-container {
@@ -57,7 +44,7 @@
     justify-content: center;
     border-radius: 0.25em;
     background-color: transparent;
-    color: red;
+    color: rgb(170, 0, 0);
     bottom: 70px;
     transform: scale(1);
     transition: 1.5s;
@@ -82,4 +69,11 @@ input:focus {
 ::placeholder {
     color: black;
     opacity: 25%;
+}
+
+#button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
 }
