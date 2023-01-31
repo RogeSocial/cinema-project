@@ -1,9 +1,8 @@
-import {useContext, useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import MovieList from "../components/MovieList";
 import {movieArray as allMovies} from "../components/movie-data.js";
 import MovieSearchField from "../components/MovieSearchField";
-import MovieSortingOptions from "../components/movieSortingOptions.jsx";
-
+import MovieSortingOptions from "../components/MovieSortingOptions.jsx";
 
 export default function () {
     //handles the searching for movies
@@ -15,7 +14,6 @@ export default function () {
     };
 
     //handles the sorting of movies
-
     useEffect(() => {
         if (isValidSearch(searchString)) filterMoviesBySearch()
         else setFilteredMovies(allMovies)
@@ -31,8 +29,6 @@ export default function () {
             <MovieList movies={filteredMovies}/>
         </section>
     );
-
-
 
     function filterMoviesBySearch() {
         setFilteredMovies([
