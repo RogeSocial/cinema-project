@@ -3,7 +3,7 @@ import "../styles/movies.css"
 import "../styles/home.css"
 
 import { useEffect, useRef, useState } from "react";
-import { movieArray } from "../components/MovieData.jsx";
+import { movieArray } from "../components/movie-data.js";
 import MovieList from "../components/MovieList.jsx";
 
 

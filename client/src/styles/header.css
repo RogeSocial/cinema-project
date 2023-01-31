@@ -99,7 +99,6 @@ a {
   color: white;
   text-decoration: none;
   padding: var(--dropdown_padding);
-  align-items: space-around;
 }
 
 .dropdown-menu {
