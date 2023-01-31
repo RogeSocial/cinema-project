@@ -4,7 +4,7 @@ import mirror3 from '../images/mirror3.png';
 import MovieList from "../components/MovieList.jsx";
 import { Link } from "react-router-dom";
 import Quotes from "../components/Quotes.jsx";
-import { movieArray } from "../components/MovieData.jsx";
+import { movieArray } from "../components/movie-data.js";
 
 export default function () {
   const [movies, setMovies] = useState(movieArray);

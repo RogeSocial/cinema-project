@@ -4,7 +4,7 @@
 }
 
 .cover {
-    background-color: gray;
+    background-color: rgba(255, 255, 255, 0.884);
     width: 30em;
     height: 35em;
     position: relative;
@@ -39,8 +39,28 @@
     margin-top: 50px;
     display: flex;
     width: 100%;
-    text-align: center;
     justify-content: center;
+    bottom: 50px;
+}
+
+.hide {
+    display: none;
+}
+
+.login-popup {
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    background-color: transparent;
+    color: red;
+    bottom: 70px;
+    transform: scale(1);
+    transition: 1.5s;
 }
 
 input {
