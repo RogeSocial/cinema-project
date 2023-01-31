@@ -63,6 +63,7 @@
 .message {
     font-size: 20px;
     margin-left: 10px;
+    margin-top: 20px;
 }
 
 .seatsWrap {
@@ -115,19 +116,15 @@
 }
 
 @media screen and (max-width: 550px) {
-    
     .showCaseSeat h3 {
         font-size: 16px;
     }
 }
 
-
 @media only screen and (min-device-width: 320px) and (max-device-width: 915px) and (orientation: landscape) {
-
     .reserveSection {
         height: 150vh;
     }
 
-    
-}
 
+}

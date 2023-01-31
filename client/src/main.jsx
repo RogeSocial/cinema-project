@@ -11,8 +11,8 @@ import {
 } from "react-router-dom";
 
 import MoviePage from './pages/MoviePage.jsx'
+import ReservePage from "./pages/ReservePage.jsx";
 import MovieDetailsPage from "./pages/MovieDetailsPage.jsx";
-import Reserve from "./pages/Reserve.jsx";
 import ErrorBoundary from "./pages/errorBoundary.jsx";
 import App from "./App.jsx";
 import CalendarPage from "./pages/CalendarPage.jsx";
@@ -26,7 +26,7 @@ const router = createBrowserRouter(
                 <Route path=":id/:param" element={<MovieDetailsPage/>}/>
             </Route>
             <Route path="tickets" element={<CalendarPage/>}/>
-            <Route path="reserve" element={<Reserve/>}/>
+            <Route path="reserve" element={<ReservePage/>}/>
             <Route path="user">
                 <Route path="login"/>
                 <Route path="register"/>
