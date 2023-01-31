@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "../styles/reserve.css";
+import "../styles/reservePage.css";
 import "../styles/home.css";
 
 export default function () {
@@ -11,23 +11,19 @@ export default function () {
     const newSeats = [];
     for (let i = 0; i < 6; i++) {
       for (let j = 0; j < 8; j++) {
-        let occupied = false;
-        if (i * 8 + j + 1 <= 13) {
-          occupied = true;
-        }
-        let plusSeat = false;
-        if (i === 3) {
-          plusSeat = true;
-        }
+        const id = i * 8 + j + 1;
+        const seat = j + 1;
+        const row = i + 1;
+        const occupied = id <= 13;
+        const plusSeat = i === 3;
 
         newSeats.push({
-          id: i * 8 + j + 1,
-          seat: j + 1,
-          row: i + 1,
-          occupied: occupied,
+          id,
+          seat,
+          row,
+          occupied,
           selected: false,
-          available: true,
-          plusSeat: plusSeat,
+          plusSeat,
         });
       }
     }
@@ -37,7 +33,7 @@ export default function () {
   return (
     <>
       <div className="seatsWrap">
-        {seats.map((seat) => (
+        {seats.map(seat => (
           <div
             key={seat.id}
             className={`seat ${seatStatus(seat)}`}
@@ -52,40 +48,38 @@ export default function () {
 
   function seatStatus(seat) {
     if (seat.occupied) {
-        return "occupied"
+      return "occupied"
     } else if (seat.selected) {
-        return "selected"
+      return "selected"
     } else if (seat.plusSeat) {
-        return "plusSeat"
+      return "plusSeat"
     } else return "available"
   }
 
   function handleSeatSelect(event) {
-    let element = event.target;
-    let updatedSeats = [...seats];
-    let selectedSeat = updatedSeats.find(
-      (seat) => seat.id === parseInt(element.id)
+    const element = event.target;
+    const updatedSeats = [...seats];
+    const selectedSeat = updatedSeats.find(
+      seat => seat.id === parseInt(element.id)
     );
 
     if (!selectedSeat.occupied) {
       selectedSeat.selected = !selectedSeat.selected;
       setSeats(updatedSeats);
 
-      let selectedSeats = updatedSeats.filter(
-        (seat) => seat.selected === true && seat.plusSeat === false
+      const selectedSeats = updatedSeats.filter(
+        seat => seat.selected === true && seat.plusSeat === false
       );
-      let selectedSeatsCount = selectedSeats.length;
+      const selectedSeatsPlus = updatedSeats.filter(
+        seat => seat.selected === true && seat.plusSeat === true
+      );
 
-      let selectedSeatsPlus = updatedSeats.filter(
-        (seat) => seat.selected === true && seat.plusSeat === true
-      );
-      let selectedSeatsPlusCount = selectedSeatsPlus.length;
+      const selectedSeatsCount = selectedSeats.length;
+      const selectedSeatsPlusCount = selectedSeatsPlus.length;
+      const totalSeats = selectedSeatsCount + selectedSeatsPlusCount;
+      const totalCost = selectedSeatsCount * 10 + selectedSeatsPlusCount * 12;
 
-      setMessage(
-        `You have selected ${
-          selectedSeatsCount + selectedSeatsPlusCount
-        } seats ${selectedSeatsCount * 10 + selectedSeatsPlusCount * 12}$`
-      );
+      setMessage(`You have selected ${totalSeats} seats ${totalCost}$`);
     }
-  }
-}
+  };
+};
