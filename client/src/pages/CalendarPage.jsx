@@ -28,11 +28,11 @@ export default function () {
         }
     });
 
-    return <section className="calender">
+    return <section className="calender" >
         <div className="wrap">
             <h2>Buy Tickets</h2>
             <hr/>
-            <CalenderBox banana={calenderRef} open={open} openDatePicker={openDatePicker}
+            <CalenderBox ref={calenderRef} open={open} openDatePicker={openDatePicker}
                          calculateCurrentDate={calculateCurrentDate}/>
             <hr/>
             <DisplaySelectedDate dateString={dateString}/>
