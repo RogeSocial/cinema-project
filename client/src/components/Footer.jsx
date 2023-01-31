@@ -5,7 +5,7 @@ import SocialMediaLinks from "./SocialMediaLinks.jsx";
 
 export default function () {
     return <footer>
-        <hr id={"footer-line"}/>
+        <hr id={"footer-line"} />
         <About />
         <ContactInfo />
         <QuickMenu />
