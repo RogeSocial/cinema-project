@@ -17,5 +17,6 @@ export default function ({currentMovie}) {
         <Link to="/reserve">
             <button type={"submit"} className={"ticket-submit button"}>Purchase tickets</button>
         </Link>
+
     </form>
 }

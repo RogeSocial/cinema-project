@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import MovieInformation from "../components/MovieInfo.jsx";
+import MovieInfo from "../components/MovieInfo.jsx";
 import ChooseShow from "../components/ChooseShow.jsx";
 import { movieArray } from '../components/movie-data.js';
 import '../styles/movie-details.css'
@@ -12,7 +12,7 @@ export default function MovieDetailsPage() {
     return (
         <div style={{ background: `url(${movie.background})`, backgroundSize: 'cover' }} className="movie-details-page">
             <div className={"content-frame"}>
-                <MovieInformation currentMovie={movie} />
+                <MovieInfo currentMovie={movie} />
                 <ChooseShow currentMovie={movie} />
             </div>
         </div>
