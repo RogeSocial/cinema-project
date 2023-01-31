@@ -1,12 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lacquer&family=Metal+Mania&family=Niconne&family=Poppins:wght@200&family=Rubik+Wet+Paint&family=Slackey&family=Yuji+Boku&display=swap");
 
-.top-movies {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.background-image {
+.hero-background {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,6 +11,38 @@
   background-repeat: no-repeat;
   width: 100%;
   height: 100vh;
+}
+
+.display-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mirror {
+  width: 500px;
+  height: 250px;
+  margin: 0;
+  padding: 0;
+}
+
+#quote-text-container {
+  font-size: 2vw;
+  color: rgb(96, 5, 5);
+  font-family: "Lacquer", cursive;
+  text-align: center;
+  margin: 1rem;
+}
+
+.quote-background {
+  display: flex;
+  position: absolute;
+  width: 400px;
+  height: 175px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #5e5b5be0, #f9f9fafe);
 }
 
 .button {
@@ -37,16 +63,13 @@
 }
 
 .button:hover {
-  margin: 10px;
-}
-
-.button:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
   border: none;
   background-color: rgb(178, 29, 29);
   transition: 0.4s;
   color: white;
+  margin: 10px;
 }
 
 .button:active {
@@ -55,6 +78,7 @@
 }
 
 .button::after {
+  background-color: #fff;
   content: "";
   display: inline-block;
   height: 100%;
@@ -67,16 +91,12 @@
   transition: all 1s;
 }
 
-.button::after {
-  background-color: #fff;
-}
-
 .button:hover::after {
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
 
-.background-image-transition {
+.hero-transition {
   content: "";
   position: absolute;
   bottom: 0;
@@ -86,30 +106,19 @@
   background: linear-gradient(to bottom, #0000001c, #000000f4);
 }
 
-.transparent-background {
-  width: 400px;
-  background: linear-gradient(to right, #5e5b5be0, #f9f9fafe);
+.top-movies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
 }
 
-#top-movie-title {
+#top-movies-title {
   font-size: 30px;
   color: white;
   font-weight: 400;
   font-family: "Fredericka the Great", cursive;
-  text-align: center;
   margin: 1rem;
-}
-
-h3 {
-  font-size: 2vw;
-  color: rgb(96, 5, 5);
-  font-family: "Lacquer", cursive;
-  text-align: center;
-  margin: 1rem;
-}
-
-.top-movies {
-  background-color: black;
 }
 
 #top-movie-cards {
@@ -139,26 +148,20 @@ h3 {
 }
 
 @media screen and (max-width: 750px) {
-  #top-movie-cards img {
-    position: relative;
-    border-radius: 20px;
-    width: 225px;
-    height: 225px;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mirror-container {
+  .display-container {
     position: relative;
     display: flex;
     align-items: center;
     width: 200px;
   }
 
-  #top-movie-title {
-    font-size: 30px;
+  #quote-text-container {
+    width: 250px;
+  }
+
+  #top-movies-title {
+    font-size: 25px;
+    margin-bottom: 0;
   }
 
   #top-movie-cards {
@@ -170,50 +173,29 @@ h3 {
     padding: 1rem;
   }
 
-  .quotebox {
-    width: 220px;
+  #top-movie-cards img {
+    position: relative;
+    border-radius: 20px;
+    width: 225px;
+    height: 225px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  #backgroundQuote {
-    width: 250px;
+  #top-movie-cards h3 {
+    font-size: 25px;
   }
 }
 
 @media screen and (min-width: 1300px) {
+  #top-movie-cards {
+    flex-direction: row;
+  }
+
   #top-movie-cards img {
     width: 400px;
     height: 700px;
   }
-
-  #top-movie-cards {
-    flex-direction: row;
-  }
-}
-
-.mirror-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.mirror {
-  width: 500px;
-  height: 250px;
-  margin: 0;
-  padding: 0;
-}
-
-.mirror-container {
-  margin: 0;
-  padding: 0;
-}
-
-.transparent-background {
-  display: flex;
-  position: absolute;
-  width: 390px;
-  height: 175px;
-  justify-content: center;
-  align-items: center;
 }
