@@ -9,12 +9,10 @@ export default function MovieDetailsPage() {
     const movieId = useParams().id
     const movie = movieArray.find(movie => movie.id == movieId)
 
-    return (
-        <div style={{ background: `url(${movie.background})`, backgroundSize: 'cover' }} className="movie-details-page">
+    return <div style={{ background: `url(${movie.background})`, backgroundSize: 'cover' }} className="movie-details-page">
             <div className={"content-frame"}>
                 <MovieInfo currentMovie={movie} />
                 <ChooseShow currentMovie={movie} />
             </div>
         </div>
-    );
 }
