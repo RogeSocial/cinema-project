@@ -2,35 +2,32 @@ import { useState, useEffect } from "react";
 import MovieList from "./MovieList";
 import { Link } from "react-router-dom";
 import { movieArray as allMovies } from "./movie-data";
+import MoreMoviesButton from "./MoreMoviesButton";
 
 export default function () {
   const [filteredMovies, setFilteredMovies] = useState(allMovies);
   useEffect(() => {
-    isTopMovie();
+    filterByTitle("Hellraiser", "It", "Rings");
   }, [allMovies]);
 
   return (
     <>
-      <h1 className="title">OUR TOP MOVIES</h1>
-      <div id="top-movies">
+      <h2 id="top-movie-title">OUR TOP MOVIES</h2>
+      <div id="top-movie-cards">
         <MovieList movies={filteredMovies} />
       </div>
-      <div>
-        <Link to="movies">
-          <button className="button">MORE MOVIES</button>
-        </Link>
-      </div>
+      <MoreMoviesButton/>
     </>
   );
 
-  function isTopMovie() {
+  function filterByTitle(title1, title2, title3) {
     setFilteredMovies([
       ...allMovies.filter((movie) => {
-        if (movie.id === 1 || movie.id === 2 || movie.id === 3) {
-          return true;
-        } else {
-          return false;
-        }
+        return (
+          movie.title === title1 ||
+          movie.title === title2 ||
+          movie.title === title3
+        );
       }),
     ]);
   }

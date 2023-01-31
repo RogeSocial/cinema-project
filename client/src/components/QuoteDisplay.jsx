@@ -4,10 +4,10 @@ import Quotes from "./Quotes.jsx";
 export default function () {
   return (
     <div className="mirror-container">
-      <img className="mirror" src={mirror3} alt="" />
-      <h2 id="backgroundQuote" className={"transparent-background"}>
+      <img className="mirror" src={mirror3} alt="a picture of an old mirror" />
+      <h3 id="backgroundQuote" className={"transparent-background"}>
         <Quotes />
-      </h2>
+      </h3>
     </div>
   );
 }
