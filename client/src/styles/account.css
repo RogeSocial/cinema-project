@@ -1,0 +1,21 @@
+#account-body {
+    display: flex;
+    align-items: center;
+}
+
+#account-headline {
+    margin-top: 5rem;
+    font-size: 2.2rem;
+    color: gray;
+}
+
+.input-element {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.account-button {
+    display: block;
+    margin-bottom: 30px;
+}
