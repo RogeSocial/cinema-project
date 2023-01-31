@@ -2,104 +2,49 @@ import "../styles/tickets.css"
 import "../styles/movies.css"
 import "../styles/home.css"
 
-import { useEffect, useRef, useState } from "react";
-import { movieArray } from "../components/movie-data.js";
+import {useEffect, useRef, useState} from "react";
+import {movieArray} from "../components/movie-data.js";
 import MovieList from "../components/MovieList.jsx";
+import {CalenderBox} from "../components/CalenderBox.jsx";
+import {DisplaySelectedDate} from "../components/DisplaySelectedDate.jsx";
+import {daysForwardInCalender} from "../components/Constants.js";
 
-
-const daysForward = 21;
 let dateString = null;
 let dateInNumbers = [{date: null, month: null, weekDay: null}];
-let daysInWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
 export default function () {
     const [open, setOpen] = useState(false);
-
     let calenderRef = useRef();
-
-    {
-        calculateCurrentDate();
-    }
-
     //this part will handle clicking outside the dropdown menu, so it closes
     useEffect(() => {
-        let handler = (e) => {
+        let onClickOutside = (e) => {
             if (!calenderRef.current.contains(e.target)) {
                 setOpen(false);
             }
         };
-        document.addEventListener("mousedown", handler);
+        document.addEventListener("mousedown", onClickOutside);
         return () => {
-            document.removeEventListener("mousedown", handler);
+            document.removeEventListener("mousedown", onClickOutside);
         }
     });
 
-    //shows the current selected date
-    const SelectedDateComp = () => (
-        <div className="selectedDate">
-            {dateString}
-        </div>
-    );
-
-    const SetDateComp = ({item}) => (
-        <div onClick={function (e) {
-            setDateString(item.day, item.month, returnDayName(item.dayName))
-        }}>
-            {item.day} / {item.month} - {returnDayName(item.dayName)}
-        </div>
-    );
-
-    const UlListComp = () => (
-        <ul onClick={() => {
-            setOpen(!open)
-        }}>
-            {calculateCurrentDate().map((item) =>
-                <div className="calender-list" key={item.id}>
-                    {/*{setDateComp(item)}*/}
-                    {/*<SetDateComp item = {item} />*/}
-                    <SetDateComp item = {item} />
-                </div>
-            )}
-        </ul>
-    );
-
-    const CalenderDropDownComp = () => (
-        <div className={`calender-dropdown-trigger ${open ? 'active' : 'inactive'}`}>
-            <UlListComp/>
-        </div>
-    );
-
-    const ButtonComp = () => (
-        <button className="button" onClick={() => {
-            setOpen(!open)
-        }}>Pick a Date
-        </button>
-    );
-
-    const TitleComp = () => (
-        <h2>Buy Tickets</h2>
-    );
-
-    //for the button and the dropdown menu to choose date
-    const CalenderBoxComp = () => (
-        <div id="calender-box" ref={calenderRef}>
-            <ButtonComp/>
-            <CalenderDropDownComp/>
-        </div>
-    );
-
     return <section className="calender">
         <div className="wrap">
-            <SelectedDateComp/>
+            <h2>Buy Tickets</h2>
             <hr/>
-            <TitleComp/>
+            <CalenderBox banana={calenderRef} open={open} openDatePicker={openDatePicker}
+                         calculateCurrentDate={calculateCurrentDate}/>
             <hr/>
-            <CalenderBoxComp/>
+            <DisplaySelectedDate dateString={dateString}/>
         </div>
         <div className="movieTickets">
             <MovieList movies={moviesOnDate()}/>
         </div>
     </section>
+
+    function openDatePicker() {
+        setOpen(!open);
+    }
 }
 
 //compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
@@ -115,8 +60,7 @@ function moviesOnDate() {
     return tmpArray;
 }
 
-//will set the string "dateString", composed of the date like this: date / month - weekday
-function setDateString(inDate, inMonth, inWeekDay) {
+export function returnDateString(inDate, inMonth, inWeekDay) {
     dateInNumbers.date = inDate;
     dateInNumbers.month = inMonth;
     dateInNumbers.weekDay = inWeekDay;
@@ -126,7 +70,7 @@ function setDateString(inDate, inMonth, inWeekDay) {
 //calculates the current date and returns it in an array
 function calculateCurrentDate() {
     let tmpArray = [];
-    for (let i = 0; i < daysForward; i++) {
+    for (let i = 0; i < daysForwardInCalender; i++) {
         let today = new Date();
         let dateLimit = new Date(new Date().setDate(today.getDate() + i));
         let object = {};
@@ -138,8 +82,4 @@ function calculateCurrentDate() {
         tmpArray.push(object);
     }
     return tmpArray;
-}
-
-function returnDayName(inIndex) {
-    return daysInWeek[inIndex];
 }
