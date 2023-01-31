@@ -21,7 +21,7 @@ export default function () {
         return () => document.removeEventListener('mousedown', onMouseDown)
 
         function onMouseDown(event) {
-            if (!menuRef?.current.contains(event.target)) closeMenu()
+            if (menuRef.current && !menuRef.current.contains(event.target)) closeMenu()
         }
     })
     return <aside>
