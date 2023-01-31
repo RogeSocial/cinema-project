@@ -32,7 +32,7 @@ export default function () {
         <div className="wrap">
             <h2>Buy Tickets</h2>
             <hr/>
-            <CalenderBox ref={calenderRef} open={open} openDatePicker={openDatePicker}
+            <CalenderBox calRef={calenderRef} open={open} openDatePicker={openDatePicker}
                          calculateCurrentDate={calculateCurrentDate}/>
             <hr/>
             <DisplaySelectedDate dateString={dateString}/>
@@ -45,41 +45,34 @@ export default function () {
     function openDatePicker() {
         setOpen(!open);
     }
-}
 
 //compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
-function moviesOnDate() {
-    let tmpArray = [];
-    for (let i = 0; i < movieArray.length; i++) {
-        for (let j = 0; j < movieArray[i].date.length; j++) {
-            if (movieArray[i].date[j] === dateInNumbers.date) {
-                tmpArray.push(movieArray[i]);
+    function moviesOnDate() {
+        let tmpArray = [];
+        for (let i = 0; i < movieArray.length; i++) {
+            for (let j = 0; j < movieArray[i].date.length; j++) {
+                if (movieArray[i].date[j] === dateInNumbers.date) {
+                    tmpArray.push(movieArray[i]);
+                }
             }
         }
+        return tmpArray;
     }
-    return tmpArray;
+
+    function calculateCurrentDate() {
+        let tmpArray = [];
+        for (let i = 0; i < daysForwardInCalender; i++) {
+            let addedDay = new Date();
+            addedDay.setDate(addedDay.getDate() + i);
+            tmpArray.push(addedDay);
+        }
+        return tmpArray;
+    }
 }
 
-export function returnDateString(inDate, inMonth, inWeekDay) {
+export function setDateString(inDate, inMonth, inWeekDay) {
     dateInNumbers.date = inDate;
     dateInNumbers.month = inMonth;
     dateInNumbers.weekDay = inWeekDay;
     dateString = dateInNumbers.date + " / " + dateInNumbers.month + "-" + dateInNumbers.weekDay;
-}
-
-//calculates the current date and returns it in an array
-function calculateCurrentDate() {
-    let tmpArray = [];
-    for (let i = 0; i < daysForwardInCalender; i++) {
-        let today = new Date();
-        let dateLimit = new Date(new Date().setDate(today.getDate() + i));
-        let object = {};
-        object.day = dateLimit.getDate();
-        object.month = dateLimit.getMonth() + 1;
-        object.year = dateLimit.getFullYear();
-        object.dayName = dateLimit.getDay();
-        object.id = i;
-        tmpArray.push(object);
-    }
-    return tmpArray;
 }

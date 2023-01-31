@@ -1,9 +1,9 @@
 import {returnDayName} from "./Utilities.jsx";
 
-export const PickADate = ({item, returnDateString}) => (
+export const PickADate = ({item, setDateString}) => (
     <div onClick={function (e) {
-        returnDateString(item.day, item.month, returnDayName(item.dayName))
+        setDateString(item.getDate(), item.getMonth(), returnDayName(item.getDay()))
     }}>
-        {item.day} / {item.month} - {returnDayName(item.dayName)}
+        {item.getDate()} / {item.getMonth() + 1} - {returnDayName(item.getDay())}
     </div>
 );

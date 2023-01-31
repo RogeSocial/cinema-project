@@ -1,13 +1,13 @@
 import {PickADate} from "./PickADate.jsx";
-import {returnDateString} from "../pages/CalendarPage.jsx";
+import {setDateString} from "../pages/CalendarPage.jsx";
 
-export const PickADateList = ({openDatePicker, calculateCurrentDate}) => (
+export const PickADateList = ({setOpen, calculateCurrentDate}) => (
     <ul onClick={() => {
-        openDatePicker(!open)
+        setOpen(!open)
     }}>
-        {calculateCurrentDate().map((item) =>
-            <div className="calender-list" key={item.id}>
-                <PickADate item={item} returnDateString={returnDateString}/>
+        {calculateCurrentDate().map((item, index) =>
+            <div className="calender-list" key={index}>
+                <PickADate item={item} setDateString={setDateString}/>
             </div>
         )}
     </ul>
