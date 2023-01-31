@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {Suspense} from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './styles.css'
-import HomePage from './pages/HomePage.jsx'
+
 import {
     Route,
     RouterProvider,
@@ -10,15 +10,17 @@ import {
     createRoutesFromElements
 } from "react-router-dom";
 
-import MoviePage from './pages/MoviePage.jsx'
-import ReservePage from "./pages/ReservePage.jsx";
-import MovieDetailsPage from "./pages/MovieDetailsPage.jsx";
 import ErrorBoundary from "./pages/errorBoundary.jsx";
 import App from "./App.jsx";
-import CalendarPage from "./pages/CalendarPage.jsx";
+const CalendarPage = React.lazy(() => import('./pages/CalendarPage.jsx'));
+const HomePage = React.lazy(() => import('./pages/HomePage'));
+const MoviePage = React.lazy(() => import('./pages/MoviePage'));
+const ReservePage = React.lazy(() => import('./pages/ReservePage'));
+const MovieDetailsPage  = React.lazy(() => import('./pages/MovieDetailsPage'));
 
 const router = createBrowserRouter(
     createRoutesFromElements(
+
         <Route path="/" element={<App/>} errorElement={<ErrorBoundary/>}>
             <Route index element={<HomePage/>}/>
             <Route path="movies">
@@ -31,12 +33,15 @@ const router = createBrowserRouter(
                 <Route path="login"/>
                 <Route path="register"/>
             </Route>
+
         </Route>
     )
 )
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
+
         <RouterProvider router={router}/>
+
     </React.StrictMode>
 );
