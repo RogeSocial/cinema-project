@@ -99,6 +99,9 @@
   width: 100vw;
   margin-top: 5rem;
 }
+.movie-search-and-sorting-area h2{
+  text-align: center;
+}
 
 .movie-card {
   display: flex;
