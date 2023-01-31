@@ -3,7 +3,8 @@ import ResetFilterButton from "./ResetFilterButton.jsx";
 import AlphabeticButton from "./AlphabeticButton.jsx";
 import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
 import MovieSortButton from "./MovieSortButton.jsx";
-import { reverseAlphabet, sortAlphabet } from "./movieSort.js";
+import { reverseAlphabet, sortAlphabet} from "./movieSort.js";
+import RecentButton from "./RecentButton.jsx";
 
 function MovieSortingOptions({ setFilteredMovies }) {
   const [filterParam, setFilterParam] = useSearchParams();
@@ -21,6 +22,7 @@ function MovieSortingOptions({ setFilteredMovies }) {
         <ResetFilterButton handleClick={removeFilter} />
         <AlphabeticButton handleClick={sortAlphabetically} />
         <ReverseAlphabeticButton handleClick={sortZetabetically} />
+        <RecentButton handleClick={console.log("add function here")}/>
       </div>
     );
   }
