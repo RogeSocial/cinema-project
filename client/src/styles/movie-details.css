@@ -9,6 +9,12 @@
     height: auto;
 }
 
+.movie-details-page h2 {
+    font-size: 2.5rem;
+    font-family: Questrial;
+    color: white;
+}
+
 .content-frame {
     display: flex;
     flex-direction: column;
