@@ -8,34 +8,47 @@ import MovieList from "../components/MovieList.jsx";
 import {CalenderBox} from "../components/CalenderBox.jsx";
 import {DisplaySelectedDate} from "../components/DisplaySelectedDate.jsx";
 import {daysForwardInCalender} from "../components/Constants.js";
+import {returnDayName} from "../components/Utilities.jsx";
 
 let dateString = null;
+let dateString2 = null;
 let dateInNumbers = [{date: null, month: null, weekDay: null}];
+let compareDate;
+let dateStringArray = [];
+let compareDateArray = [];
 
 export default function () {
     const [open, setOpen] = useState(false);
+    const [open2, setOpen2] = useState(false);
+/*    const[buttons, setButtons] = useState([
+        {text:"start date", active:true},
+        {text:"end date", active:true}
+    ])*/
+
     let calenderRef = useRef();
     //this part will handle clicking outside the dropdown menu, so it closes
-    useEffect(() => {
+/*    useEffect(() => {
         let onClickOutside = (e) => {
             if (!calenderRef.current.contains(e.target)) {
                 setOpen(false);
+                setOpen2(false);
             }
         };
         document.addEventListener("mousedown", onClickOutside);
         return () => {
             document.removeEventListener("mousedown", onClickOutside);
         }
-    });
+    });*/
 
-    return <section className="calender" >
+    return <section className="calender">
         <div className="wrap">
             <h2>Buy Tickets</h2>
             <hr/>
-            <CalenderBox calRef={calenderRef} open={open} openDatePicker={openDatePicker}
-                         calculateCurrentDate={calculateCurrentDate}/>
+            <CalenderBox calRef={calenderRef} open={open} openDatePicker={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
+            <CalenderBox calRef={calenderRef} open={open2} openDatePicker={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
             <hr/>
-            <DisplaySelectedDate dateString={dateString}/>
+            <DisplaySelectedDate dateString={dateStringArray[0]}/>
+            <DisplaySelectedDate dateString={dateStringArray[0]}/>
         </div>
         <div className="movieTickets">
             <MovieList movies={moviesOnDate()}/>
@@ -51,8 +64,10 @@ export default function () {
         let tmpArray = [];
         for (let i = 0; i < movieArray.length; i++) {
             for (let j = 0; j < movieArray[i].date.length; j++) {
-                if (movieArray[i].date[j] === dateInNumbers.date) {
-                    tmpArray.push(movieArray[i]);
+                for(let k = 0; k < compareDateArray.length; k++) {
+                    if (movieArray[i].date[j] === compareDateArray[k]) {
+                        tmpArray.push(movieArray[i]);
+                    }
                 }
             }
         }
@@ -70,9 +85,19 @@ export default function () {
     }
 }
 
-export function setDateString(inDate, inMonth, inWeekDay) {
-    dateInNumbers.date = inDate;
-    dateInNumbers.month = inMonth;
-    dateInNumbers.weekDay = inWeekDay;
-    dateString = dateInNumbers.date + " / " + dateInNumbers.month + "-" + dateInNumbers.weekDay;
+export function setDateString(inDate) {
+    compareDateArray.push(inDate.getDate());
+    /*compareDateArray[0] = inDate.getDate();*/
+    /*compareDate = inDate.getDate();*/
+    dateStringArray.push(inDate.getDate() + " / " + (inDate.getMonth() + 1) + " - " + returnDayName(inDate.getDay()));
+/*    console.log(("date: " + inDate.getDate() + " month: " + (inDate.getMonth() + 1) + "day: " + returnDayName(inDate.getDay())))*/
+    /*dateString = inDate.getDate() + " / " + (inDate.getMonth() + 1) + " - " + returnDayName(inDate.getDay());*/
+}
+
+export function resetDateArray(){
+    dateStringArray = [];
+}
+
+export function resetCompareArray(){
+    compareDateArray = [];
 }
