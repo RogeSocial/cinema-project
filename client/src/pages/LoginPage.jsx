@@ -13,8 +13,10 @@ export default function () {
     
     return (
         <section>
-            <div className="cover">
+            <form className="cover">
+                <label htmlFor="email">Email:</label>
                 <input type="email" placeholder="email"></input>
+                <label htmlFor="password">Password:</label>
                 <input type="password" placeholder="password" minLength="8"></input>
                 <div className="button-container">
                     <button className="button" onClick={popup}>LOGIN</button>
@@ -26,7 +28,7 @@ export default function () {
                     <p>Email and/or password is incorrect</p>
                 </div>
 
-            </div>
+            </form>
         </section>
     )
 }

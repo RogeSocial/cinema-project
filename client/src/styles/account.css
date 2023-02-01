@@ -6,7 +6,7 @@
 .cover {
     background-color: rgba(0, 0, 0, 0.548);
     width: 30em;
-    height: 35em;
+    height: 40em;
     position: relative;
     border-radius: 1em;
     box-shadow: 0 0.188em 1.550em rgb(255, 0, 0);
@@ -64,6 +64,11 @@ input {
 
 input:focus {
     outline-color: red;
+}
+
+label {
+    width: 80%;
+    margin: 5px;
 }
 
 ::placeholder {

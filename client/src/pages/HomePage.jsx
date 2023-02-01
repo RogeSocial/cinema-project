@@ -18,8 +18,8 @@ export default function () {
           <h2 id="backgroundQuote" className={"transparent-background"}><Quotes /></h2>
           </div>
           <div>
-            <Link to="login" ><button className="button">LOGIN</button></Link>
-            <Link to="user/registers"><button className="button">SIGNUP</button></Link>
+            <button className="button">LOGIN</button>
+            <button className="button">SIGNUP</button>
           </div>
           <div className="darken-lower-part"></div>
         </div>
