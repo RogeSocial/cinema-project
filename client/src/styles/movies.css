@@ -3,13 +3,14 @@
   --main_text_color: white;
 }
 
+/* non media-query CSS used for phone responsiveness */
 .movies {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   background-color: rgb(0, 0, 0);
   color: var(--main_text_color);
-  padding-top: 280px; /* amount movies are moved down from navbar */
+  padding-top: 280px; /* amount movie cards are moved down from navbar */
 }
 
 .movie-search-field {
@@ -19,11 +20,10 @@
   border: solid 1px var(--main_text_color);
   padding: 0.6rem;
   padding-right: 4.2rem;
-
 }
 
 .movie-search-field i {
-  color: lightgray;
+  color: lightgray; /* icon-color */
 }
 
 .movies input {
@@ -70,9 +70,8 @@
   font-size: 33px;
   min-width: 200px;
   border: none;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
   font-weight: 400;
-  font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
   padding-top: 20px;
 }
 
@@ -98,6 +97,9 @@
   top: 0;
   width: 100vw;
   margin-top: 5rem;
+}
+.movie-search-and-sorting-area h2{
+  text-align: center;
 }
 
 .movie-card {
@@ -142,7 +144,7 @@
 }
 
 .movieLength {
-  color: #8c8c8c;
+  color: #8c8c8c; /* color of movie duration on tickets page */
   position: inherit;
   bottom: 5rem;
   font-size: 20px;
@@ -150,6 +152,7 @@
   visibility: visible;
 }
 
+/* tablet view responsiveness */
 @media screen and (min-width: 680px) {
   .movies {
     justify-content: center;
@@ -179,9 +182,9 @@
   .movies input {
     width: 270px;
   }
-
 }
 
+/* desktop view responsiveness */
 @media screen and (min-width: 1000px) {
   .movies {
     grid-template-columns: repeat(3, max-content);
