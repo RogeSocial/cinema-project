@@ -8,11 +8,6 @@ export default function ({ movie }) {
         <h3> {movie.title} </h3>
         <img src={movie.image} alt={movie.alt} />
         <h4>{showsMovieLengthOnThisPage(movie, "/tickets")}</h4>
-        {movie.releaseDate.year +
-          "/" +
-          movie.releaseDate.month +
-          "/" +
-          movie.releaseDate.day}
       </div>
     </Link>
   );

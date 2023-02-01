@@ -24,17 +24,7 @@ export function reverseAlphabet() {
 }
 
 export function sortByMostRecent() {
-  let dateTypes = ["year", "month", "day"];
-  for (let i = 0; i < dateTypes.length; ++i) {
-    return movies.sort((a, b) => {
-      if (a.releaseDate[dateTypes[i]] < b.releaseDate[dateTypes[i]]) {
-        return -1;
-      }
-      if (a.releaseDate[dateTypes[i]] > b.releaseDate[dateTypes[i]]) {
-        return 1;
-      } else if (a.releaseDate[dateTypes[i]] === b.releaseDate[dateTypes[i]]) {
-        return 0;
-      }
-    });
-  }
+  return movies.sort(
+    (a, b) => a.releaseDate.getTime() - b.releaseDate.getTime()
+  );
 }
