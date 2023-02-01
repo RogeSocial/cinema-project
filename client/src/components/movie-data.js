@@ -144,4 +144,20 @@ export const movieArray = [
     background:
       "https://cdn-cc-image-api-p001.cc.vubiquity.com/sf-api/image?i=https://vucscdnprodne.azureedge.net/images/vmest_prod/1/furniture/VX-5841161_1920x1080.PNG?q=80",
   },
+ {
+  id: 10,
+    title: "The Menu",
+    stars: "Ralph Fiennes, Anya Taylor-Joy, Nicholas Hoult",
+    release: "18 november 2022",
+    trailer: "C_uTkUGcHv4",
+    text: "A young couple travels to a remote island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises.",
+    image: "https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/C39AEE8A8C360463D4CDC959440831C20BA1995A33E865DFD08B1FDB960E48E5/scale?width=1200&aspectRatio=1.78&format=jpeg",
+    alt: "the cast of the movie standing around a tabe",
+    date:  [7,  14,  21,  28,  4],
+    time:  ["16:50",  "18:50",  "20:50"],
+    length: 107,
+    param: "the-menu",
+    background:
+      "https://pyxis.nymag.com/v1/imgs/0f2/0de/aac1978a3ac990565df00a66fc85b6312f-the-menu.2x.rsocial.w600.jpg",
+  },
 ];
