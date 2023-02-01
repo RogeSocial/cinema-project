@@ -15,6 +15,12 @@
     margin-bottom: 30px;
 }
 
+.pass-input {
+    display: block;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
 .account-button {
     display: block;
     margin-bottom: 30px;
