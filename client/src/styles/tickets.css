@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
 
+.calender {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/it5.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #242333;
+    padding-top: 50px;
+}
+
+
 .calender-dropdown {
     background-color: #ffffff;
     border-radius: 20px;
@@ -87,18 +101,6 @@ hr {
     display: none;
 }
 
-.calender {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url(../images/it5.jpg);
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-color: #242333;
-    padding-top: 50px;
-}
 
 .calender h2 {
     margin: 1rem;
