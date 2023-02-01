@@ -82,8 +82,8 @@
   padding-top: 20px;
 }
 
-.movies button {
-  margin-bottom: -1rem;
+.sorting-options {
+  display: flex;
 }
 
 .movie-btn {
@@ -106,7 +106,6 @@
   width: 100vw;
   margin-top: 5rem;
 }
-
 .movie-search-and-sorting-area h2 {
   text-align: center;
 }
