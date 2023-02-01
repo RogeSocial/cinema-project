@@ -27,6 +27,6 @@ export function reverseAlphabet() {
 
 export function sortByMostRecent() {
   return movies.sort(
-    (a, b) => a.releaseDate.getTime() - b.releaseDate.getTime()
+    (a, b) => b.releaseDate.getTime() - a.releaseDate.getTime()
   );
 }
