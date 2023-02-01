@@ -1,29 +1,36 @@
 import { movieArray } from "./movie-data.js";
 const [movies] = [movieArray];
-export  function sortAlphabet()  {
-    return movies.sort((a, b) => {
-        if (a.title < b.title) {
-            return -1;
-
-        }
-        if (a.title > b.title) {
-            return 1;
-        }
-        return 0;
-    })
+export function sortAlphabet() {
+  return movies.sort((a, b) => {
+    if (a.title < b.title) {
+      return -1;
+    }
+    if (a.title > b.title) {
+      return 1;
+    }
+    return 0;
+  });
 }
-export const reverseAlphabet = () => {
-    return movies.sort((a, b) => {
-        if (a.title > b.title) {
-            return -1;
-
-        }
-        if (a.title < b.title) {
-            return 1;
-        }
-        return 0;
-    })
+export function reverseAlphabet() {
+  return movies.sort((a, b) => {
+    if (a.title > b.title) {
+      return -1;
+    }
+    if (a.title < b.title) {
+      return 1;
+    }
+    return 0;
+  });
 }
 
-
-
+export function sortByMostRecent() {
+  return movies.sort((a, b) => {
+    if (a.releaseDate["year"] < b.releaseDate["year"]) {
+      return -1;
+    }
+    if (a.releaseDate["year"] > b.releaseDate["year"]) {
+      return 1;
+    }
+    return 0;
+  });
+}
