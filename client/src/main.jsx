@@ -15,6 +15,7 @@ import ReservePage from "./pages/ReservePage.jsx";
 import MovieDetailsPage from "./pages/MovieDetailsPage.jsx";
 import ErrorBoundary from "./pages/errorBoundary.jsx";
 import App from "./App.jsx";
+
 import CalendarPage from "./pages/CalendarPage.jsx";
 import AccountPage from "./pages/AccountPage.jsx";
 
@@ -28,8 +29,8 @@ const router = createBrowserRouter(
             </Route>
             <Route path="tickets" element={<CalendarPage/>}/>
             <Route path="reserve" element={<ReservePage/>}/>
-            <Route path="account" element={<AccountPage />} />
             <Route path="user">
+                <Route path="account" element={<AccountPage />} />
                 <Route path="login"/>
                 <Route path="register"/>
             </Route>
@@ -40,4 +41,5 @@ const router = createBrowserRouter(
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
         <RouterProvider router={router}/>
+    </React.StrictMode>
 );
