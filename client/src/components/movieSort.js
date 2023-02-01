@@ -24,13 +24,17 @@ export function reverseAlphabet() {
 }
 
 export function sortByMostRecent() {
-  return movies.sort((a, b) => {
-    if (a.releaseDate["year"] < b.releaseDate["year"]) {
-      return -1;
-    }
-    if (a.releaseDate["year"] > b.releaseDate["year"]) {
-      return 1;
-    }
-    return 0;
-  });
+  let dateTypes = ["year", "month", "day"];
+  for (let i = 0; i < dateTypes.length; ++i) {
+    return movies.sort((a, b) => {
+      if (a.releaseDate[dateTypes[i]] < b.releaseDate[dateTypes[i]]) {
+        return -1;
+      }
+      if (a.releaseDate[dateTypes[i]] > b.releaseDate[dateTypes[i]]) {
+        return 1;
+      } else if (a.releaseDate[dateTypes[i]] === b.releaseDate[dateTypes[i]]) {
+        return 0;
+      }
+    });
+  }
 }
