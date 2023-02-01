@@ -12,15 +12,15 @@ import {
 
 import ErrorBoundary from "./pages/errorBoundary.jsx";
 import App from "./App.jsx";
+
 const CalendarPage = React.lazy(() => import('./pages/CalendarPage.jsx'));
 const HomePage = React.lazy(() => import('./pages/HomePage'));
 const MoviePage = React.lazy(() => import('./pages/MoviePage'));
 const ReservePage = React.lazy(() => import('./pages/ReservePage'));
-const MovieDetailsPage  = React.lazy(() => import('./pages/MovieDetailsPage'));
+const MovieDetailsPage = React.lazy(() => import('./pages/MovieDetailsPage'));
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-
         <Route path="/" element={<App/>} errorElement={<ErrorBoundary/>}>
             <Route index element={<HomePage/>}/>
             <Route path="movies">
@@ -33,7 +33,6 @@ const router = createBrowserRouter(
                 <Route path="login"/>
                 <Route path="register"/>
             </Route>
-
         </Route>
     )
 )
