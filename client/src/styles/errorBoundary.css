@@ -1,9 +1,18 @@
+
+.error h2 {
+    color: indianred;
+    font-family: 'Poppins', cursive;
+    font-size: x-large;
+}
 .error {
+    font-family: 'Lacquer', cursive;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     font-size: x-large;
     padding: 1rem;
     background-color: black;
     padding-top: 3.7rem;
+    color: red;
 }

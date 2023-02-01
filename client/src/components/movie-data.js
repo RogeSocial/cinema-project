@@ -1,4 +1,4 @@
-export let movieArray = [
+export const movieArray = [
   {
     id: 1,
     title: "Friday the 13th",
