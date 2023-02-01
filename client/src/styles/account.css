@@ -3,6 +3,10 @@
     align-items: center;
 }
 
+#account-page-form {
+
+}
+
 #account-headline {
     margin-top: 5rem;
     font-size: 2.2rem;
@@ -23,5 +27,13 @@
 
 .account-button {
     display: block;
+    margin-bottom: 30px;
+}
+
+#change-password {
+    display: inline;
+    position: relative;
+    left: 25px;
+    top: -17px;
     margin-bottom: 30px;
 }
