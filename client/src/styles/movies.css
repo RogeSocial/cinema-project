@@ -10,7 +10,11 @@
   align-items: center;
   background-color: rgb(0, 0, 0);
   color: var(--main_text_color);
-  padding-top: 280px; /* amount movie cards are moved down from navbar */
+  padding-top: 280px;
+  background-image: url(../images/horror3.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 
 .movie-search-field {
@@ -23,7 +27,8 @@
 }
 
 .movie-search-field i {
-  color: lightgray; /* icon-color */
+  color: lightgray;
+  /* icon-color */
 }
 
 .movies input {
@@ -36,6 +41,7 @@
   margin-top: 0.2rem;
   border: none;
 }
+
 .movies input:focus {
   outline: none;
 }
@@ -43,7 +49,8 @@
 ::placeholder {
   /* for Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--main_text_color);
-  opacity: 1; /* for Firefox */
+  opacity: 1;
+  /* for Firefox */
   font-size: 18px;
   font-weight: 500;
   display: flex;
@@ -86,6 +93,7 @@
 #movie-sort-btn {
   font-size: 18px;
   padding: 0.5rem 1rem 0.5rem 1rem;
+  margin-top: 1rem;
 }
 
 .movie-search-and-sorting-area {
@@ -98,7 +106,8 @@
   width: 100vw;
   margin-top: 5rem;
 }
-.movie-search-and-sorting-area h2{
+
+.movie-search-and-sorting-area h2 {
   text-align: center;
 }
 
@@ -144,7 +153,8 @@
 }
 
 .movieLength {
-  color: #8c8c8c; /* color of movie duration on tickets page */
+  color: #8c8c8c;
+  /* color of movie duration on tickets page */
   position: inherit;
   bottom: 5rem;
   font-size: 20px;
@@ -168,6 +178,7 @@
     width: 100vw;
     margin-top: 5rem;
   }
+
   .movies h2 {
     font-size: 50px;
     min-width: 300px;
