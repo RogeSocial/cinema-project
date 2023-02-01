@@ -4,6 +4,7 @@ import AlphabeticButton from "./AlphabeticButton.jsx";
 import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
 import MovieSortButton from "./MovieSortButton.jsx";
 import { reverseAlphabet, sortAlphabet } from "./movieSort.js";
+import AlphabeticButton2 from "./AlphabeticButton2.jsx";
 
 function MovieSortingOptions({ setFilteredMovies }) {
   const [filterParam, setFilterParam] = useSearchParams();
@@ -18,6 +19,7 @@ function MovieSortingOptions({ setFilteredMovies }) {
   function HandleSorting() {
     return (
       <div className={"sorting-options"}>
+        <AlphabeticButton2 handleClick={sortAlphabetically} />
         <ResetFilterButton handleClick={removeFilter} />
         <AlphabeticButton handleClick={sortAlphabetically} />
         <ReverseAlphabeticButton handleClick={sortZetabetically} />
