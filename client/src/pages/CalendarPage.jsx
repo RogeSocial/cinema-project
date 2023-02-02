@@ -27,7 +27,7 @@ export default function () {
 
     const buttons = [
         {text:"start date", buttonID: 1},
-        {text:"end date", buttonID: 2 }
+        {text:"end date",  buttonID: 2 }
     ]
 
     let calenderRef = useRef();
@@ -66,11 +66,29 @@ export default function () {
 
 //compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
     function moviesOnDate() {
+        let tmpDateArray = [];
+        if(compareDateArray.length > 1) {
+            let startDate = new Date(compareDateArray[0]);
+            let endDate = new Date(compareDateArray[1]);
+/*            console.log("startDate: " + startDate );
+            console.log("endDate: " + endDate );
+            console.log("compareDateArray.length: " + compareDateArray.length );*/
+            /*let diffInTime = endDate.getTime() - startDate.getTime();*/
+            let differenceInDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
+            console.log("differenceInDays: " + differenceInDays );
+            for (let i = compareDateArray[0]; i < compareDateArray[1] + 1; i++) {
+                tmpDateArray.push(i);
+            }
+        }
+        else{
+            tmpDateArray = compareDateArray;
+        }
+
         let tmpArray = [];
         for (let i = 0; i < movieArray.length; i++) {
             for (let j = 0; j < movieArray[i].date.length; j++) {
-                for(let k = 0; k < compareDateArray.length; k++) {
-                    if (movieArray[i].date[j] === compareDateArray[k]) {
+                for(let k = 0; k < tmpDateArray.length; k++) {
+                    if (movieArray[i].date[j] === tmpDateArray[k]) {
                         tmpArray.push(movieArray[i]);
                     }
                 }
@@ -90,15 +108,16 @@ export default function () {
     }
 }
 
-export function setDateString(inDate, inBtn) {
-    compareDateArray.push(inDate.getDate());
+export function setDateString(inDate, inBtnTxt) {
+    compareDateArray.push(inDate);
+    /*console.log("compareDateArray" + inDate);*/
     /*compareDateArray[0] = inDate.getDate();*/
     /*compareDate = inDate.getDate();*/
     let tmpString = inDate.getDate() + " / " + (inDate.getMonth() + 1) + " - " + returnDayName(inDate.getDay());
     dateStringArray.push(tmpString);
-    console.log("dateStringArray.length: " + dateStringArray.length);
-    console.log("compareDateArray.length: " + compareDateArray.length);
-    console.log("inBtn: " + inBtn.text);
+    /*console.log("dateStringArray.length: " + dateStringArray.length);*/
+    /*console.log("compareDateArray.length: " + compareDateArray.length);*/
+    /*console.log("inBtn.text: " + inBtn.text);*/
 /*    console.log(("date: " + inDate.getDate() + " month: " + (inDate.getMonth() + 1) + "day: " + returnDayName(inDate.getDay())))*/
     /*dateString = inDate.getDate() + " / " + (inDate.getMonth() + 1) + " - " + returnDayName(inDate.getDay());*/
 }
