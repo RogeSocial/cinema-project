@@ -1,5 +1,5 @@
 import AccountForm from "../components/AccountForm.jsx";
-import '../styles/accountPage.css'
+import '../styles/account.css'
 
 export default function() {
     return <section id={"account-body"}>
