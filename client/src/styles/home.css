@@ -57,9 +57,10 @@
   font-family: inherit;
   font-weight: 500;
   color: black;
-  background-color: rgb(255, 254, 254);
+ /* background-color: rgb(255, 254, 254);*/
   cursor: pointer;
   margin: 10px;
+  position: relative;
 }
 
 .button:hover {
@@ -80,14 +81,13 @@
 .button::after {
   background-color: #fff;
   content: "";
-  display: inline-block;
   height: 100%;
   width: 100%;
   border-radius: 100px;
+  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
   transition: all 1s;
 }
 
