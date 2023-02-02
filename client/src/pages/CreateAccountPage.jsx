@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import '../styles/account.css'
+import icon from "../images/apple-touch-icon.png";
 
 export default function () {
     return (
         <section className="account">
-                <form className="cover">
+                <form className="cover createAccountCover">
+                    <img className="loginImg accountImg" src={icon} alt="" />
                     <label htmlFor="fullname">Fullname:</label>
                     <input type="text" placeholder="full name"></input>
                     <label htmlFor="email">Email:</label>
@@ -16,9 +18,11 @@ export default function () {
                     <input type="password" placeholder="password" minLength="8"></input>
                     <label htmlFor="confirm password">Confirm password: </label>
                     <input type="password" placeholder="confirm password" minLength="8"></input>
-                    <br></br>
+                    <br/>
+                    <div className="button-group">
                     <button className="button">REGISTER</button>
                     <Link to="/login"><button className="button-text">Already have an account? Sign in.</button></Link>
+                    </div>
                 </form>
         </section>
     )
