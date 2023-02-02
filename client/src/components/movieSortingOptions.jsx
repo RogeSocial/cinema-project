@@ -2,27 +2,54 @@ import { useSearchParams } from "react-router-dom";
 import ResetFilterButton from "./ResetFilterButton.jsx";
 import AlphabeticButton from "./AlphabeticButton.jsx";
 import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
-import MovieSortButton from "./MovieSortButton.jsx";
-import { reverseAlphabet, sortAlphabet, sortByMostRecent} from "./movieSort.js";
-import RecentButton from "./RecentButton.jsx";
+import FilterButton from "./FilterButton.jsx";
+import {
+  reverseAlphabet,
+  sortAlphabet,
+  sortByMostRecent,
+  sortByLeastRecent,
+} from "./movieSort.js";
+import NewestButton from "./NewestButton.jsx";
+import OldestButton from "./OldestButton.jsx";
+import ConfirmFilterButton from "./ConfirmFilterButton.jsx";
+import { useState } from "react";
 
-function MovieSortingOptions({ setFilteredMovies }) {
+export default function ({ setFilteredMovies }) {
   const [filterParam, setFilterParam] = useSearchParams();
-  const isFilterActive = filterParam.get("filter") === "active";
+  const activeFilter = filterParam.get("filter") === "active";
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const [filterChosen, setFilterChosen] = useState(false);
+  const [filterComponent, setFilterComponent] = useState(null);
 
-  if (!isFilterActive) {
-    return <MovieSortButton handleClick={showSortingOptions} />;
-  } else {
+  if (!toggleMenu) {
+    return (<>
+    <FilterButton handleClick={showSortingOptions} />
+    {filterComponent}
+    </>)
+  }
+
+  if (toggleMenu) {
     return <HandleSorting />;
   }
 
   function HandleSorting() {
     return (
       <div className={"sorting-options"}>
-        <ResetFilterButton handleClick={removeFilter} />
-        <AlphabeticButton handleClick={sortAlphabetically} />
-        <ReverseAlphabeticButton handleClick={sortZetabetically} />
-        <RecentButton handleClick={sortMostRecent}/>
+        <div className="top-filter-row">
+          <ResetFilterButton handleClick={removeFilter} />
+          <h4 className="movie-filter-h4">FILTER</h4>
+          <ConfirmFilterButton handleClick={confirmFilter} />
+        </div>
+        <h4 className="movie-filter-h4">Letter</h4>
+        <div className="letter-filter-row">
+          <AlphabeticButton handleClick={sortAlphabetically} />
+          <ReverseAlphabeticButton handleClick={sortZetabetically} />
+        </div>
+        <h4 className="movie-filter-h4">Release Date</h4>
+        <div className="date-filter-row">
+          <NewestButton handleClick={sortNewest} />
+          <OldestButton handleClick={sortOldest} />
+        </div>
       </div>
     );
   }
@@ -31,22 +58,40 @@ function MovieSortingOptions({ setFilteredMovies }) {
     setFilterParam({});
     window.location.reload();
   }
+  function confirmFilter() {
+    setFilterChosen(false);
+    setToggleMenu(false);
+  }
 
   function sortAlphabetically() {
     setFilteredMovies([...sortAlphabet()]);
+    setFilterParam({ filter: "A-Z" });
+    setFilterChosen(true);
+    setFilterComponent(<AlphabeticButton/>)
   }
 
   function sortZetabetically() {
     setFilteredMovies([...reverseAlphabet()]);
+    setFilterParam({ filter: "Z-A" });
+    setFilterChosen(true);
+    setFilterComponent(<ReverseAlphabeticButton/>)
   }
 
   function showSortingOptions() {
-    setFilterParam({ filter: "active" });
+    setToggleMenu(true);
   }
 
-  function sortMostRecent() {
+  function sortNewest() {
     setFilteredMovies([...sortByMostRecent()]);
+    setFilterParam({ filter: "Newest" });
+    setFilterChosen(true);
+    setFilterComponent(<NewestButton/>)
+  }
+
+  function sortOldest() {
+    setFilteredMovies([...sortByLeastRecent()]);
+    setFilterParam({ filter: "Oldest" });
+    setFilterChosen(true);
+    setFilterComponent(<OldestButton/>)
   }
 }
-
-export default MovieSortingOptions;

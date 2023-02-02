@@ -4,8 +4,8 @@ export default function ({ handleClick }) {
   }
 
   return (
-    <button className="button" id="movie-sort-btn" onClick={handleClick}>
-      Most Recent
-    </button>
+    <div className="filter-nav-item" onClick={handleClick}>
+      Newest
+    </div>
   );
 }

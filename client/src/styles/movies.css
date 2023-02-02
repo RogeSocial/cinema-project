@@ -84,6 +84,41 @@
 
 .sorting-options {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  border: solid 1px var(--main_text_color);
+  width: 332px;
+  z-index: 200;
+}
+
+.top-filter-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.letter-filter-row {
+  display: flex;
+}
+
+.date-filter-row {
+  display: flex;
+  padding-bottom: 0.5rem;
+}
+
+.filter-nav-item {
+background-color: black;
+border: solid 1px var(--main_text_color);
+padding: 1rem;
+margin-bottom: 0.5rem;
+}
+
+.movie-filter-h4 {
+  padding: 0.5rem;
+  margin: 0;
 }
 
 .movie-btn {

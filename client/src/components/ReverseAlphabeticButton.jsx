@@ -3,9 +3,9 @@ export default function ({ handleClick }) {
     return null;
   }
   return (
-    <button className="button" id="movie-sort-btn" onClick={handleClick}>
+    <div className="filter-nav-item" onClick={handleClick}>
       {" "}
       Z-A
-    </button>
+    </div>
   );
 }

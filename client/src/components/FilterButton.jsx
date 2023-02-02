@@ -4,7 +4,7 @@ export default function ({ handleClick }) {
   }
   return (
     <button className="button" id="movie-sort-btn" onClick={handleClick}>
-      Sort
+      Filter
     </button>
   );
 }
