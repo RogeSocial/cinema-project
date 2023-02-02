@@ -1,8 +1,6 @@
-import {resetDateArray} from "../pages/CalendarPage.jsx";
-export const PickADateButton = ({handleClick}) => (
-    resetDateArray(),
+export const PickADateButton = ({btn, handleClick}) => (
     <button className="button" onClick={handleClick}>
         {/*{buttons.text}*/}
-        Pick a Date
+        {btn.text}
     </button>
 );

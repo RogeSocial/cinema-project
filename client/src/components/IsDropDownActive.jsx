@@ -1,7 +1,7 @@
 import {PickADateList} from "./PickADateList.jsx";
 
-export const IsDropDownActive = ({open, openDatePicker, calculateCurrentDate}) => (
+export const IsDropDownActive = ({btn, open, openDatePicker, calculateCurrentDate}) => (
         <div onClick={openDatePicker} className={`calender-dropdown-trigger ${open ? 'active' : 'inactive'}`}>
-            <PickADateList setOpen={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
+            <PickADateList btn={btn} setOpen={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
         </div>
 );

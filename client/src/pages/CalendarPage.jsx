@@ -21,9 +21,14 @@ export default function () {
     const [open, setOpen] = useState(false);
     const [open2, setOpen2] = useState(false);
 /*    const[buttons, setButtons] = useState([
-        {text:"start date", active:true},
-        {text:"end date", active:true}
+        {text:"start date", buttonID: 1},
+        {text:"end date", buttonID: 2 }
     ])*/
+
+    const buttons = [
+        {text:"start date", buttonID: 1},
+        {text:"end date", buttonID: 2 }
+    ]
 
     let calenderRef = useRef();
     //this part will handle clicking outside the dropdown menu, so it closes
@@ -44,11 +49,11 @@ export default function () {
         <div className="wrap">
             <h2>Buy Tickets</h2>
             <hr/>
-            <CalenderBox calRef={calenderRef} open={open} openDatePicker={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
-            <CalenderBox calRef={calenderRef} open={open2} openDatePicker={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
+            <CalenderBox btn={buttons[0]} calRef={calenderRef} open={open} openDatePicker={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
+            <CalenderBox btn={buttons[1]} calRef={calenderRef} open={open2} openDatePicker={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
             <hr/>
             <DisplaySelectedDate dateString={dateStringArray[0]}/>
-            <DisplaySelectedDate dateString={dateStringArray[0]}/>
+            <DisplaySelectedDate dateString={dateStringArray[1]}/>
         </div>
         <div className="movieTickets">
             <MovieList movies={moviesOnDate()}/>
@@ -85,11 +90,15 @@ export default function () {
     }
 }
 
-export function setDateString(inDate) {
+export function setDateString(inDate, inBtn) {
     compareDateArray.push(inDate.getDate());
     /*compareDateArray[0] = inDate.getDate();*/
     /*compareDate = inDate.getDate();*/
-    dateStringArray.push(inDate.getDate() + " / " + (inDate.getMonth() + 1) + " - " + returnDayName(inDate.getDay()));
+    let tmpString = inDate.getDate() + " / " + (inDate.getMonth() + 1) + " - " + returnDayName(inDate.getDay());
+    dateStringArray.push(tmpString);
+    console.log("dateStringArray.length: " + dateStringArray.length);
+    console.log("compareDateArray.length: " + compareDateArray.length);
+    console.log("inBtn: " + inBtn.text);
 /*    console.log(("date: " + inDate.getDate() + " month: " + (inDate.getMonth() + 1) + "day: " + returnDayName(inDate.getDay())))*/
     /*dateString = inDate.getDate() + " / " + (inDate.getMonth() + 1) + " - " + returnDayName(inDate.getDay());*/
 }
