@@ -18,6 +18,7 @@ import App from "./App.jsx";
 import CalendarPage from "./pages/CalendarPage.jsx";
 import LoginPage from './pages/LoginPage'
 import CreateAccountPage from './pages/CreateAccountPage'
+import AccountPage from "./pages/AccountPage.jsx";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -31,6 +32,11 @@ const router = createBrowserRouter(
             <Route path="reserve" element={<ReservePage/>}/>
             <Route path="login" element={<LoginPage/>}/>
             <Route path="register" element={<CreateAccountPage />}/>
+
+            <Route path="user">
+                <Route path="account" element={<AccountPage />}/>
+            </Route>
+
         </Route>
     )
 )
