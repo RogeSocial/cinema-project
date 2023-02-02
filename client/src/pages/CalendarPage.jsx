@@ -48,10 +48,10 @@ export default function () {
     return <section className="calender">
         <div className="wrap">
             <h2>Buy Tickets</h2>
-            <hr/>
+            {/*<hr/>*/}
             <CalenderBox btn={buttons[0]} calRef={calenderRef} open={open} openDatePicker={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
             <CalenderBox btn={buttons[1]} calRef={calenderRef} open={open2} openDatePicker={openDatePicker} calculateCurrentDate={calculateCurrentDate}/>
-            <hr/>
+            {/*<hr/>*/}
             <DisplaySelectedDate dateString={dateStringArray[0]}/>
             <DisplaySelectedDate dateString={dateStringArray[1]}/>
         </div>
