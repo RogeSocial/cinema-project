@@ -76,19 +76,32 @@ export default function () {
             /*let diffInTime = endDate.getTime() - startDate.getTime();*/
             let differenceInDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
             console.log("differenceInDays: " + differenceInDays );
-            for (let i = compareDateArray[0]; i < compareDateArray[1] + 1; i++) {
-                tmpDateArray.push(i);
+           /* for (let i = compareDateArray[0]; i < compareDateArray[1] + 1; i++) {*/
+            for (let i = 0; i < differenceInDays + 1; i++) {
+                let tmpDay= new Date(startDate);
+                tmpDay.setDate(tmpDay.getDate() + i);
+                /*console.log("tmpDay: " + tmpDay);*/
+                tmpDateArray.push(tmpDay);
             }
         }
         else{
             tmpDateArray = compareDateArray;
+            console.log("ELSE FUNCTION!!")
         }
+       /* console.log("tmpDateArray.length: " + tmpDateArray.length);*/
+/*        for(let i = 0; i < tmpDateArray.length; i++){
+            console.log("tmpDateArray" + tmpDateArray[i].getDate());
+        }*/
+
+        /*console.log("tmpDateArray.length: " + tmpDateArray.length);*/
 
         let tmpArray = [];
+        /*console.log("almost in Movie Array!!");*/
         for (let i = 0; i < movieArray.length; i++) {
             for (let j = 0; j < movieArray[i].date.length; j++) {
                 for(let k = 0; k < tmpDateArray.length; k++) {
-                    if (movieArray[i].date[j] === tmpDateArray[k]) {
+                    if (movieArray[i].date[j] === tmpDateArray[k].getDate()) {
+                        /*console.log("in Movie Array!!");*/
                         tmpArray.push(movieArray[i]);
                     }
                 }
