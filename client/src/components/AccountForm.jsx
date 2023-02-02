@@ -22,7 +22,6 @@ export default function () {
         saveButton.disabled = isEditable
     }, [isEditable]);
 
-
     //When change password checkbox is clicked
     function changePassEditable() {
         !isPassEditable ? setIsPassEditable(true) : setIsPassEditable(false)
