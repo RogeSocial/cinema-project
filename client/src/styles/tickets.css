@@ -45,11 +45,14 @@ hr {
 }
 
 .wrap {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+/*    flex-direction: column;*/
     justify-content: center;
     align-items: center;
     margin: 20px;
+    padding-top: 50px;
+    width: 400px;
 }
 
 .selectedDate{
