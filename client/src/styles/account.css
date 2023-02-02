@@ -1,0 +1,186 @@
+
+
+.account {
+    background-color: black;
+}
+
+.login-wrap{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+   
+}
+
+.cover {
+    background-color: rgba(0, 0, 0, 0.548);
+    width: 30em;
+    height: 42em;
+    position: relative;
+    border-radius: 1em;
+    box-shadow: 0 0.188em 1.550em rgb(255, 255, 255);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    
+}
+
+.accountImg {
+    height: 100px;
+    border-radius: 20%;
+    padding: 20px;
+}
+
+
+
+.account a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button-group {
+    
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+
+    
+}
+
+.hide-popup {
+    display: none;
+}
+
+.login-popup {
+    position: absolute;
+    height: 100px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.25em;
+    background-color: transparent;
+    color: rgb(170, 0, 0);
+    bottom: 70px;
+    transform: scale(1);
+    transition: 1.5s;
+}
+
+.account input {
+    margin-top: 5px;
+    font-size: 15px;
+    width: 80%;
+    border: 1px solid black;
+    height: 2.5em;
+    border-radius: 0.25em;
+    text-align: left;
+}
+
+.account input:focus {
+    outline-color: red;
+}
+
+.account label {
+    width: 80%;
+    margin-top: 5px;
+    padding: 5px;
+    font-size: 18px;
+}
+
+::placeholder {
+    color: black;
+    opacity: 25%;
+}
+
+.button-text {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.login-popup h3 {
+    padding: 0;
+
+
+}
+.login-popup {
+    margin-top: 40px;
+}
+
+.login-popup h3  {
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+
+.login-popup p {
+    margin-bottom: -20px
+}
+
+
+@media screen and (max-width: 750px) {
+    .cover {
+        width: 100vw;
+        height: 120vh;
+        border-radius: 0px;
+        box-shadow: 0 0 0 0;
+        margin-top: 30px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 897px) and (orientation: landscape) {
+
+    .cover {
+        margin-top: 30px;
+        width: 100vw;
+        height: 100vh;
+        border-radius: 0px;
+        box-shadow: 0 0 0 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cover input {
+        width: 50%;
+    }
+    
+    .cover label {
+        width: 50%;
+    }
+
+    .button-group {
+        
+        margin-top: 20px;
+        margin-bottom: 0;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        bottom: 0;
+    }
+
+    .createAccountCover {
+        height: 200vh;
+    }
+
+    .loginCover {
+        height: 130vh;
+        display: flex;
+        padding-top: 50px;
+    }
+
+    .login-popup {
+        position: relative;
+        margin-top: 40px;
+    }
+  }

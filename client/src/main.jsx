@@ -16,6 +16,8 @@ import MovieDetailsPage from "./pages/MovieDetailsPage.jsx";
 import ErrorBoundary from "./pages/errorBoundary.jsx";
 import App from "./App.jsx";
 import CalendarPage from "./pages/CalendarPage.jsx";
+import LoginPage from './pages/LoginPage'
+import CreateAccountPage from './pages/CreateAccountPage'
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -27,10 +29,8 @@ const router = createBrowserRouter(
             </Route>
             <Route path="tickets" element={<CalendarPage/>}/>
             <Route path="reserve" element={<ReservePage/>}/>
-            <Route path="user">
-                <Route path="login"/>
-                <Route path="register"/>
-            </Route>
+            <Route path="login" element={<LoginPage/>}/>
+            <Route path="register" element={<CreateAccountPage />}/>
         </Route>
     )
 )
