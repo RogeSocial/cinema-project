@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Checkout example</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.slim.min.js"
+            integrity="sha256-w8CvhFs7iHNVUtnSP0YKEg00p9Ih13rlL9zGqvLdePA="
+            crossorigin="anonymous"></script>
+    <script src="checkout.js" defer></script>
+</head>
+<body>
+    <form id="checkout">
+        <h2>Form values for one checkout item</h2>
+        <label>Description
+        <input type="text" id="description"/></label>
+        <label>Price
+        <input type="text" id="price"/></label>
+        <label>Quantity
+        <input type="text" id="quantity"/></label>
+        <input type="submit" value="checkout"/>
+    </form>
+    <a id="link-to-stripe" href="#" style="display:none">Continue to Stripe checkout</a>
+</body>
+</html>
