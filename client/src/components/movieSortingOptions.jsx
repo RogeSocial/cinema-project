@@ -19,12 +19,13 @@ export default function ({ setFilteredMovies }) {
   const activeFilter = filterParam.get("filter") === "active";
   const [toggleMenu, setToggleMenu] = useState(false);
   const [filterChosen, setFilterChosen] = useState(false);
-  const [filterComponent, setFilterComponent] = useState(null);
+  const [filterComponent, setFilterComponent] = useState("Filter");
 
   if (!toggleMenu) {
     return (<>
-    <FilterButton handleClick={showSortingOptions} />
-    {filterComponent}
+    <div className="top-components-row">
+    <FilterButton filterName={filterComponent} handleClick={showSortingOptions} />
+    </div>
     </>)
   }
 
@@ -67,14 +68,14 @@ export default function ({ setFilteredMovies }) {
     setFilteredMovies([...sortAlphabet()]);
     setFilterParam({ filter: "A-Z" });
     setFilterChosen(true);
-    setFilterComponent(<AlphabeticButton/>)
+    setFilterComponent("A-Z")
   }
 
   function sortZetabetically() {
     setFilteredMovies([...reverseAlphabet()]);
     setFilterParam({ filter: "Z-A" });
     setFilterChosen(true);
-    setFilterComponent(<ReverseAlphabeticButton/>)
+    setFilterComponent("Z-A")
   }
 
   function showSortingOptions() {
@@ -85,13 +86,13 @@ export default function ({ setFilteredMovies }) {
     setFilteredMovies([...sortByMostRecent()]);
     setFilterParam({ filter: "Newest" });
     setFilterChosen(true);
-    setFilterComponent(<NewestButton/>)
+    setFilterComponent("Newest")
   }
 
   function sortOldest() {
     setFilteredMovies([...sortByLeastRecent()]);
     setFilterParam({ filter: "Oldest" });
     setFilterChosen(true);
-    setFilterComponent(<OldestButton/>)
+    setFilterComponent("Oldest")
   }
 }
