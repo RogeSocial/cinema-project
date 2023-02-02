@@ -4,16 +4,12 @@ export default function () {
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
 
+    //When edit-button is clicked
     function changeEditable() {
         !isEditable ? setIsEditable(true) : setIsEditable(false)
         const editButton = document.getElementById("edit-button")
         editButton.disabled = true;
     }
-
-    function changePassEditable() {
-        !isPassEditable ? setIsPassEditable(true) : setIsPassEditable(false)
-    }
-
 
     useEffect(() => {
         const element = document.getElementsByClassName("input-element")
@@ -21,13 +17,16 @@ export default function () {
 
         for (let i = 0; i < element.length; i++) {
             element[i].disabled = isEditable;
-            if (element[i].checked === true) {
-                element[i].checked = false;
-            }
         }
 
         saveButton.disabled = isEditable
     }, [isEditable]);
+
+
+    //When change password checkbox is clicked
+    function changePassEditable() {
+        !isPassEditable ? setIsPassEditable(true) : setIsPassEditable(false)
+    }
 
     useEffect(() => {
         const passwordCheckbox = document.getElementById("change-password")
@@ -41,8 +40,7 @@ export default function () {
     }, [isPassEditable]);
 
     return <>
-        <button id={"edit-button"} onClick={changeEditable}>Edit</button>
-
+        <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit</button>
         <form id={"account-page-form"}>
             <label htmlFor="name">Full name: </label>
             <input type={"text"} name={"name"} id={"name"} className={"input-element"} required/>
@@ -57,9 +55,11 @@ export default function () {
             <input type={"password"} name={"current-password"} id={"current-password"} className={"input-element"}
                    disabled={true} required/>
 
-            <label htmlFor="change-password">Change password: </label>
-            <input type={"checkbox"} name={"change-password"} id={"change-password"} className={"input-element"}
-                   onClick={changePassEditable}/>
+            <div id={"checkbox-container"}>
+                <label htmlFor="change-password" id={"change-pass-label"}>Change password: </label>
+                <input type={"checkbox"} name={"change-password"} id={"change-password"} className={"input-element"}
+                       onClick={changePassEditable}/>
+            </div>
 
             <label htmlFor={"new-password-one"}>New password: </label>
             <input type={"password"} name={"new-password-one"} id={"new-password-one"} className={"pass-input"}
@@ -69,9 +69,7 @@ export default function () {
             <input type={"password"} name={"new-password-two"} id={"new-password-two"} className={"pass-input"}
                    disabled={true}/>
 
-            <button id={"account-button"} disabled={true}>Save</button>
+            <button id={"account-button"} className={"button"} disabled={true}>Save</button>
         </form>
     </>
 }
-
-
