@@ -39,6 +39,18 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(false)
     void checkAuth()
   }
+  const createAccount = async (email, password) => {
+    setIsLoading(true);
+    const response = await fetch("/rest/users", {
+      method: "post",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const result = await response.json();
+    console.log(result);
+    setIsLoading(false);
+    void checkAuth();
+  };
 
   const logout= async () => {
     setIsLoading(true)
@@ -63,11 +75,13 @@ export const GlobalProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
+        setAuth,
         auth,
         tidbits,
         isLoading,
         submitLogin,
-        logout
+        logout,
+        createAccount
       }}
     >
       {children}
