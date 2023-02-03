@@ -3,8 +3,7 @@ export default function ({ handleClick }) {
     return null;
   }
   return (
-    <div className="filter-option-item" onClick={handleClick}>
-      {" "}
+    <div id="alphabetic-button" className="filter-option-item" onClick={handleClick}>
       A-Z
     </div>
   );

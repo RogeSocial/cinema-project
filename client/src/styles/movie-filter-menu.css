@@ -66,6 +66,10 @@
   padding: 1rem;
   margin-bottom: 0.5rem;
 }
+.filter-option-item:hover {
+  background-color: rgb(178, 29, 29);
+  cursor: pointer;
+}
 
 @media screen and (min-width: 680px) {
   .filter-options {

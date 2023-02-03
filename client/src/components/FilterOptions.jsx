@@ -8,25 +8,24 @@ export default function ({ setFilteredMovies, setToggleMenu, setFilterName }) {
   const [filterParam, setFilterParam] = useSearchParams();
   const [filterChosen, setFilterChosen] = useState(false);
 
-  const propsPackage1 = {
+  //handles menu and filter choices
+  const props1 = {
     setFilterChosen: setFilterChosen,
     setToggleMenu: setToggleMenu,
     setFilterParam: setFilterParam,
   };
 
-  const propsPackage2 = {
+  //handles the filtering of movies
+  const props2 = {
     setFilteredMovies: setFilteredMovies,
     setFilterName: setFilterName,
-    setFilterChosen: setFilterChosen,
-    setToggleMenu: setToggleMenu,
-    setFilterParam: setFilterParam,
   };
 
   return (<>
       <div className={"filter-options"}>
-        <FilterMenuControls {...propsPackage1} />
-        <LetterFilters {...propsPackage2} />
-        <DateFilters {...propsPackage2} />
+        <FilterMenuControls {...props1} />
+        <LetterFilters {...props1} and {...props2} />
+        <DateFilters {...props1} and {...props2} />
       </div>
     </>);
 }

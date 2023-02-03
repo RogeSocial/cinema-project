@@ -3,8 +3,7 @@ export default function ({ handleClick }) {
     return null;
   }
   return (
-    <div className="filter-option-item" onClick={handleClick}>
-      {" "}
+    <div id="reverse-alphabetic-button" className="filter-option-item" onClick={handleClick}>
       Z-A
     </div>
   );

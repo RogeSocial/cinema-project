@@ -1,6 +1,7 @@
 import AlphabeticButton from "./AlphabeticButton.jsx";
 import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
 import { reverseAlphabet, sortAlphabet } from "./movieSort.js";
+import { changeColorOfElement } from "./Utilities.jsx";
 
 export default function ({
   setFilteredMovies,
@@ -18,17 +19,20 @@ export default function ({
     </>
   );
 
-  function sortAlphabetically() {
+  function sortAlphabetically(event) {
     setFilteredMovies([...sortAlphabet()]);
     setFilterChosen(true);
     setFilterName("A-Z");
     setFilterParam({ filter: "A-Z" });
+    changeColorOfElement(event, "rgb(178, 29, 29)");
+    console.log(document.getElementById(event.target.id.toString()).getAttribute("class"));
   }
 
-  function sortZetabetically() {
+  function sortZetabetically(event) {
     setFilteredMovies([...reverseAlphabet()]);
     setFilterChosen(true);
     setFilterName("Z-A");
     setFilterParam({ filter: "Z-A" });
+    changeColorOfElement(event, "rgb(178, 29, 29)");
   }
 }

@@ -1,6 +1,7 @@
 import NewestButton from "./NewestButton.jsx";
 import OldestButton from "./OldestButton.jsx";
 import { sortByMostRecent, sortByLeastRecent } from "./movieSort.js";
+import { changeColorOfElement } from "./Utilities.jsx";
 
 export default function ({
   setFilteredMovies,
@@ -18,17 +19,19 @@ export default function ({
     </>
   );
 
-  function sortNewest() {
+  function sortNewest(event) {
     setFilteredMovies([...sortByMostRecent()]);
     setFilterChosen(true);
     setFilterName("Newest");
     setFilterParam({ filter: "Newest" });
+    changeColorOfElement(event, "rgb(178, 29, 29)");
   }
 
-  function sortOldest() {
+  function sortOldest(event) {
     setFilteredMovies([...sortByLeastRecent()]);
     setFilterChosen(true);
     setFilterName("Oldest");
     setFilterParam({ filter: "Oldest" });
+    changeColorOfElement(event, "rgb(178, 29, 29)");
   }
 }

@@ -4,7 +4,7 @@ export default function ({ handleClick }) {
   }
 
   return (
-    <div className="filter-option-item" onClick={handleClick}>
+    <div id="newest-button" className="filter-option-item" onClick={handleClick}>
       Newest
     </div>
   );
