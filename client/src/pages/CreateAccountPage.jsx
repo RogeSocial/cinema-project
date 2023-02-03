@@ -5,15 +5,11 @@ import icon from "../images/apple-touch-icon.png";
 
 export default function () {
 
-
-    // const registerForm = document.getElementById("formData");
-    // registerForm.submit();
-
     function checkPassword() {
         const password = document.getElementById("password").value;
         const confirm = document.getElementById("confirmPassword").value;
 
-        if (password.match(confirm)) {
+        if (password === confirm) {
             return true;
         } else {
             return false;
@@ -30,10 +26,20 @@ export default function () {
             return false;
         }
     }
-    
+
+    function handleRegister() {
+        if (checkPassword() === true && checkEmail() === true) {
+            const registerForm = document.getElementById("formData");
+            registerForm.submit();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     return (
         <section className="account">
-            <form id="formData" action="#" className="cover createAccountCover">
+            <form id="formData" action="/register" className="cover createAccountCover">
                 <img className="loginImg accountImg" src={icon} alt="" />
                 <label htmlFor="fullname">Fullname:</label>
                 <input type="text" id="name" name="name" placeholder="full name"></input>
@@ -47,7 +53,7 @@ export default function () {
                 <input type="password" placeholder="confirm password" minLength="8" id={"confirmPassword"} name="confirmPassword"></input>
                 <br />
                 <div className="button-group">
-                    <button type="button" className="button" onClick={checkEmail}>REGISTER</button>
+                    <button type="button" className="button" onClick={handleRegister}>REGISTER</button>
                     <Link to="/login"><button className="button-text">Already have an account? Sign in.</button></Link>
                 </div>
             </form>
