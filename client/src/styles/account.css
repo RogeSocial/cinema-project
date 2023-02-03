@@ -1,5 +1,3 @@
-
-
 .account {
     background-color: black;
 }
@@ -9,8 +7,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
-   
+    width: 300px;   
 }
 
 .cover {
@@ -25,7 +22,6 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    
 }
 
 .accountImg {
@@ -34,23 +30,18 @@
     padding: 20px;
 }
 
-
-
 .account a {
     text-decoration: none;
     color: inherit;
 }
 
-.button-group {
-    
+.button-group {   
     bottom: 20px;
     display: flex;
     flex-direction: column;
     width: 220px;
     margin-bottom: 40px;
     margin-top: 20px;
-
-    
 }
 
 .hide-popup {
@@ -122,11 +113,9 @@
     margin-bottom: 0;
 }
 
-
 .login-popup p {
     margin-bottom: -20px
 }
-
 
 @media screen and (max-width: 750px) {
     .cover {
@@ -160,7 +149,6 @@
     }
 
     .button-group {
-        
         margin-top: 20px;
         margin-bottom: 0;
         position: relative;
