@@ -1,0 +1,44 @@
+#account-body {
+    display: flex;
+    font-family: Questrial;
+    align-items: center;
+}
+
+#account-page-form {
+    flex-direction: column;
+    max-width: 200px;
+}
+
+#account-headline {
+    margin-top: 5rem;
+    font-size: 2.2rem;
+    color: gray;
+}
+
+.input-element {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.pass-input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#account-button {
+    margin-bottom: 30px;
+    margin-left: 35px;
+}
+
+#change-password {
+    margin-bottom: 30px;
+}
+
+#checkbox-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#change-pass-label {
+    min-width: 80%;
+}
