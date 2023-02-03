@@ -14,7 +14,10 @@ export default function () {
         e.preventDefault()
         submitLogin(email, password)
     }
-
+    function removeAccount(e){
+        e.preventDefault()
+        deleteAccount(email)
+    }
 
 
     const [popupStyle, showPopup] = useState("hide-popup");
@@ -32,7 +35,7 @@ export default function () {
             { auth.loggedIn ?
                 <div className = "cover">
                     <button onClick={ logout}>Logout</button>
-                    <button onClick={() => deleteAccount(email)}>Delete account</button>
+                    <button onClick={removeAccount}>Delete account</button>
 
                 </div> :
 
