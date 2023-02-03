@@ -1,6 +1,6 @@
 import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
-import FilterMenuButtons from "./FilterMenuButtons.jsx";
+import FilterMenuControls from "./FilterMenuControls.jsx";
 import LetterFilters from "./LetterFilters.jsx";
 import DateFilters from "./DateFilters.jsx";
 
@@ -24,7 +24,7 @@ export default function ({ setFilteredMovies, setToggleMenu, setFilterName }) {
 
   return (<>
       <div className={"filter-options"}>
-        <FilterMenuButtons {...propsPackage1} />
+        <FilterMenuControls {...propsPackage1} />
         <LetterFilters {...propsPackage2} />
         <DateFilters {...propsPackage2} />
       </div>

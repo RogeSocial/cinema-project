@@ -3,7 +3,7 @@ export default function ({ handleClick }) {
     return null;
   }
   return (
-    <div className="filter-nav-item" onClick={handleClick}>
+    <div className="filter-option-item" onClick={handleClick}>
       {" "}
       Z-A
     </div>
