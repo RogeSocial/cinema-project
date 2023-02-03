@@ -3,7 +3,7 @@ export default function ({ handleClick }) {
     return null;
   }
   return (
-    <button className="button" id="movie-sort-btn" onClick={handleClick}>
+    <button className="button sorting-button" onClick={handleClick}>
       Clear
     </button>
   );

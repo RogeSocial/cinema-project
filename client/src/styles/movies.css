@@ -35,7 +35,7 @@
   background-color: transparent;
   color: var(--main_text_color);
   height: 18px;
-  width: 100px;
+  width: 200px;
   margin-left: 0.45rem;
   margin-right: -2.5rem;
   margin-top: 0.2rem;
@@ -81,27 +81,44 @@
   font-family: "Fredericka the Great", cursive;
   padding-top: 20px;
 }
-
-.sorting-options {
+/* ----Filter dropdown-menu-START--- */
+.filter-options {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: black;
   border: solid 1px var(--main_text_color);
-  width: 333px;
+  width: 280px;
   z-index: 200;
   margin-top: -1px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  border-radius: 10px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .top-filter-row {
   width: 100%;
-  outline: solid 1px var(--main_text_color);
+  border-bottom: solid 1px var(--main_text_color);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.sorting-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  width: 30px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#movie-filter-title {
+  position: relative;
+  font-size: 20px;
+  font-weight: 600;
 }
 
 .top-components-row {
@@ -121,25 +138,33 @@
 }
 
 .filter-nav-item {
-background-color: black;
-border: solid 1px var(--main_text_color);
-padding: 1rem;
-margin-bottom: 0.5rem;
+  background-color: black;
+  border: solid 1px var(--main_text_color);
+  padding: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .movie-filter-h4 {
+  font-size: 15px;
+  font-weight: 500;
   padding: 0.5rem;
   margin: 0;
 }
+/* ----Filter dropdown-menu END---- */
 
 .movie-btn {
   padding: 0rem;
 }
 
 #movie-sort-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 18px;
+  height: 30px;
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin-top: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
 .movie-search-and-sorting-area {
@@ -237,6 +262,12 @@ margin-bottom: 0.5rem;
 
   .movies input {
     width: 270px;
+  }
+
+  .filter-options {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 333px;
   }
 }
 

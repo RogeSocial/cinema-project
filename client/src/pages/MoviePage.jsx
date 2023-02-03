@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import MovieList from "../components/MovieList";
 import {movieArray as allMovies} from "../components/movie-data.js";
 import MovieSearchField from "../components/MovieSearchField";
-import MovieSortingOptions from "../components/MovieSortingOptions.jsx";
+import MovieFilters from "../components/MovieFilters.jsx";
 
 export default function () {
     //handles the searching for movies
@@ -24,7 +24,7 @@ export default function () {
             <div className="movie-search-and-sorting-area">
                 <h2>Movies</h2>
                 <MovieSearchField handleSearch={addUserSearchString}/>
-                <MovieSortingOptions setFilteredMovies={setFilteredMovies}/>
+                <MovieFilters setFilteredMovies={setFilteredMovies}/>
             </div>
             <MovieList movies={filteredMovies}/>
         </section>

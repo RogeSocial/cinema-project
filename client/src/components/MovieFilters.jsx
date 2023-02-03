@@ -1,18 +1,15 @@
 import { useSearchParams } from "react-router-dom";
-import ResetFilterButton from "./ResetFilterButton.jsx";
-import AlphabeticButton from "./AlphabeticButton.jsx";
-import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
-import FilterButton from "./FilterButton.jsx";
+
+import OpenFilterButton from "./OpenFilterButton.jsx";
 import {
   reverseAlphabet,
   sortAlphabet,
   sortByMostRecent,
   sortByLeastRecent,
 } from "./movieSort.js";
-import NewestButton from "./NewestButton.jsx";
-import OldestButton from "./OldestButton.jsx";
-import ConfirmFilterButton from "./ConfirmFilterButton.jsx";
+
 import { useState } from "react";
+import FilterOptions from "./FilterOptions.jsx";
 
 export default function ({ setFilteredMovies }) {
   const [filterParam, setFilterParam] = useSearchParams();
@@ -23,35 +20,24 @@ export default function ({ setFilteredMovies }) {
 
   if (!toggleMenu) {
     return (<>
-    <div className="top-components-row">
-    <FilterButton filterName={filterComponent} handleClick={showSortingOptions} />
-    </div>
-    </>)
-  }
-
-  if (toggleMenu) {
+        <OpenFilterButton
+          filterName={filterComponent}
+          handleClick={showSortingOptions}/>
+      </>);
+  } else {
     return <HandleSorting />;
   }
 
   function HandleSorting() {
     return (
-      <div className={"sorting-options"}>
-        <div className="top-filter-row">
-          <ResetFilterButton handleClick={removeFilter} />
-          <h4 className="movie-filter-h4">FILTER</h4>
-          <ConfirmFilterButton handleClick={confirmFilter} />
-        </div>
-        <h4 className="movie-filter-h4">Letter</h4>
-        <div className="letter-filter-row">
-          <AlphabeticButton handleClick={sortAlphabetically} />
-          <ReverseAlphabeticButton handleClick={sortZetabetically} />
-        </div>
-        <h4 className="movie-filter-h4">Release Date</h4>
-        <div className="date-filter-row">
-          <NewestButton handleClick={sortNewest} />
-          <OldestButton handleClick={sortOldest} />
-        </div>
-      </div>
+      <FilterOptions 
+        removeFilter={removeFilter}
+        confirmFilter={confirmFilter}
+        sortAlphabetically={sortAlphabetically}
+        sortZetabetically={sortZetabetically}
+        sortNewest={sortNewest}
+        sortOldest={sortOldest}
+      />
     );
   }
 
@@ -68,14 +54,14 @@ export default function ({ setFilteredMovies }) {
     setFilteredMovies([...sortAlphabet()]);
     setFilterParam({ filter: "A-Z" });
     setFilterChosen(true);
-    setFilterComponent("A-Z")
+    setFilterComponent("A-Z");
   }
 
   function sortZetabetically() {
     setFilteredMovies([...reverseAlphabet()]);
     setFilterParam({ filter: "Z-A" });
     setFilterChosen(true);
-    setFilterComponent("Z-A")
+    setFilterComponent("Z-A");
   }
 
   function showSortingOptions() {
@@ -86,13 +72,13 @@ export default function ({ setFilteredMovies }) {
     setFilteredMovies([...sortByMostRecent()]);
     setFilterParam({ filter: "Newest" });
     setFilterChosen(true);
-    setFilterComponent("Newest")
+    setFilterComponent("Newest");
   }
 
   function sortOldest() {
     setFilteredMovies([...sortByLeastRecent()]);
     setFilterParam({ filter: "Oldest" });
     setFilterChosen(true);
-    setFilterComponent("Oldest")
+    setFilterComponent("Oldest");
   }
 }
