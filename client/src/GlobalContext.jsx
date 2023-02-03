@@ -40,6 +40,19 @@ export const GlobalProvider = ({ children }) => {
     void checkAuth()
   }
 
+  const createAccount = async( email, password) => {
+    setIsLoading(true)
+    const response = await fetch("/rest/users", {
+      method: "post",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({email, password})
+  })
+  const result = await response.json()
+  console.log(result)
+  setIsLoading(false)
+  void checkAuth()
+  }
+
   const logout= async () => {
     setIsLoading(true)
     const response = await fetch("/rest/login", {
@@ -67,7 +80,8 @@ export const GlobalProvider = ({ children }) => {
         tidbits,
         isLoading,
         submitLogin,
-        logout
+        logout,
+        createAccount
       }}
     >
       {children}

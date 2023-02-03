@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 function checkPassword() {
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("confirmPassword").value;
@@ -5,6 +7,7 @@ function checkPassword() {
     if (password === confirm) {
         return true;
     } else {
+        alert("The entered passwords does not match")
         return false;
     }
 }
@@ -14,9 +17,12 @@ function checkEmail() {
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (email.match(regex)) {
-        return true;
+        return true
     } else {
+        changeColor();
+        alert("Please enter a valid e-mail adress")
         return false;
+
     }
 }
 
