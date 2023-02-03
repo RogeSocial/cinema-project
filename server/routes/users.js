@@ -29,6 +29,18 @@ router.post('/', (request, response) => {
     }
     response.json(result)
 })
+// ta bort användare
+router.delete('/', (request, response) => {
+    let user = request.body
+    let result
+    try {
+        result = request.db.prepare('DELETE FROM users WHERE email = ?').run([user.email])
+    }
+    catch (e) {
+        console.error(e)
+    }
+    response.json(result)
+})
 
 // begär ändring av lösenord för användare
 router.delete('/password', (request, response) => {

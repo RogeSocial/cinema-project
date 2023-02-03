@@ -8,11 +8,13 @@ export const GlobalProvider = ({ children }) => {
   const [auth, setAuth] = useState({loggedIn:false})
   const [tidbits, setTidbits] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [concerts, setConcerts] = useState([]);
 
   // useEffect to run methods upon load
   useEffect(() => {
     void checkAuth()
     void loadTidbits()
+    void loadConcerts()
   }, []);
 
   // methods, could be for on load, or just called from elsewhere
@@ -40,6 +42,31 @@ export const GlobalProvider = ({ children }) => {
     void checkAuth()
   }
 
+  const createAccount = async (email, password) => {
+    setIsLoading(true);
+    const response = await fetch("/rest/users", {
+      method: "post",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const result = await response.json();
+    console.log(result);
+    setIsLoading(false);
+    void checkAuth();
+  };
+  const deleteAccount = async(email) => {
+    setIsLoading(true);
+    const response = await fetch("rest/users", {
+      method: "delete",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const result = await response.json();
+    console.log(result)
+    setIsLoading(false)
+    void checkAuth();
+  }
+
   const logout= async () => {
     setIsLoading(true)
     const response = await fetch("/rest/login", {
@@ -60,14 +87,26 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(false)
   }
 
+  const loadConcerts = async () => {
+    setIsLoading(true)
+    const response = await fetch("/rest/concerts")
+    const result = await response.json()
+    setConcerts(result)
+    setIsLoading(false)
+  }
+
   return (
     <GlobalContext.Provider
       value={{
+        setAuth,
         auth,
         tidbits,
         isLoading,
         submitLogin,
-        logout
+        logout,
+        createAccount,
+        concerts,
+        deleteAccount
       }}
     >
       {children}
