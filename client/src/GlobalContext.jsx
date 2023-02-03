@@ -91,7 +91,6 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(true)
     const response = await fetch("/rest/concerts")
     const result = await response.json()
-    console.log(result)
     setConcerts(result)
     setIsLoading(false)
   }
