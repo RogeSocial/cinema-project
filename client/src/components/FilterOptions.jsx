@@ -1,37 +1,32 @@
-import ResetFilterButton from "./ResetFilterButton.jsx";
-import AlphabeticButton from "./AlphabeticButton.jsx";
-import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
-import NewestButton from "./NewestButton.jsx";
-import OldestButton from "./OldestButton.jsx";
-import ConfirmFilterButton from "./ConfirmFilterButton.jsx";
+import { useSearchParams } from "react-router-dom";
+import { useState } from "react";
+import FilterMenuButtons from "./FilterMenuButtons.jsx";
+import LetterFilters from "./LetterFilters.jsx";
+import DateFilters from "./DateFilters.jsx";
 
-export default function ({
-  removeFilter,
-  confirmFilter,
-  sortAlphabetically,
-  sortZetabetically,
-  sortNewest,
-  sortOldest,
-}) {
-  return (
-    <>
+export default function ({ setFilteredMovies, setToggleMenu, setFilterName }) {
+  const [filterParam, setFilterParam] = useSearchParams();
+  const [filterChosen, setFilterChosen] = useState(false);
+
+  const propsPackage1 = {
+    setFilterChosen: setFilterChosen,
+    setToggleMenu: setToggleMenu,
+    setFilterParam: setFilterParam,
+  };
+
+  const propsPackage2 = {
+    setFilteredMovies: setFilteredMovies,
+    setFilterName: setFilterName,
+    setFilterChosen: setFilterChosen,
+    setToggleMenu: setToggleMenu,
+    setFilterParam: setFilterParam,
+  };
+
+  return (<>
       <div className={"filter-options"}>
-        <div className="top-filter-row">
-          <ResetFilterButton handleClick={removeFilter} />
-          <h3 id="movie-filter-title">FILTER</h3>
-          <ConfirmFilterButton handleClick={confirmFilter} />
-        </div>
-        <h4 className="movie-filter-h4">Letter</h4>
-        <div className="letter-filter-row">
-          <AlphabeticButton handleClick={sortAlphabetically} />
-          <ReverseAlphabeticButton handleClick={sortZetabetically} />
-        </div>
-        <h4 className="movie-filter-h4">Release Date</h4>
-        <div className="date-filter-row">
-          <NewestButton handleClick={sortNewest} />
-          <OldestButton handleClick={sortOldest} />
-        </div>
+        <FilterMenuButtons {...propsPackage1} />
+        <LetterFilters {...propsPackage2} />
+        <DateFilters {...propsPackage2} />
       </div>
-    </>
-  );
+    </>);
 }

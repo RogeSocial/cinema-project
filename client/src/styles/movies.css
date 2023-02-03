@@ -115,7 +115,7 @@
   font-weight: 500;
 }
 
-#movie-filter-title {
+#filter-menu-title {
   position: relative;
   font-size: 20px;
   font-weight: 600;
@@ -128,11 +128,11 @@
   align-items: center;
 }
 
-.letter-filter-row {
+.letter-filters {
   display: flex;
 }
 
-.date-filter-row {
+.date-filters {
   display: flex;
   padding-bottom: 0.5rem;
 }
@@ -144,7 +144,7 @@
   margin-bottom: 0.5rem;
 }
 
-.movie-filter-h4 {
+.filter-category {
   font-size: 15px;
   font-weight: 500;
   padding: 0.5rem;
@@ -167,7 +167,7 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
-.movie-search-and-sorting-area {
+.movie-search-and-filter-area {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -177,7 +177,7 @@
   width: 100vw;
   margin-top: 5rem;
 }
-.movie-search-and-sorting-area h2 {
+.movie-search-and-filter-area h2 {
   text-align: center;
 }
 
@@ -242,7 +242,7 @@
     grid-template-columns: repeat(2, max-content);
   }
 
-  .movie-search-and-sorting-area {
+  .movie-search-and-filter-area {
     position: absolute;
     top: 0;
     width: 100vw;
