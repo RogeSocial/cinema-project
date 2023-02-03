@@ -8,11 +8,13 @@ export const GlobalProvider = ({ children }) => {
   const [auth, setAuth] = useState({loggedIn:false})
   const [tidbits, setTidbits] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [concerts, setConcerts] = useState([]);
 
   // useEffect to run methods upon load
   useEffect(() => {
     void checkAuth()
     void loadTidbits()
+    void loadConcerts()
   }, []);
 
   // methods, could be for on load, or just called from elsewhere
@@ -39,6 +41,7 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(false)
     void checkAuth()
   }
+
   const createAccount = async (email, password) => {
     setIsLoading(true);
     const response = await fetch("/rest/users", {
@@ -51,6 +54,18 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(false);
     void checkAuth();
   };
+  const deleteAccount = async(email) => {
+    setIsLoading(true);
+    const response = await fetch("rest/users", {
+      method: "delete",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const result = await response.json();
+    console.log(result)
+    setIsLoading(false)
+    void checkAuth();
+  }
 
   const logout= async () => {
     setIsLoading(true)
@@ -72,6 +87,15 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(false)
   }
 
+  const loadConcerts = async () => {
+    setIsLoading(true)
+    const response = await fetch("/rest/concerts")
+    const result = await response.json()
+    console.log(result)
+    setConcerts(result)
+    setIsLoading(false)
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -81,7 +105,9 @@ export const GlobalProvider = ({ children }) => {
         isLoading,
         submitLogin,
         logout,
-        createAccount
+        createAccount,
+        concerts,
+        deleteAccount
       }}
     >
       {children}

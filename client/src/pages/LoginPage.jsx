@@ -6,14 +6,13 @@ import GlobalContext from "../GlobalContext.jsx";
 
 export default function () {
 
-    const {setAuth, auth, submitLogin, logout } = useContext(GlobalContext);
+    const { deleteAccount, auth, submitLogin, logout } = useContext(GlobalContext);
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
-    let loggedIn = true
+
     function submit(e){
         e.preventDefault()
         submitLogin(email, password)
-        setAuth(loggedIn)
     }
 
 
@@ -21,16 +20,20 @@ export default function () {
     const [popupStyle, showPopup] = useState("hide-popup");
 
     const popup = () => {
+        if(!auth.loggedIn){
         showPopup("login-popup")
         setTimeout(() => showPopup("hide-popup"), 30000)
+    }
     }
 
 
     return (<section className="account loginCover">
 
             { auth.loggedIn ?
-                <div>
-                    <button onClick={logout}>Logout</button>
+                <div className = "cover">
+                    <button onClick={ logout}>Logout</button>
+                    <button onClick={() => deleteAccount(email)}>Delete account</button>
+
                 </div> :
 
 
