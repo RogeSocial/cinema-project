@@ -16,9 +16,8 @@
 .filter-menu-controls {
   width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  border-bottom: solid 1px var(--main_text_color);
 }
 
 #aligned-button-text {

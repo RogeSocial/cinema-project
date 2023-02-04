@@ -6,26 +6,22 @@ import DateFilters from "./DateFilters.jsx";
 
 export default function ({ setFilteredMovies, setToggleMenu, setFilterName }) {
   const [filterParam, setFilterParam] = useSearchParams();
-  const [filterChosen, setFilterChosen] = useState(false);
+  const [isFilterChosen, setIsFilterChosen] = useState(false);
+  console.log(filterParam)
 
-  //handles menu and filter choices
-  const props1 = {
-    setFilterChosen: setFilterChosen,
+  const props = {
+    setIsFilterChosen: setIsFilterChosen,
     setToggleMenu: setToggleMenu,
     setFilterParam: setFilterParam,
-  };
-
-  //handles the filtering of movies
-  const props2 = {
     setFilteredMovies: setFilteredMovies,
     setFilterName: setFilterName,
   };
 
   return (<>
       <div className={"filter-options"}>
-        <FilterMenuControls {...props1} />
-        <LetterFilters {...props1} and {...props2} />
-        <DateFilters {...props1} and {...props2} />
+        <FilterMenuControls {...props} />
+        <LetterFilters {...props} />
+        <DateFilters {...props} />
       </div>
     </>);
 }

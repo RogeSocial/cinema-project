@@ -6,7 +6,7 @@ import { selectOneFilterItem } from "./Utilities.jsx";
 export default function ({
   setFilteredMovies,
   setFilterParam,
-  setFilterChosen,
+  setIsFilterChosen,
   setFilterName,
 }) {
   return (
@@ -21,7 +21,7 @@ export default function ({
 
   function sortNewest(event) {
     setFilteredMovies([...sortByMostRecent()]);
-    setFilterChosen(true);
+    setIsFilterChosen(true);
     setFilterName("Newest");
     setFilterParam({ filter: "Newest" });
     selectOneFilterItem(event);
@@ -29,7 +29,7 @@ export default function ({
 
   function sortOldest(event) {
     setFilteredMovies([...sortByLeastRecent()]);
-    setFilterChosen(true);
+    setIsFilterChosen(true);
     setFilterName("Oldest");
     setFilterParam({ filter: "Oldest" });
     selectOneFilterItem(event);

@@ -6,7 +6,7 @@ import { selectOneFilterItem } from "./Utilities.jsx";
 export default function ({
   setFilteredMovies,
   setFilterParam,
-  setFilterChosen,
+  setIsFilterChosen,
   setFilterName,
 }) {
   return (
@@ -21,7 +21,7 @@ export default function ({
 
   function sortAlphabetically(event) {
     setFilteredMovies([...sortAlphabet()]);
-    setFilterChosen(true);
+    setIsFilterChosen(true);
     setFilterName("A-Z");
     setFilterParam({ filter: "A-Z" });
     selectOneFilterItem(event);
@@ -29,7 +29,7 @@ export default function ({
 
   function sortZetabetically(event) {
     setFilteredMovies([...reverseAlphabet()]);
-    setFilterChosen(true);
+    setIsFilterChosen(true);
     setFilterName("Z-A");
     setFilterParam({ filter: "Z-A" });
     selectOneFilterItem(event);
