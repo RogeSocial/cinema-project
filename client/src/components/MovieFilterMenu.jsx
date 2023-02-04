@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FilterButton from "./FilterButton.jsx";
 import FilterOptions from "./FilterOptions.jsx";
 
@@ -8,6 +8,9 @@ export default function ({ setFilteredMovies }) {
   if (filterName === null) {
     setFilterName("Filter");
   }
+  useEffect(() => {
+  saveFilterChoice();
+  }, [toggleMenu]);
 
   if (!toggleMenu)
     return (<>
@@ -24,5 +27,16 @@ export default function ({ setFilteredMovies }) {
 
   function showFilterOptions() {
     setToggleMenu(true);
+  }
+
+  function saveFilterChoice() {
+    let elements = document.getElementsByClassName("filter-option-item"); //HTML list with indexes
+    for (let i = 0; i < elements.length; ++i) {
+      if (filterName === elements[i].innerText) {
+        document
+          .getElementById(elements[i].id)
+          .setAttribute("style", "background-color: rgb(178, 29, 29)");
+      }
+  }
   }
 }

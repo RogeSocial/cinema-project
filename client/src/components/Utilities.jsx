@@ -38,8 +38,20 @@ export function returnDayName(inIndex) {
   return daysInWeek[inIndex];
 }
 
-export function changeColorOfElement(event, colorString) {
-  document
-    .getElementById(event.target.id.toString())
-    .setAttribute("style", "background-color: " + colorString);
+export function selectOneFilterItem(event) {
+  let className = document
+  .getElementById(event.target.id.toString())
+  .getAttribute("class");
+let elements = document.getElementsByClassName(className); //HTML list with indexes
+for (let i = 0; i < elements.length; ++i) {
+  if (event.target.id === elements[i].id) {
+    document
+      .getElementById(event.target.id)
+      .setAttribute("style", "background-color: rgb(178, 29, 29)");
+  } else {
+    document
+      .getElementById(elements[i].id)
+      .setAttribute("style", "background-color: transparent");
+  }
+}
 }
