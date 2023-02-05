@@ -12,14 +12,15 @@ import {daysForwardInCalender} from "../components/Constants.js";
 export default function () {
 /*    let dateStringArray = [];
     let compareDateArray = [];*/
-    const [open, setOpen] = useState(false);
-    const [open2, setOpen2] = useState(false);
-    const [startDateString, setStartDateString] = useState("Movies Today");
+    const [openDatePickerStart, setOpenDatePickerStart] = useState(false);
+    const [openDatePickerEnd, setOpenDatePickerEnd] = useState(false);
+    const [startDateString, setStartDateString] = useState("");
     const [endDateString, setEndDateString] = useState("");
     /*const [testArray, setTestArray] = useState([]);*/
     const [startDateValue, setStartDateValue] = useState(new Date());
     const [endDateValue, setEndDateValue] = useState(new Date());
-
+    const [testMargin1, setTestMargin1] = useState("200");
+    const [testMargin2, setTestMargin2] = useState("500");
 
     const buttons = [
         {text: "start date", isDisabled: false, buttonID: 1},
@@ -27,10 +28,11 @@ export default function () {
     ]
 
     let calenderRef = useRef();
+    let calenderRef2 = useRef();
     //this part will handle clicking outside the dropdown menu, so it closes
-    /*    useEffect(() => {
+/*        useEffect(() => {
             let onClickOutside = (e) => {
-                if (!calenderRef.current.contains(e.target)) {
+                if (!calenderRef.current.contains(e.target) || !calenderRef2.current.contains(e.target)) {
                     setOpen(false);
                     setOpen2(false);
                 }
@@ -40,6 +42,10 @@ export default function () {
                 document.removeEventListener("mousedown", onClickOutside);
             }
         });*/
+/*    useEffect(() => {
+        console.log('marginLeft changed');
+    }, [setTestMargin1]);*/
+
     return <section className="calender">
         <div className="wrap">
             <h2>Buy Tickets</h2>
@@ -47,19 +53,24 @@ export default function () {
             <CalenderBox btn={buttons[0]}
                          marginLeft1={"0"}
                          calRef={calenderRef}
-                         open={open}
-                         openDatePicker={openDatePicker}
+                         open={openDatePickerStart}
+                         openDatePicker={() => openDatePicker(setOpenDatePickerStart, openDatePickerStart)}
                          setDateString={setStartDateString}
                          setDateValue={setStartDateValue}
+                         setTestMargin={setTestMargin1}
+                         testMargin={testMargin1}
                 /*calculateCurrentDate={calculateCurrentDate}*//>
             <CalenderBox btn={buttons[1]}
-                         marginLeft1={"300"}
-                         calRef={calenderRef}
-                         open={open2}
-                         openDatePicker={openDatePicker}
+                         marginLeft1={"400"}
+                         calRef={calenderRef2}
+                         open={openDatePickerEnd}
+                         openDatePicker={() => openDatePicker(setOpenDatePickerEnd, openDatePickerEnd)}
                          setDateString={setEndDateString}
                          setDateValue={setEndDateValue}
+                         setTestMargin={setTestMargin2}
+                         testmargin={testMargin2}
                 /*calculateCurrentDate={calculateCurrentDate}*//>
+
 
             {/*<hr/>*/}
             {/*<DisplaySelectedDate dateString={dateStringArray[0]}/>
@@ -72,10 +83,12 @@ export default function () {
         </div>
     </section>
 
-    function openDatePicker() {
-        setOpen(!open);
+    function openDatePicker(inSet, inVar) {
+        inSet(!inVar);
     }
-
+    function openDatePicker2() {
+        setOpenDatePickerEnd(!openDatePickerEnd);
+    }
 //compare the selected date and matches with the "database"(movieData)" and returns the one who are matched
     function moviesOnDate() {
         let tmpDateArray = [];
@@ -86,7 +99,10 @@ export default function () {
         }*/
 
         //activate the 2nd button(end date), if there is something in the startDateString
-        if (startDateString !== "") {
+        if (startDateString === "") {
+            buttons[1].isDisabled = true;
+        }
+        else{
             buttons[1].isDisabled = false;
         }
         //if the array has two dates, one is start, one is end, then do this part
@@ -126,7 +142,7 @@ export default function () {
             for (let j = 0; j < movieArray[i].date.length; j++) {
                 for (let k = 0; k < tmpDateArray.length; k++) {
                     if (movieArray[i].date[j] === tmpDateArray[k].getDate()) {
-                        console.log("in Movie Array!!");
+                        /*console.log("in Movie Array!!");*/
                         tmpArray.push(movieArray[i]);
                     }
                 }
