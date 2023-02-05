@@ -12,9 +12,8 @@ const {submitLogin, auth} = useContext(GlobalContext)
 const navigate = useNavigate();
 
     useEffect(() => {
-        return () => {
             loginHandler()
-        };
+
     }, [auth]);
 
 
@@ -38,7 +37,7 @@ const submit = (e) => {
 
                 <div className="button-group">
                     <button className="button" type="submit" value="login">LOGIN</button>
-                    <Link to="/register"><button className="button-text">Don't have an account? Register here.</button></Link>
+                    <Link to="/user/register"><button className="button-text">Don't have an account? Register here.</button></Link>
                 </div>
             </div>
         </form>

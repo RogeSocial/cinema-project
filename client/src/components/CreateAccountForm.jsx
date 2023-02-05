@@ -34,7 +34,7 @@ export default function () {
             <br />
             <div className="button-group">
                 <button type="submit"className="button" onClick={handleRegister}>REGISTER</button>
-                <Link to="/login"><button className="button-text">Already have an account? Sign in.</button></Link>
+                <Link to="/user/login"><button className="button-text">Already have an account? Sign in.</button></Link>
             </div>
         </form>
     </section>
