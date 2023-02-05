@@ -41,7 +41,7 @@ export default function () {
         passwordCheckbox.checked ? passElement.disabled = false : passElement.disabled = true;
     }, [isPassEditable]);
 
-    if(auth.loggedIn) <>
+    return  <>
         <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit</button>
         <form id={"account-page-form"}>
             <label htmlFor="name">Full name: </label>
@@ -76,7 +76,5 @@ export default function () {
         </form>
 
     </>
-    async function redirectToLogin(){
-            return navigate("/user/login")
-    }
+
 }

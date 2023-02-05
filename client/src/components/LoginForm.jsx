@@ -8,9 +8,14 @@ export default function () {
 
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
-const {submitLogin} = useContext(GlobalContext)
+const {submitLogin, auth} = useContext(GlobalContext)
+const navigate = useNavigate();
 
-
+    useEffect(() => {
+        return () => {
+            loginHandler()
+        };
+    }, [auth]);
 
 
 
@@ -39,5 +44,9 @@ const submit = (e) => {
         </form>
     </section>
 
-
+function loginHandler() {
+    if(auth.loggedIn){
+        navigate("/user/account")
+    }
+}
 }

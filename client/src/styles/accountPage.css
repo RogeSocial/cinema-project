@@ -36,6 +36,12 @@
     margin-top: 70px;
     margin-left: 25px;
 }
+
+#login-button{
+    background-color: white;
+    color: indianred;
+}
+
 #change-password {
     margin-bottom: 30px;
 }
