@@ -8,6 +8,8 @@ import dbConnection from "./services/db-connection.js";
 import cookieParser from "cookie-parser";
 
 import session from "express-session";
+import server from "express/lib/application.js";
+
 
 const app = express();
 app.use(express.json())
@@ -41,7 +43,7 @@ router.use('/', apiDescription)
     .use('/rest/users', users)
     .use('/rest/login', login)
     .use('/rest', genericRoutes)
-//server.use(acl) // kommentera bort för att tillfälligt stänga av all autentisering
+    //server.use(acl) // kommentera bort för att tillfälligt stänga av all autentisering
 
 app.use(router)
 

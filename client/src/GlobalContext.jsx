@@ -8,6 +8,7 @@ export const GlobalProvider = ({ children }) => {
   const [auth, setAuth] = useState({loggedIn:false})
   const [tidbits, setTidbits] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [concerts, setConcerts] = useState([]);
 
   // useEffect to run methods upon load
   useEffect(() => {
@@ -40,17 +41,29 @@ export const GlobalProvider = ({ children }) => {
     void checkAuth()
   }
 
-  const createAccount = async( email, password) => {
-    setIsLoading(true)
+  const createAccount = async (email, password) => {
+    setIsLoading(true);
     const response = await fetch("/rest/users", {
       method: "post",
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({email, password})
-  })
-  const result = await response.json()
-  console.log(result)
-  setIsLoading(false)
-  void checkAuth()
+      body: JSON.stringify({ email, password })
+    });
+    const result = await response.json();
+    console.log(result);
+    setIsLoading(false);
+    void checkAuth();
+  };
+  const deleteAccount = async(email) => {
+    setIsLoading(true);
+    const response = await fetch("rest/users", {
+      method: "delete",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const result = await response.json();
+    console.log(result)
+    setIsLoading(false)
+    void checkAuth();
   }
 
   const logout= async () => {
@@ -73,6 +86,14 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(false)
   }
 
+  const loadConcerts = async () => {
+    setIsLoading(true)
+    const response = await fetch("/rest/concerts")
+    const result = await response.json()
+    setConcerts(result)
+    setIsLoading(false)
+  }
+
   return (
     <GlobalContext.Provider
       value={{
@@ -81,7 +102,9 @@ export const GlobalProvider = ({ children }) => {
         isLoading,
         submitLogin,
         logout,
-        createAccount
+        createAccount,
+        concerts,
+        deleteAccount
       }}
     >
       {children}

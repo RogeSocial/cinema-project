@@ -1,21 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, {useContext, useState} from "react";
 import { Link } from "react-router-dom";
 import '../styles/account.css'
 import icon from "../images/apple-touch-icon.png";
-import { handleRegister } from "./AccountComponents";
-import GlobalContext from "../GlobalContext";
+import { handleRegister } from "../components/AccountComponents";
+import GlobalContext from "../GlobalContext.jsx";
+
 
 export default function () {
     const { createAccount } = useContext(GlobalContext);
-    
+
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
     const submit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         createAccount(email, password)
     }
-
     return <section className="account">
         <form onSubmit={submit} id="formData" action="/login" className="cover createAccountCover">
             <img className="loginImg accountImg" src={icon} alt="" />
