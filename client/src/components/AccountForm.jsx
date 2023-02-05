@@ -1,11 +1,12 @@
 import {useContext, useEffect, useState} from "react";
 import GlobalContext from "../GlobalContext.jsx";
+import {useNavigate} from "react-router-dom";
 
 export default function () {
-    const { logout } = useContext(GlobalContext)
+    const { logout, auth } = useContext(GlobalContext)
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
-
+    const navigate = useNavigate();
     //When edit-button is clicked
     function changeEditable() {
         !isEditable ? setIsEditable(true) : setIsEditable(false)
@@ -40,7 +41,7 @@ export default function () {
         passwordCheckbox.checked ? passElement.disabled = false : passElement.disabled = true;
     }, [isPassEditable]);
 
-    return <>
+    if(auth.loggedIn) <>
         <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit</button>
         <form id={"account-page-form"}>
             <label htmlFor="name">Full name: </label>
@@ -75,4 +76,7 @@ export default function () {
         </form>
 
     </>
+    async function redirectToLogin(){
+            return navigate("/user/login")
+    }
 }

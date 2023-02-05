@@ -1,18 +1,26 @@
-import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import React, {useState, useContext, useEffect} from "react";
+import {Link, redirect, useNavigate} from "react-router-dom";
 import '../styles/account.css'
 import icon from "../images/apple-touch-icon.png";
 import GlobalContext from "../GlobalContext";
 
 export default function () {
+
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const {submitLogin} = useContext(GlobalContext)
+
+
+
+
+
 
 const submit = (e) => {
     e.preventDefault()
     submitLogin(email, password)
 } 
+
+
 
     return <section className="account loginCover">
         <form onSubmit={submit} className="cover">
@@ -30,4 +38,6 @@ const submit = (e) => {
             </div>
         </form>
     </section>
+
+
 }

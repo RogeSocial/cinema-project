@@ -22,12 +22,6 @@ import AccountPage from "./pages/AccountPage.jsx";
 import globalContext from "./GlobalContext.jsx";
 
 
-const loginLoader = async () => {
-    const {auth } = useContext(globalContext);
-    if(!auth.loggedIn){
-        return redirect("/register")
-    }
-}
 
 const router = createBrowserRouter(
     createRoutesFromElements(
