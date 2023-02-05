@@ -1,11 +1,10 @@
 export default function ({ handleClick }) {
-  if (!{ handleClick }) {
-    return null;
-  }
-
   return (
-    <div id="oldest-button" className="filter-option-item" onClick={handleClick}>
+    <button
+      id="oldest-button"
+      className="filter-option-button"
+      onClick={handleClick}>
       Oldest
-    </div>
+    </button>
   );
 }

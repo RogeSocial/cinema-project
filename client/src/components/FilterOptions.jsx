@@ -7,7 +7,6 @@ import DateFilters from "./DateFilters.jsx";
 export default function ({ setFilteredMovies, setToggleMenu, setFilterName }) {
   const [filterParam, setFilterParam] = useSearchParams();
   const [isFilterChosen, setIsFilterChosen] = useState(false);
-  console.log(filterParam)
 
   const props = {
     setIsFilterChosen: setIsFilterChosen,

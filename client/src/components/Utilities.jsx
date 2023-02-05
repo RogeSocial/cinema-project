@@ -38,20 +38,24 @@ export function returnDayName(inIndex) {
   return daysInWeek[inIndex];
 }
 
-export function selectOneFilterItem(event) {
-  let className = document
-  .getElementById(event.target.id.toString())
-  .getAttribute("class");
-let elements = document.getElementsByClassName(className); //HTML list with indexes
-for (let i = 0; i < elements.length; ++i) {
-  if (event.target.id === elements[i].id) {
-    document
-      .getElementById(event.target.id)
-      .setAttribute("style", "background-color: rgb(178, 29, 29)");
-  } else {
-    document
-      .getElementById(elements[i].id)
-      .setAttribute("style", "background-color: transparent");
-  }
+export function changeBackgroundColor(targetElement, color) {
+  document
+    .getElementById(targetElement.id)
+    .setAttribute("style", "background-color: " + color);
 }
+
+export function highlightFilterOption(target) {
+  let className = document
+    .getElementById(target.id.toString())
+    .getAttribute("class");
+  let elements = document.getElementsByClassName(className);
+
+  for (let i = 0; i < elements.length; ++i) {
+    let element = elements[i];
+    if (target.id === element.id) {
+      changeBackgroundColor(target, "rgb(178, 29, 29)");
+    } else {
+      changeBackgroundColor(element, "transparent");
+    }
+  }
 }

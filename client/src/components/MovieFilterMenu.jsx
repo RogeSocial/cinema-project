@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import FilterButton from "./FilterButton.jsx";
 import FilterOptions from "./FilterOptions.jsx";
+import { changeBackgroundColor } from "./Utilities.jsx";
 
 export default function ({ setFilteredMovies }) {
   const [toggleMenu, setToggleMenu] = useState(false);
@@ -9,13 +10,12 @@ export default function ({ setFilteredMovies }) {
     setFilterName("Filter");
   }
   useEffect(() => {
-  saveFilterChoice();
+    saveFilterOptionHighlight();
   }, [toggleMenu]);
 
   if (!toggleMenu)
     return (<>
-        <FilterButton filterName={filterName} 
-        handleClick={showFilterOptions} />
+        <FilterButton filterName={filterName} handleClick={showFilterOptions} />
       </>);
   else
     return (
@@ -23,20 +23,19 @@ export default function ({ setFilteredMovies }) {
         setFilteredMovies={setFilteredMovies}
         setToggleMenu={setToggleMenu}
         setFilterName={setFilterName} />
-        );
+    );
 
   function showFilterOptions() {
     setToggleMenu(true);
   }
 
-  function saveFilterChoice() {
-    let elements = document.getElementsByClassName("filter-option-item"); //HTML list with indexes
+  function saveFilterOptionHighlight() {
+    let elements = document.getElementsByClassName("filter-option-button");
     for (let i = 0; i < elements.length; ++i) {
-      if (filterName === elements[i].innerText) {
-        document
-          .getElementById(elements[i].id)
-          .setAttribute("style", "background-color: rgb(178, 29, 29)");
+      let element = elements[i];
+      if (filterName === element.innerText) {
+        changeBackgroundColor(element, "rgb(178, 29, 29)");
       }
-  }
+    }
   }
 }
