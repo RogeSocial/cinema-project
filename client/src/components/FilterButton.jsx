@@ -1,10 +1,7 @@
-export default function ({ handleClick }) {
-  if (!{ handleClick }) {
-    return null;
-  }
+export default function ({ handleClick, filterName }) {
   return (
     <button className="button" id="movie-sort-btn" onClick={handleClick}>
-      Sort
+      {filterName}
     </button>
   );
 }

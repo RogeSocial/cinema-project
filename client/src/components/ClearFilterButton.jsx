@@ -1,10 +1,10 @@
 export default function ({ handleClick }) {
   return (
     <button
-      id="alphabetic-button"
-      className="filter-option-button"
+      id="aligned-button-text"
+      className="button button-filter-version"
       onClick={handleClick}>
-      A-Z
+      Clear
     </button>
   );
 }

@@ -72,6 +72,18 @@
   color: white;
   margin: 10px;
 }
+.button[disabled]{
+  background-color: rgb(100, 100, 100);
+}
+
+.button[disabled]:hover {
+  background-color: rgb(100, 100, 100);
+  color: rgb(0, 0, 0);
+  transform: none;
+  box-shadow: none;
+  transition: none;
+  cursor: not-allowed;
+}
 
 .button:active {
   transform: translateY(-1px);

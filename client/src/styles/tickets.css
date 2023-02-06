@@ -28,13 +28,16 @@
 }
 
 .movieTickets {
-    display: flex;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-hr {
+/*hr {
     background-color: rgba(251, 252, 253, 0.616);
     margin: 20px;
-}
+}*/
 
 #calender-box {
     display: flex;
@@ -45,21 +48,24 @@ hr {
 }
 
 .wrap {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: 20px;
+    padding-top: 50px;
 }
 
-.selectedDate{
+.selectedDate {
+    text-align: center;
     font-family: 'Fredericka the Great', cursive;
     font-size: 20px;
 }
 
-.calender-dropdown-trigger>ul {
+.calender-dropdown-trigger > ul {
     background-color: #fff8f100;
-    text-align: center;
+    text-align: left;
     list-style: none;
     height: 10em;
     width: 12em;
@@ -101,10 +107,10 @@ hr {
     display: none;
 }
 
-
 .calender h2 {
-    margin: 1rem;
-    margin-top: 0.3rem;
+    grid-column: 1 / 3;
+    text-align: center;
+    margin: 0.3rem 1rem 1rem;
     color: white;
     font-size: 33px;
     min-width: 200px;
@@ -126,7 +132,23 @@ hr {
 
 @media screen and (max-width: 1000px) {
     .movieTickets {
-        flex-direction: column;
+        grid-template-columns: auto auto;
+    }
+
+    .calender h2 {
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .calender {
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .movieTickets {
+        grid-template-columns: auto;
     }
 
     .calender h2 {
@@ -141,10 +163,14 @@ hr {
 }
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 890px) and (orientation: landscape) {
+    .movieTickets {
+        grid-template-columns: auto;
+    }
+
     .calender {
         padding-top: 40px;
     }
-    
+
     #movieImg {
         width: 200px;
         height: 200px;
