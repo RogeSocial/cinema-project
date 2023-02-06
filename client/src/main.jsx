@@ -19,8 +19,6 @@ import CalendarPage from "./pages/CalendarPage.jsx";
 import LoginPage from './pages/LoginPage'
 import CreateAccountPage from './pages/CreateAccountPage'
 import AccountPage from "./pages/AccountPage.jsx";
-import GlobalContext from "./GlobalContext.jsx";
-import loggedIn from "./components/LoggedIn.js";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -36,9 +34,7 @@ const router = createBrowserRouter(
             <Route path="register" element={<CreateAccountPage />}/>
 
             <Route path="user">
-                {loggedIn.loggedIn ?
                     <Route path="account" element={<AccountPage />}/>
-                    : <Route path="account" element={<LoginPage />}/>}
             </Route>
 
         </Route>
