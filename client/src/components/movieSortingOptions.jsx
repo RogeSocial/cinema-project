@@ -5,7 +5,6 @@ import AlphabeticButton2 from "./AlphabeticButton2.jsx";
 import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
 import MovieSortButton from "./MovieSortButton.jsx";
 import { reverseAlphabet, sortAlphabet } from "./movieSort.js";
-import AlphabeticButton2 from "./AlphabeticButton2.jsx";
 
 function MovieSortingOptions({ setFilteredMovies }) {
   const [filterParam, setFilterParam] = useSearchParams();
