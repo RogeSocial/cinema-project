@@ -3,7 +3,6 @@
   <component name="dataSourceStorageLocal" created-in="WS-223.8214.51">
     <data-source name="live.db" uuid="4d2f20fe-0217-47ea-a742-4f55888e5b64">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
-      <secret-storage>forget</secret-storage>
       <schema-mapping />
     </data-source>
   </component>
