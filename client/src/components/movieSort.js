@@ -30,3 +30,8 @@ export function sortByMostRecent() {
     (a, b) => b.releaseDate.getTime() - a.releaseDate.getTime()
   );
 }
+export function sortByLeastRecent() {
+  return movies.sort(
+    (a, b) => a.releaseDate.getTime() - b.releaseDate.getTime()
+  );
+}

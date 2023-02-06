@@ -35,7 +35,7 @@
   background-color: transparent;
   color: var(--main_text_color);
   height: 18px;
-  width: 100px;
+  width: 200px;
   margin-left: 0.45rem;
   margin-right: -2.5rem;
   margin-top: 0.2rem;
@@ -82,21 +82,22 @@
   padding-top: 20px;
 }
 
-.sorting-options {
-  display: flex;
-}
-
 .movie-btn {
   padding: 0rem;
 }
 
 #movie-sort-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 18px;
+  height: 30px;
   padding: 0.5rem 1rem 0.5rem 1rem;
   margin-top: 1rem;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
-.movie-search-and-sorting-area {
+.movie-search-and-filter-area {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -106,7 +107,7 @@
   width: 100vw;
   margin-top: 5rem;
 }
-.movie-search-and-sorting-area h2 {
+.movie-search-and-filter-area h2 {
   text-align: center;
 }
 
@@ -171,7 +172,7 @@
     grid-template-columns: repeat(2, max-content);
   }
 
-  .movie-search-and-sorting-area {
+  .movie-search-and-filter-area {
     position: absolute;
     top: 0;
     width: 100vw;
