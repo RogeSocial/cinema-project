@@ -34,6 +34,7 @@ export default function () {
             <div ref={menuRef} className="dropdown-menu">
                 <Link to="movies" onClick={() => setIsOpen(false)}>Movies</Link>
                 <Link to="tickets" onClick={() => setIsOpen(false)}>Tickets</Link>
+                <Link to="user/account">Account</Link>
             </div>
         )
         else return null

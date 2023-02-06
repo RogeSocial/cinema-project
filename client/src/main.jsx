@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './styles.css'
@@ -7,7 +7,7 @@ import {
     Route,
     RouterProvider,
     createBrowserRouter,
-    createRoutesFromElements
+    createRoutesFromElements, redirect
 } from "react-router-dom";
 
 import MoviePage from './pages/MoviePage.jsx'
@@ -19,6 +19,9 @@ import CalendarPage from "./pages/CalendarPage.jsx";
 import LoginPage from './pages/LoginPage'
 import CreateAccountPage from './pages/CreateAccountPage'
 import AccountPage from "./pages/AccountPage.jsx";
+import globalContext from "./GlobalContext.jsx";
+
+
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -30,10 +33,10 @@ const router = createBrowserRouter(
             </Route>
             <Route path="tickets" element={<CalendarPage/>}/>
             <Route path="reserve" element={<ReservePage/>}/>
-            <Route path="login" element={<LoginPage/>}/>
-            <Route path="register" element={<CreateAccountPage />}/>
 
             <Route path="user">
+                <Route path="login" element={<LoginPage/>}/>
+                <Route path="register" element={<CreateAccountPage />}/>
                 <Route path="account" element={<AccountPage />}/>
             </Route>
 

@@ -10,62 +10,61 @@ export const GlobalProvider = ({children}) => {
     const [isLoading, setIsLoading] = useState(true)
     const [concerts, setConcerts] = useState([]);
 
-    // useEffect to run methods upon load
-    useEffect(() => {
-        void checkAuth()
-        void loadTidbits()
-        void loadConcerts()
-    }, []);
+  // useEffect to run methods upon load
+  useEffect(() => {
+    void checkAuth()
+    void loadTidbits()
+  }, []);
 
-    // methods, could be for on load, or just called from elsewhere
+  // methods, could be for on load, or just called from elsewhere
 
-    const checkAuth = async () => {
-        setIsLoading(true)
-        const response = await fetch("/rest/login")
-        console.log('loading auth')
-        const result = await response.json()
-        console.log('auth state: ', result)
-        setAuth(result)
-        setIsLoading(false)
-    }
+  const checkAuth = async () => {
+    setIsLoading(true)
+    const response = await fetch("/rest/login")
+      console.log('loading auth')
+    const result = await response.json()
+    console.log('auth state: ', result)
+    setAuth(result)
+    setIsLoading(false)
+  }
 
-    const submitLogin = async (email, password) => {
-        setIsLoading(true)
-        const response = await fetch("/rest/login", {
-            method: "post",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email, password})
-        })
-        const result = await response.json()
-        console.log(result)
-        setIsLoading(false)
-        void checkAuth()
-    }
+  const submitLogin = async (email, password) => {
+    setIsLoading(true)
+    const response = await fetch("/rest/login", {
+        method: "post",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({email, password})
+    })
+    const result = await response.json()
+    console.log(result)
+    setIsLoading(false)
+    void checkAuth()
+  }
 
-    const createAccount = async (email, password) => {
-        setIsLoading(true);
-        const response = await fetch("/rest/users", {
-            method: "post",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email, password})
-        });
-        const result = await response.json();
-        console.log(result);
-        setIsLoading(false);
-        void checkAuth();
-    };
-    const deleteAccount = async (email) => {
-        setIsLoading(true);
-        const response = await fetch("rest/users", {
-            method: "delete",
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email})
-        });
-        const result = await response.json();
-        console.log(result)
-        setIsLoading(false)
-        void checkAuth();
-    }
+  const createAccount = async (email, password) => {
+    setIsLoading(true);
+    const response = await fetch("/rest/users", {
+      method: "post",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
+    const result = await response.json();
+    console.log(result);
+    setIsLoading(false);
+    void checkAuth();
+  };
+  const deleteAccount = async(email) => {
+    setIsLoading(true);
+    const response = await fetch("rest/users", {
+      method: "delete",
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email })
+    });
+    const result = await response.json();
+    console.log(result)
+    setIsLoading(false)
+    void checkAuth();
+  }
 
     const removePassword = async (email) => {
         setIsLoading(true)
@@ -101,22 +100,22 @@ export const GlobalProvider = ({children}) => {
         setAuth({loggedIn: false})
     }
 
-    const loadTidbits = async () => {
-        setIsLoading(true)
-        const response = await fetch("/rest/tidbits")
-        const result = await response.json()
-        console.log(result)
-        setTidbits(result)
-        setIsLoading(false)
-    }
+  const loadTidbits = async () => {
+    setIsLoading(true)
+    const response = await fetch("/rest/tidbits")
+    const result = await response.json()
+    console.log(result)
+    setTidbits(result)
+    setIsLoading(false)
+  }
 
-    const loadConcerts = async () => {
-        setIsLoading(true)
-        const response = await fetch("/rest/concerts")
-        const result = await response.json()
-        setConcerts(result)
-        setIsLoading(false)
-    }
+  const loadConcerts = async () => {
+    setIsLoading(true)
+    const response = await fetch("/rest/concerts")
+    const result = await response.json()
+    setConcerts(result)
+    setIsLoading(false)
+  }
 
 
     return (
