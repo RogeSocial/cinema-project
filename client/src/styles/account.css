@@ -85,7 +85,7 @@
     font-size: 18px;
 }
 
-::placeholder {
+.account ::placeholder {
     color: black;
     opacity: 25%;
 }
