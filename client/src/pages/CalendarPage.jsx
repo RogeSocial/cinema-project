@@ -110,11 +110,11 @@ export default function () {
         }
         console.log("movieDates: " + movieDates);
         //just get the whole array
-        /*return tmpArray;*/
+        return tmpArray;
 
         //remove duplicates
-        let returnArray = [...new Set(tmpArray)];
-        return returnArray;
+/*        let returnArray = [...new Set(tmpArray)];
+        return returnArray;*/
     }
 }
 
