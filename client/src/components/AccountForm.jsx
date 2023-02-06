@@ -1,12 +1,10 @@
 import {useContext, useEffect, useState} from "react";
 import GlobalContext from "../GlobalContext.jsx";
-import {useNavigate} from "react-router-dom";
 
 export default function () {
-    const { logout, auth } = useContext(GlobalContext)
+    const { logout } = useContext(GlobalContext)
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
-    const navigate = useNavigate();
     //When edit-button is clicked
     function changeEditable() {
         !isEditable ? setIsEditable(true) : setIsEditable(false)
