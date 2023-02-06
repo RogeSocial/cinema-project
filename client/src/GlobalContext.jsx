@@ -14,7 +14,6 @@ export const GlobalProvider = ({ children }) => {
   useEffect(() => {
     void checkAuth()
     void loadTidbits()
-    void loadConcerts()
   }, []);
 
   // methods, could be for on load, or just called from elsewhere
@@ -98,7 +97,6 @@ export const GlobalProvider = ({ children }) => {
   return (
     <GlobalContext.Provider
       value={{
-        setAuth,
         auth,
         tidbits,
         isLoading,

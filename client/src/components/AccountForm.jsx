@@ -1,6 +1,8 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import GlobalContext from "../GlobalContext.jsx";
 
 export default function () {
+    const { logout } = useContext(GlobalContext)
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
 
@@ -69,6 +71,8 @@ export default function () {
                    disabled={true}/>
 
             <button id={"account-button"} className={"button"} disabled={true}>Save</button>
+            <button id={"logout-button"} className={"button"} onClick={logout}>Logout</button>
         </form>
+
     </>
 }

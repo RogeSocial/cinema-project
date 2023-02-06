@@ -14,7 +14,7 @@ function checkEmail() {
     const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
     if (email.match(regex)) {
-        return true;
+        return true
     } else {
         return false;
     }

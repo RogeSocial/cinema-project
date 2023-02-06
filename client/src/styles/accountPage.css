@@ -30,6 +30,12 @@
     margin-left: 35px;
 }
 
+#logout-button {
+    background-color: black;
+    color: indianred;
+    margin-top: 70px;
+    margin-left: 25px;
+}
 #change-password {
     margin-bottom: 30px;
 }
