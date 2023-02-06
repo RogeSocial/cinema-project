@@ -45,7 +45,7 @@ const submit = (e) => {
 
 function loginHandler() {
     if(auth.loggedIn){
-        navigate("/user/account")
+        navigate("/")
     }
 }
 }
