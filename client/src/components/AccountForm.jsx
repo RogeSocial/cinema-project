@@ -1,8 +1,12 @@
-import {useEffect, useState} from "react";
+import {useContext, useEffect, useState} from "react";
+import globalContext from "../GlobalContext.jsx";
 
 export default function () {
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
+    const {removePassword, changePassword} = useContext(globalContext)
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     //When edit-button is clicked
     function changeEditable() {
@@ -38,9 +42,15 @@ export default function () {
         passwordCheckbox.checked ? passElement.disabled = false : passElement.disabled = true;
     }, [isPassEditable]);
 
+
+    const submit = (e) => {
+        e.preventDefault()
+        removePassword(email, password)
+        changePassword()
+    }
     return <>
         <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit</button>
-        <form id={"account-page-form"}>
+        <form id={"account-page-form"} type={"submit"} onSubmit={submit}>
             <label htmlFor="name">Full name: </label>
             <input type={"text"} name={"name"} id={"name"} className={"input-element"} required/>
 
@@ -51,8 +61,8 @@ export default function () {
             <input type={"email"} name={"email"} id={"email"} className={"input-element"} disabled={true} required/>
 
             <label htmlFor="password">Current password: </label>
-            <input type={"password"} name={"current-password"} id={"current-password"} className={"input-element"}
-                   disabled={true} required/>
+            <input type={"password"}  name={"current-password"} id={"current-password"} className={"input-element"}
+                 value={password} onChange={(event) => setPassword(event.target.value)}  disabled={true} required/>
 
             <div id={"checkbox-container"}>
                 <label htmlFor="change-password" id={"change-pass-label"}>Change password: </label>
