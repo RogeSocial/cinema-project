@@ -1,4 +1,4 @@
-import {daysInWeek} from "./Constants.js";
+import {daysForwardInCalender, daysInWeek} from "./Constants.js";
 
 export function convertsMinutesIntoHoursAndMinutes(min) {
     let hours = Math.trunc(min / 60);
@@ -36,4 +36,15 @@ export function timeSelector(movie) {
 
 export function returnDayName(inIndex) {
     return daysInWeek[inIndex];
+}
+
+//calculate days forward for the calendar
+export function calculateCurrentDate() {
+    let tmpArray = [];
+    for (let i = 0; i < daysForwardInCalender; i++) {
+        let addedDay = new Date();
+        addedDay.setDate(addedDay.getDate() + i);
+        tmpArray.push(addedDay);
+    }
+    return tmpArray;
 }

@@ -8,6 +8,7 @@ export default function ({movie}) {
                 <h3> {movie.title} </h3>
                 <img src={movie.image} alt={movie.alt}/>
                 <h4>{showsMovieLengthOnThisPage(movie, "/tickets")}</h4>
+                <h5>{movie.date}</h5>
             </div>
         </Link>
     );
