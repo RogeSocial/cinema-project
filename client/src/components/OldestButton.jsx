@@ -1,10 +1,10 @@
 export default function ({ handleClick }) {
   return (
     <button
-      id="alphabetic-button"
+      id="oldest-button"
       className="filter-option-button"
       onClick={handleClick}>
-      A-Z
+      Oldest
     </button>
   );
 }
