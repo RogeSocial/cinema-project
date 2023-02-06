@@ -4,15 +4,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(4.5px);
   -webkit-backdrop-filter: blur(4.5px);
-
   z-index: 200;
   margin-top: -1px;
   padding-bottom: 1.5rem;
-  border: solid 1px var(--main_text_color);
+  border: solid 1px #4d97b9;
   border-radius: 10px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
@@ -59,9 +57,8 @@
 }
 
 .filter-option-button {
-  background-color: black;
+  background-color: #0B1321;
   height: 40px;
-  width: 1fr;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,9 +66,12 @@
   font-family: system-ui, -apple-system, BlinkMacSystemFont;
   color: var(--main_text_color);
   user-select: none;
-  border: solid 1px var(--main_text_color);
   padding: 1.5rem;
-  margin-bottom: 1rem;
+  border-radius: 10%;
+  border-color: #ffffff;
+  transition: 0.5s;
+  margin: 3px;
+
 }
 .filter-option-button:hover {
   background-color: rgb(178, 29, 29);
