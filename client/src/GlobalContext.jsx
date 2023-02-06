@@ -9,11 +9,13 @@ export const GlobalProvider = ({children}) => {
     const [tidbits, setTidbits] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [concerts, setConcerts] = useState([]);
+    const [users, setUsers] = useState([])
 
   // useEffect to run methods upon load
   useEffect(() => {
     void checkAuth()
     void loadTidbits()
+      void allUsers()
   }, []);
 
   // methods, could be for on load, or just called from elsewhere
@@ -72,18 +74,28 @@ export const GlobalProvider = ({children}) => {
             method: "delete",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email})
-        })
+        });
         const result = await response.json();
         console.log(result)
         setIsLoading(false)
-        void checkAuth()
     }
-    const changePassword = async (email, password) => {
+
+
+    const allUsers = async(email) =>{
         setIsLoading(true)
-        const response = await fetch("rest/user/password", {
+        const response = await fetch("/rest/users")
+        const result = await response.json()
+        console.log(result)
+        setUsers(result)
+        setIsLoading(false)
+    }
+
+    const changePassword = async (password, email) => {
+        setIsLoading(true)
+        const response = await fetch("rest/users/password", {
             method: "patch",
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({email, password})
+            body: JSON.stringify({password, email})
         })
         const result = await response.json()
         console.log(result)
@@ -131,7 +143,8 @@ export const GlobalProvider = ({children}) => {
                 concerts,
                 deleteAccount,
                 removePassword,
-                changePassword
+                changePassword,
+                users
             }}
         >
             {children}

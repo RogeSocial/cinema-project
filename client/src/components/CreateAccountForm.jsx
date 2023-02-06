@@ -7,15 +7,31 @@ import GlobalContext from "../GlobalContext.jsx";
 
 
 export default function () {
-    const { createAccount } = useContext(GlobalContext);
+    const { createAccount, users } = useContext(GlobalContext);
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const userEmails = users.some(user => user.email === email)
+    console.log(userEmails)
+    function checkEmail() {
+        if(!userEmails){
+            return <button type="submit"className="button" onClick={handleRegister}>REGISTER</button>
+                ;
+        }else {
+           return  <button disabled={true} className="button" onClick={handleRegister}>REGISTER</button>
+
+        }
+
+    }
     const submit = (e) => {
         e.preventDefault()
+
         createAccount(email, password)
     }
+
+
+
     return <section className="account">
         <form onSubmit={submit} id="formData" action="/login" className="cover createAccountCover">
             <img className="loginImg accountImg" src={icon} alt="" />
@@ -33,7 +49,7 @@ export default function () {
             <input type="password" placeholder="confirm password" minLength="8" id={"confirmPassword"} name="confirmPassword"></input>
             <br />
             <div className="button-group">
-                <button type="submit"className="button" onClick={handleRegister}>REGISTER</button>
+                {checkEmail()}
                 <Link to="/user/login"><button className="button-text">Already have an account? Sign in.</button></Link>
             </div>
         </form>

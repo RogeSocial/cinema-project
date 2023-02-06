@@ -1,11 +1,10 @@
 import {useContext, useEffect, useState} from "react";
-import globalContext from "../GlobalContext.jsx";
+import GlobalContext from "../GlobalContext.jsx";
 
 export default function () {
-    const { logout } = useContext(GlobalContext)
+    const { logout, removePassword, changePassword} = useContext(GlobalContext)
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
-    const {removePassword, changePassword} = useContext(globalContext)
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
@@ -46,8 +45,7 @@ export default function () {
 
     const submit = (e) => {
         e.preventDefault()
-        removePassword(email, password)
-        changePassword()
+        changePassword(password, email)
     }
     return <>
         <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit</button>
@@ -59,11 +57,12 @@ export default function () {
             <input type={"tel"} name={"tel"} id={"tel"} className={"input-element"} disabled={true} required/>
 
             <label htmlFor="email">E-mail: </label>
-            <input type={"email"} name={"email"} id={"email"} className={"input-element"} disabled={true} required/>
+            <input type={"email"} name={"email"} id={"email"} className={"input-element"}
+                  value={email} onChange={(event)=> setEmail(event.target.value)} disabled={true} required/>
 
             <label htmlFor="password">Current password: </label>
             <input type={"password"}  name={"current-password"} id={"current-password"} className={"input-element"}
-                 value={password} onChange={(event) => setPassword(event.target.value)}  disabled={true} required/>
+                 disabled={true} required/>
 
             <div id={"checkbox-container"}>
                 <label htmlFor="change-password" id={"change-pass-label"}>Change password: </label>
@@ -73,7 +72,7 @@ export default function () {
 
             <label htmlFor={"new-password-one"}>New password: </label>
             <input type={"password"} name={"new-password-one"} id={"new-password-one"} className={"pass-input"}
-                   disabled={true}/>
+                   value={password} onChange={(event) => setPassword(event.target.value)}   disabled={true}/>
 
             <label htmlFor={"new-password-two"}>New password again: </label>
             <input type={"password"} name={"new-password-two"} id={"new-password-two"} className={"pass-input"}
