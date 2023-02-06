@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './styles.css'
@@ -19,6 +19,8 @@ import CalendarPage from "./pages/CalendarPage.jsx";
 import LoginPage from './pages/LoginPage'
 import CreateAccountPage from './pages/CreateAccountPage'
 import AccountPage from "./pages/AccountPage.jsx";
+import GlobalContext from "./GlobalContext.jsx";
+import loggedIn from "./components/LoggedIn.js";
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -34,7 +36,9 @@ const router = createBrowserRouter(
             <Route path="register" element={<CreateAccountPage />}/>
 
             <Route path="user">
-                <Route path="account" element={<AccountPage />}/>
+                {loggedIn.loggedIn ?
+                    <Route path="account" element={<AccountPage />}/>
+                    : <Route path="account" element={<LoginPage />}/>}
             </Route>
 
         </Route>
