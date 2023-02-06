@@ -2,6 +2,8 @@ import AlphabeticButton from "./AlphabeticButton.jsx";
 import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
 import { reverseAlphabet, sortAlphabet } from "./movieSort.js";
 import { highlightFilterOption } from "./Utilities.jsx";
+import {useContext} from "react";
+import globalContext from "../GlobalContext.jsx";
 
 export default function ({
   setFilteredMovies,
@@ -9,6 +11,7 @@ export default function ({
   setIsFilterChosen,
   setFilterName,
 }) {
+  const {movies} = useContext(globalContext)
   return (<>
       <h4 className="filter-category">Letter</h4>
       <div className="letter-filters">
@@ -18,7 +21,7 @@ export default function ({
     </>);
 
   function sortAlphabetically(event) {
-    setFilteredMovies([...sortAlphabet()]);
+    setFilteredMovies([...sortAlphabet(movies)]);
     setIsFilterChosen(true);
     setFilterName("A-Z");
     setFilterParam({ filter: "A-Z" });
@@ -26,7 +29,7 @@ export default function ({
   }
 
   function sortZetabetically(event) {
-    setFilteredMovies([...reverseAlphabet()]);
+    setFilteredMovies([...reverseAlphabet(movies)]);
     setIsFilterChosen(true);
     setFilterName("Z-A");
     setFilterParam({ filter: "Z-A" });
