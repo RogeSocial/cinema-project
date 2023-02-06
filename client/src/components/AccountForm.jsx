@@ -5,6 +5,7 @@ export default function () {
     const { logout } = useContext(GlobalContext)
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
+    
 
     //When edit-button is clicked
     function changeEditable() {

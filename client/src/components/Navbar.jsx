@@ -1,17 +1,19 @@
 import {Link, Route} from "react-router-dom";
-import React from "react";
-import loggedIn from "./LoggedIn.js";
-import AccountPage from "../pages/AccountPage.jsx";
-import LoginPage from "../pages/LoginPage.jsx";
+import React, {useContext} from "react";
+import loggedIn from "./isLoggedIn.js";
+import GlobalContext from "../GlobalContext.jsx";
+
+
 
 export default function () {
+    const {auth} = useContext(GlobalContext)
     return <nav>
         <Link to="movies" id='navbar'>Movies</Link>
         <Link to="tickets" id='navbar'>Tickets</Link>
 
-        {loggedIn.loggedIn ?
-            <Link to="account" id='navbar'> Account </Link>
-            : <Link to="account" id='navbar'> Account </Link>}
+        {auth.loggedIn ?
+            <Link to="user/account" id='navbar'> Account </Link>
+            : <Link to="login" id='navbar'> Account </Link>}
 
     </nav>
 }
