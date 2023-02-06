@@ -13,11 +13,9 @@ export default function () {
     const [password, setPassword] = useState('')
 
     const userEmails = users.some(user => user.email === email)
-    console.log(userEmails)
     function checkEmail() {
         if(!userEmails){
-            return <button type="submit"className="button" onClick={handleRegister}>REGISTER</button>
-                ;
+            return <button type="submit"className="button" onClick={handleRegister}>REGISTER</button>;
         }else {
            return  <button disabled={true} className="button" onClick={handleRegister}>REGISTER</button>
 
@@ -41,7 +39,7 @@ export default function () {
             <input type="email" id="email" name="email" placeholder="email"
              value={email} onChange={(event)=>setEmail(event.target.value)}></input>
             <label htmlFor="phone number">Phone number:</label>
-            <input onKeyPress={(e) => !/[0-9 + "+"]/.test(e.key) && e.preventDefault()} placeholder="phone number" id="tel" name="tel"></input>
+            <input onKeyDown={(e) => !/[0-9 + "+"]/.test(e.key) && e.preventDefault()} placeholder="phone number" id="tel" name="tel"></input>
             <label htmlFor="password">Password:</label>
             <input type="password" placeholder="password" name="password" minLength="8" id={"password"}
              value={password} onChange={(event)=>setPassword(event.target.value)}></input>

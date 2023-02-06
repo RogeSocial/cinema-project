@@ -68,6 +68,16 @@ export const GlobalProvider = ({children}) => {
     void checkAuth();
   }
 
+
+    const allUsers = async(email) =>{
+        setIsLoading(true)
+        const response = await fetch("/rest/users")
+        const result = await response.json()
+        console.log(result)
+        setUsers(result)
+        setIsLoading(false)
+    }
+
     const removePassword = async (email) => {
         setIsLoading(true)
         const response = await fetch("rest/users/password", {
@@ -77,16 +87,6 @@ export const GlobalProvider = ({children}) => {
         });
         const result = await response.json();
         console.log(result)
-        setIsLoading(false)
-    }
-
-
-    const allUsers = async(email) =>{
-        setIsLoading(true)
-        const response = await fetch("/rest/users")
-        const result = await response.json()
-        console.log(result)
-        setUsers(result)
         setIsLoading(false)
     }
 
