@@ -1,5 +1,5 @@
-import { showsMovieLengthOnThisPage } from "./Utilities";
-import { Link } from "react-router-dom";
+import {showsMovieLengthOnThisPage} from "./Utilities";
+import {Link} from "react-router-dom";
 
 export default function ({ movie }) {
   return (
