@@ -12,7 +12,6 @@ export const movieArray = [
     param: "Friday-the-13th",
     length: 120,
     release: "13 february 2009",
-    releaseDate: {day: 13, month: 2, year: 2009},
     releaseDate: new Date("2009-02-13"),
     background: "https://wallpapercave.com/wp/wp3940179.jpg",
   },
