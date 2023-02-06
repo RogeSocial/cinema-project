@@ -55,7 +55,7 @@ export function highlightFilterOption(target) {
     if (target.id === element.id) {
       changeBackgroundColor(target, "rgb(178, 29, 29)");
     } else {
-      changeBackgroundColor(element, "transparent");
+      changeBackgroundColor(element, "black");
     }
   }
 }
