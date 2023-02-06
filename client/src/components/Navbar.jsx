@@ -1,6 +1,5 @@
 import {Link, Route} from "react-router-dom";
 import React, {useContext} from "react";
-import loggedIn from "./isLoggedIn.js";
 import GlobalContext from "../GlobalContext.jsx";
 
 
