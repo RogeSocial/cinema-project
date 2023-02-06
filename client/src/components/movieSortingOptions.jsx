@@ -1,9 +1,11 @@
 import { useSearchParams } from "react-router-dom";
 import ResetFilterButton from "./ResetFilterButton.jsx";
 import AlphabeticButton from "./AlphabeticButton.jsx";
+import AlphabeticButton2 from "./AlphabeticButton2.jsx";
 import ReverseAlphabeticButton from "./ReverseAlphabeticButton.jsx";
 import MovieSortButton from "./MovieSortButton.jsx";
 import { reverseAlphabet, sortAlphabet } from "./movieSort.js";
+import AlphabeticButton2 from "./AlphabeticButton2.jsx";
 
 function MovieSortingOptions({ setFilteredMovies }) {
   const [filterParam, setFilterParam] = useSearchParams();
@@ -18,6 +20,7 @@ function MovieSortingOptions({ setFilteredMovies }) {
   function HandleSorting() {
     return (
       <div className={"sorting-options"}>
+        <AlphabeticButton2 handleClick={sortAlphabetically2} />
         <ResetFilterButton handleClick={removeFilter} />
         <AlphabeticButton handleClick={sortAlphabetically} />
         <ReverseAlphabeticButton handleClick={sortZetabetically} />
@@ -31,6 +34,10 @@ function MovieSortingOptions({ setFilteredMovies }) {
   }
 
   function sortAlphabetically() {
+    setFilteredMovies([...sortAlphabet()]);
+  }
+
+  function sortAlphabetically2() {
     setFilteredMovies([...sortAlphabet()]);
   }
 

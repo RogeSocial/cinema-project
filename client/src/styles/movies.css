@@ -70,16 +70,14 @@
   font-weight: 600;
 }
 
-.movies h2 {
-  margin: 1rem;
-  margin-top: 0.3rem;
+.movies h5 {
+  position: absolute;
+  z-index: 2;
+  font-size: 25px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  font-weight: 600;
+  padding-top: 10%;
   color: white;
-  font-size: 33px;
-  min-width: 200px;
-  border: none;
-  font-weight: 400;
-  font-family: "Fredericka the Great", cursive;
-  padding-top: 20px;
 }
 
 .movies button {
