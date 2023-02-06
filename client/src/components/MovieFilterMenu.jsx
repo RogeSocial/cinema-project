@@ -1,11 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import FilterButton from "./FilterButton.jsx";
 import FilterOptions from "./FilterOptions.jsx";
 import { changeBackgroundColor } from "./Utilities.jsx";
 
+
 export default function ({ setFilteredMovies }) {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [filterName, setFilterName] = useState(null);
+  const menuRef = useRef();
+
+  useEffect(() => {
+    document.addEventListener('mousedown', onMouseDown);
+    return () => document.removeEventListener('mousedown', onMouseDown);
+
+    function onMouseDown(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setToggleMenu(false);
+      }
+    }
+  }, []);
+
   if (filterName === null) {
     setFilterName("Filter");
   }
@@ -15,14 +29,16 @@ export default function ({ setFilteredMovies }) {
 
   if (!toggleMenu)
     return (<>
-        <FilterButton filterName={filterName} handleClick={showFilterOptions} />
-      </>);
+      <FilterButton filterName={filterName} handleClick={showFilterOptions} />
+    </>);
   else
     return (
-      <FilterOptions
-        setFilteredMovies={setFilteredMovies}
-        setToggleMenu={setToggleMenu}
-        setFilterName={setFilterName} />
+        <div ref={menuRef}>
+          <FilterOptions
+              setFilteredMovies={setFilteredMovies}
+              setToggleMenu={setToggleMenu}
+              setFilterName={setFilterName} />
+        </div>
     );
 
   function showFilterOptions() {
