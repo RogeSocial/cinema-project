@@ -7,6 +7,7 @@ export default function () {
             <li className="footer-link"><Link to={"/"}>Home</Link></li>
             <li className="footer-link"><Link to={"/movies"}>Movies</Link></li>
             <li className="footer-link"><Link to={"/tickets"}>Tickets</Link></li>
+            <li className="footer-link"><Link to={"/user/account"}>Account</Link></li>
         </ul>
     </div>
 }

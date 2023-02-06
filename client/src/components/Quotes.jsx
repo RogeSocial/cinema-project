@@ -1,7 +1,7 @@
 import "../styles/home.css";
 import "../styles/quotes.css";
 import React, { useEffect, useState } from "react";
-import { quoteArray } from "./QuoteData.jsx";
+import { quoteArray } from "./QuoteData.js";
 
 export default function () {
   const [index, setIndex] = useState(
