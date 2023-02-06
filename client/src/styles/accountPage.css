@@ -33,7 +33,8 @@
 #logout-button {
     background-color: black;
     color: indianred;
-    margin-top: 70px;
+    margin-top: 30px;
+    margin-bottom: 60px;
     margin-left: 25px;
 }
 #change-password {
