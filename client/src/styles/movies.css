@@ -46,9 +46,9 @@
   outline: none;
 }
 
-::placeholder {
+.movie-search-field ::placeholder {
   /* for Chrome, Firefox, Opera, Safari 10.1+ */
-  color: var(--main_text_color);
+  color: rgba(255, 255, 255, 0.68);
   opacity: 1;
   /* for Firefox */
   font-size: 18px;
@@ -59,7 +59,7 @@
 
 ::-ms-input-placeholder {
   /* for Microsoft Edge */
-  color: var(--main_text_color);
+  color: white;
 }
 
 .movies h3 {
@@ -201,4 +201,8 @@
     grid-template-columns: repeat(3, max-content);
     grid-template-rows: repeat(3, max-content);
   }
+}
+
+.filter-options{
+  position: relative;
 }
