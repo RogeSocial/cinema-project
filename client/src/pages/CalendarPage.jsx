@@ -13,7 +13,6 @@ export default function () {
     const [openDatePickerEnd, setOpenDatePickerEnd] = useState(false);
     const [startDateString, setStartDateString] = useState("");
     const [endDateString, setEndDateString] = useState("");
-    console.log(startDateString + " " + endDateString)
     const [startDateValue, setStartDateValue] = useState(new Date());
     const [endDateValue, setEndDateValue] = useState(new Date());
     let movieDates =[];
@@ -59,7 +58,7 @@ export default function () {
             <DisplaySelectedDate dateString={endDateString}/>
         </div>
         <div className="movieTickets">
-            <MovieList movies={moviesOnDate()}/>
+            <MovieList movies={moviesOnDate()} startDate ={startDateString} endDate={endDateString}/>
         </div>
     </section>
 
@@ -126,6 +125,7 @@ function isInArray(inArray, inMovie){
         }
     }
     return false;
+    
 }
 
 
