@@ -57,7 +57,7 @@
 }
 
 .filter-option-button {
-  background-color: #0B1321;
+  background-color: rgb(3, 26, 38);
   height: 40px;
   display: flex;
   align-items: center;
@@ -74,8 +74,9 @@
 
 }
 .filter-option-button:hover {
-  background-color: rgb(178, 29, 29);
+  background-color: rgb(3, 26, 38);
   cursor: pointer;
+  border-color: #4d97b9;
 }
 
 @media screen and (min-width: 680px) {
