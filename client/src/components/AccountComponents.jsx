@@ -2,11 +2,27 @@ function checkPassword() {
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("confirmPassword").value;
 
-    if (password === confirm) {
-        return true;
+    if (password === '') {
+        document.getElementById("pwrd").innerHTML = 
+        'Please enter a password' 
+    } else if (password.length < 8) {
+        document.getElementById("pwrd").innerHTML =
+        'Please enter 8 characters'
     } else {
-        return false;
+        document.getElementById("pwrd").innerHTML =
+        ''
+        return true;
     }
+
+//     if (confirm === '') {
+//         document.getElementById("pwrdc").innerHTML =
+//         "Please confirm your password"
+//     } else if (confirm !== password) {
+//         document.getElementById("pwrdc").innerHTML =
+//         "Password is not matching"
+//     } else {
+//         return true;
+//     }
 }
 
 function checkEmail() {
