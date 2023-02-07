@@ -65,7 +65,7 @@ export default function () {
 
             <label htmlFor="name">Phone: </label>
             <input type={"tel"} name={"tel"} id={"tel"} className={"input-element"} disabled={true}
-                   defaultValue={auth.tel} required/>
+                   defaultValue={auth.phoneNumber} required/>
 
             <label htmlFor="email">E-mail: </label>
             <input type={"email"} name={"email"} id={"email"} className={"input-element"} disabled={true}
