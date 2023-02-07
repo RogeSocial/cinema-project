@@ -58,7 +58,7 @@ export default function () {
             <DisplaySelectedDate dateString={endDateString}/>
         </div>
         <div className="movieTickets">
-            <MovieList movies={moviesOnDate()} startDate ={startDateString} endDate={endDateString}/>
+            <MovieList movies={moviesOnDate()} startDate ={startDateValue} endDate={endDateValue}/>
         </div>
     </section>
 

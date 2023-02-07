@@ -25,30 +25,45 @@ export default function ({ movie, startDate, endDate }) {
     }
   }
   function matchMovieDates(movie) {
-    //if no end date has been chosen
-    if (endDate === "" || endDate === startDate) {
-      for (let i = 0; i < movie.date.length; ++i) {
-        if (
-          movie.date[i] === parseInt(startDate[0]) ||
-          movie.date[i] === parseInt(startDate[0] + startDate[1])
-        ) {
-          return startDate;
-        }
+    let day;
+   
+    for (let i = 0; i < movie.date.length; ++i) {
+      if (movie.date[i] === startDate.getDate()) {
+        return (
+          translateDay(startDate, day) +
+          " (" +
+          startDate.getDate() +
+          "/" +
+          (startDate.getMonth() + 1) +
+          ")"
+        );
       }
     }
-    //if both start date and end date were chosen
-    else {
-      for (let i = 0; i < movie.date.length; ++i) {
-        if (
-          movie.date[i] === parseInt(startDate[0]) ||
-          movie.date[i] === parseInt(startDate[0] + startDate[1])
-        ) {
-          let string = startDate;
-          console.log(string)
-        }
 
-      }
-    
+}
+  function translateDay(date, day) {
+    switch (date.getDay()) {
+      case 0:
+        day = "Sunday";
+        break;
+      case 1:
+        day = "Monday";
+        break;
+      case 2:
+        day = "Tuesday";
+        break;
+      case 3:
+        day = "Wednesday";
+        break;
+      case 4:
+        day = "Thursday";
+        break;
+      case 5:
+        day = "Friday";
+        break;
+      case 6:
+        day = "Saturday";
     }
+    return day;
   }
 }
