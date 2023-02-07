@@ -2,6 +2,7 @@ import { showsMovieLengthOnThisPage } from "./Utilities";
 import { Link } from "react-router-dom";
 
 export default function ({ movie, startDate, endDate }) {
+
   return (
     <Link to={`/movies/${movie.id}/${movie["slug"]}`} key={movie.id}>
       <div className="movie-card">
@@ -26,11 +27,11 @@ export default function ({ movie, startDate, endDate }) {
   }
   function matchMovieDates(movie) {
     let day;
-   
+    
     for (let i = 0; i < movie.date.length; ++i) {
-      if (movie.date[i] === startDate.getDate()) {
+      if (movie.date[i] === startDate.getDate()) {   
         return (
-          translateDay(startDate, day) +
+          translateDay(startDate.getDay(), day) +
           " (" +
           startDate.getDate() +
           "/" +
@@ -38,32 +39,44 @@ export default function ({ movie, startDate, endDate }) {
           ")"
         );
       }
+      if (movie.date[i] >= startDate.getDate() &&
+      movie.date[i] <= endDate.getDate()){
+         let difference = parseInt(movie.date[i] - startDate.getDate());
+         console.log(difference)
+         return (
+          translateDay((startDate.getDay() + difference), day) +
+          " (" +
+          movie.date[i] +
+          "/" +
+          (startDate.getMonth() + 1) +
+          ")"
+        );
+      }
     }
-
-}
-  function translateDay(date, day) {
-    switch (date.getDay()) {
-      case 0:
-        day = "Sunday";
-        break;
-      case 1:
-        day = "Monday";
-        break;
-      case 2:
-        day = "Tuesday";
-        break;
-      case 3:
-        day = "Wednesday";
-        break;
-      case 4:
-        day = "Thursday";
-        break;
-      case 5:
-        day = "Friday";
-        break;
-      case 6:
-        day = "Saturday";
-    }
-    return day;
   }
+}
+function translateDay(date, day) {
+  switch (date) {
+    case 0:
+      day = "Sunday";
+      break;
+    case 1:
+      day = "Monday";
+      break;
+    case 2:
+      day = "Tuesday";
+      break;
+    case 3:
+      day = "Wednesday";
+      break;
+    case 4:
+      day = "Thursday";
+      break;
+    case 5:
+      day = "Friday";
+      break;
+    case 6:
+      day = "Saturday";
+  }
+  return day;
 }
