@@ -1,10 +1,9 @@
 export default function ({ handleClick }) {
-  if (!{ handleClick }) {
-    return null;
-  }
   return (
-    <button className="button" id="movie-sort-btn" onClick={handleClick}>
-      {" "}
+    <button
+      id="reverse-alphabetic-button"
+      className="filter-option-button"
+      onClick={handleClick}>
       Z-A
     </button>
   );

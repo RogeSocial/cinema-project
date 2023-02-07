@@ -1,0 +1,69 @@
+[
+
+  {
+    "route": "/rest",
+    "roles":[
+      {"role":"*", "methods": ["GET"]}
+    ]
+  },
+
+  {
+    "route": "/rest/video_streams*",
+    "roles":[
+      {"role": "user", "methods": ["GET"]}
+    ]
+  },
+
+  {
+    "route": "/rest/video_example",
+    "roles":[
+      {"role": "*", "methods": ["GET"]}      
+    ]
+  },
+
+  {
+    "route": "/rest/audio_streams*",
+    "roles":[
+      {"role": "*", "methods": ["GET"]}
+    ]
+  },
+
+  {
+    "route": "/rest/audio_example",
+    "roles":[
+      {"role": "*", "methods": ["GET"]}
+    ]
+  },
+
+  {
+    "route": "/rest/users*",
+    "roles":[
+      {"role": "user", "methods": ["GET","PUT","POST","DELETE"]}
+    ]
+  },
+
+  {
+    "route": "/rest/users/password",
+    "roles":[
+      {"role": "user", "methods": ["DELETE","PATCH"]}
+    ]
+  },
+
+  {
+    "route": "/rest/login",
+    "roles":[
+      {"role": "anonymous", "methods": ["POST","GET"]},
+      {"role": "user", "methods": ["GET", "DELETE"]}
+    ]
+  },
+
+  {
+    "route": "/rest/tidbits",
+    "roles": [
+      {
+        "role": "*", "methods": ["GET"]
+      }
+    ]
+  }
+
+]
