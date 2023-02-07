@@ -5,6 +5,7 @@ export default function () {
     const { logout } = useContext(GlobalContext)
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
+    
 
     //When edit-button is clicked
     function changeEditable() {
@@ -41,7 +42,9 @@ export default function () {
     }, [isPassEditable]);
 
     return <>
-        <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit</button>
+        <button id={"logout-button"} className={"button"} onClick={logout}>Logout</button>
+
+        <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit account</button>
         <form id={"account-page-form"}>
             <label htmlFor="name">Full name: </label>
             <input type={"text"} name={"name"} id={"name"} className={"input-element"} required/>
@@ -71,7 +74,7 @@ export default function () {
                    disabled={true}/>
 
             <button id={"account-button"} className={"button"} disabled={true}>Save</button>
-            <button id={"logout-button"} className={"button"} onClick={logout}>Logout</button>
+
         </form>
 
     </>
