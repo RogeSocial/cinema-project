@@ -12,7 +12,7 @@ export default function () {
 
         {auth.loggedIn ?
             <Link to="user/account" id='navbar'> Account </Link>
-            : <Link to="login" id='navbar'> Account </Link>}
+            : <Link to="login" id='navbar'> Login </Link>}
 
     </nav>
 }

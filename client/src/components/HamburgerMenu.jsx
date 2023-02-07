@@ -39,7 +39,7 @@ export default function () {
 
                 {auth.loggedIn ?
                     <Link to="user/account" onClick={() => setIsOpen(false)}>Account</Link>
-                    : <Link to="login" onClick={() => setIsOpen(false)}>Account</Link>}
+                    : <Link to="login" onClick={() => setIsOpen(false)}>Login</Link>}
 
             </div>
         )

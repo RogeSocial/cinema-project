@@ -15,7 +15,7 @@ export default function () {
 
             {auth.loggedIn ?
                 <li className="footer-link"><Link to={"/user/account"}>Account</Link></li>
-                : <li className="footer-link"><Link to={"login"}>Account</Link></li>}
+                : <li className="footer-link"><Link to={"login"}>Login</Link></li>}
 
         </ul>
     </div>
