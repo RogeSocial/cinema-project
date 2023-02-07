@@ -1,5 +1,6 @@
 import {useContext, useEffect, useState} from "react";
 import GlobalContext from "../GlobalContext.jsx";
+import {Navigate} from "react-router-dom";
 
 export default function () {
     const { logout } = useContext(GlobalContext)
