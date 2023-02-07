@@ -2,6 +2,8 @@ import NewestButton from "./NewestButton.jsx";
 import OldestButton from "./OldestButton.jsx";
 import { sortByMostRecent, sortByLeastRecent } from "./movieSort.js";
 import { highlightFilterOption } from "./Utilities.jsx";
+import {useContext} from "react";
+import globalContext from "../GlobalContext.jsx";
 
 export default function ({
   setFilteredMovies,
@@ -9,6 +11,8 @@ export default function ({
   setIsFilterChosen,
   setFilterName,
 }) {
+
+  const {movies} = useContext(globalContext)
   return (<>
       <h4 className="filter-category">Release Date</h4>
       <div className="date-filters">
@@ -18,7 +22,7 @@ export default function ({
     </>);
 
   function sortNewest(event) {
-    setFilteredMovies([...sortByMostRecent()]);
+    setFilteredMovies([...sortByMostRecent(movies)]);
     setIsFilterChosen(true);
     setFilterName("Newest");
     setFilterParam({ filter: "Newest" });
@@ -26,7 +30,7 @@ export default function ({
   }
 
   function sortOldest(event) {
-    setFilteredMovies([...sortByLeastRecent()]);
+    setFilteredMovies([...sortByLeastRecent(movies)]);
     setIsFilterChosen(true);
     setFilterName("Oldest");
     setFilterParam({ filter: "Oldest" });

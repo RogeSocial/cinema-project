@@ -9,11 +9,12 @@ export const GlobalProvider = ({ children }) => {
   const [tidbits, setTidbits] = useState([])
   const [isLoading, setIsLoading] = useState(true)
   const [concerts, setConcerts] = useState([]);
-
+  const [movies, setMovies] = useState([])
   // useEffect to run methods upon load
   useEffect(() => {
     void checkAuth()
     void loadTidbits()
+    void loadMovies()
   }, []);
 
   // methods, could be for on load, or just called from elsewhere
@@ -94,6 +95,17 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(false)
   }
 
+  const loadMovies = async () => {
+    setIsLoading(true)
+    const response = await fetch("/rest/movies")
+    const result = await response.json()
+    console.log(result)
+    setMovies(result)
+    setIsLoading(false)
+  }
+
+
+
   return (
     <GlobalContext.Provider
       value={{
@@ -104,7 +116,8 @@ export const GlobalProvider = ({ children }) => {
         logout,
         createAccount,
         concerts,
-        deleteAccount
+        deleteAccount,
+        movies
       }}
     >
       {children}

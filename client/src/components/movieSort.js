@@ -1,8 +1,7 @@
-import { movieArray } from "./movie-data.js";
-const [movies] = [movieArray];
 
-export function sortAlphabet() {
-  return movies.sort((a, b) => {
+
+export function sortAlphabet(movieX) {
+  return movieX.sort((a, b) => {
     if (a.title < b.title) {
       return -1;
     }
@@ -13,8 +12,8 @@ export function sortAlphabet() {
   });
 }
 
-export function reverseAlphabet() {
-  return movies.sort((a, b) => {
+export function reverseAlphabet(movieX) {
+  return movieX.sort((a, b) => {
     if (a.title > b.title) {
       return -1;
     }
@@ -25,13 +24,13 @@ export function reverseAlphabet() {
   });
 }
 
-export function sortByMostRecent() {
-  return movies.sort(
-    (a, b) => b.releaseDate.getTime() - a.releaseDate.getTime()
+export function sortByMostRecent(movieX) {
+  return movieX.sort(
+    (a, b) => b['release_date'] - a['release_date']
   );
 }
-export function sortByLeastRecent() {
-  return movies.sort(
-    (a, b) => a.releaseDate.getTime() - b.releaseDate.getTime()
+export function sortByLeastRecent(movieX) {
+  return movieX.sort(
+    (a, b) => a['release_date'] - b['release_date']
   );
 }
