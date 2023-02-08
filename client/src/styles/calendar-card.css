@@ -50,8 +50,9 @@
     text-align: left;
     list-style: square;
     height: 100%;
-    width: 100;
+    width: 160px;
      font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    padding-left: 0;
   }
 
   .calendar-card li {

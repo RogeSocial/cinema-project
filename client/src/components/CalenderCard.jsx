@@ -11,8 +11,8 @@ export default function ({ movie, startDate, endDate }) {
       <div className="calendar-card">
         <img src={movie.image} alt={"poster"} />
         <aside className="calendar-card-label">
-        <h3> {movie.title} </h3>
-      <h4>{showsMovieLength(movie)}</h4>
+{/*        <h3> {movie.title} </h3>
+      <h4>{showsMovieLength(movie)}</h4>*/}
           {calenderDay(movie)}
         </aside>
       </div>
@@ -22,8 +22,10 @@ export default function ({ movie, startDate, endDate }) {
   function calenderDay(movie) {
     return (
         <ul>
-          {matching(movie).map(item =>{
-          return <li>{item}</li>
+          <h3> {movie.title} </h3>
+          <h4>{showsMovieLength(movie)}</h4>
+          {matching(movie).map((item, index) =>{
+          return <li key={index}>{item}</li>
           })}
         </ul>
     );
