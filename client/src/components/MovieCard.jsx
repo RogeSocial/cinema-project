@@ -38,8 +38,10 @@ export default function ({movie, startDate, endDate}) {
                 let tmpDay = new Date(startDate);
                 tmpDay.setDate(tmpDay.getDate() + j);
                 if (parseInt(dateArray[i]) === tmpDay.getDate()) {
-                    console.log("PUSHING");
+                    /*console.log("PUSHING");*/
                     array.push(tmpDay);
+                    console.log("array: " + array);
+
                 }
             }
         }
@@ -47,11 +49,9 @@ export default function ({movie, startDate, endDate}) {
         let string = "";
         for (let i = 0; i < array.length; i++) {
             string += array[i].getDate() + " / ";
-            string += (array[i].getMonth() + 1)  + " - ";;
+            string += (array[i].getMonth() + 1)  + " - ";
             string += returnDayName(array[i].getDay());
-            string += "\r\n";
         }
-
         return string;
     }
 

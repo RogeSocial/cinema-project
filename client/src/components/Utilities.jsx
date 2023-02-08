@@ -72,5 +72,7 @@ export function calculateCurrentDate() {
 }
 
 export function calculateDifferenceInDays(inStartDate, inEndDate){
-    return Math.round((inEndDate.getTime() - inStartDate.getTime()) / (1000 * 60 * 60 * 24));
+    let diff = Math.round((inEndDate.getTime() - inStartDate.getTime()) / (1000 * 60 * 60 * 24));
+    if(diff < 0){return 0;}
+    else {return diff;}
 }
