@@ -47,7 +47,6 @@ function validateInputs() {
             ''
     }
 
-
     if (fullname === '') {
         document.getElementById("name").innerHTML =
             'Name is required'
@@ -59,15 +58,15 @@ function validateInputs() {
 
     if (telephone === '') {
         document.getElementById('phone').innerHTML =
-        'Phone number is required'
-        valid = false; 
+            'Phone number is required'
+        valid = false;
     } else if (!telephone.match(regexTel)) {
         document.getElementById('phone').innerHTML =
-        'This is not a swedish number'
+            'Not a valid Swedish number'
         valid = false;
     } else {
         document.getElementById('phone').innerHTML =
-        ''
+            ''
     }
 
     return valid;

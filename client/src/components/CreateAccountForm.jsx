@@ -21,20 +21,25 @@ export default function () {
     return <section className="account">
         <form onSubmit={submit} id="formData" action="/login" className="cover createAccountCover">
             <img className="loginImg accountImg" src={icon} alt="" />
-            <label htmlFor="fullname" id="name">Fullname:</label>
+            <label htmlFor="fullname">Fullname</label>
             <input type="text" id="fullname" name="name" placeholder="full name"
                 value={fullName} onChange={event => setFullName(event.target.value)}></input>
-            <label htmlFor="email" id="mail">Email:</label>
-            <input type="email" id="email" name="email" placeholder="email"
-                required="required" value={email} onChange={(event) => setEmail(event.target.value)}></input>
-            <label htmlFor="phone number" id="phone">Phone number:</label>
+            <p id="name"></p>
+            <label htmlFor="email">Email</label>
+            <input id="email" name="email" placeholder="email"
+                value={email} onChange={(event) => setEmail(event.target.value)}></input>
+            <p id="mail"></p>
+            <label htmlFor="phone number">Phone number</label>
             <input onKeyDown={(e) => (e.key !== "Backspace" && !/[0-9 +]+/.test(e.key)) && e.preventDefault()} placeholder="+46" id="tel" name="tel"
                 value={phoneNumber} onChange={event => setPhoneNumber(event.target.value)}></input>
-            <label htmlFor="password" id="pwrd">Password:</label>
+            <p id="phone"></p>
+            <label htmlFor="password">Password</label>
             <input type="password" placeholder="password" name="password" minLength="8" id={"password"}
                 value={password} onChange={(event) => setPassword(event.target.value)}></input>
-            <label htmlFor="confirm password" id="pwrdc">Confirm password: </label>
-            <input type="password" required="required" placeholder="confirm password" minLength="8" id={"confirmPassword"} name="confirmPassword"></input>
+            <p id="pwrd"></p>
+            <label htmlFor="confirm password">Confirm password</label>
+            <input type="password" placeholder="confirm password" minLength="8" id={"confirmPassword"} name="confirmPassword"></input>
+            <p id="pwrdc"></p>
             <br />
             <div className="button-group">
                 <button type="submit" className="button" onClick={handleRegister}>REGISTER</button>
