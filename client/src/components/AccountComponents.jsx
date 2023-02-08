@@ -2,7 +2,9 @@ function validateInputs() {
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("confirmPassword").value;
     const email = document.getElementById("email").value;
-    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const regexMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const telephone = document.getElementById("tel").value
+    const regexTel = /^\s?\d{3}\s?\d{3}\s?\d{4}$/
     const fullname = document.getElementById("fullname").value;
     let valid = true;
 
@@ -36,7 +38,7 @@ function validateInputs() {
         document.getElementById("mail").innerHTML =
             'Email is required'
         valid = false;
-    } else if (!email.match(regex)) {
+    } else if (!email.match(regexMail)) {
         document.getElementById("mail").innerHTML =
             'Provide a valid email address'
         valid = false;
@@ -53,6 +55,19 @@ function validateInputs() {
     } else {
         document.getElementById("name").innerHTML =
             ''
+    }
+
+    if (telephone === '') {
+        document.getElementById('phone').innerHTML =
+        'Phone number is required'
+        valid = false; 
+    } else if (!telephone.match(regexTel)) {
+        document.getElementById('phone').innerHTML =
+        'This is not a swedish number'
+        valid = false;
+    } else {
+        document.getElementById('phone').innerHTML =
+        ''
     }
 
     return valid;
