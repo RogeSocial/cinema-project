@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import React, {useState, useContext, useEffect} from "react";
+import {Link, useNavigate} from "react-router-dom";
 import '../styles/account.css'
 import icon from "../images/apple-touch-icon.png";
 import GlobalContext from "../GlobalContext";
@@ -7,7 +7,21 @@ import GlobalContext from "../GlobalContext";
 export default function () {
 const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
-const {submitLogin} = useContext(GlobalContext)
+const {submitLogin} = useContext(GlobalContext);
+const navigate = useNavigate();
+const {auth} = useContext(GlobalContext);
+
+    useEffect(() => {
+        loginHandler()
+
+    }, [auth]);
+
+
+    function loginHandler() {
+        if(auth.loggedIn){
+            navigate("/")
+        }
+    }
 
 const submit = (e) => {
     e.preventDefault()

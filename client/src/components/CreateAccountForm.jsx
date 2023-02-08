@@ -11,23 +11,27 @@ export default function () {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const [fullName, setFullName] = useState('')
+    const [phoneNumber, setPhoneNumber] = useState('')
 
     const submit = (e) => {
         e.preventDefault()
-        createAccount(email, password)
+        createAccount(email, password, fullName, phoneNumber)
     }
     return <section className="account">
         <form onSubmit={submit} id="formData" action="/login" className="cover createAccountCover">
             <img className="loginImg accountImg" src={icon} alt="" />
             <label htmlFor="fullname">Fullname:</label>
-            <input type="text" id="name" name="name" placeholder="full name" required="required"></input>
+            <input  type="text" id="name" name="name" placeholder="full name"
+                    value={fullName} onChange={event => setFullName(event.target.value)}></input>
             <label htmlFor="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="email"
             required="required" value={email} onChange={(event)=>setEmail(event.target.value)}></input>
             <label htmlFor="phone number">Phone number:</label>
-            <input onKeyPress={(e) => !/[0-9 + "+"]/.test(e.key) && e.preventDefault()} required="required" placeholder="phone number" id="tel" name="tel"></input>
-            <label htmlFor="password" id="pwrd">Password:</label>
-            <input type="password" required="required" placeholder="password" name="password" minLength="8" id={"password"}
+            <input onKeyDown={(e) => !/[0-9 + "+"]/.test(e.key) && e.preventDefault()} placeholder="phone number" id="tel" name="tel"
+            value={phoneNumber} onChange={event => setPhoneNumber(event.target.value)}></input>
+            <label htmlFor="password">Password:</label>
+            <input type="password" placeholder="password" name="password" minLength="8" id={"password"}
              value={password} onChange={(event)=>setPassword(event.target.value)}></input>
             <label htmlFor="confirm password" id="pwrdc">Confirm password: </label>
             <input type="password" required="required" placeholder="confirm password" minLength="8" id={"confirmPassword"} name="confirmPassword"></input>
