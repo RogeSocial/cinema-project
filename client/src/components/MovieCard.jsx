@@ -5,7 +5,7 @@ export default function ({movie, startDate, endDate}) {
     return (
         <Link to={`/movies/${movie.id}/${movie["slug"]}`} key={movie.id}>
             <div className="movie-card">
-                {/*{calenderDay(movie, "/tickets")}*/}
+                {calenderDay(movie, "/tickets")}
                 {/*{showCalendarCard(movie, "/tickets")}*/}
                 <h3> {movie.title} </h3>
                 <img src={movie.image} alt={"poster"}/>
@@ -27,17 +27,17 @@ export default function ({movie, startDate, endDate}) {
     }
 
     function matching(movie) {
-        let word = movie.dates.split(", ");
+        let dateArray = movie.dates.split(", ");
         let array = [];
         /*console.log("word: " + word);*/
         let differenceInDays = calculateDifferenceInDays(startDate, endDate);
 
-        for (let i = 0; i < word.length; i++) {
+        for (let i = 0; i < dateArray.length; i++) {
             for (let j = 0; j < differenceInDays + 1; j++) {
-                let tmpDay = startDate;
+                let tmpDay = new Date(startDate);
                 tmpDay.setDate(tmpDay.getDate() + j);
-                if (parseInt(word[i]) === tmpDay.getDate()) {
-                    console.log("PUSHING")
+                if (parseInt(dateArray[i]) === tmpDay.getDate()) {
+                    console.log("PUSHING");
                     array.push(tmpDay);
                 }
             }
@@ -45,6 +45,13 @@ export default function ({movie, startDate, endDate}) {
         for (let i = 0; i < array.length; i++) {
             console.log("array: "+ i + " " + array);
         }
+        /*return array;*/
+        let string = "";
+        for (let i = 0; i < array.length; i++) {
+            string.concat(array[i].getDate());
+        }
+        /*console.log("array.length: " + array.length);*/
+        return string;
     }
 
     /*  for (let i = 0; i < differenceInDays + 1; i++) {
