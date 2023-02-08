@@ -13,11 +13,22 @@ export default function ({ movie, startDate, endDate }) {
         <aside className="calendar-card-label">
         <h3> {movie.title} </h3>
         <h4>{showsMovieLength(movie)}</h4>
-          <p>{matching(movie)}</p>
+        <p>Available</p>
+          <p>{calenderDay(movie)}</p>
         </aside>
       </div>
     </Link>
   );
+
+  function calenderDay(movie) {
+    return (
+        <ul>
+          {matching(movie).map(item =>{
+          return <li>{item}</li>
+          })}
+        </ul>
+    );
+  }
 
   function matching(movie) {
     let dateArray = movie.dates.split(", ");
@@ -33,12 +44,15 @@ export default function ({ movie, startDate, endDate }) {
       }
     }
 
-    let string = "";
+    let stringArray = [];
     for (let i = 0; i < array.length; i++) {
+      let string = "";
       string += array[i].getDate() + " / ";
       string += array[i].getMonth() + 1 + " - ";
       string += returnDayName(array[i].getDay());
+      stringArray.push(string);
     }
-    return string;
+
+    return stringArray;
   }
 }
