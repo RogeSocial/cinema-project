@@ -9,9 +9,9 @@ export default function ({ movie, startDate, endDate }) {
   return (
     <Link to={`/movies/${movie.id}/${movie["slug"]}`} key={movie.id}>
       <div className="calendar-card">
-        <h3> {movie.title} </h3>
+        {/*<h3> {movie.title} </h3>*/}
         <img src={movie.image} alt={"poster"} />
-        <h4>{showsMovieLengthOnThisPage(movie, "/tickets")}</h4>
+        {/*<h4>{showsMovieLengthOnThisPage(movie, "/tickets")}</h4>*/}
         {calenderDay(movie)}
       </div>
     </Link>

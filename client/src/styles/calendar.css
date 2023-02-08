@@ -17,7 +17,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   .calendar-card h3 {
     position: absolute;
     z-index: 2;
