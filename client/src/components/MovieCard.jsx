@@ -34,19 +34,18 @@ export default function ({ movie, startDate, endDate, endString, dateOrder }) {
       dates = movie.date;
       dates.sort((a, b) => a - b);
       if (endString !== "") {
-        if (dates[i] >= startDate.getDate() &&
-        dates[i] <= endDate.getDate()){
         //end date was activated
-        let difference = parseInt(dates[i] - startDate.getDate());
-        return (
-          translateDay(startDate.getDay() + difference, day) +
-          " (" +
-          dates[i] +
-          "/" +
-          (startDate.getMonth() + 1) +
-          ")"
-        );
-      }
+        if (dates[i] >= startDate.getDate() && dates[i] <= endDate.getDate()) {
+          let difference = parseInt(dates[i] - startDate.getDate());
+          return (
+            translateDay(startDate.getDay() + difference, day) +
+            " (" +
+            dates[i] +
+            "/" +
+            (startDate.getMonth() + 1) +
+            ")"
+          );
+        }
       } else {
         if (movie.date[i] === startDate.getDate()) {
           return (
@@ -63,7 +62,7 @@ export default function ({ movie, startDate, endDate, endString, dateOrder }) {
   }
 }
 function translateDay(date, day) {
-  console.log(date)
+  console.log(date);
   if (date >= 7) {
     date = date - 7;
   }
