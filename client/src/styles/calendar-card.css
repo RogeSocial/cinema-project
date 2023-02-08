@@ -25,7 +25,7 @@
     font-weight: 600;
     color: var(--main_text_color);
     text-decoration: none;
-    margin: 0;
+    margin: 0.5rem;
     padding: 0;
   }
   
@@ -34,7 +34,6 @@
     font-size: 10px;
     font-weight: 200;
     padding-top: 3rem;
-    z-index: 2;
     font-size: 18px;
     margin: 0;
     padding: 0;
@@ -42,10 +41,21 @@
   .calendar-card p {
     color: var(--main_text_color);
     font-weight: 200;
-    z-index: 2;
     font-size: 18px;
     margin: 0;
     padding: 0;
+  }
+  .calendar-card ul{
+    color: var(--main_text_color);
+    text-align: left;
+    list-style: square;
+    height: 100%;
+    width: 100;
+     font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  }
+
+  .calendar-card li {
+
   }
   
   .calendar-card:hover {
@@ -63,17 +73,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
-
-  .calendar-card ul{
-    background-color: #fff8f100;
-    color: white;
-    text-align: left;
-    list-style: none;
-    height: 10em;
-    width: 12em;
-    padding-left: 1em;
-    padding-top: 0;
-    margin: 0;
-    font-family: 'Fredericka the Great', cursive;
+    overflow: auto;
+   
   }

@@ -12,9 +12,8 @@ export default function ({ movie, startDate, endDate }) {
         <img src={movie.image} alt={"poster"} />
         <aside className="calendar-card-label">
         <h3> {movie.title} </h3>
-        <h4>{showsMovieLength(movie)}</h4>
-        <p>Available</p>
-          <p>{calenderDay(movie)}</p>
+      <h4>{showsMovieLength(movie)}</h4>
+          {calenderDay(movie)}
         </aside>
       </div>
     </Link>
