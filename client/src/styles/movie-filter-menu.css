@@ -12,8 +12,10 @@
   padding-bottom: 1.5rem;
   border: solid 1px #4d97b9;
   border-radius: 10px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  font-family: inherit;
 }
+
+
 
 .filter-menu-controls {
   width: 100%;
@@ -71,8 +73,8 @@
   border-color: #ffffff;
   transition: 0.5s;
   margin: 3px;
-
 }
+
 .filter-option-button:hover {
   background-color: rgb(3, 26, 38);
   cursor: pointer;
@@ -85,4 +87,8 @@
     border-top-right-radius: 0;
     width: 333px;
   }
+}
+.filterButton {
+  padding: 0;
+
 }
