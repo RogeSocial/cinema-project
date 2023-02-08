@@ -1,7 +1,7 @@
 import {
   calculateDifferenceInDays,
   returnDayName,
-  showsMovieLengthOnThisPage,
+  showsMovieLength,
 } from "./Utilities";
 import { Link } from "react-router-dom";
 
@@ -9,21 +9,15 @@ export default function ({ movie, startDate, endDate }) {
   return (
     <Link to={`/movies/${movie.id}/${movie["slug"]}`} key={movie.id}>
       <div className="calendar-card">
-        <h3> {movie.title} </h3>
         <img src={movie.image} alt={"poster"} />
-        <h4>{showsMovieLengthOnThisPage(movie, "/tickets")}</h4>
-        {calenderDay(movie, "/tickets")}
+        <aside className="calendar-card-label">
+        <h3> {movie.title} </h3>
+        <h4>{showsMovieLength(movie)}</h4>
+          <p>{matching(movie)}</p>
+        </aside>
       </div>
     </Link>
   );
-
-  function calenderDay(movie) {
-    return (
-      <div className="calendar-card-label">
-        <p>{matching(movie)}</p>
-      </div>
-    );
-  }
 
   function matching(movie) {
     let dateArray = movie.dates.split(", ");

@@ -8,34 +8,44 @@
   }
   
   .calendar-card img {
-    position: relative;
-    border-radius: 20px;
     width: 200px;
     height:200px;
+    border: solid 1px var(--main_text_color);
+    border-right: 0;
     object-fit: cover;
     display: flex;
     align-items: center;
     justify-content: center;
+
   }
   
   .calendar-card h3 {
-    position: absolute;
-    z-index: 2;
     font-size: 25px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont;
     font-weight: 600;
     color: var(--main_text_color);
     text-decoration: none;
+    margin: 0;
+    padding: 0;
   }
   
   .calendar-card h4 {
-    position: absolute;
     color: lightgray;
     font-size: 10px;
     font-weight: 200;
     padding-top: 3rem;
     z-index: 2;
     font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+  .calendar-card p {
+    color: var(--main_text_color);
+    font-weight: 200;
+    z-index: 2;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
   }
   
   .calendar-card:hover {
@@ -44,10 +54,13 @@
   }
   
   .calendar-card-label {
-    background-color: blue;
+    background-color: rgb(0, 0, 0);
+    border: solid 1px var(--main_text_color);
+    border-left: 0;
     width: 200px;
-    height: 200px;
+    height: 200px; 
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
   }

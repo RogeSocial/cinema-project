@@ -1,11 +1,9 @@
 import MovieCard from "./MovieCard";
 
 export default function ({ movies }) {
-  return (
-    <>
+  return (<>
       {movies.map((movie, index) => (
         <MovieCard movie={movie} key={index} />
       ))}
-    </>
-  );
+    </>);
 }
