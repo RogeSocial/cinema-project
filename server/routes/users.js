@@ -1,5 +1,5 @@
 import encrypt from "../modules/encrypt.js";
-import {Router} from "express";
+import {request, response, Router} from "express";
 
 const router = Router()
 
@@ -42,6 +42,20 @@ router.delete('/', (request, response) => {
     response.json(result)
 })
 
+
+// ändra på användarens uppgifter
+router.patch('/', (request, response)=> {
+    let user = request.body
+    let result
+    try {
+        result = request.db.prepare('UPDATE users SET fullName = ?, phoneNumber = ?  WHERE email= ?').run([ user.fullName, user.phoneNumber, user.email])
+    }
+    catch(e) {
+        console.error(e)
+    }
+    response.json(result)
+})
+
 // begär ändring av lösenord för användare
 router.delete('/password', (request, response) => {
     let user = request.body
@@ -54,6 +68,7 @@ router.delete('/password', (request, response) => {
     }
     response.json(result)
 })
+
 
 
 // ändra lösenord för användare
