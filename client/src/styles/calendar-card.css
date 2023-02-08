@@ -6,7 +6,7 @@
     padding: 1rem;
     transition: 1s;
   }
-  
+
   .calendar-card img {
     width: 200px;
     height:200px;
@@ -45,18 +45,15 @@
     margin: 0;
     padding: 0;
   }
+
   .calendar-card ul{
     color: var(--main_text_color);
     text-align: left;
     list-style: square;
     height: 100%;
     width: 160px;
-     font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
     padding-left: 0;
-  }
-
-  .calendar-card li {
-
   }
   
   .calendar-card:hover {
@@ -77,9 +74,14 @@
     overflow: auto;
   }
 
-
 @media screen and (max-width: 680px) {
   .calendar-card {
-/* hur lösa responsivitet? */
+  width: 340px;
+  }
+
+  .calendar-card ul{
+    list-style: none;
+    width: 130px;
   }
 }
+

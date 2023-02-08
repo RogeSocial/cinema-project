@@ -130,7 +130,7 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1400px) {
     .movieTickets {
         grid-template-columns: auto auto;
     }
@@ -146,7 +146,7 @@
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 930px) {
     .movieTickets {
         grid-template-columns: auto;
     }
