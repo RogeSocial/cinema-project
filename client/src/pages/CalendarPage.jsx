@@ -58,7 +58,11 @@ export default function () {
             <DisplaySelectedDate dateString={endDateString}/>
         </div>
         <div className="movieTickets">
-            <MovieList movies={moviesOnDate()} startDate ={startDateValue} endDate={endDateValue}/>
+            <MovieList movies={moviesOnDate()} 
+            startDate ={startDateValue} 
+            endDate={endDateValue} 
+            endString={endDateString}
+            dateOrder={movieDates}/>
         </div>
     </section>
 
@@ -107,8 +111,9 @@ export default function () {
                     }
                 }
             }
+
         }
-        console.log("movieDates: " + movieDates);
+        
         //just get the whole array
         return tmpArray;
 

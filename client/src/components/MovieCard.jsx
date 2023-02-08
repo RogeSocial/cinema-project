@@ -1,11 +1,13 @@
 import { showsMovieLengthOnThisPage } from "./Utilities";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-export default function ({ movie, startDate, endDate }) {
+export default function ({ movie, startDate, endDate, endString, dateOrder }) {
+  const [count, setCount] = useState(0);
   return (
     <Link to={`/movies/${movie.id}/${movie["slug"]}`} key={movie.id}>
       <div className="movie-card">
-        {showCalendarCard(movie, "/tickets")}
+        {showCalendarLabel(movie, "/tickets")}
         <h3> {movie.title} </h3>
         <img src={movie.image} alt={"poster"} />
         <h4>{showsMovieLengthOnThisPage(movie, "/tickets")}</h4>
@@ -13,7 +15,7 @@ export default function ({ movie, startDate, endDate }) {
     </Link>
   );
 
-  function showCalendarCard(movie, page) {
+  function showCalendarLabel(movie, page) {
     if (window.location.pathname === page) {
       return (
         <div className="calendar-card-frame">
@@ -26,41 +28,45 @@ export default function ({ movie, startDate, endDate }) {
   }
   function matchMovieDates(movie) {
     let day;
+    let dates;
 
     for (let i = 0; i < movie.date.length; ++i) {
-      if (movie.date[i] === startDate.getDate()) {
-        
+      dates = movie.date;
+      dates.sort((a, b) => a - b);
+      if (endString !== "") {
+        if (dates[i] >= startDate.getDate() &&
+        dates[i] <= endDate.getDate()){
+        //end date was activated
+        let difference = parseInt(dates[i] - startDate.getDate());
         return (
-          translateDay(startDate.getDay(), day) +
+          translateDay(startDate.getDay() + difference, day) +
           " (" +
-          startDate.getDate() +
+          dates[i] +
           "/" +
           (startDate.getMonth() + 1) +
           ")"
         );
       }
-      if (
-        movie.date[i] >= startDate.getDate() &&
-        movie.date[i] <= endDate.getDate()
-      ) {
-        let difference = parseInt(movie.date[i] - startDate.getDate());
-        return (
-          translateDay(startDate.getDay() + difference, day) +
-          " (" +
-          movie.date[i] +
-          "/" +
-          (startDate.getMonth() + 1) +
-          ")"
-        );
+      } else {
+        if (movie.date[i] === startDate.getDate()) {
+          return (
+            translateDay(startDate.getDay(), day) +
+            " (" +
+            startDate.getDate() +
+            "/" +
+            (startDate.getMonth() + 1) +
+            ")"
+          );
+        }
       }
     }
   }
 }
 function translateDay(date, day) {
-  if (date > 7) {
+  console.log(date)
+  if (date >= 7) {
     date = date - 7;
   }
-  console.log(date);
   switch (date) {
     case 0:
       day = "Sunday";

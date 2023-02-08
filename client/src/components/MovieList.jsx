@@ -1,6 +1,6 @@
 import MovieCard from "./MovieCard";
 
-export default function ({ movies, startDate, endDate }) {
+export default function ({ movies, startDate, endDate, endString, dateOrder }) {
   return (
     <>
       {movies.map((movie, index) => (
@@ -8,6 +8,8 @@ export default function ({ movies, startDate, endDate }) {
           movie={movie}
           startDate={startDate}
           endDate={endDate}
+          endString={endString}
+          dateOrder={dateOrder}
           key={index}
         />
       ))}
