@@ -1,17 +1,10 @@
 import MovieCard from "./MovieCard";
 
-export default function ({ movies, startDate, endDate, endString, dateOrder }) {
+export default function ({ movies }) {
   return (
     <>
       {movies.map((movie, index) => (
-        <MovieCard
-          movie={movie}
-          startDate={startDate}
-          endDate={endDate}
-          endString={endString}
-          dateOrder={dateOrder}
-          key={index}
-        />
+        <MovieCard movie={movie} key={index} />
       ))}
     </>
   );

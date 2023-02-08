@@ -3,7 +3,7 @@ import "../styles/movies.css"
 import "../styles/home.css"
 
 import {useContext, useEffect, useRef, useState} from "react";
-import MovieList from "../components/MovieList.jsx";
+import CalendarList from "../components/CalenderList";
 import {CalenderBox} from "../components/CalenderBox.jsx";
 import {DisplaySelectedDate} from "../components/DisplaySelectedDate.jsx";
 import globalContext from "../GlobalContext.jsx";
@@ -63,7 +63,7 @@ export default function () {
             <DisplaySelectedDate dateString={endDateString}/>
         </div>
         <div className="movieTickets">
-            <MovieList movies={moviesOnDate()} startDate={startDateValue} endDate={endDateValue}/>
+            <CalendarList movies={moviesOnDate()} startDate={startDateValue} endDate={endDateValue}/>
         </div>
     </section>
 

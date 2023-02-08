@@ -1,0 +1,53 @@
+.calendar-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    transition: 1s;
+  }
+  
+  .calendar-card img {
+    position: relative;
+    border-radius: 20px;
+    width: 200px;
+    height:200px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .calendar-card h3 {
+    position: absolute;
+    z-index: 2;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: 600;
+    color: var(--main_text_color);
+    text-decoration: none;
+  }
+  
+  .calendar-card h4 {
+    position: absolute;
+    color: lightgray;
+    font-size: 10px;
+    font-weight: 200;
+    padding-top: 3rem;
+    z-index: 2;
+    font-size: 18px;
+  }
+  
+  .calendar-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }
+  
+  .calendar-card-label {
+    background-color: blue;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
