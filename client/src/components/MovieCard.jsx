@@ -1,10 +1,11 @@
-import {calculateDifferenceInDays, showsMovieLengthOnThisPage} from "./Utilities";
+import {calculateDifferenceInDays, returnDayName, showsMovieLengthOnThisPage} from "./Utilities";
 import {Link} from "react-router-dom";
 
 export default function ({movie, startDate, endDate}) {
     return (
         <Link to={`/movies/${movie.id}/${movie["slug"]}`} key={movie.id}>
             <div className="movie-card">
+                <div style={{color: "white"}}>Showing on dates</div>
                 {calenderDay(movie, "/tickets")}
                 {/*{showCalendarCard(movie, "/tickets")}*/}
                 <h3> {movie.title} </h3>
@@ -31,7 +32,7 @@ export default function ({movie, startDate, endDate}) {
         let array = [];
         /*console.log("word: " + word);*/
         let differenceInDays = calculateDifferenceInDays(startDate, endDate);
-
+        console.log("differenceInDays: " + differenceInDays);
         for (let i = 0; i < dateArray.length; i++) {
             for (let j = 0; j < differenceInDays + 1; j++) {
                 let tmpDay = new Date(startDate);
@@ -42,23 +43,17 @@ export default function ({movie, startDate, endDate}) {
                 }
             }
         }
-        for (let i = 0; i < array.length; i++) {
-            console.log("array: "+ i + " " + array);
-        }
-        /*return array;*/
+
         let string = "";
         for (let i = 0; i < array.length; i++) {
-            string.concat(array[i].getDate());
+            string += array[i].getDate() + " / ";
+            string += (array[i].getMonth() + 1)  + " - ";;
+            string += returnDayName(array[i].getDay());
+            string += "\r\n";
         }
-        /*console.log("array.length: " + array.length);*/
+
         return string;
     }
-
-    /*  for (let i = 0; i < differenceInDays + 1; i++) {
-        let tmpDay = new Date(startDateValue);
-        tmpDay.setDate(tmpDay.getDate() + i);
-        tmpDateArray.push(tmpDay);
-      }*/
 
     function showCalendarCard(movie, page) {
         if (window.location.pathname === page) {

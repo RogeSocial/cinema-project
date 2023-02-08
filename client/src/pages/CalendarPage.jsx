@@ -3,7 +3,6 @@ import "../styles/movies.css"
 import "../styles/home.css"
 
 import {useContext, useEffect, useRef, useState} from "react";
-import {movieArray} from "../components/movie-data.js";
 import MovieList from "../components/MovieList.jsx";
 import {CalenderBox} from "../components/CalenderBox.jsx";
 import {DisplaySelectedDate} from "../components/DisplaySelectedDate.jsx";
@@ -89,9 +88,6 @@ export default function () {
 
         //if the array has two dates, one is start, one is end, then do this part
         if (startDateString !== "" && endDateString !== "") {
-/*            let startDate = new Date(startDateValue);
-            let endDate = new Date(endDateValue);
-            let differenceInDays = Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));*/
 
             let differenceInDays = calculateDifferenceInDays(new Date(startDateValue), new Date(endDateValue));
 
@@ -105,31 +101,7 @@ export default function () {
         else {
             tmpDateArray.push(startDateValue);
         }
-/*        for (let i = 0; i < tmpDateArray.length; i++) {
-            console.log("tmpDAteArray: "+ i +" : "+ tmpDateArray[i]);
-        }*/
 
-        /*        console.log("movies: " + movies.title);*/
-/*        let testArray = [];
-        let counter = 0;
-        if (Array.isArray(movies)) {
-            movies.forEach((banana) => {
-                /!*console.log(banana.dates)*!/
-                testArray.push(banana);
-                counter++;
-            })
-        }
-        console.log("counter: " + counter);
-
-        console.log("testArray: " + testArray[0].title);*/
-   /*     console.log("movies: " + movies[0].title);*/
-
-/*        let dateParsedArray = [];
-        /!*for(let i=0; i<movies.length; i++){*!/
-            let word = movies[0].dates.split(", ");
-            /!*dateParsedArray.push(word);*!/
-       /!* }*!/
-        console.log("word.length: " + word);*/
         //maps the moviearray with the selected dates, and pushes the hits into a new array, "tmpArray"
         let tmpArray = []
         for (let i = 0; i < movies.length; i++) {
@@ -145,26 +117,11 @@ export default function () {
             }
         }
 
-/*        let tmpArray = [];
-        for (let i = 0; i < movieArray.length; i++) {
-            for (let j = 0; j < movieArray[i].date.length; j++) {
-                for (let k = 0; k < tmpDateArray.length; k++) {
-                    if ((movieArray[i].date[j] === tmpDateArray[k].getDate())) {
-                        tmpArray.push(movieArray[i]);
-                        let tmp = tmpDateArray[k].getDate();
-                        movieDates.push(tmp);
-                    }
-                }
-            }
-        }*/
-        /*console.log("movieDates: " + movieDates);*/
-        //just get the whole array
-
-        return tmpArray;
+     /*   return tmpArray;*/
 
         //remove duplicates
-/*        let returnArray = [...new Set(tmpArray)];
-        return returnArray;*/
+        let returnArray = [...new Set(tmpArray)];
+        return returnArray;
     }
 }
 
