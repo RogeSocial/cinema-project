@@ -12,11 +12,10 @@ import {
 import ErrorBoundary from "./pages/errorBoundary.jsx";
 import App from "./App.jsx";
 
-import LoginPage from './pages/LoginPage'
-import CreateAccountPage from './pages/CreateAccountPage'
-import AccountPage from "./pages/AccountPage.jsx";
-
-const CalendarPage = React.lazy(() => import('./pages/CalendarPage.jsx'));
+const LoginPage = React.lazy(() => import('./pages/LoginPage'))
+const CreateAccountPage = React.lazy(() => import('./pages/CreateAccountPage'))
+const AccountPage = React.lazy(() => import('./pages/AccountPage'))
+const CalendarPage = React.lazy(() => import('./pages/CalendarPage'));
 const HomePage = React.lazy(() => import('./pages/HomePage'));
 const MoviePage = React.lazy(() => import('./pages/MoviePage'));
 const ReservePage = React.lazy(() => import('./pages/ReservePage'));
