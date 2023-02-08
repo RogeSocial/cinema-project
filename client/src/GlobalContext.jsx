@@ -67,14 +67,14 @@ export const GlobalProvider = ({children}) => {
         void checkAuth();
     }
 
-    const changeAccountValues = async (email, fullName, phoneNumber) => {
+    const changeAccountValues = async (email, fullName, phoneNumber, id) => {
         setIsLoading(true)
         const response = await fetch("/rest/users", {
             method: "PATCH",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email, fullName, phoneNumber})
+            body: JSON.stringify({email, fullName, phoneNumber, id})
         });
         const result = await response.json()
         console.log(result)

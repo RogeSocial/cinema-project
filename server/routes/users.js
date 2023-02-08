@@ -43,12 +43,12 @@ router.delete('/', (request, response) => {
 })
 
 
-// ändra på användarens uppgifter
+// ändra på användarens personuppgifter
 router.patch('/', (request, response)=> {
     let user = request.body
     let result
     try {
-        result = request.db.prepare('UPDATE users SET fullName = ?, phoneNumber = ?  WHERE email= ?').run([ user.fullName, user.phoneNumber, user.email])
+        result = request.db.prepare('UPDATE users SET email = ?, fullName = ?, phoneNumber = ?  WHERE id= ?').run([user.email, user.fullName, user.phoneNumber,  user.id])
     }
     catch(e) {
         console.error(e)

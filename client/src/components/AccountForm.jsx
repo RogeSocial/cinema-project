@@ -14,7 +14,7 @@ export default function () {
     const [email, setEmail] = useState(auth.email)
     const [fullName, setFullName] = useState(auth.fullName)
     const [phoneNumber, setPhoneNumber] = useState(auth.phoneNumber)
-
+    const [id, setId] = useState(auth.id)
 
     const navigate = useNavigate();
 
@@ -65,7 +65,7 @@ export default function () {
 
     const submit = (e) => {
         e.preventDefault()
-        changeAccountValues(email, fullName, phoneNumber)
+        changeAccountValues(email, fullName, phoneNumber, id)
     }
 
     return <>
