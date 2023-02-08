@@ -1,8 +1,10 @@
 import {Link} from "react-router-dom";
-import React, {useEffect, useRef, useState} from "react";
+import React, {useContext, useEffect, useRef, useState} from "react";
+import GlobalContext from "../GlobalContext.jsx";
 
 export default function () {
 
+    const {auth} = useContext(GlobalContext)
     const [isOpen, setIsOpen] = useState(false);
 
     function toggleMenu() {
@@ -34,7 +36,11 @@ export default function () {
             <div ref={menuRef} className="dropdown-menu">
                 <Link to="movies" onClick={() => setIsOpen(false)}>Movies</Link>
                 <Link to="tickets" onClick={() => setIsOpen(false)}>Tickets</Link>
-                <Link to="user/account" onClick={() => setIsOpen(false)}>Account</Link>
+
+                {auth.loggedIn ?
+                    <Link to="user/account" onClick={() => setIsOpen(false)}>Account</Link>
+                    : <Link to="login" onClick={() => setIsOpen(false)}>Login</Link>}
+
             </div>
         )
         else return null
