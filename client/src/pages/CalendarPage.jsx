@@ -2,11 +2,13 @@ import "../styles/tickets.css"
 import "../styles/movies.css"
 import "../styles/home.css"
 
-import {useEffect, useRef, useState} from "react";
-import {movieArray} from "../components/movie-data.js";
+import {useContext, useEffect, useRef, useState} from "react";
 import MovieList from "../components/MovieList.jsx";
 import {CalenderBox} from "../components/CalenderBox.jsx";
 import {DisplaySelectedDate} from "../components/DisplaySelectedDate.jsx";
+import globalContext from "../GlobalContext.jsx";
+import {calculateDifferenceInDays} from "../components/Utilities.jsx";
+
 
 export default function () {
     const [openDatePickerStart, setOpenDatePickerStart] = useState(false);
@@ -15,7 +17,10 @@ export default function () {
     const [endDateString, setEndDateString] = useState("");
     const [startDateValue, setStartDateValue] = useState(new Date());
     const [endDateValue, setEndDateValue] = useState(new Date());
-    let movieDates =[];
+    const [movieDates, setMovieDates] = useState([new Date()]);
+
+    const{movies} = useContext(globalContext);
+    /*let movieDates =[];*/
 
     const buttons = [
         {text: "start date", isDisabled: false, buttonID: 1},
@@ -58,11 +63,7 @@ export default function () {
             <DisplaySelectedDate dateString={endDateString}/>
         </div>
         <div className="movieTickets">
-            <MovieList movies={moviesOnDate()} 
-            startDate ={startDateValue} 
-            endDate={endDateValue} 
-            endString={endDateString}
-            dateOrder={movieDates}/>
+            <MovieList movies={moviesOnDate()} startDate={startDateValue} endDate={endDateValue}/>
         </div>
     </section>
 
@@ -72,8 +73,8 @@ export default function () {
 
 //compare the selected date and matches with the "database"(movieData)" and returns the one(s) who are matched
     function moviesOnDate() {
+
         let tmpDateArray = [];
-        movieDates = [];
 
         //activate the 2nd button(end date), if there is something in the startDateString
         if (startDateString === "") {
@@ -85,12 +86,11 @@ export default function () {
 
         //if the array has two dates, one is start, one is end, then do this part
         if (startDateString !== "" && endDateString !== "") {
-            let startDate = new Date(startDateValue);
-            let endDate = new Date(endDateValue);
-            let differenceInDays = Math.round((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+
+            let differenceInDays = calculateDifferenceInDays(new Date(startDateValue), new Date(endDateValue));
 
             for (let i = 0; i < differenceInDays + 1; i++) {
-                let tmpDay = new Date(startDate);
+                let tmpDay = new Date(startDateValue);
                 tmpDay.setDate(tmpDay.getDate() + i);
                 tmpDateArray.push(tmpDay);
             }
@@ -100,12 +100,14 @@ export default function () {
             tmpDateArray.push(startDateValue);
         }
 
-        let tmpArray = [];
-        for (let i = 0; i < movieArray.length; i++) {
-            for (let j = 0; j < movieArray[i].date.length; j++) {
+        //maps the moviearray with the selected dates, and pushes the hits into a new array, "tmpArray"
+        let tmpArray = []
+        for (let i = 0; i < movies.length; i++) {
+            let word = movies[i].dates.split(", ");
+            for (let j = 0; j < word.length; j++) {
                 for (let k = 0; k < tmpDateArray.length; k++) {
-                    if ((movieArray[i].date[j] === tmpDateArray[k].getDate())) {
-                        tmpArray.push(movieArray[i]);
+                    if ((parseInt(word[j]) === tmpDateArray[k].getDate())) {
+                        tmpArray.push(movies[i]);
                         let tmp = tmpDateArray[k].getDate();
                         movieDates.push(tmp);
                     }
@@ -113,24 +115,11 @@ export default function () {
             }
 
         }
-        
-        //just get the whole array
-        return tmpArray;
 
         //remove duplicates
-/*        let returnArray = [...new Set(tmpArray)];
-        return returnArray;*/
+        let returnArray = [...new Set(tmpArray)];
+        return returnArray;
     }
-}
-
-function isInArray(inArray, inMovie){
-    for(let i=0; inArray.length; inArray++){
-        if(inArray[i] === inMovie){
-            return true;
-        }
-    }
-    return false;
-    
 }
 
 

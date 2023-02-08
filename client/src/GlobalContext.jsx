@@ -99,7 +99,7 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(true)
     const response = await fetch("/rest/movies")
     const result = await response.json()
-    console.log(result)
+    console.log(result.title)
     setMovies(result)
     setIsLoading(false)
   }
