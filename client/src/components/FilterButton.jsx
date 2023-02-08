@@ -1,6 +1,6 @@
 export default function ({ handleClick, filterName }) {
   return (
-    <button className="button" id="movie-sort-btn" onClick={handleClick}>
+    <button className="fa-solid fa-filter button"  onClick={handleClick}>
       {filterName}
     </button>
   );
