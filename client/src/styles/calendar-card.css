@@ -74,5 +74,11 @@
     align-items: center;
     justify-content: center;
     overflow: auto;
-   
   }
+
+
+@media screen and (max-width: 680px) {
+  .calendar-card {
+/* hur lösa responsivitet? */
+  }
+}
