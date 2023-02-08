@@ -60,7 +60,6 @@ export function highlightFilterOption(target) {
   }
 }
 
-
 //calculate days forward for the calendar
 export function calculateCurrentDate() {
     let tmpArray = [];
@@ -70,4 +69,8 @@ export function calculateCurrentDate() {
         tmpArray.push(addedDay);
     }
     return tmpArray;
+}
+
+export function calculateDifferenceInDays(inStartDate, inEndDate){
+    return Math.round((inEndDate.getTime() - inStartDate.getTime()) / (1000 * 60 * 60 * 24));
 }
