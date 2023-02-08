@@ -12,20 +12,21 @@ Clone the project
   git clone https://github.com/RogeSocial/cinema-project.git
 ```
 
-Go to the project directory
-
-```bash
-  cd client
-```
-
 Install dependencies
 
 ```bash
   npm install
   npm install react-router-dom
+  npm install concurrently nodemon
 ```
 
-Start the server
+Go to the project directory
+
+```bash
+  cd server
+```
+
+Starts the server and client concurrently
 
 ```bash
   npm run dev
