@@ -2,6 +2,18 @@ function checkPassword() {
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("confirmPassword").value;
 
+    if (confirm === '') {
+        document.getElementById("pwrdc").innerHTML =
+        "Please confirm your password"
+    } else if (confirm !== password) {
+        document.getElementById("pwrdc").innerHTML =
+        "Password is not matching"
+    } else {
+        document.getElementById("pwrdc").innerHTML =
+        ''
+        return true;
+    }
+
     if (password === '') {
         document.getElementById("pwrd").innerHTML = 
         'Please enter a password' 
@@ -13,16 +25,6 @@ function checkPassword() {
         ''
         return true;
     }
-
-//     if (confirm === '') {
-//         document.getElementById("pwrdc").innerHTML =
-//         "Please confirm your password"
-//     } else if (confirm !== password) {
-//         document.getElementById("pwrdc").innerHTML =
-//         "Password is not matching"
-//     } else {
-//         return true;
-//     }
 }
 
 function checkEmail() {

@@ -30,7 +30,7 @@ export default function () {
             <label htmlFor="phone number">Phone number:</label>
             <input onKeyDown={(e) => !/[0-9 + "+"]/.test(e.key) && e.preventDefault()} placeholder="phone number" id="tel" name="tel"
             value={phoneNumber} onChange={event => setPhoneNumber(event.target.value)}></input>
-            <label htmlFor="password">Password:</label>
+            <label htmlFor="password" id="pwrd">Password:</label>
             <input type="password" placeholder="password" name="password" minLength="8" id={"password"}
              value={password} onChange={(event)=>setPassword(event.target.value)}></input>
             <label htmlFor="confirm password" id="pwrdc">Confirm password: </label>
