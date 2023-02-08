@@ -48,7 +48,9 @@ export default function ({ movie, startDate, endDate }) {
       string += array[i].getDate() + " / ";
       string += array[i].getMonth() + 1 + " - ";
       string += returnDayName(array[i].getDay());
+
     }
+
     return string;
   }
 }

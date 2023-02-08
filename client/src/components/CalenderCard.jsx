@@ -12,16 +12,18 @@ export default function ({ movie, startDate, endDate }) {
         <h3> {movie.title} </h3>
         <img src={movie.image} alt={"poster"} />
         <h4>{showsMovieLengthOnThisPage(movie, "/tickets")}</h4>
-        {calenderDay(movie, "/tickets")}
+        {calenderDay(movie)}
       </div>
     </Link>
   );
 
   function calenderDay(movie) {
     return (
-      <div className="calendar-card-label">
-        <p>{matching(movie)}</p>
-      </div>
+        <ul>
+          {matching(movie).map(item =>{
+          return <li>{item}</li>
+          })}
+        </ul>
     );
   }
 
@@ -39,12 +41,15 @@ export default function ({ movie, startDate, endDate }) {
       }
     }
 
-    let string = "";
+    let stringArray = [];
     for (let i = 0; i < array.length; i++) {
+      let string = "";
       string += array[i].getDate() + " / ";
       string += array[i].getMonth() + 1 + " - ";
       string += returnDayName(array[i].getDay());
+      stringArray.push(string);
     }
-    return string;
+
+    return stringArray;
   }
 }

@@ -45,9 +45,23 @@
   
   .calendar-card-label {
     background-color: blue;
+    color: white;
     width: 200px;
     height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .calendar-card ul{
+    background-color: #fff8f100;
+    color: white;
+    text-align: left;
+    list-style: none;
+    height: 10em;
+    width: 12em;
+    padding-left: 1em;
+    padding-top: 0;
+    margin: 0;
+    font-family: 'Fredericka the Great', cursive;
   }
