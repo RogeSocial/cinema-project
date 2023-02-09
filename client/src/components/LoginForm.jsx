@@ -33,9 +33,9 @@ const submit = (e) => {
             <div className="login-wrap">
                 <img className="loginImg accountImg" src={icon} alt="" />
                 <label htmlFor="email">Email:</label>
-                <input type="email" value={email} onChange={(event)=>setEmail(event.target.value)} placeholder="email"></input>
+                <input type="email" value={email} onChange={(event)=>setEmail(event.target.value)} required="required" placeholder="email"></input>
                 <label htmlFor="password">Password:</label>
-                <input type="password" value={password} onChange={(event)=>setPassword(event.target.value)} placeholder="password" minLength="8"></input>
+                <input type="password" value={password} onChange={(event)=>setPassword(event.target.value)} required="required" placeholder="password" minLength="8"></input>
 
                 <div className="button-group">
                     <button className="button" type="submit" value="login">LOGIN</button>
