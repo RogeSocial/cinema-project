@@ -1,10 +1,24 @@
 import {useContext, useEffect, useState} from "react";
+import {useNavigate} from "react-router-dom";
 import GlobalContext from "../GlobalContext.jsx";
 
 export default function () {
-    const { logout } = useContext(GlobalContext)
+    const {logout} = useContext(GlobalContext)
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
+    const {auth} = useContext(GlobalContext);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        loginHandler()
+
+    }, [auth]);
+
+    function loginHandler() {
+        if (!auth.loggedIn) {
+            navigate("/")
+        }
+    }
 
     //When edit-button is clicked
     function changeEditable() {
@@ -41,16 +55,21 @@ export default function () {
     }, [isPassEditable]);
 
     return <>
-        <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit</button>
+        <button id={"logout-button"} className={"button"} onClick={logout}>Logout</button>
+
+        <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit account</button>
         <form id={"account-page-form"}>
             <label htmlFor="name">Full name: </label>
-            <input type={"text"} name={"name"} id={"name"} className={"input-element"} required/>
+            <input type={"text"} name={"name"} id={"name"} className={"input-element"} defaultValue={auth.fullName}
+                   required/>
 
             <label htmlFor="name">Phone: </label>
-            <input type={"tel"} name={"tel"} id={"tel"} className={"input-element"} disabled={true} required/>
+            <input type={"tel"} name={"tel"} id={"tel"} className={"input-element"} disabled={true}
+                   defaultValue={auth.phoneNumber} required/>
 
             <label htmlFor="email">E-mail: </label>
-            <input type={"email"} name={"email"} id={"email"} className={"input-element"} disabled={true} required/>
+            <input type={"email"} name={"email"} id={"email"} className={"input-element"} disabled={true}
+                   defaultValue={auth.email} required></input>
 
             <label htmlFor="password">Current password: </label>
             <input type={"password"} name={"current-password"} id={"current-password"} className={"input-element"}
@@ -71,7 +90,7 @@ export default function () {
                    disabled={true}/>
 
             <button id={"account-button"} className={"button"} disabled={true}>Save</button>
-            <button id={"logout-button"} className={"button"} onClick={logout}>Logout</button>
+
         </form>
 
     </>
