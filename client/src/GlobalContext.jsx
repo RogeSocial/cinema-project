@@ -42,12 +42,12 @@ export const GlobalProvider = ({ children }) => {
     void checkAuth()
   }
 
-  const createAccount = async (email, password) => {
+  const createAccount = async (email, password, fullName, phoneNumber) => {
     setIsLoading(true);
     const response = await fetch("/rest/users", {
       method: "post",
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
+      body: JSON.stringify({ email, password, fullName, phoneNumber })
     });
     const result = await response.json();
     console.log(result);

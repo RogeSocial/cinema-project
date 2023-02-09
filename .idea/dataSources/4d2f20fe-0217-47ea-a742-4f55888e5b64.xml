@@ -1313,5 +1313,197 @@
     <argument id="481" parent="165">
       <Position>1</Position>
     </argument>
+    <table id="482" parent="166" name="concerts"/>
+    <table id="483" parent="166" name="movies"/>
+    <table id="484" parent="166" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="485" parent="166" name="sqlite_sequence">
+      <System>1</System>
+    </table>
+    <table id="486" parent="166" name="tidbits"/>
+    <table id="487" parent="166" name="users"/>
+    <column id="488" parent="482" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="489" parent="482" name="name">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="490" parent="482" name="venue">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="491" parent="482" name="date">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="492" parent="482" name="image">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="493" parent="482" name="time">
+      <DasType>TIME|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="494" parent="482" name="datum">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="495" parent="482" name="hour">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="496" parent="482" name="minute">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="497" parent="482" name="datet">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>10</Position>
+    </column>
+    <key id="498" parent="482">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="499" parent="483" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="500" parent="483" name="title">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="501" parent="483" name="trailer">
+      <DasType>text|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="502" parent="483" name="description">
+      <DasType>text|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="503" parent="483" name="actors">
+      <DasType>text|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="504" parent="483" name="image">
+      <DasType>text|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <column id="505" parent="483" name="dates">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>7</Position>
+    </column>
+    <column id="506" parent="483" name="time">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>8</Position>
+    </column>
+    <column id="507" parent="483" name="slug">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>9</Position>
+    </column>
+    <column id="508" parent="483" name="length">
+      <DasType>integer|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>10</Position>
+    </column>
+    <column id="509" parent="483" name="release_date">
+      <DasType>date|0s</DasType>
+      <Position>11</Position>
+    </column>
+    <column id="510" parent="483" name="background">
+      <DasType>text|0s</DasType>
+      <Position>12</Position>
+    </column>
+    <key id="511" parent="483" name="movies_pk">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="512" parent="484" name="type">
+      <DasType>TEXT|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="513" parent="484" name="name">
+      <DasType>TEXT|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="514" parent="484" name="tbl_name">
+      <DasType>TEXT|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="515" parent="484" name="rootpage">
+      <DasType>INT|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="516" parent="484" name="sql">
+      <DasType>TEXT|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="517" parent="485" name="name">
+      <Position>1</Position>
+    </column>
+    <column id="518" parent="485" name="seq">
+      <Position>2</Position>
+    </column>
+    <column id="519" parent="486" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>integer|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="520" parent="486" name="subject">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="521" parent="486" name="content">
+      <DasType>text|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <key id="522" parent="486" name="tidbits_pk">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="523" parent="487" name="id">
+      <AutoIncrement>1</AutoIncrement>
+      <DasType>INTEGER|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="524" parent="487" name="email">
+      <DasType>VARCHAR|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="525" parent="487" name="password">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="526" parent="487" name="roles">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="527" parent="487" name="fullName">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="528" parent="487" name="phoneNumber">
+      <DasType>integer|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <index id="529" parent="487" name="sqlite_autoindex_users_1">
+      <ColNames>email</ColNames>
+      <NameSurrogate>1</NameSurrogate>
+      <Unique>1</Unique>
+    </index>
+    <key id="530" parent="487">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="531" parent="487">
+      <ColNames>email</ColNames>
+      <UnderlyingIndexName>sqlite_autoindex_users_1</UnderlyingIndexName>
+    </key>
   </database-model>
 </dataSource>
