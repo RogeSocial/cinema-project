@@ -10,16 +10,19 @@ export default function MovieDetailsPage() {
     const {movies} = useContext(GlobalContext)
     const movieId = useParams().id
     const movie = movies[movieId - 1]
+    let index;
 
-    let found = movies.find(element => element > movieId);
+    for (let i = 0; i < movies.length; i++) {
+        if (movieId === movies[i].id.toString()) {
+            index = i;
+        }
+    }
 
-    console.log(found);
-
-    return <div style={{background: `url(${movie.background.toString()})`, backgroundSize: 'cover'}}
+    return <div style={{background: `url(${movies[index].background.toString()})`, backgroundSize: 'cover'}}
                 className="movie-details-page">
         <div className={"content-frame"}>
-            <MovieInfo currentMovie={movie}/>
-            <ChooseShow currentMovie={movie}/>
+            <MovieInfo currentMovie={movies[index]}/>
+            <ChooseShow currentMovie={movies[index]}/>
         </div>
     </div>
 }
