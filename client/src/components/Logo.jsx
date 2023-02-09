@@ -1,9 +1,12 @@
 import {Link} from "react-router-dom";
-import React from "react";
 import '../styles/header.css'
+import React, {useContext} from "react";
+import globalContext from "../GlobalContext.jsx";
+import {unSortMovies} from "./movieSort.js";
 
 export default function () {
-    return <Link to={'/'}>
+    const {movies} = useContext(globalContext)
+    return <Link onClick={() => unSortMovies(movies)} to={'/'}>
         <div className="waviy">
             <span style={{'--i':1}}>C</span>
             <span style={{'--i':2}}>o</span>
