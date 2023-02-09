@@ -9,9 +9,9 @@ export default function ({currentMovie}) {
         <h3>Purchase tickets</h3>
         <ul>
             <li>Available dates:</li>
-            {dateSelector(movie)}
+            {dateSelector(movie.dates)}
             <li>The chosen time</li>
-            {timeSelector(movie)}
+            {timeSelector(movie.time)}
         </ul>
 
         <Link to="/reserve">
