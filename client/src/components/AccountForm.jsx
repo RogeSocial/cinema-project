@@ -7,22 +7,13 @@ export default function () {
     const [isEditable, setIsEditable] = useState(true);
     const [isPassEditable, setIsPassEditable] = useState(true);
 
-    const {
-        logout,
-        auth,
-    } = useContext(GlobalContext);
+    const {logout, auth} = useContext(GlobalContext);
     const [email, setEmail] = useState(auth.email)
     const navigate = useNavigate();
 
     useEffect(() => {
         loginHandler()
-
     }, [auth]);
-
-
-
-    //When edit-button is clicked
-
 
     useEffect(() => {
         const element = document.getElementsByClassName("input-element")
@@ -35,9 +26,6 @@ export default function () {
         saveButton.disabled = isEditable
     }, [isEditable]);
 
-    //When change password checkbox is clicked
-
-
     useEffect(() => {
         const passwordCheckbox = document.getElementById("change-password")
         const passElement = document.getElementsByClassName("pass-input")
@@ -49,24 +37,24 @@ export default function () {
         passwordCheckbox.checked ? passElement.disabled = false : passElement.disabled = true;
     }, [isPassEditable]);
 
-
-
     return <>
         <button id={"logout-button"} className={"button"} onClick={logout}>Logout</button>
-
         <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit account</button>
         <AccountFormHandler changePassEditable={changePassEditable}
                             setEmail={setEmail}
                             email={email}/>
     </>
+
     function changePassEditable() {
         !isPassEditable ? setIsPassEditable(true) : setIsPassEditable(false)
     }
+
     function changeEditable() {
         !isEditable ? setIsEditable(true) : setIsEditable(false)
         const editButton = document.getElementById("edit-button")
         editButton.disabled = true;
     }
+
     function loginHandler() {
         if (!auth.loggedIn) {
             navigate("/")
@@ -76,6 +64,4 @@ export default function () {
             }
         }
     }
-
 }
-
