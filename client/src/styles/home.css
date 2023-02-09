@@ -1,38 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Lacquer&family=Metal+Mania&family=Niconne&family=Poppins:wght@200&family=Rubik+Wet+Paint&family=Slackey&family=Yuji+Boku&display=swap");
 
 .hero-background {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../images/bakgrund.jpg");
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/bakgrund.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
 }
 
 .display-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mirror {
-    width: 500px;
-    height: 250px;
-    margin: 0;
-    padding: 0;
+  width: 500px;
+  height: 250px;
+  margin: 0;
+  padding: 0;
 }
 
 #quote-text-container {
-    font-size: 2vw;
-    color: rgb(96, 5, 5);
-    font-family: "Lacquer", cursive;
-    text-align: center;
-    margin: 1rem;
+  color: #710101;
+  font-family: "Lacquer", cursive;
+  text-align: center;
+  margin: 1rem;
 }
 
 #quote-text-container p {
@@ -41,13 +40,19 @@
 }
 
 .quote-background {
-    display: flex;
-    position: absolute;
-    width: 400px;
-    height: 175px;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #5e5b5be0, #f9f9fafe);
+  display: flex;
+  position: absolute;
+  width: 400px;
+  height: 175px;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to top, rgba(131, 129, 129, 0.11), rgba(255, 255, 255, 0.85));
+}
+
+.mirrorBackground {
+  position: absolute;
+  width: 400px;
+  height: 175px;
 }
 
 .button {
@@ -124,10 +129,11 @@
 }
 
 .top-movies {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+  padding-bottom: 20px;
 }
 
 #top-movies-title {
@@ -172,9 +178,14 @@
         width: 200px;
     }
 
-    #quote-text-container {
-        width: 250px;
-    }
+  #quote-text-container {
+    width: 250px;
+  }
+
+  .mirrorBackground {
+    position: absolute;
+    width: 250px;
+  }
 
     #top-movies-title {
         font-size: 25px;

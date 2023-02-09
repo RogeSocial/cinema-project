@@ -55,9 +55,9 @@ export function highlightFilterOption(target) {
   for (let i = 0; i < elements.length; ++i) {
     let element = elements[i];
     if (target.id === element.id) {
-      changeBackgroundColor(target, "rgb(178, 29, 29)");
+      changeBackgroundColor(target, "rgb(2,2,2)");
     } else {
-      changeBackgroundColor(element, "black");
+      changeBackgroundColor(element, "rgb(6, 57, 84)");
     }
   }
 }
