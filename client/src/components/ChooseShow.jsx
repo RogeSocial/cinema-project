@@ -1,22 +1,21 @@
-import {dateSelector, timeSelector} from "./Utilities.jsx";
-import {Link} from "react-router-dom";
 import React from "react";
+import {Link} from "react-router-dom";
+import {dateSelector, timeSelector} from "./Utilities.jsx";
 
 export default function ({currentMovie}) {
     const movie = currentMovie;
 
     return <form className={"date-form"}>
-        <h3>Purchase tickets</h3>
+        <h3>Available shows</h3>
         <ul>
-            <li>Available dates:</li>
+            <li>Date:</li>
             {dateSelector(movie.dates)}
-            <li>The chosen time</li>
+            <li>Time:</li>
             {timeSelector(movie.time)}
         </ul>
 
         <Link to="/reserve">
-            <button type={"submit"} className={"ticket-submit button"}>Purchase tickets</button>
+            <button type={"submit"} className={"ticket-submit button"}>Choose seats</button>
         </Link>
-
     </form>
 }

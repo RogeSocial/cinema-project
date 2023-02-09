@@ -1,10 +1,10 @@
+import {useContext} from "react";
 import {useParams} from 'react-router-dom';
+import GlobalContext from "../GlobalContext.jsx";
 import MovieInfo from "../components/MovieInfo.jsx";
 import ChooseShow from "../components/ChooseShow.jsx";
 import '../styles/movie-details.css'
 import '../styles/home.css'
-import {useContext} from "react";
-import GlobalContext from "../GlobalContext.jsx";
 
 export default function MovieDetailsPage() {
     const {movies} = useContext(GlobalContext)
