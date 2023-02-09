@@ -1,6 +1,7 @@
 import {useContext, useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import GlobalContext from "../GlobalContext.jsx";
+import AccountFormHandler from "./AccountFormHandler.jsx";
 
 export default function () {
     const [isEditable, setIsEditable] = useState(true);
@@ -9,14 +10,9 @@ export default function () {
     const {
         logout,
         auth,
-        changeAccountValues,
-        deleteAccount
+        changeAccountValues
     } = useContext(GlobalContext);
     const [email, setEmail] = useState(auth.email)
-    const [fullName, setFullName] = useState(auth.fullName)
-    const [phoneNumber, setPhoneNumber] = useState(auth.phoneNumber)
-    const [id, setId] = useState(auth.id)
-    const [password, setPassword] = useState('')
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -24,22 +20,10 @@ export default function () {
 
     }, [auth]);
 
-    function loginHandler() {
-        if (!auth.loggedIn) {
-            navigate("/")
-            if(email !== undefined ){
-           return alert(`\n Your new/normal email is ${email} \n 
-            Login to the email with your normal password`)
-            }
-        }
-    }
+
 
     //When edit-button is clicked
-    function changeEditable() {
-        !isEditable ? setIsEditable(true) : setIsEditable(false)
-        const editButton = document.getElementById("edit-button")
-        editButton.disabled = true;
-    }
+
 
     useEffect(() => {
         const element = document.getElementsByClassName("input-element")
@@ -53,9 +37,7 @@ export default function () {
     }, [isEditable]);
 
     //When change password checkbox is clicked
-    function changePassEditable() {
-        !isPassEditable ? setIsPassEditable(true) : setIsPassEditable(false)
-    }
+
 
     useEffect(() => {
         const passwordCheckbox = document.getElementById("change-password")
@@ -68,50 +50,33 @@ export default function () {
         passwordCheckbox.checked ? passElement.disabled = false : passElement.disabled = true;
     }, [isPassEditable]);
 
-    const submit = (e) => {
-        e.preventDefault()
-        changeAccountValues(email, fullName, phoneNumber, id)
 
-    }
 
     return <>
         <button id={"logout-button"} className={"button"} onClick={logout}>Logout</button>
 
         <button id={"edit-button"} className={"button"} onClick={changeEditable}>Edit account</button>
-        <form onSubmit={submit} id={"account-page-form"}>
-            <label htmlFor="name">Full name: </label>
-            <input type={"text"} name={"name"} id={"name"} className={"input-element"} defaultValue={auth.fullName}
-                   onChange={event => setFullName(event.target.value)} required/>
-
-            <label htmlFor="name">Phone: </label>
-            <input type={"tel"} name={"tel"} id={"tel"} className={"input-element"} disabled={true}
-                   defaultValue={auth.phoneNumber} onChange={event => setPhoneNumber(event.target.value)} required/>
-
-            <label htmlFor="email">E-mail: </label>
-            <input type={"email"} name={"email"} id={"email"} className={"input-element"} disabled={true}
-                   defaultValue={auth.email} onChange={event => setEmail(event.target.value)} required></input>
-
-            <label htmlFor="password">Current password: </label>
-            <input type={"password"} name={"current-password"} id={"current-password"} className={"input-element"}
-                  disabled={true} required/>
-
-            <div id={"checkbox-container"}>
-                <label htmlFor="change-password" id={"change-pass-label"}>Change password or Delete Account: </label>
-                <input type={"checkbox"} name={"change-password"} id={"change-password"} className={"input-element"}
-                       onClick={changePassEditable}/>
-            </div>
-
-            <label htmlFor={"new-password-one"}>New password: </label>
-            <input type={"password"} name={"new-password-one"} id={"new-password-one"} className={"pass-input"}
-                   disabled={true}/>
-
-            <label htmlFor={"new-password-two"}>New password again: </label>
-            <input type={"password"} name={"new-password-two"} id={"new-password-two"} className={"pass-input"}
-                   disabled={true}/>
-
-            <button id={"account-button"} className={"button"} disabled={true}>Save</button>
-            <button id={"logout-button"}  className={"button pass-input"} onClick={() => deleteAccount(auth.email)}>Delete account</button>
-
-        </form>
+        <AccountFormHandler changePassEditable={changePassEditable}
+                            setEmail={setEmail}
+                            email={email}/>
     </>
+    function changePassEditable() {
+        !isPassEditable ? setIsPassEditable(true) : setIsPassEditable(false)
+    }
+    function changeEditable() {
+        !isEditable ? setIsEditable(true) : setIsEditable(false)
+        const editButton = document.getElementById("edit-button")
+        editButton.disabled = true;
+    }
+    function loginHandler() {
+        if (!auth.loggedIn) {
+            navigate("/")
+            if (email !== undefined) {
+                return alert(`\n Your new/normal email is ${email} \n 
+            Login to the email with your normal password`)
+            }
+        }
+    }
+
 }
+
