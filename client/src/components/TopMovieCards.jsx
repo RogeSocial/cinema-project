@@ -1,30 +1,21 @@
-import {useState, useEffect, useContext} from "react";
-import MovieList from "./MovieList";
-import { movieArray as allMovies } from "./movie-data";
+import {useContext, useEffect, useState} from "react";
 import globalContext from "../GlobalContext.jsx";
+import MovieList from "./MovieList";
 
 export default function () {
-  const {movies} = useContext(globalContext)
-  const [filteredTopMovies, setFilteredTopMovies] = useState(movies);
-  useEffect(() => {
-    filterByTitle(["Hellraiser", "It", "Rings"]);
-  }, [movies]);
+    const {movies} = useContext(globalContext)
+    const [filteredTopMovies, setFilteredTopMovies] = useState(movies);
+    useEffect(() => {
+        filterByTitle(["Hellraiser", "It", "Rings"]);
+    }, [movies]);
 
-  return (<>
-      <div id="top-movie-cards">
+    return <div id="top-movie-cards">
         <MovieList movies={filteredTopMovies} />
-      </div>
-    </>);
+    </div>
 
-  function filterByTitle(choices) {
-    setFilteredTopMovies([
-      ...movies.filter((movie) => {
-        return (
-          movie.title === choices[0] ||
-          movie.title === choices[1] ||
-          movie.title === choices[2]
-        );
-      }),
-    ]);
-  }
+    function filterByTitle(choices) {
+        setFilteredTopMovies([...movies.filter((movie) => {
+            return (movie.title === choices[0] || movie.title === choices[1] || movie.title === choices[2]);
+        }),]);
+    }
 }

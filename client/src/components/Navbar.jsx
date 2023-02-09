@@ -1,4 +1,4 @@
-import {Link, Route} from "react-router-dom";
+import {Link} from "react-router-dom";
 import React, {useContext} from "react";
 import GlobalContext from "../GlobalContext.jsx";
 
@@ -12,7 +12,7 @@ export default function () {
 
         {auth.loggedIn ?
             <Link to="user/account" id='navbar'> Account </Link>
-            : <Link to="login" id='navbar'> Login </Link>}
+            : <Link to="login" id='navbar'> Account </Link>}
 
     </nav>
 }

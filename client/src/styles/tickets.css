@@ -13,8 +13,7 @@
     padding-top: 50px;
 }
 
-
-.calender-dropdown {
+/*.calender-dropdown {
     background-color: #ffffff;
     border-radius: 20px;
     color: #000000;
@@ -25,7 +24,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 .movieTickets {
     display: grid;
@@ -33,11 +32,6 @@
     justify-content: flex-start;
     align-items: center;
 }
-
-/*hr {
-    background-color: rgba(251, 252, 253, 0.616);
-    margin: 20px;
-}*/
 
 #calender-box {
     display: flex;
@@ -130,7 +124,7 @@
     }
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1400px) {
     .movieTickets {
         grid-template-columns: auto auto;
     }
@@ -146,7 +140,7 @@
     }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 930px) {
     .movieTickets {
         grid-template-columns: auto;
     }

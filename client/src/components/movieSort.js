@@ -24,6 +24,11 @@ export function reverseAlphabet(movieX) {
   });
 }
 
+export function unSortMovies(movieX) {
+  return movieX.sort(
+      (a, b) => a.id - b.id
+  );
+}
 export function sortByMostRecent(movieX) {
   return movieX.sort(
     (a, b) => b.release_date - a.release_date

@@ -1,21 +1,29 @@
-import {useParams} from 'react-router-dom';
+import { useContext } from "react";
+import { useParams } from 'react-router-dom';
+import GlobalContext from "../GlobalContext.jsx";
 import MovieInfo from "../components/MovieInfo.jsx";
 import ChooseShow from "../components/ChooseShow.jsx";
 import '../styles/movie-details.css'
 import '../styles/home.css'
-import {useContext} from "react";
-import GlobalContext from "../GlobalContext.jsx";
 
 export default function MovieDetailsPage() {
-    const {movies} = useContext(GlobalContext)
+    const { movies } = useContext(GlobalContext)
     const movieId = useParams().id
-    const movie = movies[movieId - 1]
+    let index
 
-    return <div style={{background: `url(${movie.background.toString()})`, backgroundSize: 'cover'}}
-                className="movie-details-page">
-        <div className={"content-frame"}>
-            <MovieInfo currentMovie={movie}/>
-            <ChooseShow currentMovie={movie}/>
+    for (let i = 0; i < movies.length; i++) {
+        if (movieId === movies[i].id.toString()) {
+            index = i
+        }
+    }
+
+    if (movies[index]) {
+        return <div style={{background: `url(${movies[index].background.toString()})`, backgroundSize: 'cover'}}
+                    className="movie-details-page">
+            <div className={"content-frame"}>
+                <MovieInfo currentMovie={movies[index]}/>
+                <ChooseShow currentMovie={movies[index]}/>
+            </div>
         </div>
-    </div>
+    }
 }

@@ -31,6 +31,10 @@
   color: lightgray;
 }
 
+.movie-search-field input {
+  color: white;
+}
+
 .movies input {
   background-color: transparent;
   color: var(--main_text_color);
@@ -48,8 +52,8 @@
 
 .movie-search-field ::placeholder {
   /* for Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgba(255, 255, 255, 0.68);
-  opacity: 1;
+  color: var(--main_text_color);
+  /*opacity: 1;*/
   /* for Firefox */
   font-size: 18px;
   font-weight: 500;
@@ -87,9 +91,8 @@
   justify-content: center;
   font-size: 18px;
   height: 30px;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
   margin-top: 1rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
 .movie-search-and-filter-area {
@@ -147,6 +150,9 @@
   }
 }
 
-.filter-options {
-  position: relative;
+@media screen and (min-width: 1400px) {
+  .movieImageContainer img {
+    width: 600px;
+    height: 300px;
+  }
 }

@@ -1,4 +1,4 @@
-import {daysForwardInCalender, daysInWeek} from "./Constants.js";
+import { daysForwardInCalender, daysInWeek } from "./Constants.js";
 
 export function convertsMinutesIntoHoursAndMinutes(min) {
   let hours = Math.trunc(min / 60);
@@ -6,13 +6,14 @@ export function convertsMinutesIntoHoursAndMinutes(min) {
   return hours + "h " + minutes + "m";
 }
 
+export function showsMovieLength(movie) {
+  return convertsMinutesIntoHoursAndMinutes(movie.length);
+}
+
 export function showsMovieLengthOnThisPage(movie, page) {
   if (window.location.pathname === page) {
-    return convertsMinutesIntoHoursAndMinutes(movie.length);
-  } else {
-    return null;
-  }
-}
+    return convertsMinutesIntoHoursAndMinutes(movie.length);  }
+  else {    return null;  }}
 
 export function dateSelector(movie) {
     const dateArray = movie.split(",");
@@ -37,7 +38,7 @@ export function timeSelector(movie) {
 }
 
 export function returnDayName(inIndex) {
-    return daysInWeek[inIndex];
+  return daysInWeek[inIndex];
 }
 
 export function changeBackgroundColor(targetElement, color) {
@@ -55,21 +56,31 @@ export function highlightFilterOption(target) {
   for (let i = 0; i < elements.length; ++i) {
     let element = elements[i];
     if (target.id === element.id) {
-      changeBackgroundColor(target, "rgb(178, 29, 29)");
+      changeBackgroundColor(target, "rgb(2,2,2)");
     } else {
-      changeBackgroundColor(element, "black");
+      changeBackgroundColor(element, "rgb(6, 57, 84)");
     }
   }
 }
 
-
 //calculate days forward for the calendar
 export function calculateCurrentDate() {
-    let tmpArray = [];
-    for (let i = 0; i < daysForwardInCalender; i++) {
-        let addedDay = new Date();
-        addedDay.setDate(addedDay.getDate() + i);
-        tmpArray.push(addedDay);
-    }
-    return tmpArray;
+  let tmpArray = [];
+  for (let i = 0; i < daysForwardInCalender; i++) {
+    let addedDay = new Date();
+    addedDay.setDate(addedDay.getDate() + i);
+    tmpArray.push(addedDay);
+  }
+  return tmpArray;
+}
+
+export function calculateDifferenceInDays(inStartDate, inEndDate) {
+  let diff = Math.round(
+    (inEndDate.getTime() - inStartDate.getTime()) / (1000 * 60 * 60 * 24)
+  );
+  if (diff <= 0) {
+    return 0;
+  } else {
+    return diff;
+  }
 }

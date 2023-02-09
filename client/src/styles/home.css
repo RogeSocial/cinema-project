@@ -28,11 +28,15 @@
 }
 
 #quote-text-container {
-  font-size: 2vw;
-  color: rgb(96, 5, 5);
+  color: #710101;
   font-family: "Lacquer", cursive;
   text-align: center;
   margin: 1rem;
+}
+
+#quote-text-container p {
+    margin: 0px;
+    font-weight: bold;
 }
 
 .quote-background {
@@ -42,80 +46,86 @@
   height: 175px;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, #5e5b5be0, #f9f9fafe);
+  background: linear-gradient(to top, rgba(131, 129, 129, 0.11), rgba(255, 255, 255, 0.85));
+}
+
+.mirrorBackground {
+  position: absolute;
+  width: 400px;
+  height: 175px;
 }
 
 .button {
-  font-size: 17px;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 1em 2.5em;
-  display: inline-block;
-  border-radius: 50px;
-  transition: all 0.4s;
-  border: none;
-  font-family: inherit;
-  font-weight: 500;
-  color: black;
- /* background-color: rgb(255, 254, 254);*/
-  cursor: pointer;
-  margin: 10px;
-  position: relative;
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 1em 2.5em;
+    display: inline-block;
+    border-radius: 50px;
+    transition: all 0.4s;
+    border: none;
+    font-family: inherit;
+    font-weight: 500;
+    color: black;
+    cursor: pointer;
+    margin: 10px;
+    position: relative;
 }
 
 .button:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  border: none;
-  background-color: rgb(178, 29, 29);
-  transition: 0.4s;
-  color: white;
-  margin: 10px;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: none;
+    background-color: rgb(178, 29, 29);
+    transition: 0.4s;
+    color: white;
+    margin: 10px;
 }
-.button[disabled]{
-  background-color: rgb(100, 100, 100);
+
+.button[disabled] {
+    background-color: rgb(100, 100, 100);
 }
 
 .button[disabled]:hover {
-  background-color: rgb(100, 100, 100);
-  color: rgb(0, 0, 0);
-  transform: none;
-  box-shadow: none;
-  transition: none;
-  cursor: not-allowed;
+    background-color: rgb(100, 100, 100);
+    color: rgb(0, 0, 0);
+    transform: none;
+    box-shadow: none;
+    transition: none;
+    cursor: not-allowed;
 }
 
 .button:active {
-  transform: translateY(-1px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .button::after {
-  background-color: #fff;
-  content: "";
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  z-index: -1;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 1s;
+    background-color: #fff;
+    content: "";
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 1s;
 }
 
 .button:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
 }
 
 .hero-transition {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  background: linear-gradient(to bottom, #0000001c, #000000f4);
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    background: linear-gradient(to bottom, #0000001c, #000000f4);
 }
 
 .top-movies {
@@ -123,91 +133,97 @@
   align-items: center;
   justify-content: center;
   background-color: black;
+  padding-bottom: 20px;
 }
 
 #top-movies-title {
-  font-size: 30px;
-  color: white;
-  font-weight: 400;
-  font-family: "Fredericka the Great", cursive;
-  margin: 1rem;
+    font-size: 30px;
+    color: white;
+    font-weight: 400;
+    font-family: "Fredericka the Great", cursive;
+    margin: 1rem;
 }
 
 #top-movie-cards {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
 }
 
 #top-movie-cards img {
-  height: 400px;
-  width: 400px;
+    height: 400px;
+    width: 400px;
 }
 
 #top-movie-cards img:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 #top-movie-cards h3 {
-  position: absolute;
-  z-index: 2;
-  font-size: 30px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
-  font-weight: 600;
+    position: absolute;
+    z-index: 2;
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: 600;
 }
 
 @media screen and (max-width: 750px) {
-  .display-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 200px;
-  }
+    .display-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 200px;
+    }
 
   #quote-text-container {
     width: 250px;
   }
 
-  #top-movies-title {
-    font-size: 25px;
-    margin-bottom: 0;
+  .mirrorBackground {
+    position: absolute;
+    width: 250px;
   }
 
-  #top-movie-cards {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
-  }
+    #top-movies-title {
+        font-size: 25px;
+        margin-bottom: 0;
+    }
 
-  #top-movie-cards img {
-    position: relative;
-    border-radius: 20px;
-    width: 225px;
-    height: 225px;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+    #top-movie-cards {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 1rem;
+    }
 
-  #top-movie-cards h3 {
-    font-size: 25px;
-  }
+    #top-movie-cards img {
+        position: relative;
+        border-radius: 20px;
+        width: 225px;
+        height: 225px;
+        object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #top-movie-cards h3 {
+        font-size: 25px;
+    }
 }
 
 @media screen and (min-width: 1300px) {
-  #top-movie-cards {
-    flex-direction: row;
-  }
+    #top-movie-cards {
+        flex-direction: row;
+    }
 
-  #top-movie-cards img {
-    width: 400px;
-    height: 700px;
-  }
+    #top-movie-cards img {
+        width: 400px;
+        height: 700px;
+    }
 }
