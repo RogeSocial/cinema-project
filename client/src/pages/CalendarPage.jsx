@@ -9,7 +9,6 @@ import {DisplaySelectedDate} from "../components/DisplaySelectedDate.jsx";
 import globalContext from "../GlobalContext.jsx";
 import {calculateDifferenceInDays} from "../components/Utilities.jsx";
 
-
 export default function () {
     const [openDatePickerStart, setOpenDatePickerStart] = useState(false);
     const [openDatePickerEnd, setOpenDatePickerEnd] = useState(false);
@@ -17,10 +16,8 @@ export default function () {
     const [endDateString, setEndDateString] = useState("");
     const [startDateValue, setStartDateValue] = useState(new Date());
     const [endDateValue, setEndDateValue] = useState(new Date());
-    const [movieDates, setMovieDates] = useState([new Date()]);
 
-    const{movies} = useContext(globalContext);
-    /*let movieDates =[];*/
+    const {movies} = useContext(globalContext);
 
     const buttons = [
         {text: "start date", isDisabled: false, buttonID: 1},
@@ -108,8 +105,6 @@ export default function () {
                 for (let k = 0; k < tmpDateArray.length; k++) {
                     if ((parseInt(word[j]) === tmpDateArray[k].getDate())) {
                         tmpArray.push(movies[i]);
-                        let tmp = tmpDateArray[k].getDate();
-                        movieDates.push(tmp);
                     }
                 }
             }

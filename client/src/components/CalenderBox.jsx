@@ -4,10 +4,9 @@ import {IsDropDownActive} from "./IsDropDownActive.jsx";
 export const CalenderBox = ({btn, calRef, open, openDatePicker, setDateString, setDateValue}) => (
     <div id="calender-box" ref={calRef}>
         <PickADateButton btn={btn} handleClick={openDatePicker}/>
-        <IsDropDownActive btn={btn}
-                          open={open}
+        <IsDropDownActive open={open}
                           openDatePicker={openDatePicker}
                           setDateString={setDateString}
-                          setDateValue={setDateValue} />
+                          setDateValue={setDateValue}/>
     </div>
 );

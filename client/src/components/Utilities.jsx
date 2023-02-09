@@ -71,7 +71,7 @@ export function calculateDifferenceInDays(inStartDate, inEndDate) {
   let diff = Math.round(
     (inEndDate.getTime() - inStartDate.getTime()) / (1000 * 60 * 60 * 24)
   );
-  if (diff < 0) {
+  if (diff <= 0) {
     return 0;
   } else {
     return diff;
