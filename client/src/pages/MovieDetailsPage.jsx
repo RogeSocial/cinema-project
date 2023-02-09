@@ -11,6 +11,10 @@ export default function MovieDetailsPage() {
     const movieId = useParams().id
     const movie = movies[movieId - 1]
 
+    let found = movies.find(element => element > movieId);
+
+    console.log(found);
+
     return <div style={{background: `url(${movie.background.toString()})`, backgroundSize: 'cover'}}
                 className="movie-details-page">
         <div className={"content-frame"}>
