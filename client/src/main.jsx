@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import './styles.css'
@@ -34,7 +34,7 @@ const router = createBrowserRouter(
             <Route path="register" element={<CreateAccountPage />}/>
 
             <Route path="user">
-                <Route path="account" element={<AccountPage />}/>
+                    <Route path="account" element={<AccountPage />}/>
             </Route>
 
         </Route>

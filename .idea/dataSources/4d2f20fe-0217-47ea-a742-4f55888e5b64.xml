@@ -1484,16 +1484,24 @@
       <DasType>VARCHAR|0s</DasType>
       <Position>4</Position>
     </column>
-    <index id="527" parent="487" name="sqlite_autoindex_users_1">
+    <column id="527" parent="487" name="fullName">
+      <DasType>VARCHAR|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <column id="528" parent="487" name="phoneNumber">
+      <DasType>integer|0s</DasType>
+      <Position>6</Position>
+    </column>
+    <index id="529" parent="487" name="sqlite_autoindex_users_1">
       <ColNames>email</ColNames>
       <NameSurrogate>1</NameSurrogate>
       <Unique>1</Unique>
     </index>
-    <key id="528" parent="487">
+    <key id="530" parent="487">
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="529" parent="487">
+    <key id="531" parent="487">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>sqlite_autoindex_users_1</UnderlyingIndexName>
     </key>

@@ -22,7 +22,7 @@ router.post('/', (request, response) => {
     let encryptedPassword = encrypt(user.password)
     let result
     try {
-        result = request.db.prepare('INSERT INTO users (email, password) VALUES(?,?)').run([user.email, encryptedPassword])
+        result = request.db.prepare('INSERT INTO users (email, password, fullName, phoneNumber) VALUES(?,?,?,?)').run([user.email, encryptedPassword, user['fullName'], user['phoneNumber']])
     }
     catch (e) {
         console.error(e)

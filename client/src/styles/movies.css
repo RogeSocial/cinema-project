@@ -57,7 +57,7 @@
 
 ::-ms-input-placeholder {
   /* for Microsoft Edge */
-  color: var(--main_text_color);
+  color: white;
 }
 
 .movies h3 {
@@ -209,7 +209,6 @@
     grid-template-columns: repeat(3, max-content);
     grid-template-rows: repeat(3, max-content);
   }
-
 }
 
 @media screen and (min-width: 1400px) {
@@ -217,4 +216,7 @@
    width: 600px;
     height: 300px;
   }
+}
+.filter-options{
+  position: relative;
 }
