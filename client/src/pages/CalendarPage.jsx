@@ -108,7 +108,6 @@ export default function () {
                     }
                 }
             }
-
         }
 
         //remove duplicates
@@ -116,16 +115,3 @@ export default function () {
         return returnArray;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

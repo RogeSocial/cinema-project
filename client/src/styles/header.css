@@ -11,10 +11,11 @@
   display: inline-block;
   font-size: 2em;
   color: #fff;
-  /*text-transform: uppercase;*/
-  animation: flip 3s infinite;
-  animation-delay: calc(.2s * var(--i))
+  animation: flip 12s infinite;
+  animation-delay: calc(.08s * var(--i));
+
 }
+
 @keyframes flip {
   0%,80% {
     transform: rotateY(360deg)
