@@ -118,7 +118,7 @@
 }
 
 @media screen and (max-width: 750px) {
-    .cover {
+     .cover {
         width: 100vw;
         height: 120vh;
         border-radius: 0px;
