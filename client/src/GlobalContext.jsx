@@ -56,8 +56,8 @@ export const GlobalProvider = ({children}) => {
     };
     const deleteAccount = async (email) => {
         setIsLoading(true);
-        const response = await fetch("rest/users", {
-            method: "delete",
+        const response = await fetch("/rest/users", {
+            method: "DELETE",
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email})
         });

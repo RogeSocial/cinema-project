@@ -27,7 +27,7 @@ export default function () {
     function loginHandler() {
         if (!auth.loggedIn) {
             navigate("/")
-            if(email !== undefined){
+            if(email !== undefined && email == auth.email){
            return alert(`\n new email is ${email} \n 
             Login with the new email`)
             }
@@ -112,6 +112,6 @@ export default function () {
             <button id={"account-button"} className={"button"} disabled={true}>Save</button>
 
         </form>
-        <button id={"logout-button"}  className={"button pass-input"} onClick={() => deleteAccount(email)}>Delete account</button>
+        <button id={"logout-button"}  className={"button pass-input"} onClick={() => deleteAccount(auth.email)}>Delete account</button>
     </>
 }
