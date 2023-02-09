@@ -3,7 +3,7 @@
   --main_text_color: white;
 }
 
-/* non media-query CSS used for phone responsiveness */
+/* Observe: non media-query CSS is used for phone responsiveness */
 .movies {
   display: flex;
   justify-content: flex-start;
@@ -27,8 +27,8 @@
 }
 
 .movie-search-field i {
-  color: lightgray;
   /* icon-color */
+  color: lightgray;
 }
 
 .movies input {
@@ -55,11 +55,6 @@
   font-weight: 500;
   display: flex;
   align-items: center;
-}
-
-::-ms-input-placeholder {
-  /* for Microsoft Edge */
-  color: white;
 }
 
 .movies h3 {
@@ -111,57 +106,6 @@
   text-align: center;
 }
 
-.movie-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  transition: 1s;
-}
-
-.movie-card img {
-  position: relative;
-  border-radius: 20px;
-  width: 300px;
-  height: 250px;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.movie-card h3 {
-  color: var(--main_text_color);
-  text-decoration: none;
-}
-
-.movie-card h4 {
-  position: absolute;
-  color: lightgray;
-  font-size: 10px;
-  font-weight: 200;
-  padding-top: 3rem;
-  z-index: 2;
-  font-size: 18px;
-}
-
-.movie-card:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-
-.movieLength {
-  color: #8c8c8c;
-  /* color of movie duration on tickets page */
-  position: inherit;
-  bottom: 5rem;
-  font-size: 20px;
-  z-index: 2;
-  visibility: visible;
-}
-
 /* tablet view responsiveness */
 @media screen and (min-width: 680px) {
   .movies {
@@ -203,6 +147,6 @@
   }
 }
 
-.filter-options{
+.filter-options {
   position: relative;
 }

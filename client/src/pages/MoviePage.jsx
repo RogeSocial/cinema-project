@@ -34,12 +34,12 @@ export default function () {
       <MovieList movies={filteredMovies} />
     </section>
   );
-}
 
-function filterMoviesBySearch() {
-  setFilteredMovies([
-    ...movies.filter((movie) => compareTitleWithSearch(movie, searchString)),
-  ]);
+  function filterMoviesBySearch() {
+    setFilteredMovies([
+      ...movies.filter((movie) => compareTitleWithSearch(movie, searchString)),
+    ]);
+  }
 }
 
 function isValidSearch(search) {
