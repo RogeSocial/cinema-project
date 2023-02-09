@@ -38,7 +38,7 @@
   {
     "route": "/rest/users*",
     "roles":[
-      {"role": "user", "methods": ["GET","PUT","POST","DELETE"]}
+      {"role": "user", "methods": ["GET","PUT","POST","DELETE","PATCH"]}
     ]
   },
 

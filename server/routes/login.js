@@ -28,7 +28,7 @@ router.post('/',
             }
         }
 
-        if (user && user.email && request.session?.verification?.status === 0 && request.session?.verification?.phone_number === user?.phone) {
+        if (user && user.email  && request.session?.verification?.status === 0 && request.session?.verification?.phone_number === user?.phone) {
             request.session.passwordAttempts = 0
             request.session.user = user
             request.session.user.loggedIn = true
@@ -53,15 +53,18 @@ router.post('/',
 router.get('/', (request, response) => {
     let user;
     if (request.session.user) {
-        user = request.db.prepare('SELECT * FROM users WHERE email = ? AND password = ?').all([request.session.user.email, request.session.user.password])
+        user = request.db.prepare('SELECT * FROM users WHERE email = ?  AND password = ?').all([request.session.user.email, request.session.user.password ])
         user = user[0]
-        typeof user.roles === 'string' ? user.roles.split(','): "";
+        if(user?.roles){
+            user.roles.split(',')
+        }
     }
     if (user && user.email) {
         user.loggedIn = true
         delete (user.password)
         response.json(user)
-    } else {
+    }
+else {
         response.status(401)
         response.json({loggedIn: false, message: "not logged in"})
     }

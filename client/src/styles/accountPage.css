@@ -37,6 +37,14 @@
     margin-bottom: 60px;
     margin-left: 25px;
 }
+
+#delete-account-button{
+    background-color: black;
+    color: indianred;
+    margin-top: 40px;
+    margin-right: 80px;
+}
+
 #change-password {
     margin-bottom: 30px;
 }
