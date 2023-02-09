@@ -53,7 +53,7 @@ router.post('/',
 router.get('/', (request, response) => {
     let user;
     if (request.session.user) {
-        user = request.db.prepare('SELECT * FROM users WHERE email = ? AND password = ?').all([request.session.user.email, request.session.user.password])
+        user = request.db.prepare('SELECT * FROM users WHERE email = ?  AND password = ?').all([request.session.user.email, request.session.user.password ])
         user = user[0]
         if(user?.roles){
             user.roles.split(',')
@@ -63,7 +63,8 @@ router.get('/', (request, response) => {
         user.loggedIn = true
         delete (user.password)
         response.json(user)
-    } else {
+    }
+else {
         response.status(401)
         response.json({loggedIn: false, message: "not logged in"})
     }

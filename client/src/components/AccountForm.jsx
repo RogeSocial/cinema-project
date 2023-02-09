@@ -9,13 +9,14 @@ export default function () {
     const {
         logout,
         auth,
-        changeAccountValues
+        changeAccountValues,
+        deleteAccount
     } = useContext(GlobalContext);
     const [email, setEmail] = useState(auth.email)
     const [fullName, setFullName] = useState(auth.fullName)
     const [phoneNumber, setPhoneNumber] = useState(auth.phoneNumber)
     const [id, setId] = useState(auth.id)
-
+    const [password, setPassword] = useState('')
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -26,6 +27,10 @@ export default function () {
     function loginHandler() {
         if (!auth.loggedIn) {
             navigate("/")
+            if(email !== undefined){
+           return alert(`\n new email is ${email} \n 
+            Login with the new email`)
+            }
         }
     }
 
@@ -66,6 +71,7 @@ export default function () {
     const submit = (e) => {
         e.preventDefault()
         changeAccountValues(email, fullName, phoneNumber, id)
+
     }
 
     return <>
@@ -87,10 +93,10 @@ export default function () {
 
             <label htmlFor="password">Current password: </label>
             <input type={"password"} name={"current-password"} id={"current-password"} className={"input-element"}
-                   disabled={true} required/>
+                  disabled={true} required/>
 
             <div id={"checkbox-container"}>
-                <label htmlFor="change-password" id={"change-pass-label"}>Change password: </label>
+                <label htmlFor="change-password" id={"change-pass-label"}>Change password or Delete Account: </label>
                 <input type={"checkbox"} name={"change-password"} id={"change-password"} className={"input-element"}
                        onClick={changePassEditable}/>
             </div>
@@ -106,6 +112,6 @@ export default function () {
             <button id={"account-button"} className={"button"} disabled={true}>Save</button>
 
         </form>
-
+        <button id={"logout-button"}  className={"button pass-input"} onClick={() => deleteAccount(email)}>Delete account</button>
     </>
 }
