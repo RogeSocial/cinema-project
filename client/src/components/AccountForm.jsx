@@ -10,7 +10,6 @@ export default function () {
     const {
         logout,
         auth,
-        changeAccountValues
     } = useContext(GlobalContext);
     const [email, setEmail] = useState(auth.email)
     const navigate = useNavigate();
