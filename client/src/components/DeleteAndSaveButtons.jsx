@@ -5,7 +5,7 @@ export default function DeleteAndSaveButtons() {
     const {auth, deleteAccount} = useContext(globalContext)
     return <>
         <button id={"account-button"} className={"button"} disabled={true}>Save</button>
-        <button id={"logout-button"} className={"button pass-input"} onClick={() => deleteAccount(auth.email)}>Delete
+        <button id={"delete-account-button"} className={"button pass-input"} onClick={() => deleteAccount(auth.email)}>Delete
             account
         </button>
     </>
