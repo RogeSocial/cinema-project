@@ -9,7 +9,8 @@ const [email, setEmail] = useState('')
 const [password, setPassword] = useState('')
 const {submitLogin} = useContext(GlobalContext);
 const navigate = useNavigate();
-const {auth} = useContext(GlobalContext);
+const {auth, allUsers} = useContext(GlobalContext);
+
 
     useEffect(() => {
         loginHandler()
@@ -26,7 +27,20 @@ const {auth} = useContext(GlobalContext);
 const submit = (e) => {
     e.preventDefault()
     submitLogin(email, password)
-} 
+}
+
+
+function handleInfo() {
+    const checkMailRegistered = allUsers.some(user => user.email === email);
+    
+    if (!checkMailRegistered) {
+        document.getElementById("errorMessage").innerHTML =
+        "This email is not registered."
+      } else {
+        document.getElementById("errorMessage").innerHTML =
+        ""
+      }
+}
 
     return <section className="account loginCover">
         <form onSubmit={submit} className="cover">
@@ -34,11 +48,11 @@ const submit = (e) => {
                 <img className="loginImg accountImg" src={icon} alt="" />
                 <label htmlFor="email">Email:</label>
                 <input type="email" value={email} onChange={(event)=>setEmail(event.target.value)} required="required" placeholder="email"></input>
+                <p id="errorMessage"></p>
                 <label htmlFor="password">Password:</label>
                 <input type="password" value={password} onChange={(event)=>setPassword(event.target.value)} required="required" placeholder="password" minLength="8"></input>
-
                 <div className="button-group">
-                    <button className="button" type="submit" value="login">LOGIN</button>
+                    <button className="button" type="submit" value="login" onClick={handleInfo}>LOGIN</button>
                     <Link to="/register"><button className="button-text">Don't have an account? Register here.</button></Link>
                 </div>
             </div>

@@ -10,11 +10,13 @@ export const GlobalProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [concerts, setConcerts] = useState([]);
   const [movies, setMovies] = useState([])
+  const [allUsers, setAllUsers] = useState([])
   // useEffect to run methods upon load
   useEffect(() => {
     void checkAuth()
     void loadTidbits()
     void loadMovies()
+    void checkAllUsers()
   }, []);
 
   // methods, could be for on load, or just called from elsewhere
@@ -104,6 +106,15 @@ export const GlobalProvider = ({ children }) => {
     setIsLoading(false)
   }
 
+  const checkAllUsers = async () => {
+    setIsLoading(true)
+    const response = await fetch("rest/users")
+    const result = await response.json()
+    console.log(result)
+    setAllUsers(result)
+    setIsLoading(false)
+  }
+
 
 
   return (
@@ -117,7 +128,8 @@ export const GlobalProvider = ({ children }) => {
         createAccount,
         concerts,
         deleteAccount,
-        movies
+        movies,
+        allUsers
       }}
     >
       {children}

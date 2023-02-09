@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import GlobalContext from "../GlobalContext";
+
 function validateInputs() {
     const password = document.getElementById("password").value;
     const confirm = document.getElementById("confirmPassword").value;
@@ -70,6 +73,17 @@ function validateInputs() {
     }
 
     return valid;
+}
+
+export function handleInfo(email) {
+    const { allUsers } = useContext(GlobalContext)
+    const checkMailRegistered = allUsers.some(user => user.email === email);
+
+    if (!checkMailRegistered) {
+        alert("This email is not registered.");
+      } else {
+        alert("This email is registered.");
+      }
 }
 
 export function handleRegister() {
