@@ -6,9 +6,9 @@
     text-align: center;
     padding: 1rem;
     transition: 1s;
-  }
-  
-  .movie-card img {
+}
+
+.movie-card img {
     position: relative;
     border-radius: 20px;
     width: 300px;
@@ -17,24 +17,50 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .movie-card h3 {
+}
+
+.movie-card h3 {
+    position: absolute;
+    z-index: 2;
+    font-size: 25px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    font-weight: 600;
     color: var(--main_text_color);
     text-decoration: none;
-  }
-  
-  .movie-card h4 {
+}
+
+.movie-card h4 {
     position: absolute;
     color: lightgray;
-    font-size: 10px;
     font-weight: 200;
     padding-top: 3rem;
     z-index: 2;
     font-size: 18px;
-  }
-  
-  .movie-card:hover {
+}
+
+.movie-card:hover {
     cursor: pointer;
-    transform: scale(1.05);
-  }
+}
+
+.movieImageContainer {
+    overflow: hidden;
+}
+
+.movieImageContainer img {
+    transition: all 0.8s ease;
+    filter: brightness(65%);
+}
+
+.movie-card:hover .movieImageContainer img {
+    filter: brightness(100%);
+    transform: scale(1.2);
+}
+.movieLength {
+    color: #8c8c8c;
+    /* color of movie duration on tickets page */
+    position: inherit;
+    bottom: 5rem;
+    font-size: 20px;
+    z-index: 2;
+    visibility: visible;
+}
