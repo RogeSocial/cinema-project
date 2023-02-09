@@ -110,14 +110,14 @@ export const GlobalProvider = ({children}) => {
         setIsLoading(false)
     }
 
-    const loadMovies = async () => {
-        setIsLoading(true)
-        const response = await fetch("/rest/movies")
-        const result = await response.json()
-        console.log(result)
-        setMovies(result)
-        setIsLoading(false)
-    }
+  const loadMovies = async () => {
+    setIsLoading(true)
+    const response = await fetch("/rest/movies")
+    const result = await response.json()
+    console.log(result)
+    setMovies(result)
+    setIsLoading(false)
+  }
 
 
     return (

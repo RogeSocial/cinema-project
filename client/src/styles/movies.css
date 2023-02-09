@@ -60,14 +60,6 @@
   color: white;
 }
 
-.movies h3 {
-  position: absolute;
-  z-index: 2;
-  font-size: 25px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
-  font-weight: 600;
-}
-
 .movies h2 {
   margin: 1rem;
   margin-top: 0.3rem;
@@ -130,6 +122,11 @@
 }
 
 .movie-card h3 {
+  position: absolute;
+  z-index: 2;
+  font-size: 25px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  font-weight: 600;
   color: var(--main_text_color);
   text-decoration: none;
 }
