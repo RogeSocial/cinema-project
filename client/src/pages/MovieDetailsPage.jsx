@@ -8,14 +8,12 @@ import '../styles/home.css'
 
 export default function MovieDetailsPage() {
     const { movies } = useContext(GlobalContext)
-
     const movieId = useParams().id
-
-    let index;
+    let index
 
     for (let i = 0; i < movies.length; i++) {
         if (movieId === movies[i].id.toString()) {
-            index = i;
+            index = i
         }
     }
 
@@ -27,4 +25,3 @@ export default function MovieDetailsPage() {
         </div>
     </div>
 }
-
