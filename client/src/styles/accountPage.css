@@ -1,7 +1,31 @@
 #account-body {
     display: flex;
+    align-items: center;
     font-family: Questrial;
     align-items: center;
+    background-color: black;
+}
+
+.handImg {
+    position: relative;
+    right: 100px;
+    top: 800px;
+    width: 200px;
+    height: 200px;
+    rotate: 30deg;
+}
+
+.accountContainer {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    margin-bottom: 20px;
+    border-radius: 1em;
+    box-shadow: 0 0.188em 1.550em rgb(255, 255, 255);
+    padding: 1em;
 }
 
 #account-page-form {
@@ -36,7 +60,16 @@
     margin-top: 30px;
     margin-bottom: 60px;
     margin-left: 25px;
+    border: 1px solid white;
 }
+
+#delete-account-button{
+    background-color: black;
+    color: indianred;
+    margin-top: 40px;
+    margin-right: 80px;
+}
+
 #change-password {
     margin-bottom: 30px;
 }
@@ -48,4 +81,47 @@
 
 #change-pass-label {
     min-width: 80%;
+}
+
+
+@media screen and (max-width: 750px) {
+    .accountContainer{
+        width: 100%;
+        border: none;
+        box-shadow: none;
+        margin-top: -200px;
+    }
+
+    .handImg {
+
+        right: 100px;
+        top: 700px;
+        width: 200px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 897px) and (orientation: landscape) {
+    .accountContainer{
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+}
+
+#edit-button {
+    font-size: 17px;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.5em 2em;
+    display: inline-block;
+    border-radius: 50px;
+    transition: all 0.4s;
+    border: none;
+    font-family: inherit;
+
+
+    /* background-color: rgb(255, 254, 254);*/
+
+    margin: 10px;
+    position: relative;
 }

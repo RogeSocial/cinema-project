@@ -1,7 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Niconne&family=Nosifer&family=Poppins:wght@200&display=swap');
 
+.waviy {
+  position: relative;
+  width: 120%;
+  padding-left: 30px;
+}
+.waviy span {
+  font-family: 'Niconne', cursive;
+  position: relative;
+  display: inline-block;
+  font-size: 2em;
+  color: #fff;
+  /*text-transform: uppercase;*/
+  animation: flip 3s infinite;
+  animation-delay: calc(.2s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg)
+  }
+}
+
 header {
-  height: 3.5vw;
   background-color: #0b132182;
   position: fixed;
   width: 100%;
@@ -21,7 +41,7 @@ header {
 }
 
 
-header h1 {
+/*header h1 {
   font-family: 'Niconne', cursive;
   font-weight: 100;
   padding-left: 3rem;
@@ -29,7 +49,7 @@ header h1 {
   margin-bottom: 0;
   color: white;
   margin: 0;
-}
+}*/
 
 
 nav {
