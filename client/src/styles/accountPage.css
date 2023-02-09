@@ -1,8 +1,31 @@
 #account-body {
     display: flex;
+    align-items: center;
     font-family: Questrial;
     align-items: center;
     background-color: black;
+}
+
+.handImg {
+    position: relative;
+    right: 100px;
+    top: 800px;
+    width: 200px;
+    height: 200px;
+    transform: rotate(30deg);
+}
+
+.accountContainer {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    margin-bottom: 20px;
+    border-radius: 1em;
+    box-shadow: 0 0.188em 1.550em rgb(255, 255, 255);
+    padding: 1em;
 }
 
 #account-page-form {
@@ -31,18 +54,7 @@
     margin-left: 35px;
 }
 
-.accountContainer {
-    width: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 100px;
-    margin-bottom: 20px;
-    border-radius: 1em;
-    box-shadow: 0 0.188em 1.550em rgb(255, 255, 255);
-    padding: 1em;
-}
+
 
 #logout-button {
     background-color: black;
@@ -70,13 +82,19 @@
         width: 100%;
         border: none;
         box-shadow: none;
-        margin-top: 0;
+        margin-top: -200px;
+    }
+
+    .handImg {
+
+        right: 100px;
+        top: 700px;
+        width: 200px;
     }
 }
 
 @media (min-width: 480px) and (max-width: 897px) and (orientation: landscape) {
     .accountContainer{
-        margin-top: 0;
         width: 100%;
         border: none;
         box-shadow: none;

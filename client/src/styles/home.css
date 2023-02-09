@@ -28,8 +28,7 @@
 }
 
 #quote-text-container {
-  font-size: 2vw;
-  color: rgb(96, 5, 5);
+  color: #710101;
   font-family: "Lacquer", cursive;
   text-align: center;
   margin: 1rem;
@@ -129,6 +128,7 @@
   align-items: center;
   justify-content: center;
   background-color: black;
+  padding-bottom: 20px;
 }
 
 #top-movies-title {

@@ -26,11 +26,9 @@
   padding-right: 4.2rem;
 }
 
-.movie-search-field i {
-  color: lightgray;
-  /* icon-color */
+.movie-search-field input {
+  color: white;
 }
-
 .movies input {
   background-color: transparent;
   color: var(--main_text_color);
@@ -46,10 +44,10 @@
   outline: none;
 }
 
-::placeholder {
+.movie-search-field  ::placeholder {
   /* for Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--main_text_color);
-  opacity: 1;
+  /*opacity: 1;*/
   /* for Firefox */
   font-size: 18px;
   font-weight: 500;
