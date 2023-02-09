@@ -47,7 +47,7 @@ export default function ({movie, startDate, endDate}) {
         let stringArray = [];
         for (let i = 0; i < array.length; i++) {
             let string = "";
-            string += (array[i].getDate() + " / " + array[i].getMonth() + 1 + " - " + returnDayName(array[i].getDay()));
+            string += (array[i].getDate() + " / " + (array[i].getMonth() + 1) + " - " + returnDayName(array[i].getDay()));
             stringArray.push(string);
         }
         return stringArray;
