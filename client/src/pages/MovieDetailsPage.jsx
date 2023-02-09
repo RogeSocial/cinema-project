@@ -17,11 +17,13 @@ export default function MovieDetailsPage() {
         }
     }
 
-    return <div style={{ background: `url(${movies[index].background.toString()})`, backgroundSize: 'cover' }}
-        className="movie-details-page">
-        <div className={"content-frame"}>
-            <MovieInfo currentMovie={movies[index]} />
-            <ChooseShow currentMovie={movies[index]} />
+    if (movies[index]) {
+        return <div style={{background: `url(${movies[index].background.toString()})`, backgroundSize: 'cover'}}
+                    className="movie-details-page">
+            <div className={"content-frame"}>
+                <MovieInfo currentMovie={movies[index]}/>
+                <ChooseShow currentMovie={movies[index]}/>
+            </div>
         </div>
-    </div>
+    }
 }
