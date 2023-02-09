@@ -1,4 +1,3 @@
-import {showsMovieLengthOnThisPage} from "./Utilities";
 import {Link} from "react-router-dom";
 import {useState} from "react";
 
@@ -20,7 +19,6 @@ export default function ({movie}) {
                 <div className={`movieImageContainer ${movieImgDarken ? 'darken' : ''}`}>
                     <img src={movie.image} alt={"poster"}/>
                 </div>
-                <h4>{showsMovieLengthOnThisPage(movie, "/tickets")}</h4>
             </div>
         </Link>
     );

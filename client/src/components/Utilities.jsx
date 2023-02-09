@@ -10,6 +10,11 @@ export function showsMovieLength(movie) {
   return convertsMinutesIntoHoursAndMinutes(movie.length);
 }
 
+export function showsMovieLengthOnThisPage(movie, page) {
+  if (window.location.pathname === page) {
+    return convertsMinutesIntoHoursAndMinutes(movie.length);  }
+  else {    return null;  }}
+
 export function dateSelector(movie) {
     const dateArray = movie.split(",");
   return (
