@@ -1,6 +1,6 @@
 :root {
   --button_padding: 0.25rem 1rem 0.25rem 1rem;
-  --main_text_color: white;
+  --main_text_color: #fffefe;
 }
 
 /* non media-query CSS used for phone responsiveness */

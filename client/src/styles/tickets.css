@@ -10,7 +10,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #242333;
-    padding-top: 50px;
+    /*padding-top: 50px;*/
 }
 
 /*.calender-dropdown {
@@ -33,6 +33,8 @@
     align-items: center;
 }
 
+
+
 #calender-box {
     display: flex;
     flex-direction: column;
@@ -44,11 +46,10 @@
 .wrap {
     display: grid;
     grid-template-columns: auto;
-    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin: 20px;
-    padding-top: 50px;
+    padding-top: 0px;
 }
 
 .selectedDate {
