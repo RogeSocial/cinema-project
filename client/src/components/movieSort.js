@@ -26,11 +26,11 @@ export function reverseAlphabet(movieX) {
 
 export function sortByMostRecent(movieX) {
   return movieX.sort(
-    (a, b) => b['release_date'] - a['release_date']
+    (a, b) => b.release_date - a.release_date
   );
 }
 export function sortByLeastRecent(movieX) {
   return movieX.sort(
-    (a, b) => a['release_date'] - b['release_date']
+    (a, b) => a.release_date - b.release_date
   );
 }

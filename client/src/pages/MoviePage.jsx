@@ -1,15 +1,15 @@
-import {useContext, useEffect, useState} from "react";
+import { useContext, useEffect, useState } from "react";
 import MovieList from "../components/MovieList";
 import MovieSearchField from "../components/MovieSearchField";
 import MovieFilterMenu from "../components/MovieFilterMenu.jsx";
 import globalContext from "../GlobalContext.jsx";
 
 export default function () {
-  const {movies} = useContext(globalContext)
+  const { movies } = useContext(globalContext);
+
   //handles the searching for movies
   const [filteredMovies, setFilteredMovies] = useState(movies);
   const [searchString, setSearchString] = useState(null);
-
   const addUserSearchString = (event) => {
     setSearchString(event.target.value);
   };
@@ -21,8 +21,9 @@ export default function () {
   }, [searchString]);
 
   useEffect(() => {
-    setFilteredMovies(movies)
+    setFilteredMovies(movies);
   }, [movies]);
+
   return (
     <section className="movies">
       <div className="movie-search-and-filter-area">
@@ -33,14 +34,12 @@ export default function () {
       <MovieList movies={filteredMovies} />
     </section>
   );
+}
 
-  function filterMoviesBySearch() {
-    setFilteredMovies([
-      ...movies.filter((movie) =>
-        compareTitleWithSearch(movie, searchString)
-      ),
-    ]);
-  }
+function filterMoviesBySearch() {
+  setFilteredMovies([
+    ...movies.filter((movie) => compareTitleWithSearch(movie, searchString)),
+  ]);
 }
 
 function isValidSearch(search) {

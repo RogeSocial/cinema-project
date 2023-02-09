@@ -7,9 +7,9 @@ import globalContext from "../GlobalContext.jsx";
 
 export default function ({
   setFilteredMovies,
-  setFilterParam,
+  setFilterSlug,
   setIsFilterChosen,
-  setFilterName,
+  setFilterButtonName,
 }) {
 
   const {movies} = useContext(globalContext)
@@ -24,16 +24,16 @@ export default function ({
   function sortNewest(event) {
     setFilteredMovies([...sortByMostRecent(movies)]);
     setIsFilterChosen(true);
-    setFilterName("Newest");
-    setFilterParam({ filter: "Newest" });
+    setFilterButtonName("Newest");
+    setFilterSlug({ filter: "Newest" });
     highlightFilterOption(event.target);
   }
 
   function sortOldest(event) {
     setFilteredMovies([...sortByLeastRecent(movies)]);
     setIsFilterChosen(true);
-    setFilterName("Oldest");
-    setFilterParam({ filter: "Oldest" });
+    setFilterButtonName("Oldest");
+    setFilterSlug({ filter: "Oldest" });
     highlightFilterOption(event.target);
   }
 }
