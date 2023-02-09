@@ -26,11 +26,9 @@
   padding-right: 4.2rem;
 }
 
-.movie-search-field i {
-  color: lightgray;
-  /* icon-color */
+.movie-search-field input {
+  color: white;
 }
-
 .movies input {
   background-color: transparent;
   color: var(--main_text_color);
@@ -46,10 +44,10 @@
   outline: none;
 }
 
-.movie-search-field ::placeholder {
+.movie-search-field  ::placeholder {
   /* for Chrome, Firefox, Opera, Safari 10.1+ */
-  color: rgba(255, 255, 255, 0.68);
-  opacity: 1;
+  color: var(--main_text_color);
+  /*opacity: 1;*/
   /* for Firefox */
   font-size: 18px;
   font-weight: 500;
@@ -84,9 +82,8 @@
   justify-content: center;
   font-size: 18px;
   height: 30px;
-  padding: 0.5rem 1rem 0.5rem 1rem;
+  padding: 0.7rem 1rem 0.7rem 1rem;
   margin-top: 1rem;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
 }
 
 .movie-search-and-filter-area {
@@ -137,7 +134,6 @@
 .movie-card h4 {
   position: absolute;
   color: lightgray;
-  font-size: 10px;
   font-weight: 200;
   padding-top: 3rem;
   z-index: 2;
@@ -146,9 +142,21 @@
 
 .movie-card:hover {
   cursor: pointer;
-  transform: scale(1.05);
 }
 
+.movieImageContainer {
+  overflow: hidden;
+}
+
+.movieImageContainer img {
+  transition: all 0.8s ease;
+  filter: brightness(65%);
+}
+
+.movie-card:hover .movieImageContainer img {
+  filter: brightness(100%);
+  transform: scale(1.2);
+}
 .movieLength {
   color: #8c8c8c;
   /* color of movie duration on tickets page */
@@ -200,6 +208,12 @@
   }
 }
 
+@media screen and (min-width: 1400px) {
+  .movieImageContainer img {
+   width: 600px;
+    height: 300px;
+  }
+}
 .filter-options{
   position: relative;
 }
