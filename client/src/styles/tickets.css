@@ -29,7 +29,7 @@
 
 .wrap {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
     margin: 20px;
