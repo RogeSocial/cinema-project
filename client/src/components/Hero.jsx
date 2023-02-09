@@ -5,11 +5,9 @@ import AccountButtons from "../components/AccountButtons";
 
 export default function () {
     const {auth} = useContext(GlobalContext)
-    return (<>
-        <section className="hero-background">
+    return <section className="hero-background">
             <QuoteDisplay />
-            {!auth.loggedIn ? <AccountButtons /> : null}
+            { !auth.loggedIn ? <AccountButtons /> : null }
             <div className="hero-transition"></div>
         </section>
-    </>);
 }

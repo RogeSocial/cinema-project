@@ -2,8 +2,8 @@ import LoginButton from "./LoginButton";
 import RegisterButton from "./RegisterButton";
 
 export default function () {
-    return (<div>
+    return <div>
             <LoginButton />
             <RegisterButton />
-        </div>);
+        </div>
 }

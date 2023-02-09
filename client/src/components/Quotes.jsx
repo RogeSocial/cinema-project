@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {quoteArray} from "./QuoteData.js";
+import React, { useEffect, useState } from "react";
+import { quoteArray } from "./QuoteData.js";
 import "../styles/home.css";
 import "../styles/quotes.css";
 
@@ -26,10 +26,10 @@ export default function () {
     let movieQuote = quoteArray[index].quote;
     let byline = quoteArray[index].quoteSource;
 
-    return (<h2 id="quote-text-container" className={"quote-background quotebox"}>
-            <div ref={animationRef} className={"quote fading"}>
-                {movieQuote}
-            </div>
-            <div className={"byline fading"}>{byline}</div>
-        </h2>);
+    return <div id="quote-text-container" className={"quote-background quotebox"}>
+        <p ref={animationRef} className={"quote fading"}>
+            {movieQuote}
+        </p>
+        <p className={"byline fading"}>{byline}</p>
+    </div>
 }
