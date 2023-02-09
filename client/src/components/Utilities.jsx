@@ -11,9 +11,10 @@ export function showsMovieLength(movie) {
 }
 
 export function dateSelector(movie) {
+    const dateArray = movie.split(",");
   return (
     <select name="dates" id="dates" className="date-picker">
-      {movie.date.map((option, index) => {
+      {dateArray.map((option, index) => {
         return <option key={index}> {option} </option>;
       })}
     </select>
@@ -21,9 +22,10 @@ export function dateSelector(movie) {
 }
 
 export function timeSelector(movie) {
+    const timeArray = movie.split(",");
   return (
     <select name="times" id="times" className="date-picker">
-      {movie.time.map((option, index) => {
+      {timeArray.map((option, index) => {
         return <option key={index}> {option} </option>;
       })}
     </select>
