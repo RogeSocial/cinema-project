@@ -27,9 +27,9 @@ export default function () {
     function loginHandler() {
         if (!auth.loggedIn) {
             navigate("/")
-            if(email !== undefined){
-           return alert(`\n new email is ${email} \n 
-            Login with the new email`)
+            if(email !== undefined ){
+           return alert(`\n Your new/normal email is ${email} \n 
+            Login to the email with your normal password`)
             }
         }
     }
