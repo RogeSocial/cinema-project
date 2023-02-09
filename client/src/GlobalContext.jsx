@@ -13,7 +13,6 @@ export const GlobalProvider = ({children}) => {
      // useEffect to run methods upon load
     useEffect(() => {
         void checkAuth()
-        void loadTidbits()
         void loadMovies()
     }, []);
 
@@ -93,15 +92,6 @@ export const GlobalProvider = ({children}) => {
         setAuth({loggedIn: false})
     }
 
-    const loadTidbits = async () => {
-        setIsLoading(true)
-        const response = await fetch("/rest/tidbits")
-        const result = await response.json()
-        console.log(result)
-        setTidbits(result)
-        setIsLoading(false)
-    }
-
     const loadConcerts = async () => {
         setIsLoading(true)
         const response = await fetch("/rest/concerts")
@@ -114,7 +104,6 @@ export const GlobalProvider = ({children}) => {
     setIsLoading(true)
     const response = await fetch("/rest/movies")
     const result = await response.json()
-    console.log(result)
     setMovies(result)
     setIsLoading(false)
   }
@@ -124,7 +113,6 @@ export const GlobalProvider = ({children}) => {
         <GlobalContext.Provider
             value={{
                 auth,
-                tidbits,
                 isLoading,
                 submitLogin,
                 logout,

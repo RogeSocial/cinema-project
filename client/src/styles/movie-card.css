@@ -1,0 +1,40 @@
+.movie-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    transition: 1s;
+  }
+  
+  .movie-card img {
+    position: relative;
+    border-radius: 20px;
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .movie-card h3 {
+    color: var(--main_text_color);
+    text-decoration: none;
+  }
+  
+  .movie-card h4 {
+    position: absolute;
+    color: lightgray;
+    font-size: 10px;
+    font-weight: 200;
+    padding-top: 3rem;
+    z-index: 2;
+    font-size: 18px;
+  }
+  
+  .movie-card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+  }

@@ -3,7 +3,7 @@
   --main_text_color: white;
 }
 
-/* non media-query CSS used for phone responsiveness */
+/* Observe: non media-query CSS is used for phone responsiveness */
 .movies {
   display: flex;
   justify-content: flex-start;
@@ -26,9 +26,15 @@
   padding-right: 4.2rem;
 }
 
+.movie-search-field i {
+  /* icon-color */
+  color: lightgray;
+}
+
 .movie-search-field input {
   color: white;
 }
+
 .movies input {
   background-color: transparent;
   color: var(--main_text_color);
@@ -44,7 +50,7 @@
   outline: none;
 }
 
-.movie-search-field  ::placeholder {
+.movie-search-field ::placeholder {
   /* for Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--main_text_color);
   /*opacity: 1;*/
@@ -55,9 +61,12 @@
   align-items: center;
 }
 
-::-ms-input-placeholder {
-  /* for Microsoft Edge */
-  color: white;
+.movies h3 {
+  position: absolute;
+  z-index: 2;
+  font-size: 25px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+  font-weight: 600;
 }
 
 .movies h2 {
@@ -76,7 +85,7 @@
   padding: 0rem;
 }
 
-#movie-sort-btn {
+#movie-sort-button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,73 +107,6 @@
 }
 .movie-search-and-filter-area h2 {
   text-align: center;
-}
-
-.movie-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
-  transition: 1s;
-}
-
-.movie-card img {
-  position: relative;
-  border-radius: 20px;
-  width: 300px;
-  height: 250px;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.movie-card h3 {
-  position: absolute;
-  z-index: 2;
-  font-size: 25px;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
-  font-weight: 600;
-  color: var(--main_text_color);
-  text-decoration: none;
-}
-
-.movie-card h4 {
-  position: absolute;
-  color: lightgray;
-  font-weight: 200;
-  padding-top: 3rem;
-  z-index: 2;
-  font-size: 18px;
-}
-
-.movie-card:hover {
-  cursor: pointer;
-}
-
-.movieImageContainer {
-  overflow: hidden;
-}
-
-.movieImageContainer img {
-  transition: all 0.8s ease;
-  filter: brightness(65%);
-}
-
-.movie-card:hover .movieImageContainer img {
-  filter: brightness(100%);
-  transform: scale(1.2);
-}
-.movieLength {
-  color: #8c8c8c;
-  /* color of movie duration on tickets page */
-  position: inherit;
-  bottom: 5rem;
-  font-size: 20px;
-  z-index: 2;
-  visibility: visible;
 }
 
 /* tablet view responsiveness */
@@ -210,10 +152,7 @@
 
 @media screen and (min-width: 1400px) {
   .movieImageContainer img {
-   width: 600px;
+    width: 600px;
     height: 300px;
   }
-}
-.filter-options{
-  position: relative;
 }

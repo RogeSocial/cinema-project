@@ -8,14 +8,15 @@ export default function ({movie}) {
         <Link to={`/movies/${movie.id}/${movie["slug"]}`} key={movie.id}>
             <div onMouseEnter={() => {
                 setMovieTitleOpacity(0);
-                setMovieImgDarken(false);
-            }}
+                setMovieImgDarken(false);}}
+
                  onMouseLeave={() => {
                      setMovieTitleOpacity(1);
-                     setMovieImgDarken(true);
-                 }}
+                     setMovieImgDarken(true);}}
+                     
                  className="movie-card">
-                <h3 style={{ opacity: movieTitleOpacity, transition: 'opacity 1s' }} className='movie-title'> {movie.title} </h3>
+                <h3 style={{ opacity: movieTitleOpacity, transition: 'opacity 1s' }} className='movie-title'>
+                {movie.title} </h3>
                 <div className={`movieImageContainer ${movieImgDarken ? 'darken' : ''}`}>
                     <img src={movie.image} alt={"poster"}/>
                 </div>
