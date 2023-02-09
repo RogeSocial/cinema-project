@@ -63,7 +63,7 @@
     border: 1px solid white;
 }
 
-#delete-account-button{
+#delete-account-button {
     background-color: black;
     color: indianred;
     margin-top: 40px;
@@ -85,7 +85,7 @@
 
 
 @media screen and (max-width: 750px) {
-    .accountContainer{
+    .accountContainer {
         width: 100%;
         border: none;
         box-shadow: none;
@@ -93,7 +93,6 @@
     }
 
     .handImg {
-
         right: 100px;
         top: 700px;
         width: 200px;
@@ -101,7 +100,7 @@
 }
 
 @media (min-width: 480px) and (max-width: 897px) and (orientation: landscape) {
-    .accountContainer{
+    .accountContainer {
         width: 100%;
         border: none;
         box-shadow: none;
@@ -118,10 +117,6 @@
     transition: all 0.4s;
     border: none;
     font-family: inherit;
-
-
-    /* background-color: rgb(255, 254, 254);*/
-
     margin: 10px;
     position: relative;
 }
