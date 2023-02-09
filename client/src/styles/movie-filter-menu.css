@@ -1,5 +1,6 @@
 .filter-options {
-  width: 282px;
+  position: relative;
+  width: 285px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,8 +15,6 @@
   border-radius: 10px;
   font-family: inherit;
 }
-
-
 
 .filter-menu-controls {
   width: 100%;
@@ -85,10 +84,9 @@
   .filter-options {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
-    width: 333px;
+    width: 334px;
   }
 }
 .filterButton {
   padding: 0;
-
 }

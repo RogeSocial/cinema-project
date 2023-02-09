@@ -1,6 +1,7 @@
 import ClearFilterButton from "./ClearFilterButton";
 import ConfirmFilterButton from "./ConfirmFilterButton";
-export default function ({ setIsFilterChosen, setToggleMenu, setFilterParam }) {
+export default function ({ setIsFilterChosen, setToggleMenu, setFilterSlug }) {
+  
   return (
     <div className="filter-menu-controls">
       <ClearFilterButton handleClick={removeFilter} />
@@ -10,7 +11,7 @@ export default function ({ setIsFilterChosen, setToggleMenu, setFilterParam }) {
   );
 
   function removeFilter() {
-    setFilterParam({});
+    setFilterSlug({});
     window.location.reload();
   }
 
