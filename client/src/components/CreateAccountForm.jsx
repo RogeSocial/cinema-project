@@ -19,7 +19,7 @@ export default function () {
         createAccount(email, password, fullName, phoneNumber)
     }
     return <section className="account">
-        <form onSubmit={submit} id="formData" action="/login" className="cover createAccountCover">
+        <form onSubmit={submit} id="formData" action="javascript:void(0)" className="cover createAccountCover">
             <img className="loginImg accountImg" src={icon} alt="" />
             <label htmlFor="fullname">Fullname</label>
             <input type="text" id="fullname" name="name" placeholder="full name"

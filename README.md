@@ -17,23 +17,30 @@ Clone the project
 git clone https://github.com/RogeSocial/cinema-project.git
 ```
 
-Go to the project directory
+Install local dependencies in the project directory
 
 ```bash
 cd client
 ```
 
-Install local dependencies
-
 ```bash
 npm install
 npm install react-router-dom
+```
+
+```bash
+cd server
+```
+
+```bash
+npm install
 npm install concurrently nodemon
 ```
 
 Start the server
 
 ```bash
+cd server
 npm run dev
 ```
 
