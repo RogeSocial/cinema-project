@@ -2,6 +2,13 @@
     background-color: black;
 }
 
+#navbar:first-letter {
+    text-transform: capitalize;
+}
+#navbar {
+    text-transform: lowercase;
+}
+
 .login-wrap {
     display: flex;
     flex-direction: column;
