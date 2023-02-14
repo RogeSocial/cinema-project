@@ -6,6 +6,7 @@ export default function () {
 
     const {auth} = useContext(GlobalContext)
     const [isOpen, setIsOpen] = useState(false);
+    const firstName = auth.fullName?.split(" ").splice(0, 1)
 
     function toggleMenu() {
         setIsOpen(!isOpen);
@@ -38,8 +39,8 @@ export default function () {
                 <Link to="tickets" onClick={() => setIsOpen(false)}>Tickets</Link>
 
                 {auth.loggedIn ?
-                    <Link to="user/account" onClick={() => setIsOpen(false)}>Account</Link>
-                    : <Link to="login" onClick={() => setIsOpen(false)}>Account</Link>}
+                    <Link to="user/account" onClick={() => setIsOpen(false)}>{firstName}</Link>
+                    : <Link to="login" onClick={() => setIsOpen(false)}>Login</Link>}
 
             </div>
         )
