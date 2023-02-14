@@ -10,21 +10,7 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #242333;
-    padding-top: 50px;
 }
-
-/*.calender-dropdown {
-    background-color: #ffffff;
-    border-radius: 20px;
-    color: #000000;
-    text-align: center;
-    width: 12em;
-    height: 2em;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}*/
 
 .movieTickets {
     display: grid;
@@ -43,12 +29,11 @@
 
 .wrap {
     display: grid;
-    grid-template-columns: auto;
-    flex-direction: row;
+    grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
     margin: 20px;
-    padding-top: 50px;
+    padding-top: 0px;
 }
 
 .selectedDate {
